@@ -1,4 +1,4 @@
-2D-Mapping-VHDL
-===============
+2D Mapping Bug Robot using VHDL
+==============================
 
-A VHDL implementation of a 2D mapping robot
+A VHDL implementation of a 2D mapping 'bug 1' robot
