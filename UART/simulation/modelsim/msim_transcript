@@ -1,0 +1,68 @@
+# do UART_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying /usr/src/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /usr/src/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/UART/TRANSMIT.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TRANSMIT
+# -- Compiling architecture main of TRANSMIT
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/UART/UART.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity UART
+# -- Compiling architecture main of UART
+# 
+vsim work.transmit
+# vsim work.transmit 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.transmit(main)
+vsim work.transmit
+# vsim work.transmit 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.transmit(main)
+add wave -position insertpoint  \
+sim:/transmit/clk
+add wave -position insertpoint  \
+sim:/transmit/clk
+add wave -position insertpoint  \
+sim:/transmit/wr
+add wave -position insertpoint  \
+sim:/transmit/data
+add wave -position insertpoint  \
+sim:/transmit/tx
+add wave -position insertpoint  \
+sim:/transmit/txrdy
+add wave -position insertpoint  \
+sim:/transmit/done
+add wave -position insertpoint  \
+sim:/transmit/trigger
+add wave -position insertpoint  \
+sim:/transmit/parity
+add wave -position insertpoint  \
+sim:/transmit/latch
+add wave -position insertpoint  \
+sim:/transmit/step
+add wave -position insertpoint  \
+sim:/transmit/clk
+force -freeze sim:/transmit/clk 1 0, 0 {50000 ps} -r 100000
+force -freeze sim:/transmit/wr 1 0, 0 {990000 ps} -r 1000000
+force reset 1 0 ps, 0 200000 ps
+force data 01000010 0
+run -all

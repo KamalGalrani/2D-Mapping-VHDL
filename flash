@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "cable ft2232 vid=0x0403 pid=0x6010" > Krypton
+echo "detect" >> Krypton
+echo "svf ./$1/output_files/$1.svf" >> Krypton
+
+sudo jtag Krypton
+
+rm Krypton
