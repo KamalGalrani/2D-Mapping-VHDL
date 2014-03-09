@@ -64,9 +64,9 @@ CHIP  "UART"  ASSIGNED TO AN: 5M1270ZT144A5
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
-tx                           : 1         : output : 3.3-V LVTTL       :         : 1         : Y              
-GND*                         : 2         :        :                   :         : 1         :                
-txrdy                        : 3         : output : 3.3-V LVTTL       :         : 1         : Y              
+TX                           : 1         : output : 3.3-V LVTTL       :         : 1         : Y              
+TXRDY                        : 2         : output : 3.3-V LVTTL       :         : 1         : Y              
+GND*                         : 3         :        :                   :         : 1         :                
 GND*                         : 4         :        :                   :         : 1         :                
 GND*                         : 5         :        :                   :         : 1         :                
 GND*                         : 6         :        :                   :         : 1         :                
@@ -81,7 +81,7 @@ GND*                         : 14        :        :                   :         
 GND*                         : 15        :        :                   :         : 1         :                
 GND*                         : 16        :        :                   :         : 1         :                
 GNDINT                       : 17        : gnd    :                   :         :           :                
-wr                           : 18        : input  : 3.3-V LVTTL       :         : 1         : Y              
+GND*                         : 18        :        :                   :         : 1         :                
 VCCINT                       : 19        : power  :                   : 1.8V    :           :                
 GND*                         : 20        :        :                   :         : 1         :                
 GND*                         : 21        :        :                   :         : 1         :                
@@ -102,8 +102,8 @@ TCK                          : 35        : input  :                   :         
 TDO                          : 36        : output :                   :         : 1         :                
 GND*                         : 37        :        :                   :         : 4         :                
 GND*                         : 38        :        :                   :         : 4         :                
-GND*                         : 39        :        :                   :         : 4         :                
-GND*                         : 40        :        :                   :         : 4         :                
+RST                          : 39        : input  : 3.3-V LVTTL       :         : 4         : Y              
+WR                           : 40        : input  : 3.3-V LVTTL       :         : 4         : Y              
 GND*                         : 41        :        :                   :         : 4         :                
 GND*                         : 42        :        :                   :         : 4         :                
 GND*                         : 43        :        :                   :         : 4         :                
@@ -111,7 +111,7 @@ GND*                         : 44        :        :                   :         
 GND*                         : 45        :        :                   :         : 4         :                
 VCCIO4                       : 46        : power  :                   : 3.3V    : 4         :                
 GNDIO                        : 47        : gnd    :                   :         :           :                
-reset                        : 48        : input  : 3.3-V LVTTL       :         : 4         : Y              
+GND*                         : 48        :        :                   :         : 4         :                
 GND*                         : 49        :        :                   :         : 4         :                
 GND*                         : 50        :        :                   :         : 4         :                
 GND*                         : 51        :        :                   :         : 4         :                
@@ -152,7 +152,7 @@ GND*                         : 85        :        :                   :         
 GND*                         : 86        :        :                   :         : 3         :                
 GND*                         : 87        :        :                   :         : 3         :                
 GND*                         : 88        :        :                   :         : 3         :                
-clk                          : 89        : input  : 3.3-V LVTTL       :         : 3         : Y              
+CLK                          : 89        : input  : 3.3-V LVTTL       :         : 3         : Y              
 VCCINT                       : 90        : power  :                   : 1.8V    :           :                
 GND*                         : 91        :        :                   :         : 3         :                
 GNDINT                       : 92        : gnd    :                   :         :           :                

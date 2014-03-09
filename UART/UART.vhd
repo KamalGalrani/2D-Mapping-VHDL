@@ -3,45 +3,57 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity UART is
-port (clk, reset, wr: in std_logic; tx, txrdy: out std_logic);
+  generic(
+		-------------------------------------------------
+      --TX_CLK_DIV = FCPU/BAUDRATE - 1
+        --9600   => 5207
+        --14400  => 3471
+        --19200  => 2603
+        --28800  => 1735
+        --38400  => 1301
+        --57600  => 867
+        --115200 => 433
+      -------------------------------------------------
+      TX_CLK_DIV : integer := 5207
+      );
+  port(
+      CLK   : in  std_logic;
+      RST   : in  std_logic;
+      WR    : in  std_logic;
+      TX    : out std_logic;
+      TXRDY : out std_logic
+      );
 end entity;
 
 architecture main of UART is
-signal divisor, count: integer;
-signal txclk: std_logic;
+signal tx_clk_count : integer range 0 to TX_CLK_DIV;
+signal tx_clk_tick  : std_logic;
+signal TX_DATA: std_logic_vector(7 downto 0);
 component TRANSMIT is
-port (clk  : in std_logic;
-      wr   : in std_logic;
-      reset: in std_logic;
-      data : in std_logic_vector(7 downto 0);
-      tx   : out std_logic;
-      txrdy: out std_logic);
+  port(
+      TX_CLK : in std_logic;
+      WR     : in std_logic;
+      RST    : in std_logic;
+      DATA   : in std_logic_vector(7 downto 0);
+      TX     : out std_logic;
+      TXRDY  : out std_logic
+		);
 end component;
 begin
-  --Clock DIV = FCPU/(2*BAUDRATE)
-    --9600   => 2604
-	 --14400  => 1736
-	 --19200  => 1302
-	 --28800  => 868
-	 --38400  => 651
-	 --57600  => 434
-	 --115200 => 217
-  divisor <= 217;
-  
-  process (reset, clk)
-    begin
-    if reset='1' then
-      txclk <= '0';
-      count <= 0;
-    elsif rising_edge(clk) then
-      txclk <= '0';
-      if (count = divisor) then
-        count <= 0;
-        txclk <= '1';
+  process (RST, CLK)
+  begin
+    if ( RST = '1' ) then
+      tx_clk_tick  <= '0';
+      tx_clk_count <= 0;
+    elsif rising_edge(CLK) then
+      tx_clk_tick <= '0';
+      if (tx_clk_count = TX_CLK_DIV) then
+        tx_clk_count <= 0;
+        tx_clk_tick <= '1';
       else
-        count <= count + 1;
+        tx_clk_count <= tx_clk_count + 1;
       end if;
     end if;
   end process;
-  transmitter: TRANSMIT port map (txclk, wr, reset, "01000010", tx, txrdy);
+  transmitter: TRANSMIT port map (tx_clk_tick, WR, RST, "01000010", TX, TXRDY);
 end architecture;

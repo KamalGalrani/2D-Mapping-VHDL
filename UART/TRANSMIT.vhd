@@ -1,66 +1,46 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity TRANSMIT is
-port (clk     : in std_logic;
-      wr      : in std_logic;
-      reset   : in std_logic;
-      data    : in std_logic_vector(7 downto 0);
-      tx      : out std_logic;
-      txrdy   : out std_logic);
+  port(
+      TX_CLK : in  std_logic;
+      WR     : in  std_logic;
+      RST    : in  std_logic;
+      DATA   : in  std_logic_vector(7 downto 0);
+      TX     : out std_logic;
+      TXRDY  : out std_logic
+      );
 end entity;
 
 architecture main of TRANSMIT is
-constant paritymode: std_logic := '0';
-signal done, trigger, parity: std_logic;
 signal latch: std_logic_vector(7 downto 0);
-signal step: integer range 0 to 15;
+signal step: integer range 0 to 10;
 begin
-  CONTROL: process (wr, done)
+  process (TX_CLK, RST, WR)
   begin
-    if (done = '1') then
-	   if (wr = '0') then
-		  latch <= data;
-        txrdy <= '0';
-		  trigger <= '1';
-      else
-		  txrdy <= '1';
-		end if;
-	 else
-		trigger <= '0';
-    end if;
-  end process;
-  
-  TRANSMIT_DATA: process (clk, reset, trigger)
-  begin
-    if (reset = '1') then
-      parity <= paritymode;
-      tx <= '1';
-	   step <= 0;
-	   done <= '1';
-    elsif (trigger = '1') then
-	   parity <= paritymode;
-      tx <= '1';
-	   step <= 0;
-	   done <= '0';
-	 elsif (rising_edge(clk) and done = '0') then
-      if (step = 0) then
-        parity <= paritymode;
-        tx <= '0';
-		  step <= step + 1;
-      else
-		  if (step = 10) then
-          tx <= '1';
-			 step <= 0;
-			 done <= '1';
-        elsif (step = 9) then
-          tx <= parity;
-			 step <= step + 1;
-        else
-		    parity <= parity xor latch(step - 1);
-          tx <= latch(step - 1);
-			 step <= step + 1;
-        end if;
+    if ( RST = '1' ) then
+      step  <= 10;
+      TX    <= '1';
+		TXRDY <= '1';
+    elsif ( WR = '0' and step = 10 ) then
+      latch <= DATA;
+      step <= 0;		
+      TX    <= '1';
+      TXRDY <= '0';
+    elsif ( rising_edge(TX_CLK) ) then
+      if ( step = 0 ) then				--Send START bit
+        TX   <= '0';
+        step <= 1;
+      elsif ( step = 9 ) then					--Send STOP bit
+        TX <= '1';
+        step <= 10;
+	   elsif (step = 10) then				--Keep TX high when idle
+        TX <= '1';
+        TXRDY <= '1';
+      else										--Transmit DATA
+        TX <= latch(step - 1);
+        step <= step + 1;
       end if;
     end if;
   end process;

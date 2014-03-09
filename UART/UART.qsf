@@ -53,8 +53,8 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulati
 set_global_assignment -name VHDL_FILE TRANSMIT.vhd
 set_global_assignment -name VHDL_FILE UART.vhd
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
-set_location_assignment PIN_89 -to clk
-set_location_assignment PIN_1 -to tx
-set_location_assignment PIN_48 -to reset
-set_location_assignment PIN_3 -to txrdy
-set_location_assignment PIN_18 -to wr
+set_location_assignment PIN_89 -to CLK
+set_location_assignment PIN_39 -to RST
+set_location_assignment PIN_1 -to TX
+set_location_assignment PIN_2 -to TXRDY
+set_location_assignment PIN_40 -to WR
