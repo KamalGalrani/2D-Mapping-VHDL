@@ -18,14 +18,14 @@
 #
 # Quartus II 64-Bit
 # Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-# Date created = 19:55:08  March 08, 2014
+# Date created = 23:41:43  March 09, 2014
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		Stepper_assignment_defaults.qdf
+#		GLCD_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -38,9 +38,9 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE 5M1270ZT144A5
-set_global_assignment -name TOP_LEVEL_ENTITY AccelerationLimitedMotorController
+set_global_assignment -name TOP_LEVEL_ENTITY GLCD
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:55:08  MARCH 08, 2014"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:41:43  MARCH 09, 2014"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
@@ -50,9 +50,21 @@ set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 5A
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_global_assignment -name VHDL_FILE UPDOWNcounterANDswitch.vhd
-set_global_assignment -name VHDL_FILE PWMcomparator.vhd
-set_global_assignment -name VHDL_FILE cosine.vhd
-set_global_assignment -name VHDL_FILE AccelerationLimitedPositionControl.vhd
-set_global_assignment -name VHDL_FILE AccelerationLimitedMotorController.vhd
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name VHDL_FILE GLCD.vhd
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_39 -to button1
+set_location_assignment PIN_40 -to button2
+set_location_assignment PIN_89 -to clk
+set_location_assignment PIN_102 -to cs1
+set_location_assignment PIN_104 -to cs2
+set_location_assignment PIN_74 -to en
+set_location_assignment PIN_98 -to lcdData[7]
+set_location_assignment PIN_96 -to lcdData[6]
+set_location_assignment PIN_94 -to lcdData[5]
+set_location_assignment PIN_88 -to lcdData[4]
+set_location_assignment PIN_86 -to lcdData[3]
+set_location_assignment PIN_84 -to lcdData[2]
+set_location_assignment PIN_80 -to lcdData[1]
+set_location_assignment PIN_76 -to lcdData[0]
+set_location_assignment PIN_70 -to rs
+set_location_assignment PIN_72 -to rw

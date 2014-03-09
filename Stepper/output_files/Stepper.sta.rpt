@@ -1,0 +1,627 @@
+TimeQuest Timing Analyzer report for Stepper
+Mon Mar 10 00:25:14 2014
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Hold: 'clk'
+ 13. Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Setup Transfers
+ 19. Hold Transfers
+ 20. Report TCCS
+ 21. Report RSKM
+ 22. Unconstrained Paths
+ 23. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; Stepper                                            ;
+; Device Family      ; MAX V                                              ;
+; Device Name        ; 5M1270ZT144A5                                      ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Slow Model                                         ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 32.79 MHz ; 32.79 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -29.497 ; -1856.109     ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.665 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                             ;
++---------+----------------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                              ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; -29.497 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.159     ;
+; -29.497 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.159     ;
+; -29.497 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.159     ;
+; -29.497 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.159     ;
+; -29.497 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.159     ;
+; -29.497 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.159     ;
+; -29.497 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.159     ;
+; -29.497 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.159     ;
+; -29.497 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.159     ;
+; -29.493 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 30.155     ;
+; -29.493 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 30.155     ;
+; -29.493 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 30.155     ;
+; -29.493 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 30.155     ;
+; -29.493 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 30.155     ;
+; -29.493 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 30.155     ;
+; -29.493 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 30.155     ;
+; -29.493 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 30.155     ;
+; -29.493 ; UPDOWNcounterANDswitch:U2|timechunk[2] ; UPDOWNcounterANDswitch:U2|t[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.155     ;
+; -29.272 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.934     ;
+; -29.272 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.934     ;
+; -29.272 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.934     ;
+; -29.272 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.934     ;
+; -29.272 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.934     ;
+; -29.272 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.934     ;
+; -29.272 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.934     ;
+; -29.272 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.934     ;
+; -29.272 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.934     ;
+; -29.268 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.930     ;
+; -29.268 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.930     ;
+; -29.268 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.930     ;
+; -29.268 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.930     ;
+; -29.268 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.930     ;
+; -29.268 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.930     ;
+; -29.268 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.930     ;
+; -29.268 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.930     ;
+; -29.268 ; UPDOWNcounterANDswitch:U2|speedreg[1]  ; UPDOWNcounterANDswitch:U2|t[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.930     ;
+; -29.258 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.920     ;
+; -29.258 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.920     ;
+; -29.258 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.920     ;
+; -29.258 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.920     ;
+; -29.258 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.920     ;
+; -29.258 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.920     ;
+; -29.258 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.920     ;
+; -29.258 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.920     ;
+; -29.258 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.920     ;
+; -29.254 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.916     ;
+; -29.254 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.916     ;
+; -29.254 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.916     ;
+; -29.254 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.916     ;
+; -29.254 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.916     ;
+; -29.254 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.916     ;
+; -29.254 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.916     ;
+; -29.254 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.916     ;
+; -29.254 ; UPDOWNcounterANDswitch:U2|timechunk[5] ; UPDOWNcounterANDswitch:U2|t[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.916     ;
+; -28.952 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.614     ;
+; -28.952 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.614     ;
+; -28.952 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.614     ;
+; -28.952 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.614     ;
+; -28.952 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.614     ;
+; -28.952 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.614     ;
+; -28.952 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.614     ;
+; -28.952 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.614     ;
+; -28.952 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.614     ;
+; -28.948 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.610     ;
+; -28.948 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.610     ;
+; -28.948 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.610     ;
+; -28.948 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.610     ;
+; -28.948 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.610     ;
+; -28.948 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.610     ;
+; -28.948 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.610     ;
+; -28.948 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.610     ;
+; -28.948 ; UPDOWNcounterANDswitch:U2|timechunk[6] ; UPDOWNcounterANDswitch:U2|t[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.610     ;
+; -28.937 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.599     ;
+; -28.937 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.599     ;
+; -28.937 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.599     ;
+; -28.937 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.599     ;
+; -28.937 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.599     ;
+; -28.937 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.599     ;
+; -28.937 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.599     ;
+; -28.937 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.599     ;
+; -28.937 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.599     ;
+; -28.933 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.595     ;
+; -28.933 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.595     ;
+; -28.933 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.595     ;
+; -28.933 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.595     ;
+; -28.933 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.595     ;
+; -28.933 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.595     ;
+; -28.933 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.595     ;
+; -28.933 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.595     ;
+; -28.933 ; UPDOWNcounterANDswitch:U2|timechunk[8] ; UPDOWNcounterANDswitch:U2|t[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.595     ;
+; -28.924 ; UPDOWNcounterANDswitch:U2|timechunk[7] ; UPDOWNcounterANDswitch:U2|t[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.586     ;
+; -28.924 ; UPDOWNcounterANDswitch:U2|timechunk[7] ; UPDOWNcounterANDswitch:U2|t[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.586     ;
+; -28.924 ; UPDOWNcounterANDswitch:U2|timechunk[7] ; UPDOWNcounterANDswitch:U2|t[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.586     ;
+; -28.924 ; UPDOWNcounterANDswitch:U2|timechunk[7] ; UPDOWNcounterANDswitch:U2|t[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.586     ;
+; -28.924 ; UPDOWNcounterANDswitch:U2|timechunk[7] ; UPDOWNcounterANDswitch:U2|t[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.586     ;
+; -28.924 ; UPDOWNcounterANDswitch:U2|timechunk[7] ; UPDOWNcounterANDswitch:U2|t[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.586     ;
+; -28.924 ; UPDOWNcounterANDswitch:U2|timechunk[7] ; UPDOWNcounterANDswitch:U2|t[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.586     ;
+; -28.924 ; UPDOWNcounterANDswitch:U2|timechunk[7] ; UPDOWNcounterANDswitch:U2|t[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.586     ;
+; -28.924 ; UPDOWNcounterANDswitch:U2|timechunk[7] ; UPDOWNcounterANDswitch:U2|t[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.586     ;
+; -28.920 ; UPDOWNcounterANDswitch:U2|timechunk[7] ; UPDOWNcounterANDswitch:U2|t[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 29.582     ;
++---------+----------------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                             ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.665 ; UPDOWNcounterANDswitch:U2|t[17]             ; UPDOWNcounterANDswitch:U2|t[17]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.889      ;
+; 1.927 ; PWMcomparator:U6|COUNTPWM[0]                ; PWMcomparator:U6|COUNTPWM[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.151      ;
+; 2.131 ; UPDOWNcounterANDswitch:U2|t[0]              ; UPDOWNcounterANDswitch:U2|t[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.355      ;
+; 2.131 ; AccelerationLimitedPositionControl:U1|va[0] ; AccelerationLimitedPositionControl:U1|va[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.355      ;
+; 2.132 ; PWMcomparator:U6|COUNTPWM[7]                ; PWMcomparator:U6|COUNTPWM[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.356      ;
+; 2.141 ; PWMcomparator:U6|COUNTPWM[2]                ; PWMcomparator:U6|COUNTPWM[2]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.365      ;
+; 2.141 ; PWMcomparator:U6|COUNTPWM[1]                ; PWMcomparator:U6|COUNTPWM[1]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.365      ;
+; 2.198 ; UPDOWNcounterANDswitch:U2|t[10]             ; UPDOWNcounterANDswitch:U2|t[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.422      ;
+; 2.247 ; UPDOWNcounterANDswitch:U2|t[12]             ; UPDOWNcounterANDswitch:U2|t[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.471      ;
+; 2.248 ; PWMcomparator:U6|COUNTPWM[3]                ; PWMcomparator:U6|COUNTPWM[3]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.472      ;
+; 2.256 ; UPDOWNcounterANDswitch:U2|t[7]              ; UPDOWNcounterANDswitch:U2|t[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.480      ;
+; 2.256 ; UPDOWNcounterANDswitch:U2|t[4]              ; UPDOWNcounterANDswitch:U2|t[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.480      ;
+; 2.256 ; PWMcomparator:U6|COUNTPWM[5]                ; PWMcomparator:U6|COUNTPWM[5]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.480      ;
+; 2.256 ; UPDOWNcounterANDswitch:U2|t[14]             ; UPDOWNcounterANDswitch:U2|t[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.480      ;
+; 2.257 ; UPDOWNcounterANDswitch:U2|t[3]              ; UPDOWNcounterANDswitch:U2|t[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.481      ;
+; 2.257 ; UPDOWNcounterANDswitch:U2|t[5]              ; UPDOWNcounterANDswitch:U2|t[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.481      ;
+; 2.257 ; PWMcomparator:U6|COUNTPWM[6]                ; PWMcomparator:U6|COUNTPWM[6]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.481      ;
+; 2.257 ; PWMcomparator:U6|COUNTPWM[4]                ; PWMcomparator:U6|COUNTPWM[4]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.481      ;
+; 2.257 ; UPDOWNcounterANDswitch:U2|t[13]             ; UPDOWNcounterANDswitch:U2|t[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.481      ;
+; 2.257 ; UPDOWNcounterANDswitch:U2|t[15]             ; UPDOWNcounterANDswitch:U2|t[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.481      ;
+; 2.261 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[17]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.485      ;
+; 2.263 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[16]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.487      ;
+; 2.264 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.488      ;
+; 2.265 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.489      ;
+; 2.266 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.490      ;
+; 2.267 ; UPDOWNcounterANDswitch:U2|t[2]              ; UPDOWNcounterANDswitch:U2|t[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.491      ;
+; 2.268 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.492      ;
+; 2.269 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.493      ;
+; 2.270 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[9]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.494      ;
+; 2.646 ; UPDOWNcounterANDswitch:U2|t[11]             ; UPDOWNcounterANDswitch:U2|t[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.870      ;
+; 2.669 ; PWMcomparator:U6|COUNTPWM[0]                ; PWMcomparator:U6|COUNTPWM[1]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.893      ;
+; 2.688 ; UPDOWNcounterANDswitch:U2|t[16]             ; UPDOWNcounterANDswitch:U2|t[16]             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.912      ;
+; 2.691 ; AccelerationLimitedPositionControl:U1|va[7] ; UPDOWNcounterANDswitch:U2|speedreg[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.915      ;
+; 2.692 ; UPDOWNcounterANDswitch:U2|t[1]              ; UPDOWNcounterANDswitch:U2|t[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.916      ;
+; 2.705 ; UPDOWNcounterANDswitch:U2|t[6]              ; UPDOWNcounterANDswitch:U2|t[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.929      ;
+; 2.936 ; AccelerationLimitedPositionControl:U1|va[8] ; UPDOWNcounterANDswitch:U2|speedreg[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 3.160      ;
+; 2.975 ; UPDOWNcounterANDswitch:U2|t[0]              ; UPDOWNcounterANDswitch:U2|t[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.199      ;
+; 2.985 ; PWMcomparator:U6|COUNTPWM[2]                ; PWMcomparator:U6|COUNTPWM[3]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.209      ;
+; 2.985 ; PWMcomparator:U6|COUNTPWM[1]                ; PWMcomparator:U6|COUNTPWM[2]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.209      ;
+; 3.042 ; UPDOWNcounterANDswitch:U2|t[10]             ; UPDOWNcounterANDswitch:U2|t[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.266      ;
+; 3.087 ; UPDOWNcounterANDswitch:U2|t[0]              ; UPDOWNcounterANDswitch:U2|t[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.311      ;
+; 3.097 ; PWMcomparator:U6|COUNTPWM[2]                ; PWMcomparator:U6|COUNTPWM[4]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.321      ;
+; 3.097 ; PWMcomparator:U6|COUNTPWM[1]                ; PWMcomparator:U6|COUNTPWM[3]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.321      ;
+; 3.114 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.338      ;
+; 3.145 ; AccelerationLimitedPositionControl:U1|va[2] ; AccelerationLimitedPositionControl:U1|va[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.369      ;
+; 3.154 ; UPDOWNcounterANDswitch:U2|t[10]             ; UPDOWNcounterANDswitch:U2|t[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.378      ;
+; 3.173 ; PWMcomparator:U6|timechunk[2]               ; PWMcomparator:U6|timechunk[2]               ; clk          ; clk         ; 0.000        ; 0.000      ; 3.397      ;
+; 3.199 ; UPDOWNcounterANDswitch:U2|t[0]              ; UPDOWNcounterANDswitch:U2|t[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.423      ;
+; 3.201 ; UPDOWNcounterANDswitch:U2|t[12]             ; UPDOWNcounterANDswitch:U2|t[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.425      ;
+; 3.202 ; PWMcomparator:U6|COUNTPWM[3]                ; PWMcomparator:U6|COUNTPWM[4]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.426      ;
+; 3.209 ; PWMcomparator:U6|COUNTPWM[1]                ; PWMcomparator:U6|COUNTPWM[4]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.433      ;
+; 3.210 ; UPDOWNcounterANDswitch:U2|t[4]              ; UPDOWNcounterANDswitch:U2|t[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.434      ;
+; 3.210 ; PWMcomparator:U6|COUNTPWM[5]                ; PWMcomparator:U6|COUNTPWM[6]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.434      ;
+; 3.210 ; UPDOWNcounterANDswitch:U2|t[7]              ; UPDOWNcounterANDswitch:U2|t[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.434      ;
+; 3.210 ; UPDOWNcounterANDswitch:U2|t[14]             ; UPDOWNcounterANDswitch:U2|t[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.434      ;
+; 3.211 ; UPDOWNcounterANDswitch:U2|t[5]              ; UPDOWNcounterANDswitch:U2|t[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.435      ;
+; 3.211 ; PWMcomparator:U6|COUNTPWM[6]                ; PWMcomparator:U6|COUNTPWM[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.435      ;
+; 3.211 ; UPDOWNcounterANDswitch:U2|t[15]             ; UPDOWNcounterANDswitch:U2|t[16]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.435      ;
+; 3.221 ; UPDOWNcounterANDswitch:U2|t[2]              ; UPDOWNcounterANDswitch:U2|t[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.445      ;
+; 3.233 ; AccelerationLimitedPositionControl:U1|va[8] ; AccelerationLimitedPositionControl:U1|va[8] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.457      ;
+; 3.238 ; AccelerationLimitedPositionControl:U1|va[8] ; UPDOWNcounterANDswitch:U2|forwreg           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.462      ;
+; 3.266 ; UPDOWNcounterANDswitch:U2|t[10]             ; UPDOWNcounterANDswitch:U2|t[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.490      ;
+; 3.322 ; UPDOWNcounterANDswitch:U2|t[4]              ; UPDOWNcounterANDswitch:U2|t[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.546      ;
+; 3.322 ; PWMcomparator:U6|COUNTPWM[5]                ; PWMcomparator:U6|COUNTPWM[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.546      ;
+; 3.322 ; UPDOWNcounterANDswitch:U2|t[14]             ; UPDOWNcounterANDswitch:U2|t[16]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.546      ;
+; 3.323 ; UPDOWNcounterANDswitch:U2|t[5]              ; UPDOWNcounterANDswitch:U2|t[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.547      ;
+; 3.323 ; UPDOWNcounterANDswitch:U2|t[15]             ; UPDOWNcounterANDswitch:U2|t[17]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.547      ;
+; 3.347 ; UPDOWNcounterANDswitch:U2|t[8]              ; UPDOWNcounterANDswitch:U2|t[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.571      ;
+; 3.411 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.635      ;
+; 3.411 ; UPDOWNcounterANDswitch:U2|timechunk[1]      ; UPDOWNcounterANDswitch:U2|timechunk[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.635      ;
+; 3.412 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.636      ;
+; 3.414 ; PWMcomparator:U6|timechunk[0]               ; PWMcomparator:U6|timechunk[0]               ; clk          ; clk         ; 0.000        ; 0.000      ; 3.638      ;
+; 3.415 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.639      ;
+; 3.418 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.642      ;
+; 3.421 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.645      ;
+; 3.426 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.650      ;
+; 3.427 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.651      ;
+; 3.428 ; UPDOWNcounterANDswitch:U2|forwreg           ; UPDOWNcounterANDswitch:U2|t[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.652      ;
+; 3.434 ; UPDOWNcounterANDswitch:U2|t[4]              ; UPDOWNcounterANDswitch:U2|t[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.658      ;
+; 3.434 ; UPDOWNcounterANDswitch:U2|t[14]             ; UPDOWNcounterANDswitch:U2|t[17]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.658      ;
+; 3.435 ; UPDOWNcounterANDswitch:U2|t[5]              ; UPDOWNcounterANDswitch:U2|t[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.659      ;
+; 3.443 ; AccelerationLimitedPositionControl:U1|t[1]  ; AccelerationLimitedPositionControl:U1|t[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.667      ;
+; 3.448 ; PWMcomparator:U6|timechunk[1]               ; PWMcomparator:U6|timechunk[1]               ; clk          ; clk         ; 0.000        ; 0.000      ; 3.672      ;
+; 3.479 ; AccelerationLimitedPositionControl:U1|va[3] ; UPDOWNcounterANDswitch:U2|speedreg[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 3.703      ;
+; 3.513 ; UPDOWNcounterANDswitch:U2|t[9]              ; UPDOWNcounterANDswitch:U2|t[9]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.737      ;
+; 3.536 ; UPDOWNcounterANDswitch:U2|t[3]              ; UPDOWNcounterANDswitch:U2|t[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.536 ; UPDOWNcounterANDswitch:U2|t[3]              ; UPDOWNcounterANDswitch:U2|t[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.536 ; PWMcomparator:U6|COUNTPWM[4]                ; PWMcomparator:U6|COUNTPWM[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.536 ; UPDOWNcounterANDswitch:U2|t[3]              ; UPDOWNcounterANDswitch:U2|t[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.536 ; UPDOWNcounterANDswitch:U2|t[3]              ; UPDOWNcounterANDswitch:U2|t[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.536 ; PWMcomparator:U6|COUNTPWM[4]                ; PWMcomparator:U6|COUNTPWM[6]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.536 ; PWMcomparator:U6|COUNTPWM[4]                ; PWMcomparator:U6|COUNTPWM[5]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.536 ; UPDOWNcounterANDswitch:U2|t[13]             ; UPDOWNcounterANDswitch:U2|t[17]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.536 ; UPDOWNcounterANDswitch:U2|t[3]              ; UPDOWNcounterANDswitch:U2|t[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.536 ; UPDOWNcounterANDswitch:U2|t[13]             ; UPDOWNcounterANDswitch:U2|t[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.536 ; UPDOWNcounterANDswitch:U2|t[13]             ; UPDOWNcounterANDswitch:U2|t[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.536 ; UPDOWNcounterANDswitch:U2|t[13]             ; UPDOWNcounterANDswitch:U2|t[16]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.546 ; UPDOWNcounterANDswitch:U2|t[4]              ; UPDOWNcounterANDswitch:U2|t[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.770      ;
+; 3.573 ; PWMcomparator:U6|COUNTPWM[2]                ; PWMcomparator:U6|COUNTPWM[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.797      ;
+; 3.573 ; PWMcomparator:U6|COUNTPWM[2]                ; PWMcomparator:U6|COUNTPWM[6]                ; clk          ; clk         ; 0.000        ; 0.000      ; 3.797      ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                         ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; clk   ; Rise       ; clk                                            ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[0]     ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[0]     ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[10]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[10]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[11]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[11]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[12]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[12]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[13]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[13]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[14]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[14]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[15]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[15]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[16]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[16]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[17]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[17]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[18]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[18]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[19]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[19]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[1]     ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[1]     ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[20]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[20]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[2]     ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[2]     ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[3]     ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[3]     ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[4]     ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[4]     ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[5]     ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[5]     ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[6]     ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[6]     ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[7]     ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[7]     ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[8]     ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[8]     ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[9]     ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|t[9]     ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[0]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[0]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[1]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[1]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[2]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[2]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[3]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[3]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[4]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[4]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[5]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[5]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[6]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[6]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[7]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[7]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[8]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|va[8]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[0] ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[0] ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[1] ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[1] ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[2] ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[2] ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[3] ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[3] ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[4] ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[4] ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[5] ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[5] ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[6] ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[6] ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[7] ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[7] ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[8] ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; AccelerationLimitedPositionControl:U1|vireg[8] ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[0]                   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[0]                   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[1]                   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[1]                   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[2]                   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[2]                   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[3]                   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[3]                   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[4]                   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[4]                   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[5]                   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[5]                   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[6]                   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[6]                   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[7]                   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; PWMcomparator:U6|COUNTPWM[7]                   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; PWMcomparator:U6|timechunk[0]                  ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; PWMcomparator:U6|timechunk[0]                  ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; PWMcomparator:U6|timechunk[1]                  ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; clk   ; Rise       ; PWMcomparator:U6|timechunk[1]                  ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; clk   ; Rise       ; PWMcomparator:U6|timechunk[2]                  ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Setup Times                                                                 ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; position[*]   ; clk        ; 19.252 ; 19.252 ; Rise       ; clk             ;
+;  position[0]  ; clk        ; 18.279 ; 18.279 ; Rise       ; clk             ;
+;  position[1]  ; clk        ; 18.188 ; 18.188 ; Rise       ; clk             ;
+;  position[2]  ; clk        ; 17.674 ; 17.674 ; Rise       ; clk             ;
+;  position[3]  ; clk        ; 19.252 ; 19.252 ; Rise       ; clk             ;
+;  position[4]  ; clk        ; 18.222 ; 18.222 ; Rise       ; clk             ;
+;  position[5]  ; clk        ; 18.310 ; 18.310 ; Rise       ; clk             ;
+;  position[6]  ; clk        ; 17.454 ; 17.454 ; Rise       ; clk             ;
+;  position[7]  ; clk        ; 18.683 ; 18.683 ; Rise       ; clk             ;
+;  position[8]  ; clk        ; 17.809 ; 17.809 ; Rise       ; clk             ;
+;  position[9]  ; clk        ; 17.861 ; 17.861 ; Rise       ; clk             ;
+;  position[10] ; clk        ; 17.492 ; 17.492 ; Rise       ; clk             ;
+;  position[11] ; clk        ; 17.577 ; 17.577 ; Rise       ; clk             ;
+;  position[12] ; clk        ; 17.466 ; 17.466 ; Rise       ; clk             ;
+;  position[13] ; clk        ; 17.364 ; 17.364 ; Rise       ; clk             ;
+;  position[14] ; clk        ; 16.991 ; 16.991 ; Rise       ; clk             ;
+;  position[15] ; clk        ; 16.785 ; 16.785 ; Rise       ; clk             ;
+;  position[16] ; clk        ; 17.091 ; 17.091 ; Rise       ; clk             ;
+;  position[17] ; clk        ; 15.775 ; 15.775 ; Rise       ; clk             ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; position[*]   ; clk        ; -2.250 ; -2.250 ; Rise       ; clk             ;
+;  position[0]  ; clk        ; -4.839 ; -4.839 ; Rise       ; clk             ;
+;  position[1]  ; clk        ; -4.761 ; -4.761 ; Rise       ; clk             ;
+;  position[2]  ; clk        ; -4.260 ; -4.260 ; Rise       ; clk             ;
+;  position[3]  ; clk        ; -5.851 ; -5.851 ; Rise       ; clk             ;
+;  position[4]  ; clk        ; -4.765 ; -4.765 ; Rise       ; clk             ;
+;  position[5]  ; clk        ; -4.866 ; -4.866 ; Rise       ; clk             ;
+;  position[6]  ; clk        ; -4.023 ; -4.023 ; Rise       ; clk             ;
+;  position[7]  ; clk        ; -5.265 ; -5.265 ; Rise       ; clk             ;
+;  position[8]  ; clk        ; -4.408 ; -4.408 ; Rise       ; clk             ;
+;  position[9]  ; clk        ; -4.408 ; -4.408 ; Rise       ; clk             ;
+;  position[10] ; clk        ; -4.052 ; -4.052 ; Rise       ; clk             ;
+;  position[11] ; clk        ; -4.150 ; -4.150 ; Rise       ; clk             ;
+;  position[12] ; clk        ; -4.052 ; -4.052 ; Rise       ; clk             ;
+;  position[13] ; clk        ; -3.963 ; -3.963 ; Rise       ; clk             ;
+;  position[14] ; clk        ; -3.502 ; -3.502 ; Rise       ; clk             ;
+;  position[15] ; clk        ; -3.309 ; -3.309 ; Rise       ; clk             ;
+;  position[16] ; clk        ; -3.628 ; -3.628 ; Rise       ; clk             ;
+;  position[17] ; clk        ; -2.250 ; -2.250 ; Rise       ; clk             ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; switch1   ; clk        ; 25.135 ; 25.135 ; Rise       ; clk             ;
+; switch2   ; clk        ; 25.118 ; 25.118 ; Rise       ; clk             ;
+; switch3   ; clk        ; 24.592 ; 24.592 ; Rise       ; clk             ;
+; switch4   ; clk        ; 24.543 ; 24.543 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; switch1   ; clk        ; 11.041 ; 11.041 ; Rise       ; clk             ;
+; switch2   ; clk        ; 11.024 ; 11.024 ; Rise       ; clk             ;
+; switch3   ; clk        ; 11.565 ; 11.565 ; Rise       ; clk             ;
+; switch4   ; clk        ; 11.516 ; 11.516 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------+
+; Setup Transfers                                                    ;
++------------+----------+-----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths  ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+-----------+----------+----------+----------+
+; clk        ; clk      ; 222738508 ; 0        ; 0        ; 0        ;
++------------+----------+-----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------+
+; Hold Transfers                                                     ;
++------------+----------+-----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths  ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+-----------+----------+----------+----------+
+; clk        ; clk      ; 222738508 ; 0        ; 0        ; 0        ;
++------------+----------+-----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 18    ; 18   ;
+; Unconstrained Input Port Paths  ; 162   ; 162  ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 64    ; 64   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Mon Mar 10 00:25:10 2014
+Info: Command: quartus_sta Stepper -c Stepper
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is -40 degrees C
+Info (21077): High junction temperature is 125 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Stepper.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -29.497
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -29.497           -1856.109 clk 
+Info (332146): Worst-case hold slack is 1.665
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.665               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 558 megabytes
+    Info: Processing ended: Mon Mar 10 00:25:14 2014
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+
