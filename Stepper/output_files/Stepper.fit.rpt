@@ -1,5 +1,5 @@
 Fitter report for Stepper
-Mon Mar 10 00:25:01 2014
+Mon Mar 10 16:57:51 2014
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -56,15 +56,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Fitter Summary                                                         ;
 +---------------------------+--------------------------------------------+
-; Fitter Status             ; Successful - Mon Mar 10 00:25:01 2014      ;
+; Fitter Status             ; Successful - Mon Mar 10 16:57:51 2014      ;
 ; Quartus II 64-Bit Version ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name             ; Stepper                                    ;
-; Top-level Entity Name     ; AccelerationLimitedMotorController         ;
+; Top-level Entity Name     ; Stepper                                    ;
 ; Family                    ; MAX V                                      ;
 ; Device                    ; 5M1270ZT144A5                              ;
 ; Timing Models             ; Final                                      ;
-; Total logic elements      ; 632 / 1,270 ( 50 % )                       ;
-; Total pins                ; 23 / 114 ( 20 % )                          ;
+; Total logic elements      ; 78 / 1,270 ( 6 % )                         ;
+; Total pins                ; 22 / 114 ( 19 % )                          ;
 ; Total virtual pins        ; 0                                          ;
 ; UFM blocks                ; 0 / 1 ( 0 % )                              ;
 +---------------------------+--------------------------------------------+
@@ -79,6 +79,7 @@ applicable agreement for further details.
 ; Minimum Core Junction Temperature                                          ; -40                            ;                                ;
 ; Maximum Core Junction Temperature                                          ; 125                            ;                                ;
 ; Fit Attempts to Skip                                                       ; 0                              ; 0.0                            ;
+; Device I/O Standard                                                        ; 3.3-V LVTTL                    ;                                ;
 ; Use smart compilation                                                      ; Off                            ; Off                            ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                             ; On                             ;
 ; Enable compact report table                                                ; Off                            ; Off                            ;
@@ -135,100 +136,99 @@ Parallel compilation was disabled, but you have multiple processors available. E
 The pin-out file can be found in /home/singularity/GIT/2D-Mapping-VHDL/Stepper/output_files/Stepper.pin.
 
 
-+--------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                      ;
-+---------------------------------------------+----------------------+
-; Resource                                    ; Usage                ;
-+---------------------------------------------+----------------------+
-; Total logic elements                        ; 632 / 1,270 ( 50 % ) ;
-;     -- Combinational with no register       ; 534                  ;
-;     -- Register only                        ; 0                    ;
-;     -- Combinational with a register        ; 98                   ;
-;                                             ;                      ;
-; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 207                  ;
-;     -- 3 input functions                    ; 262                  ;
-;     -- 2 input functions                    ; 151                  ;
-;     -- 1 input functions                    ; 12                   ;
-;     -- 0 input functions                    ; 0                    ;
-;                                             ;                      ;
-; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 367                  ;
-;     -- arithmetic mode                      ; 265                  ;
-;     -- qfbk mode                            ; 0                    ;
-;     -- register cascade mode                ; 0                    ;
-;     -- synchronous clear/load mode          ; 0                    ;
-;     -- asynchronous clear/load mode         ; 0                    ;
-;                                             ;                      ;
-; Total registers                             ; 98 / 1,270 ( 8 % )   ;
-; Total LABs                                  ; 69 / 127 ( 54 % )    ;
-; Logic elements in carry chains              ; 285                  ;
-; Virtual pins                                ; 0                    ;
-; I/O pins                                    ; 23 / 114 ( 20 % )    ;
-;     -- Clock pins                           ; 1 / 4 ( 25 % )       ;
-;                                             ;                      ;
-; Global signals                              ; 1                    ;
-; UFM blocks                                  ; 0 / 1 ( 0 % )        ;
-; Global clocks                               ; 1 / 4 ( 25 % )       ;
-; JTAGs                                       ; 0 / 1 ( 0 % )        ;
-; Average interconnect usage (total/H/V)      ; 18% / 18% / 18%      ;
-; Peak interconnect usage (total/H/V)         ; 20% / 19% / 22%      ;
-; Maximum fan-out                             ; 98                   ;
-; Highest non-global fan-out                  ; 40                   ;
-; Total fan-out                               ; 2237                 ;
-; Average fan-out                             ; 3.42                 ;
-+---------------------------------------------+----------------------+
++------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                    ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Total logic elements                        ; 78 / 1,270 ( 6 % ) ;
+;     -- Combinational with no register       ; 35                 ;
+;     -- Register only                        ; 10                 ;
+;     -- Combinational with a register        ; 33                 ;
+;                                             ;                    ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 16                 ;
+;     -- 3 input functions                    ; 1                  ;
+;     -- 2 input functions                    ; 49                 ;
+;     -- 1 input functions                    ; 2                  ;
+;     -- 0 input functions                    ; 0                  ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 40                 ;
+;     -- arithmetic mode                      ; 38                 ;
+;     -- qfbk mode                            ; 8                  ;
+;     -- register cascade mode                ; 0                  ;
+;     -- synchronous clear/load mode          ; 14                 ;
+;     -- asynchronous clear/load mode         ; 0                  ;
+;                                             ;                    ;
+; Total registers                             ; 43 / 1,270 ( 3 % ) ;
+; Total LABs                                  ; 10 / 127 ( 8 % )   ;
+; Logic elements in carry chains              ; 41                 ;
+; Virtual pins                                ; 0                  ;
+; I/O pins                                    ; 22 / 114 ( 19 % )  ;
+;     -- Clock pins                           ; 1 / 4 ( 25 % )     ;
+;                                             ;                    ;
+; Global signals                              ; 2                  ;
+; UFM blocks                                  ; 0 / 1 ( 0 % )      ;
+; Global clocks                               ; 2 / 4 ( 50 % )     ;
+; JTAGs                                       ; 0 / 1 ( 0 % )      ;
+; Average interconnect usage (total/H/V)      ; 1% / 2% / 0%       ;
+; Peak interconnect usage (total/H/V)         ; 1% / 2% / 1%       ;
+; Maximum fan-out                             ; 27                 ;
+; Highest non-global fan-out                  ; 10                 ;
+; Total fan-out                               ; 269                ;
+; Average fan-out                             ; 2.69               ;
++---------------------------------------------+--------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Input Pins                                                                                                                                                                                                          ;
-+--------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
-; Name         ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
-+--------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
-; clk          ; 18    ; 1        ; 0            ; 7            ; 5           ; 98                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[0]  ; 45    ; 4        ; 6            ; 3            ; 0           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[10] ; 61    ; 4        ; 10           ; 3            ; 3           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[11] ; 62    ; 4        ; 10           ; 3            ; 2           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[12] ; 58    ; 4        ; 9            ; 3            ; 2           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[13] ; 60    ; 4        ; 9            ; 3            ; 0           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[14] ; 51    ; 4        ; 7            ; 3            ; 0           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[15] ; 55    ; 4        ; 8            ; 3            ; 1           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[16] ; 59    ; 4        ; 9            ; 3            ; 1           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[17] ; 49    ; 4        ; 7            ; 3            ; 2           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[1]  ; 53    ; 4        ; 8            ; 3            ; 2           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[2]  ; 50    ; 4        ; 7            ; 3            ; 1           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[3]  ; 42    ; 4        ; 4            ; 3            ; 0           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[4]  ; 52    ; 4        ; 8            ; 3            ; 3           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[5]  ; 43    ; 4        ; 5            ; 3            ; 3           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[6]  ; 48    ; 4        ; 7            ; 3            ; 3           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[7]  ; 44    ; 4        ; 5            ; 3            ; 2           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[8]  ; 57    ; 4        ; 8            ; 3            ; 0           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; position[9]  ; 63    ; 4        ; 10           ; 3            ; 1           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-+--------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                   ;
++-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; Name  ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
++-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; CLK   ; 89    ; 3        ; 17           ; 5            ; 1           ; 27                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; PI[0] ; 39    ; 4        ; 2            ; 3            ; 0           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; PI[1] ; 40    ; 4        ; 3            ; 3            ; 1           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; PI[2] ; 41    ; 4        ; 3            ; 3            ; 0           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; PI[3] ; 42    ; 4        ; 4            ; 3            ; 0           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; PI[4] ; 43    ; 4        ; 5            ; 3            ; 3           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; PI[5] ; 44    ; 4        ; 5            ; 3            ; 2           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; PI[6] ; 45    ; 4        ; 6            ; 3            ; 0           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; PI[7] ; 48    ; 4        ; 7            ; 3            ; 3           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
++-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                                                                                                                                                                                               ;
-+---------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
-; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
-+---------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
-; switch1 ; 27    ; 1        ; 0            ; 6            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; switch2 ; 22    ; 1        ; 0            ; 6            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; switch3 ; 23    ; 1        ; 0            ; 6            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; switch4 ; 21    ; 1        ; 0            ; 6            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-+---------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                             ;
++-------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; Name  ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++-------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; CH1   ; 1     ; 1        ; 0            ; 10           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; CH2   ; 2     ; 1        ; 0            ; 10           ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; CH3   ; 3     ; 1        ; 0            ; 10           ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; CH4   ; 4     ; 1        ; 0            ; 9            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; FWD   ; 93    ; 3        ; 17           ; 6            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; PA[0] ; 140   ; 2        ; 4            ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; PA[1] ; 143   ; 2        ; 2            ; 11           ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; PA[2] ; 138   ; 2        ; 5            ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; PA[3] ; 139   ; 2        ; 5            ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; PA[4] ; 141   ; 2        ; 4            ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; PA[5] ; 142   ; 2        ; 3            ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; PA[6] ; 137   ; 2        ; 6            ; 11           ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; PA[7] ; 144   ; 2        ; 1            ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
++-------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
 
 
-+------------------------------------------------------------+
-; I/O Bank Usage                                             ;
-+----------+------------------+---------------+--------------+
-; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
-+----------+------------------+---------------+--------------+
-; 1        ; 5 / 25 ( 20 % )  ; 3.3V          ; --           ;
-; 2        ; 0 / 30 ( 0 % )   ; 3.3V          ; --           ;
-; 3        ; 0 / 29 ( 0 % )   ; 3.3V          ; --           ;
-; 4        ; 18 / 30 ( 60 % ) ; 3.3V          ; --           ;
-+----------+------------------+---------------+--------------+
++-----------------------------------------------------------+
+; I/O Bank Usage                                            ;
++----------+-----------------+---------------+--------------+
+; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
++----------+-----------------+---------------+--------------+
+; 1        ; 4 / 25 ( 16 % ) ; 3.3V          ; --           ;
+; 2        ; 8 / 30 ( 27 % ) ; 3.3V          ; --           ;
+; 3        ; 2 / 29 ( 7 % )  ; 3.3V          ; --           ;
+; 4        ; 8 / 30 ( 27 % ) ; 3.3V          ; --           ;
++----------+-----------------+---------------+--------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -236,10 +236,10 @@ The pin-out file can be found in /home/singularity/GIT/2D-Mapping-VHDL/Stepper/o
 +----------+------------+----------+----------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 ; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
 +----------+------------+----------+----------------+--------+--------------+---------+------------+-----------------+----------+--------------+
-; 1        ; 2          ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 2        ; 3          ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 3        ; 5          ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 4        ; 7          ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 1        ; 2          ; 1        ; CH1            ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 2        ; 3          ; 1        ; CH2            ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 3        ; 5          ; 1        ; CH3            ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 4        ; 7          ; 1        ; CH4            ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; 5        ; 9          ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 6        ; 10         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 7        ; 14         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -253,16 +253,16 @@ The pin-out file can be found in /home/singularity/GIT/2D-Mapping-VHDL/Stepper/o
 ; 15       ; 24         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 16       ; 25         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 17       ;            ;          ; GNDINT         ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 18       ; 26         ; 1        ; clk            ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 18       ; 26         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 19       ;            ;          ; VCCINT         ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
 ; 20       ; 27         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 21       ; 28         ; 1        ; switch4        ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 22       ; 29         ; 1        ; switch2        ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 23       ; 30         ; 1        ; switch3        ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 21       ; 28         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 22       ; 29         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 23       ; 30         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 24       ; 31         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 25       ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 26       ;            ;          ; GNDIO          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 27       ; 33         ; 1        ; switch1        ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 27       ; 33         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 28       ; 36         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 29       ; 37         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 30       ; 41         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -274,31 +274,31 @@ The pin-out file can be found in /home/singularity/GIT/2D-Mapping-VHDL/Stepper/o
 ; 36       ; 53         ; 1        ; #TDO           ; output ;              ;         ; --         ;                 ; --       ; --           ;
 ; 37       ; 56         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 38       ; 57         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 39       ; 60         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 40       ; 62         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 41       ; 63         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 42       ; 67         ; 4        ; position[3]    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 43       ; 68         ; 4        ; position[5]    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 44       ; 69         ; 4        ; position[7]    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 45       ; 74         ; 4        ; position[0]    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 39       ; 60         ; 4        ; PI[0]          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 40       ; 62         ; 4        ; PI[1]          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 41       ; 63         ; 4        ; PI[2]          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 42       ; 67         ; 4        ; PI[3]          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 43       ; 68         ; 4        ; PI[4]          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 44       ; 69         ; 4        ; PI[5]          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 45       ; 74         ; 4        ; PI[6]          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; 46       ;            ; 4        ; VCCIO4         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 47       ;            ;          ; GNDIO          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 48       ; 75         ; 4        ; position[6]    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 49       ; 76         ; 4        ; position[17]   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 50       ; 77         ; 4        ; position[2]    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 51       ; 78         ; 4        ; position[14]   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 52       ; 79         ; 4        ; position[4]    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 53       ; 80         ; 4        ; position[1]    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 48       ; 75         ; 4        ; PI[7]          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 49       ; 76         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 50       ; 77         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 51       ; 78         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 52       ; 79         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 53       ; 80         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 54       ;            ;          ; GNDINT         ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 55       ; 81         ; 4        ; position[15]   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 55       ; 81         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 56       ;            ;          ; VCCINT         ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
-; 57       ; 82         ; 4        ; position[8]    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 58       ; 83         ; 4        ; position[12]   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 59       ; 84         ; 4        ; position[16]   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 60       ; 85         ; 4        ; position[13]   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 61       ; 86         ; 4        ; position[10]   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 62       ; 87         ; 4        ; position[11]   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 63       ; 88         ; 4        ; position[9]    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 57       ; 82         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 58       ; 83         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 59       ; 84         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 60       ; 85         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 61       ; 86         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 62       ; 87         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 63       ; 88         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 64       ;            ; 4        ; VCCIO4         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 65       ;            ;          ; GNDIO          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 66       ; 91         ; 4        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -324,11 +324,11 @@ The pin-out file can be found in /home/singularity/GIT/2D-Mapping-VHDL/Stepper/o
 ; 86       ; 131        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 87       ; 132        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 88       ; 133        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 89       ; 134        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 89       ; 134        ; 3        ; CLK            ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; 90       ;            ;          ; VCCINT         ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
 ; 91       ; 135        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 92       ;            ;          ; GNDINT         ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 93       ; 136        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 93       ; 136        ; 3        ; FWD            ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 94       ; 137        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 95       ; 138        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 96       ; 139        ; 3        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -372,14 +372,14 @@ The pin-out file can be found in /home/singularity/GIT/2D-Mapping-VHDL/Stepper/o
 ; 134      ; 195        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 135      ;            ;          ; GNDIO          ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 136      ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; 137      ; 199        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 138      ; 200        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 139      ; 201        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 140      ; 204        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 141      ; 205        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 142      ; 208        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 143      ; 212        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 144      ; 215        ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 137      ; 199        ; 2        ; PA[6]          ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 138      ; 200        ; 2        ; PA[2]          ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 139      ; 201        ; 2        ; PA[3]          ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 140      ; 204        ; 2        ; PA[0]          ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 141      ; 205        ; 2        ; PA[4]          ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 142      ; 208        ; 2        ; PA[5]          ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 143      ; 212        ; 2        ; PA[1]          ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 144      ; 215        ; 2        ; PA[7]          ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 +----------+------------+----------+----------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
@@ -404,1082 +404,237 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                 ;
-+--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                 ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                  ; Library Name ;
-+--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------+--------------+
-; |AccelerationLimitedMotorController        ; 632 (0)     ; 98           ; 0          ; 23   ; 0            ; 534 (0)      ; 0 (0)             ; 98 (0)           ; 285 (0)         ; 0 (0)      ; |AccelerationLimitedMotorController                                                                  ; work         ;
-;    |AccelerationLimitedPositionControl:U1| ; 211 (211)   ; 39           ; 0          ; 0    ; 0            ; 172 (172)    ; 0 (0)             ; 39 (39)          ; 110 (110)       ; 0 (0)      ; |AccelerationLimitedMotorController|AccelerationLimitedPositionControl:U1                            ; work         ;
-;    |PWMcomparator:U6|                      ; 35 (35)     ; 11           ; 0          ; 0    ; 0            ; 24 (24)      ; 0 (0)             ; 11 (11)          ; 27 (27)         ; 0 (0)      ; |AccelerationLimitedMotorController|PWMcomparator:U6                                                 ; work         ;
-;    |UPDOWNcounterANDswitch:U2|             ; 306 (88)    ; 48           ; 0          ; 0    ; 0            ; 258 (40)     ; 0 (0)             ; 48 (48)          ; 148 (39)        ; 0 (0)      ; |AccelerationLimitedMotorController|UPDOWNcounterANDswitch:U2                                        ; work         ;
-;       |lpm_mult:Mult0|                     ; 218 (0)     ; 0            ; 0          ; 0    ; 0            ; 218 (0)      ; 0 (0)             ; 0 (0)            ; 109 (0)         ; 0 (0)      ; |AccelerationLimitedMotorController|UPDOWNcounterANDswitch:U2|lpm_mult:Mult0                         ; work         ;
-;          |mult_4ns:auto_generated|         ; 218 (218)   ; 0            ; 0          ; 0    ; 0            ; 218 (218)    ; 0 (0)             ; 0 (0)            ; 109 (109)       ; 0 (0)      ; |AccelerationLimitedMotorController|UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated ; work         ;
-;    |cosine:U3|                             ; 40 (40)     ; 0            ; 0          ; 0    ; 0            ; 40 (40)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AccelerationLimitedMotorController|cosine:U3                                                        ; work         ;
-;    |cosine:U4|                             ; 40 (40)     ; 0            ; 0          ; 0    ; 0            ; 40 (40)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AccelerationLimitedMotorController|cosine:U4                                                        ; work         ;
-+--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |Stepper                   ; 78 (78)     ; 43           ; 0          ; 22   ; 0            ; 35 (35)      ; 10 (10)           ; 33 (33)          ; 41 (41)         ; 8 (8)      ; |Stepper            ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------+
-; Delay Chain Summary                     ;
-+--------------+----------+---------------+
-; Name         ; Pin Type ; Pad to Core 0 ;
-+--------------+----------+---------------+
-; switch1      ; Output   ; --            ;
-; switch2      ; Output   ; --            ;
-; switch3      ; Output   ; --            ;
-; switch4      ; Output   ; --            ;
-; clk          ; Input    ; (0)           ;
-; position[17] ; Input    ; (1)           ;
-; position[16] ; Input    ; (1)           ;
-; position[12] ; Input    ; (1)           ;
-; position[13] ; Input    ; (1)           ;
-; position[14] ; Input    ; (1)           ;
-; position[15] ; Input    ; (1)           ;
-; position[11] ; Input    ; (1)           ;
-; position[10] ; Input    ; (1)           ;
-; position[9]  ; Input    ; (1)           ;
-; position[8]  ; Input    ; (1)           ;
-; position[7]  ; Input    ; (1)           ;
-; position[6]  ; Input    ; (1)           ;
-; position[5]  ; Input    ; (1)           ;
-; position[4]  ; Input    ; (1)           ;
-; position[3]  ; Input    ; (1)           ;
-; position[2]  ; Input    ; (1)           ;
-; position[1]  ; Input    ; (1)           ;
-; position[0]  ; Input    ; (1)           ;
-+--------------+----------+---------------+
++----------------------------------+
+; Delay Chain Summary              ;
++-------+----------+---------------+
+; Name  ; Pin Type ; Pad to Core 0 ;
++-------+----------+---------------+
+; PA[0] ; Output   ; --            ;
+; PA[1] ; Output   ; --            ;
+; PA[2] ; Output   ; --            ;
+; PA[3] ; Output   ; --            ;
+; PA[4] ; Output   ; --            ;
+; PA[5] ; Output   ; --            ;
+; PA[6] ; Output   ; --            ;
+; PA[7] ; Output   ; --            ;
+; CH1   ; Output   ; --            ;
+; CH2   ; Output   ; --            ;
+; CH3   ; Output   ; --            ;
+; CH4   ; Output   ; --            ;
+; FWD   ; Output   ; --            ;
+; PI[1] ; Input    ; (1)           ;
+; PI[0] ; Input    ; (1)           ;
+; PI[3] ; Input    ; (1)           ;
+; PI[2] ; Input    ; (1)           ;
+; PI[5] ; Input    ; (1)           ;
+; PI[4] ; Input    ; (1)           ;
+; PI[7] ; Input    ; (1)           ;
+; PI[6] ; Input    ; (1)           ;
+; CLK   ; Input    ; (0)           ;
++-------+----------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                        ;
-+---------------------------------------------+--------------+---------+--------------+--------+----------------------+------------------+
-; Name                                        ; Location     ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
-+---------------------------------------------+--------------+---------+--------------+--------+----------------------+------------------+
-; AccelerationLimitedPositionControl:U1|va~12 ; LC_X5_Y9_N5  ; 27      ; Clock enable ; no     ; --                   ; --               ;
-; PWMcomparator:U6|Add0~0                     ; LC_X2_Y6_N9  ; 11      ; Clock enable ; no     ; --                   ; --               ;
-; UPDOWNcounterANDswitch:U2|LessThan0~2       ; LC_X10_Y7_N4 ; 22      ; Clock enable ; no     ; --                   ; --               ;
-; UPDOWNcounterANDswitch:U2|t[6]~16           ; LC_X9_Y9_N8  ; 18      ; Clock enable ; no     ; --                   ; --               ;
-; clk                                         ; PIN_18       ; 98      ; Clock        ; yes    ; Global Clock         ; GCLK0            ;
-+---------------------------------------------+--------------+---------+--------------+--------+----------------------+------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                           ;
++----------------+--------------+---------+--------------+--------+----------------------+------------------+
+; Name           ; Location     ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
++----------------+--------------+---------+--------------+--------+----------------------+------------------+
+; CLK            ; PIN_89       ; 27      ; Clock        ; yes    ; Global Clock         ; GCLK2            ;
+; Equal1~4       ; LC_X3_Y10_N9 ; 10      ; Clock enable ; no     ; --                   ; --               ;
+; position[0]~17 ; LC_X3_Y10_N0 ; 7       ; Clock enable ; no     ; --                   ; --               ;
+; stepper_clk    ; LC_X12_Y5_N8 ; 16      ; Clock        ; yes    ; Global Clock         ; GCLK3            ;
++----------------+--------------+---------+--------------+--------+----------------------+------------------+
 
 
-+---------------------------------------------------------------------+
-; Global & Other Fast Signals                                         ;
-+------+----------+---------+----------------------+------------------+
-; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ;
-+------+----------+---------+----------------------+------------------+
-; clk  ; PIN_18   ; 98      ; Global Clock         ; GCLK0            ;
-+------+----------+---------+----------------------+------------------+
++--------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                    ;
++-------------+--------------+---------+----------------------+------------------+
+; Name        ; Location     ; Fan-Out ; Global Resource Used ; Global Line Name ;
++-------------+--------------+---------+----------------------+------------------+
+; CLK         ; PIN_89       ; 27      ; Global Clock         ; GCLK2            ;
+; stepper_clk ; LC_X12_Y5_N8 ; 16      ; Global Clock         ; GCLK3            ;
++-------------+--------------+---------+----------------------+------------------+
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Non-Global High Fan-Out Signals                                                                         ;
-+-----------------------------------------------------------------------------------------------+---------+
-; Name                                                                                          ; Fan-Out ;
-+-----------------------------------------------------------------------------------------------+---------+
-; UPDOWNcounterANDswitch:U2|COUNTsin1[3]~1                                                      ; 40      ;
-; UPDOWNcounterANDswitch:U2|COUNTsin1[5]~5                                                      ; 38      ;
-; UPDOWNcounterANDswitch:U2|COUNTsin1[0]~0                                                      ; 38      ;
-; UPDOWNcounterANDswitch:U2|COUNTsin1[1]~2                                                      ; 36      ;
-; UPDOWNcounterANDswitch:U2|COUNTsin1[4]~4                                                      ; 30      ;
-; UPDOWNcounterANDswitch:U2|COUNTsin1[2]~3                                                      ; 30      ;
-; AccelerationLimitedPositionControl:U1|LessThan6~0                                             ; 29      ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs1a[0]                      ; 29      ;
-; AccelerationLimitedPositionControl:U1|va~12                                                   ; 27      ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs1a[1]                      ; 24      ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs1a[2]                      ; 24      ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs2a[0]                      ; 23      ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs2a[2]                      ; 22      ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs2a[1]                      ; 22      ;
-; UPDOWNcounterANDswitch:U2|LessThan1~8                                                         ; 22      ;
-; UPDOWNcounterANDswitch:U2|LessThan1~5                                                         ; 22      ;
-; UPDOWNcounterANDswitch:U2|LessThan0~2                                                         ; 22      ;
-; UPDOWNcounterANDswitch:U2|speedreg[7]                                                         ; 22      ;
-; UPDOWNcounterANDswitch:U2|t[6]                                                                ; 22      ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs2a[3]                      ; 21      ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs1a[3]                      ; 21      ;
-; AccelerationLimitedPositionControl:U1|va[8]                                                   ; 20      ;
-; UPDOWNcounterANDswitch:U2|t[6]~16                                                             ; 18      ;
-; UPDOWNcounterANDswitch:U2|forwreg                                                             ; 17      ;
-; UPDOWNcounterANDswitch:U2|t[1]                                                                ; 13      ;
-; PWMcomparator:U6|Add0~0                                                                       ; 11      ;
-; UPDOWNcounterANDswitch:U2|t[4]                                                                ; 11      ;
-; UPDOWNcounterANDswitch:U2|t[2]                                                                ; 11      ;
-; UPDOWNcounterANDswitch:U2|Add0~100                                                            ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~95                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~90                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~85                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~80                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~75                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~70                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~65                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~60                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~55                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~50                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~45                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~40                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~35                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~30                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~25                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~20                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~15                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~10                                                             ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~5                                                              ; 10      ;
-; UPDOWNcounterANDswitch:U2|Add0~0                                                              ; 10      ;
-; UPDOWNcounterANDswitch:U2|t[5]                                                                ; 9       ;
-; UPDOWNcounterANDswitch:U2|t[7]                                                                ; 8       ;
-; AccelerationLimitedPositionControl:U1|va[1]~10                                                ; 7       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~0                                             ; 7       ;
-; UPDOWNcounterANDswitch:U2|t[0]                                                                ; 7       ;
-; AccelerationLimitedPositionControl:U1|Add3~53                                                 ; 6       ;
-; AccelerationLimitedPositionControl:U1|Add3~42                                                 ; 6       ;
-; AccelerationLimitedPositionControl:U1|va[0]                                                   ; 6       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~0                                             ; 6       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~72                                            ; 5       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~47                                            ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add4~72                                                 ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add3~81                                                 ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add3~67                                                 ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add3~66                                                 ; 5       ;
-; UPDOWNcounterANDswitch:U2|t[8]~36                                                             ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add3~55                                                 ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add3~54                                                 ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add3~50                                                 ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add4~47                                                 ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add3~36                                                 ; 5       ;
-; AccelerationLimitedPositionControl:U1|vi[0]~4                                                 ; 5       ;
-; UPDOWNcounterANDswitch:U2|Add0~47                                                             ; 5       ;
-; UPDOWNcounterANDswitch:U2|Add0~42                                                             ; 5       ;
-; UPDOWNcounterANDswitch:U2|Add0~27                                                             ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[14]~72          ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[4]~22           ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[9]~7            ; 5       ;
-; AccelerationLimitedPositionControl:U1|va[1]                                                   ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add0~92                                                 ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add0~52                                                 ; 5       ;
-; AccelerationLimitedPositionControl:U1|Add0~32                                                 ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~82                      ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~87                      ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~82                      ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~57                      ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~52                      ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~47                      ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~32                      ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~2                       ; 5       ;
-; AccelerationLimitedPositionControl:U1|va[7]                                                   ; 5       ;
-; AccelerationLimitedPositionControl:U1|va[6]                                                   ; 5       ;
-; AccelerationLimitedPositionControl:U1|va[5]                                                   ; 5       ;
-; AccelerationLimitedPositionControl:U1|va[4]                                                   ; 5       ;
-; AccelerationLimitedPositionControl:U1|va[3]                                                   ; 5       ;
-; AccelerationLimitedPositionControl:U1|va[2]                                                   ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~117                     ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~87                      ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~82                      ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~42                      ; 5       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~17                      ; 5       ;
-; UPDOWNcounterANDswitch:U2|t[3]~11                                                             ; 5       ;
-; UPDOWNcounterANDswitch:U2|t[3]                                                                ; 5       ;
-; UPDOWNcounterANDswitch:U2|t[8]                                                                ; 4       ;
-; UPDOWNcounterANDswitch:U2|t[9]                                                                ; 4       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~22                                            ; 4       ;
-; UPDOWNcounterANDswitch:U2|t[10]                                                               ; 4       ;
-; UPDOWNcounterANDswitch:U2|t[11]                                                               ; 4       ;
-; PWMcomparator:U6|COUNTPWM[0]                                                                  ; 4       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~22                                            ; 4       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~22                                            ; 4       ;
-; UPDOWNcounterANDswitch:U2|t[15]                                                               ; 4       ;
-; UPDOWNcounterANDswitch:U2|t[14]                                                               ; 4       ;
-; UPDOWNcounterANDswitch:U2|t[13]~24                                                            ; 4       ;
-; UPDOWNcounterANDswitch:U2|t[13]                                                               ; 4       ;
-; UPDOWNcounterANDswitch:U2|t[12]                                                               ; 4       ;
-; UPDOWNcounterANDswitch:U2|t[16]                                                               ; 4       ;
-; AccelerationLimitedPositionControl:U1|Add3~10                                                 ; 4       ;
-; AccelerationLimitedPositionControl:U1|Add3~7                                                  ; 4       ;
-; AccelerationLimitedPositionControl:U1|Add4~7                                                  ; 4       ;
-; UPDOWNcounterANDswitch:U2|t[17]                                                               ; 4       ;
-; AccelerationLimitedPositionControl:U1|Add2~17                                                 ; 4       ;
-; AccelerationLimitedPositionControl:U1|Add0~5                                                  ; 4       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~112                     ; 4       ;
-; AccelerationLimitedPositionControl:U1|LessThan0~7                                             ; 3       ;
-; AccelerationLimitedPositionControl:U1|t~24                                                    ; 3       ;
-; position[0]                                                                                   ; 3       ;
-; position[1]                                                                                   ; 3       ;
-; position[2]                                                                                   ; 3       ;
-; position[3]                                                                                   ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add3~90                                                 ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add3~89                                                 ; 3       ;
-; position[4]                                                                                   ; 3       ;
-; position[5]                                                                                   ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add3~78                                                 ; 3       ;
-; position[6]                                                                                   ; 3       ;
-; position[7]                                                                                   ; 3       ;
-; position[8]                                                                                   ; 3       ;
-; position[9]                                                                                   ; 3       ;
-; position[10]                                                                                  ; 3       ;
-; position[11]                                                                                  ; 3       ;
-; AccelerationLimitedPositionControl:U1|vi[2]~6                                                 ; 3       ;
-; position[15]                                                                                  ; 3       ;
-; position[14]                                                                                  ; 3       ;
-; position[13]                                                                                  ; 3       ;
-; position[12]                                                                                  ; 3       ;
-; position[16]                                                                                  ; 3       ;
-; PWMcomparator:U6|COUNTPWM[1]                                                                  ; 3       ;
-; AccelerationLimitedPositionControl:U1|vi[0]~0                                                 ; 3       ;
-; position[17]                                                                                  ; 3       ;
-; PWMcomparator:U6|COUNTPWM[2]                                                                  ; 3       ;
-; PWMcomparator:U6|COUNTPWM[3]                                                                  ; 3       ;
-; PWMcomparator:U6|COUNTPWM[4]~7                                                                ; 3       ;
-; PWMcomparator:U6|COUNTPWM[4]                                                                  ; 3       ;
-; PWMcomparator:U6|LessThan2~17                                                                 ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add1~22                                                 ; 3       ;
-; AccelerationLimitedPositionControl:U1|LessThan5~1                                             ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add0~95                                                 ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add0~50                                                 ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add0~30                                                 ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add0~25                                                 ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add0~20                                                 ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add0~15                                                 ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add0~10                                                 ; 3       ;
-; AccelerationLimitedPositionControl:U1|Add0~0                                                  ; 3       ;
-; PWMcomparator:U6|LessThan1~17                                                                 ; 3       ;
-; PWMcomparator:U6|COUNTPWM[5]                                                                  ; 3       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~107                     ; 3       ;
-; PWMcomparator:U6|COUNTPWM[6]                                                                  ; 3       ;
-; UPDOWNcounterANDswitch:U2|speedreg[6]                                                         ; 3       ;
-; UPDOWNcounterANDswitch:U2|speedreg[5]                                                         ; 3       ;
-; UPDOWNcounterANDswitch:U2|speedreg[4]                                                         ; 3       ;
-; UPDOWNcounterANDswitch:U2|speedreg[3]                                                         ; 3       ;
-; UPDOWNcounterANDswitch:U2|speedreg[2]                                                         ; 3       ;
-; PWMcomparator:U6|COUNTPWM[7]                                                                  ; 3       ;
-; AccelerationLimitedPositionControl:U1|vireg[0]                                                ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add3~97                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|vireg[1]                                                ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add3~91                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|vireg[2]                                                ; 2       ;
-; AccelerationLimitedPositionControl:U1|vl1~0                                                   ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add4~65                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add3~73                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|vireg[3]                                                ; 2       ;
-; AccelerationLimitedPositionControl:U1|vireg[4]                                                ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add4~40                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add3~43                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|vireg[5]                                                ; 2       ;
-; AccelerationLimitedPositionControl:U1|vi[0]~7                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add4~35                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add3~37                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|vireg[6]                                                ; 2       ;
-; AccelerationLimitedPositionControl:U1|vi[0]~3                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|vi[0]~2                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|vi[0]~1                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add4~0                                                  ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add3~0                                                  ; 2       ;
-; AccelerationLimitedPositionControl:U1|vireg[7]                                                ; 2       ;
-; AccelerationLimitedPositionControl:U1|vireg[8]                                                ; 2       ;
-; AccelerationLimitedPositionControl:U1|va~7                                                    ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add1~0                                                  ; 2       ;
-; AccelerationLimitedPositionControl:U1|va[1]~5                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|va~4                                                    ; 2       ;
-; AccelerationLimitedPositionControl:U1|LessThan5~6                                             ; 2       ;
-; AccelerationLimitedPositionControl:U1|LessThan5~5                                             ; 2       ;
-; AccelerationLimitedPositionControl:U1|LessThan5~4                                             ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~100                                                ; 2       ;
-; AccelerationLimitedPositionControl:U1|t~2                                                     ; 2       ;
-; AccelerationLimitedPositionControl:U1|LessThan0~5                                             ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~90                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~85                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~80                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~75                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~70                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|LessThan0~2                                             ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~65                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~60                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~55                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|LessThan0~0                                             ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~45                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~40                                                 ; 2       ;
-; AccelerationLimitedPositionControl:U1|Add0~35                                                 ; 2       ;
-; cosine:U4|Mux3~0                                                                              ; 2       ;
-; cosine:U3|Mux3~0                                                                              ; 2       ;
-; PWMcomparator:U6|LessThan2~0                                                                  ; 2       ;
-; PWMcomparator:U6|LessThan1~0                                                                  ; 2       ;
-; AccelerationLimitedPositionControl:U1|LessThan0~6                                             ; 1       ;
-; AccelerationLimitedPositionControl:U1|va~20                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~87COUT1_106                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~87                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~82COUT1_108                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~82                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~77COUT1_110                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~77                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~67COUT1_112                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~67                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~62COUT1_114                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~62                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~57COUT1_116                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~57                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~52COUT1_118                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~52                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[0]~26                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[0]~25                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[0]~24                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[0]~23                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~42COUT1_120                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~42                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|vl1[1]~4                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|vl1[1]~3                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|vl1~2                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|vl1~1                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~100COUT1_119                                       ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~100                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~98                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~87COUT1_106                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~87                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~85                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~94COUT1_121                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~94                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~92                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~82COUT1_108                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~82                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~80                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~37COUT1_122                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~37                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~42COUT1_54                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~42                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~42COUT1_54                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~42                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[2]~20                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[2]~19                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[2]~18                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~86COUT1_123                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~86                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~84                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~77COUT1_110                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~77                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~75                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~70                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~79                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~32COUT1_124                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~32                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~37COUT1_56                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~37                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~37COUT1_56                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~37                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[3]~16                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[3]~15                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~67COUT1_112                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~67                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~75COUT1_125                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~75                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[3]~14                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~70COUT1_127                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~70                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~68                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~62COUT1_114                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~62                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~60                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~27COUT1_126                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~27                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~32COUT1_58                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~32                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~32COUT1_58                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~32                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[4]~12                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[4]~11                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~63COUT1_129                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~63                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~61                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~57COUT1_116                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~57                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~55                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~58COUT1_131                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~58                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~56                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~52COUT1_118                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~52                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~50                                                 ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[9]~34COUT1_67                                                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[9]~34                                                             ; 1       ;
-; cosine:U4|Mux7~5                                                                              ; 1       ;
-; cosine:U4|Mux7~4                                                                              ; 1       ;
-; cosine:U4|Mux7~3                                                                              ; 1       ;
-; cosine:U4|Mux7~2                                                                              ; 1       ;
-; cosine:U4|Mux7~1                                                                              ; 1       ;
-; cosine:U4|Mux7~0                                                                              ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~27COUT1_60                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~27                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~27COUT1_60                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~27                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|vi[5]~9                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~48                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~45                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~42COUT1_120                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~42                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~45COUT1_133                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~45                                                 ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[10]~32COUT1_69                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[10]~32                                                            ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[11]~30COUT1_71                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[11]~30                                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~17COUT1_128                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~17                                            ; 1       ;
-; cosine:U3|Mux7~5                                                                              ; 1       ;
-; cosine:U3|Mux7~4                                                                              ; 1       ;
-; cosine:U3|Mux7~3                                                                              ; 1       ;
-; cosine:U3|Mux7~2                                                                              ; 1       ;
-; cosine:U3|Mux7~1                                                                              ; 1       ;
-; cosine:U3|Mux7~0                                                                              ; 1       ;
-; PWMcomparator:U6|LessThan2~37COUT1_48                                                         ; 1       ;
-; PWMcomparator:U6|LessThan2~37                                                                 ; 1       ;
-; cosine:U4|Mux6~5                                                                              ; 1       ;
-; cosine:U4|Mux6~4                                                                              ; 1       ;
-; cosine:U4|Mux6~3                                                                              ; 1       ;
-; cosine:U4|Mux6~2                                                                              ; 1       ;
-; cosine:U4|Mux6~1                                                                              ; 1       ;
-; cosine:U4|Mux6~0                                                                              ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~37COUT1_122                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~37                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~39COUT1_135                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~39                                                 ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[15]~28COUT1_77                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[15]~28                                                            ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[14]~26COUT1_75                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[14]~26                                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~32COUT1_124                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~32                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~30                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~33COUT1_137                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~33                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~31                                                 ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[12]~22COUT1_73                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[12]~22                                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~12COUT1_130                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~12                                            ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[16]~20COUT1_79                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|t[16]~20                                                            ; 1       ;
-; PWMcomparator:U6|LessThan1~37COUT1_48                                                         ; 1       ;
-; PWMcomparator:U6|LessThan1~37                                                                 ; 1       ;
-; cosine:U3|Mux6~5                                                                              ; 1       ;
-; cosine:U3|Mux6~4                                                                              ; 1       ;
-; cosine:U3|Mux6~3                                                                              ; 1       ;
-; cosine:U3|Mux6~2                                                                              ; 1       ;
-; cosine:U3|Mux6~1                                                                              ; 1       ;
-; cosine:U3|Mux6~0                                                                              ; 1       ;
-; PWMcomparator:U6|COUNTPWM[1]~13COUT1_22                                                       ; 1       ;
-; PWMcomparator:U6|COUNTPWM[1]~13                                                               ; 1       ;
-; PWMcomparator:U6|LessThan2~32COUT1_50                                                         ; 1       ;
-; PWMcomparator:U6|LessThan2~32                                                                 ; 1       ;
-; cosine:U4|Mux5~5                                                                              ; 1       ;
-; cosine:U4|Mux5~4                                                                              ; 1       ;
-; cosine:U4|Mux5~3                                                                              ; 1       ;
-; cosine:U4|Mux5~2                                                                              ; 1       ;
-; cosine:U4|Mux5~1                                                                              ; 1       ;
-; cosine:U4|Mux5~0                                                                              ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~17COUT1_62                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~17                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~17COUT1_62                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~17                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~25                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~26                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~22COUT1_132                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~22                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~20                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~23COUT1_145                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~23                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~21                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~18COUT1_143                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~18                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~16                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~13COUT1_141                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~13                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~11                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~17COUT1_130                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~17                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~15                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~12COUT1_128                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~12                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~10                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~5                                                  ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~5                                                  ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~2COUT1_126                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add4~2                                                  ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~2COUT1_139                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add3~2                                                  ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~7COUT1_132                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan6~7                                             ; 1       ;
-; PWMcomparator:U6|LessThan1~32COUT1_50                                                         ; 1       ;
-; PWMcomparator:U6|LessThan1~32                                                                 ; 1       ;
-; cosine:U3|Mux5~5                                                                              ; 1       ;
-; cosine:U3|Mux5~4                                                                              ; 1       ;
-; cosine:U3|Mux5~3                                                                              ; 1       ;
-; cosine:U3|Mux5~2                                                                              ; 1       ;
-; cosine:U3|Mux5~1                                                                              ; 1       ;
-; cosine:U3|Mux5~0                                                                              ; 1       ;
-; PWMcomparator:U6|COUNTPWM[2]~11COUT1_24                                                       ; 1       ;
-; PWMcomparator:U6|COUNTPWM[2]~11                                                               ; 1       ;
-; PWMcomparator:U6|timechunk[0]                                                                 ; 1       ;
-; PWMcomparator:U6|LessThan2~27COUT1_52                                                         ; 1       ;
-; PWMcomparator:U6|LessThan2~27                                                                 ; 1       ;
-; cosine:U4|Mux4~5                                                                              ; 1       ;
-; cosine:U4|Mux4~4                                                                              ; 1       ;
-; cosine:U4|Mux4~3                                                                              ; 1       ;
-; cosine:U4|Mux4~2                                                                              ; 1       ;
-; cosine:U4|Mux4~1                                                                              ; 1       ;
-; cosine:U4|Mux4~0                                                                              ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[19]                                                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[20]                                                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[18]                                                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[20]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[19]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[21]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[18]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[20]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[17]                                                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[19]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[21]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[16]                                                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[18]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[20]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[15]                                                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[17]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[19]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[12]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[14]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[11]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[13]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[8]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[10]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[6]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[8]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[5]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[7]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[3]                                                        ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[2]                                                        ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[7]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[9]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[10]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[12]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[5]                                                        ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[7]                                                        ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[6]                                                        ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[4]                                                        ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[9]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[11]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[14]                                                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[16]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[18]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[13]                                                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[15]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[17]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[12]                                                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[14]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[16]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[9]                                                        ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[11]                                                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[10]                                                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[8]                                                        ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[13]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[15]                     ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~42COUT1_54                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~42                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~12COUT1_64                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~12                                            ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~12COUT1_64                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~12                                            ; 1       ;
-; PWMcomparator:U6|LessThan1~27COUT1_52                                                         ; 1       ;
-; PWMcomparator:U6|LessThan1~27                                                                 ; 1       ;
-; cosine:U3|Mux4~5                                                                              ; 1       ;
-; cosine:U3|Mux4~4                                                                              ; 1       ;
-; cosine:U3|Mux4~3                                                                              ; 1       ;
-; cosine:U3|Mux4~2                                                                              ; 1       ;
-; cosine:U3|Mux4~1                                                                              ; 1       ;
-; cosine:U3|Mux4~0                                                                              ; 1       ;
-; PWMcomparator:U6|COUNTPWM[3]~9COUT1_26                                                        ; 1       ;
-; PWMcomparator:U6|COUNTPWM[3]~9                                                                ; 1       ;
-; PWMcomparator:U6|Add0~17COUT1_25                                                              ; 1       ;
-; PWMcomparator:U6|Add0~17                                                                      ; 1       ;
-; PWMcomparator:U6|Add0~15                                                                      ; 1       ;
-; PWMcomparator:U6|timechunk[1]                                                                 ; 1       ;
-; PWMcomparator:U6|LessThan2~22COUT1_54                                                         ; 1       ;
-; PWMcomparator:U6|LessThan2~22                                                                 ; 1       ;
-; cosine:U4|Mux3~5                                                                              ; 1       ;
-; cosine:U4|Mux3~4                                                                              ; 1       ;
-; cosine:U4|Mux3~3                                                                              ; 1       ;
-; cosine:U4|Mux3~2                                                                              ; 1       ;
-; cosine:U4|Mux3~1                                                                              ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[20]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[21]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[19]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[20]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[19]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~102                                                            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[21]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[18]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[18]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~92COUT1_153                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~92                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[17]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[17]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[16]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[16]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[15]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[15]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[17]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~87COUT1_151                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~87                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[14]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[14]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[16]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~82COUT1_149                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~82                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[13]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[13]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[15]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~77COUT1_147                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~77                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[12]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[8]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[10]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[7]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[7]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[9]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[6]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[3]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[2]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[1]                                                        ; 1       ;
-; UPDOWNcounterANDswitch:U2|timechunk[0]                                                        ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[4]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[6]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[0]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[2]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[5]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[1]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[3]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[4]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[0]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[2]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[4]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[6]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[3]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[2]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[4]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[1]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[1]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[3]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[0]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[3]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~72COUT1_129                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~72                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[5]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[2]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~67COUT1_127                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~67                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[6]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[8]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[5]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[5]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~62COUT1_131                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~62                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[7]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~57COUT1_135                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~57                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~52COUT1_133                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~52                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[4]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[12]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[14]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[11]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[11]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[13]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~37COUT1_145                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~37                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[10]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[10]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[12]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~32COUT1_143                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~32                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[9]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le6a[9]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le5a[11]                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~22COUT1_141                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~22                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~17COUT1_139                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~17                                                             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs2a[2]~COUTCOUT1_18         ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs2a[2]~COUT                 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le7a[8]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~12COUT1_137                                                    ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~12                                                             ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~37COUT1_48                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~37                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~35                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~37COUT1_56                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~37                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~35                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[0]                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~7COUT1_66                                     ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan1~7                                             ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~7COUT1_66                                     ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan3~7                                             ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[16]                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[14]                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[13]                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[12]                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[11]                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[15]                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[8]                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[7]                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[6]                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[9]                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[3]                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[2]                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[1]                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[4]                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[5]                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[10]                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[20]                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[19]                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[17]                                                   ; 1       ;
-; AccelerationLimitedPositionControl:U1|t[18]                                                   ; 1       ;
-; PWMcomparator:U6|LessThan1~22COUT1_54                                                         ; 1       ;
-; PWMcomparator:U6|LessThan1~22                                                                 ; 1       ;
-; cosine:U3|Mux3~5                                                                              ; 1       ;
-; cosine:U3|Mux3~4                                                                              ; 1       ;
-; cosine:U3|Mux3~3                                                                              ; 1       ;
-; cosine:U3|Mux3~2                                                                              ; 1       ;
-; cosine:U3|Mux3~1                                                                              ; 1       ;
-; PWMcomparator:U6|Add0~12COUT1_27                                                              ; 1       ;
-; PWMcomparator:U6|Add0~12                                                                      ; 1       ;
-; PWMcomparator:U6|Add0~10                                                                      ; 1       ;
-; PWMcomparator:U6|timechunk[2]                                                                 ; 1       ;
-; cosine:U4|Mux2~4                                                                              ; 1       ;
-; cosine:U4|Mux2~3                                                                              ; 1       ;
-; cosine:U4|Mux2~2                                                                              ; 1       ;
-; cosine:U4|Mux2~1                                                                              ; 1       ;
-; cosine:U4|Mux2~0                                                                              ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[19]~95          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[18]~92COUT1_148 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[18]~92          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[18]~90          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[17]~87COUT1_146 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[17]~87          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[17]~85          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[16]~82COUT1_144 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[16]~82          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[16]~80          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[15]~77COUT1_142 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[15]~77          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[15]~75          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[14]~70          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[13]~67COUT1_140 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[13]~67          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[13]~65          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[12]~62COUT1_138 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[12]~62          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[12]~60          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[7]~57COUT1_130  ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[7]~57           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[7]~55           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[6]~52COUT1_128  ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[6]~52           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[6]~50           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[1]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le4a[0]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs2a[1]~COUTCOUT1_16         ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs2a[1]~COUT                 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs1a[1]~COUTCOUT1_16         ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs1a[1]~COUT                 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[1]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~7COUT1_125                                                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~7                                                              ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|le3a[0]                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~2COUT1_123                                                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|Add0~2                                                              ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs1a[2]~COUTCOUT1_18         ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|cs1a[2]~COUT                 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[3]~47COUT1_124  ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[3]~47           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[3]~45           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[1]~42COUT1_120  ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[1]~42           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[1]~40           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[0]~37COUT1_118  ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[0]~37           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[0]~35           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[2]~32COUT1_122  ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[2]~32           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[2]~30           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[5]~27COUT1_126  ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[5]~27           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[5]~25           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[4]~20           ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[11]~17COUT1_136 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[11]~17          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[11]~15          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[10]~12COUT1_134 ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[10]~12          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[10]~10          ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[9]~5            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[8]~2COUT1_132   ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[8]~2            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|add20_result[8]~0            ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~32COUT1_58                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~32                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~30                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~32COUT1_66                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~32                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~30                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~27COUT1_56                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~27                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~25                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~27COUT1_64                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~27                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~25                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~20                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~22COUT1_62                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~22                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~20                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~17COUT1_54                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~17                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~15                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~15                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~12COUT1_52                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~12                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~10                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~12COUT1_60                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~12                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~10                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~7COUT1_50                                          ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~7                                                  ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add1~5                                                  ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~7COUT1_58                                          ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~7                                                  ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~5                                                  ; 1       ;
-; AccelerationLimitedPositionControl:U1|va~8                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add2~0                                                  ; 1       ;
-; AccelerationLimitedPositionControl:U1|va~6                                                    ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan5~3                                             ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan5~2                                             ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~102COUT1_123                                       ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~102                                                ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan5~0                                             ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~97COUT1_149                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~97                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~87COUT1_145                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~87                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan0~4                                             ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~82COUT1_143                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~82                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~77COUT1_141                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~77                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~72COUT1_147                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~72                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan0~3                                             ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~67COUT1_137                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~67                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~62COUT1_135                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~62                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~57COUT1_133                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~57                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|LessThan0~1                                             ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~47COUT1_129                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~47                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~42COUT1_127                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~42                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~37COUT1_125                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~37                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~27COUT1_131                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~27                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~22COUT1_139                                        ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~22                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~12                                                 ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~7COUT1_151                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~7                                                  ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~2COUT1_153                                         ; 1       ;
-; AccelerationLimitedPositionControl:U1|Add0~2                                                  ; 1       ;
-; cosine:U3|Mux2~4                                                                              ; 1       ;
-; cosine:U3|Mux2~3                                                                              ; 1       ;
-; cosine:U3|Mux2~2                                                                              ; 1       ;
-; cosine:U3|Mux2~1                                                                              ; 1       ;
-; cosine:U3|Mux2~0                                                                              ; 1       ;
-; PWMcomparator:U6|COUNTPWM[5]~5COUT1_28                                                        ; 1       ;
-; PWMcomparator:U6|COUNTPWM[5]~5                                                                ; 1       ;
-; PWMcomparator:U6|Add0~7COUT1_29                                                               ; 1       ;
-; PWMcomparator:U6|Add0~7                                                                       ; 1       ;
-; PWMcomparator:U6|Add0~5                                                                       ; 1       ;
-; PWMcomparator:U6|LessThan2~12COUT1_56                                                         ; 1       ;
-; PWMcomparator:U6|LessThan2~12                                                                 ; 1       ;
-; cosine:U4|Mux1~2                                                                              ; 1       ;
-; cosine:U4|Mux1~1                                                                              ; 1       ;
-; cosine:U4|Mux1~0                                                                              ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~120                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~130                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~117COUT1_182            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~117                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~115                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~127COUT1_198            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~127                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~125                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~112COUT1_180            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~112                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~110                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~122COUT1_196            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~122                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~120                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~105                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~117COUT1_194            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~117                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~115                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~102COUT1_178            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~102                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~100                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~110                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~97COUT1_176             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~97                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~95                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~107COUT1_192            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~107                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~105                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~92COUT1_174             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~92                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~90                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~102COUT1_190            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~102                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~100                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~87COUT1_172             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~87                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~85                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~97COUT1_188             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~97                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~95                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~80                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~92COUT1_186             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~92                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~90                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~77COUT1_170             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~77                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~75                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~85                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~72COUT1_162             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~72                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~70                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~80                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~67COUT1_160             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~67                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~65                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~77COUT1_176             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~77                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~75                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~72COUT1_160             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~72                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~70                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~67COUT1_158             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~67                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~65                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~62COUT1_148             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~62                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~60                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~62COUT1_164             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~62                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~60                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~55                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~57COUT1_162             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~57                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~55                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~52COUT1_146             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~52                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~50                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~50                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~45                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~47COUT1_170             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~47                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~45                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~42COUT1_152             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~42                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~40                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~42COUT1_168             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~42                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~40                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~37COUT1_150             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~37                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~35                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~37COUT1_166             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~37                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~35                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~32COUT1_154             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~32                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~30                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~30                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~27COUT1_158             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~27                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~25                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~27COUT1_174             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~27                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~25                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~22COUT1_156             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~22                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~20                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~22COUT1_172             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~22                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~20                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~17COUT1_168             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~17                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~15                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~17COUT1_184             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~17                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~15                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~12COUT1_166             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~12                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~10                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~12COUT1_182             ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~12                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~10                      ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~7COUT1_164              ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~7                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~5                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~7COUT1_180              ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~7                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~5                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_2~0                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~2COUT1_178              ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~2                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_1~0                       ; 1       ;
-; UPDOWNcounterANDswitch:U2|speedreg[0]                                                         ; 1       ;
-; UPDOWNcounterANDswitch:U2|speedreg[1]                                                         ; 1       ;
-; PWMcomparator:U6|LessThan1~12COUT1_56                                                         ; 1       ;
-; PWMcomparator:U6|LessThan1~12                                                                 ; 1       ;
-; cosine:U3|Mux1~2                                                                              ; 1       ;
-; cosine:U3|Mux1~1                                                                              ; 1       ;
-; cosine:U3|Mux1~0                                                                              ; 1       ;
-; PWMcomparator:U6|COUNTPWM[6]~3COUT1_30                                                        ; 1       ;
-; PWMcomparator:U6|COUNTPWM[6]~3                                                                ; 1       ;
-; PWMcomparator:U6|LessThan2~7COUT1_58                                                          ; 1       ;
-; PWMcomparator:U6|LessThan2~7                                                                  ; 1       ;
-; cosine:U4|Mux0~1                                                                              ; 1       ;
-; cosine:U4|Mux0~0                                                                              ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~140                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~137COUT1_214            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~137                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~135                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|LessThan1~7                                                         ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~132COUT1_212            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~132                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~130                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~127COUT1_210            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~127                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~125                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~122COUT1_208            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~122                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~120                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~115                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|LessThan1~6                                                         ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~112COUT1_206            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~112                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~110                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~107COUT1_204            ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~107                     ; 1       ;
-; UPDOWNcounterANDswitch:U2|lpm_mult:Mult0|mult_4ns:auto_generated|op_5~105                     ; 1       ;
-+-----------------------------------------------------------------------------------------------+---------+
++----------------------------------+
+; Non-Global High Fan-Out Signals  ;
++------------------------+---------+
+; Name                   ; Fan-Out ;
++------------------------+---------+
+; Equal1~4               ; 10      ;
+; Equal0~8               ; 8       ;
+; position[0]~17         ; 7       ;
+; Add0~87                ; 5       ;
+; Add0~72                ; 5       ;
+; Add0~32                ; 5       ;
+; Add0~27                ; 5       ;
+; t[7]                   ; 5       ;
+; position[0]            ; 4       ;
+; Add0~112               ; 3       ;
+; t[4]~13                ; 3       ;
+; t[6]                   ; 3       ;
+; position[7]            ; 3       ;
+; position[6]            ; 3       ;
+; position[5]            ; 3       ;
+; position[4]~7          ; 3       ;
+; position[4]            ; 3       ;
+; position[3]            ; 3       ;
+; position[2]            ; 3       ;
+; position[1]            ; 3       ;
+; count[25]              ; 2       ;
+; count[23]              ; 2       ;
+; count[22]              ; 2       ;
+; count[21]              ; 2       ;
+; count[18]              ; 2       ;
+; count[17]              ; 2       ;
+; count[16]              ; 2       ;
+; count[14]              ; 2       ;
+; count[15]              ; 2       ;
+; count[13]              ; 2       ;
+; count[11]              ; 2       ;
+; count[10]              ; 2       ;
+; count[8]               ; 2       ;
+; count[3]               ; 2       ;
+; count[7]               ; 2       ;
+; count[6]               ; 2       ;
+; count[5]               ; 2       ;
+; count[0]               ; 2       ;
+; position[0]~15         ; 2       ;
+; t[5]                   ; 2       ;
+; t[4]                   ; 2       ;
+; position[0]~14         ; 2       ;
+; t[3]                   ; 2       ;
+; t[2]                   ; 2       ;
+; t[1]                   ; 2       ;
+; t[0]                   ; 2       ;
+; CH2~0                  ; 2       ;
+; Add0~125               ; 1       ;
+; Add0~122COUT1_190      ; 1       ;
+; Add0~122               ; 1       ;
+; Add0~120               ; 1       ;
+; Add0~117COUT1_188      ; 1       ;
+; Add0~117               ; 1       ;
+; Add0~115               ; 1       ;
+; Add0~110               ; 1       ;
+; Add0~107COUT1_186      ; 1       ;
+; Add0~107               ; 1       ;
+; Add0~105               ; 1       ;
+; Add0~102COUT1_184      ; 1       ;
+; Add0~102               ; 1       ;
+; Add0~100               ; 1       ;
+; Add0~97COUT1_182       ; 1       ;
+; Add0~97                ; 1       ;
+; Add0~95                ; 1       ;
+; Add0~92COUT1_180       ; 1       ;
+; Add0~92                ; 1       ;
+; Add0~90                ; 1       ;
+; Add0~85                ; 1       ;
+; Add0~82COUT1_178       ; 1       ;
+; Add0~82                ; 1       ;
+; Add0~80                ; 1       ;
+; Add0~77COUT1_174       ; 1       ;
+; Add0~77                ; 1       ;
+; Add0~75                ; 1       ;
+; Add0~70                ; 1       ;
+; Add0~67COUT1_176       ; 1       ;
+; Add0~67                ; 1       ;
+; Add0~65                ; 1       ;
+; Add0~62COUT1_172       ; 1       ;
+; Add0~62                ; 1       ;
+; Add0~60                ; 1       ;
+; Add0~57COUT1_170       ; 1       ;
+; Add0~57                ; 1       ;
+; Add0~55                ; 1       ;
+; Add0~52COUT1_168       ; 1       ;
+; Add0~52                ; 1       ;
+; Add0~50                ; 1       ;
+; Add0~47COUT1_166       ; 1       ;
+; Add0~47                ; 1       ;
+; Add0~45                ; 1       ;
+; Add0~42COUT1_164       ; 1       ;
+; Add0~42                ; 1       ;
+; Add0~40                ; 1       ;
+; Add0~37COUT1_156       ; 1       ;
+; Add0~37                ; 1       ;
+; Add0~35                ; 1       ;
+; Add0~30                ; 1       ;
+; Add0~25                ; 1       ;
+; Add0~22COUT1_162       ; 1       ;
+; Add0~22                ; 1       ;
+; Add0~20                ; 1       ;
+; Add0~17COUT1_158       ; 1       ;
+; Add0~17                ; 1       ;
+; Add0~15                ; 1       ;
+; Add0~12COUT1_160       ; 1       ;
+; Add0~12                ; 1       ;
+; Add0~10                ; 1       ;
+; Add0~7COUT1_154        ; 1       ;
+; Add0~7                 ; 1       ;
+; Add0~5                 ; 1       ;
+; Add0~2COUT1_152        ; 1       ;
+; Add0~2                 ; 1       ;
+; Add0~0                 ; 1       ;
+; count[24]              ; 1       ;
+; Equal0~7               ; 1       ;
+; count[20]              ; 1       ;
+; Equal0~6               ; 1       ;
+; count[19]              ; 1       ;
+; Equal0~5               ; 1       ;
+; count[12]              ; 1       ;
+; Equal0~4               ; 1       ;
+; count[9]               ; 1       ;
+; Equal0~3               ; 1       ;
+; count[2]               ; 1       ;
+; Equal0~2               ; 1       ;
+; count[4]               ; 1       ;
+; Equal0~1               ; 1       ;
+; count[1]               ; 1       ;
+; Equal0~0               ; 1       ;
+; t[5]~15COUT1_32        ; 1       ;
+; t[5]~15                ; 1       ;
+; t[3]~11COUT1_30        ; 1       ;
+; t[3]~11                ; 1       ;
+; t[2]~9COUT1_28         ; 1       ;
+; t[2]~9                 ; 1       ;
+; t[1]~7COUT1_26         ; 1       ;
+; t[1]~7                 ; 1       ;
+; t[0]~5COUT1_24         ; 1       ;
+; t[0]~5                 ; 1       ;
+; Equal1~3               ; 1       ;
+; PI[6]                  ; 1       ;
+; PI[7]                  ; 1       ;
+; Equal1~2               ; 1       ;
+; PI[4]                  ; 1       ;
+; PI[5]                  ; 1       ;
+; Equal1~1               ; 1       ;
+; PI[2]                  ; 1       ;
+; PI[3]                  ; 1       ;
+; Equal1~0               ; 1       ;
+; PI[0]                  ; 1       ;
+; PI[1]                  ; 1       ;
+; t[6]~3COUT1_34         ; 1       ;
+; t[6]~3                 ; 1       ;
+; position[6]~11COUT1_33 ; 1       ;
+; position[6]~11         ; 1       ;
+; position[5]~9COUT1_31  ; 1       ;
+; position[5]~9          ; 1       ;
+; position[3]~5COUT1_29  ; 1       ;
+; position[3]~5          ; 1       ;
+; position[2]~3COUT1_27  ; 1       ;
+; position[2]~3          ; 1       ;
+; position[1]~1COUT1_25  ; 1       ;
+; position[1]~1          ; 1       ;
++------------------------+---------+
 
 
 +----------------------------------------------+
@@ -1487,111 +642,114 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+----------------------+
 ; Routing Resource Type ; Usage                ;
 +-----------------------+----------------------+
-; C4s                   ; 441 / 2,870 ( 15 % ) ;
-; Direct links          ; 107 / 3,938 ( 3 % )  ;
-; Global clocks         ; 1 / 4 ( 25 % )       ;
-; LAB clocks            ; 11 / 72 ( 15 % )     ;
-; LUT chains            ; 17 / 1,143 ( 1 % )   ;
-; Local interconnects   ; 890 / 3,938 ( 23 % ) ;
-; R4s                   ; 432 / 2,832 ( 15 % ) ;
+; C4s                   ; 26 / 2,870 ( < 1 % ) ;
+; Direct links          ; 45 / 3,938 ( 1 % )   ;
+; Global clocks         ; 2 / 4 ( 50 % )       ;
+; LAB clocks            ; 8 / 72 ( 11 % )      ;
+; LUT chains            ; 0 / 1,143 ( 0 % )    ;
+; Local interconnects   ; 104 / 3,938 ( 3 % )  ;
+; R4s                   ; 52 / 2,832 ( 2 % )   ;
 +-----------------------+----------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 9.16) ; Number of LABs  (Total = 69) ;
+; Number of Logic Elements  (Average = 7.80) ; Number of LABs  (Total = 10) ;
 +--------------------------------------------+------------------------------+
 ; 1                                          ; 1                            ;
 ; 2                                          ; 0                            ;
-; 3                                          ; 2                            ;
-; 4                                          ; 0                            ;
+; 3                                          ; 1                            ;
+; 4                                          ; 1                            ;
 ; 5                                          ; 0                            ;
-; 6                                          ; 3                            ;
-; 7                                          ; 3                            ;
-; 8                                          ; 3                            ;
-; 9                                          ; 8                            ;
-; 10                                         ; 49                           ;
+; 6                                          ; 0                            ;
+; 7                                          ; 0                            ;
+; 8                                          ; 0                            ;
+; 9                                          ; 0                            ;
+; 10                                         ; 7                            ;
 +--------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.48) ; Number of LABs  (Total = 69) ;
+; LAB-wide Signals  (Average = 0.90) ; Number of LABs  (Total = 10) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 24                           ;
-; 1 Clock enable                     ; 9                            ;
+; 1 Clock                            ; 8                            ;
+; 1 Clock enable                     ; 1                            ;
 +------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 8.48) ; Number of LABs  (Total = 69) ;
+; Number of Signals Sourced  (Average = 8.70) ; Number of LABs  (Total = 10) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
-; 1                                           ; 4                            ;
+; 1                                           ; 1                            ;
 ; 2                                           ; 0                            ;
-; 3                                           ; 5                            ;
-; 4                                           ; 0                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 1                            ;
 ; 5                                           ; 0                            ;
-; 6                                           ; 3                            ;
-; 7                                           ; 3                            ;
-; 8                                           ; 4                            ;
-; 9                                           ; 5                            ;
-; 10                                          ; 45                           ;
+; 6                                           ; 0                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 5                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 1                            ;
+; 15                                          ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 6.67) ; Number of LABs  (Total = 69) ;
+; Number of Signals Sourced Out  (Average = 7.10) ; Number of LABs  (Total = 10) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 4                            ;
-; 2                                               ; 8                            ;
-; 3                                               ; 6                            ;
+; 1                                               ; 1                            ;
+; 2                                               ; 0                            ;
+; 3                                               ; 1                            ;
 ; 4                                               ; 2                            ;
-; 5                                               ; 3                            ;
-; 6                                               ; 4                            ;
-; 7                                               ; 8                            ;
-; 8                                               ; 6                            ;
-; 9                                               ; 9                            ;
-; 10                                              ; 19                           ;
+; 5                                               ; 0                            ;
+; 6                                               ; 0                            ;
+; 7                                               ; 0                            ;
+; 8                                               ; 2                            ;
+; 9                                               ; 0                            ;
+; 10                                              ; 2                            ;
+; 11                                              ; 1                            ;
+; 12                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
-+-----------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                         ;
-+----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 12.62) ; Number of LABs  (Total = 69) ;
-+----------------------------------------------+------------------------------+
-; 0                                            ; 0                            ;
-; 1                                            ; 1                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 3                            ;
-; 4                                            ; 2                            ;
-; 5                                            ; 1                            ;
-; 6                                            ; 3                            ;
-; 7                                            ; 5                            ;
-; 8                                            ; 2                            ;
-; 9                                            ; 6                            ;
-; 10                                           ; 4                            ;
-; 11                                           ; 5                            ;
-; 12                                           ; 2                            ;
-; 13                                           ; 8                            ;
-; 14                                           ; 0                            ;
-; 15                                           ; 4                            ;
-; 16                                           ; 1                            ;
-; 17                                           ; 2                            ;
-; 18                                           ; 7                            ;
-; 19                                           ; 2                            ;
-; 20                                           ; 4                            ;
-; 21                                           ; 6                            ;
-; 22                                           ; 1                            ;
-+----------------------------------------------+------------------------------+
++----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 9.50) ; Number of LABs  (Total = 10) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 0                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 2                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 1                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 0                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 1                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 1                            ;
+; 15                                          ; 1                            ;
+; 16                                          ; 0                            ;
+; 17                                          ; 0                            ;
+; 18                                          ; 1                            ;
++---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -1621,75 +779,63 @@ Warning (292013): Feature LogicLock is only available with a valid subscription 
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
     Info (176445): Device 5M240ZT144A5 is compatible
     Info (176445): Device 5M570ZT144A5 is compatible
-Critical Warning (169085): No exact pin location assignment(s) for 23 pins of 23 total pins
-    Info (169086): Pin switch1 not assigned to an exact location on the device
-    Info (169086): Pin switch2 not assigned to an exact location on the device
-    Info (169086): Pin switch3 not assigned to an exact location on the device
-    Info (169086): Pin switch4 not assigned to an exact location on the device
-    Info (169086): Pin clk not assigned to an exact location on the device
-    Info (169086): Pin position[17] not assigned to an exact location on the device
-    Info (169086): Pin position[16] not assigned to an exact location on the device
-    Info (169086): Pin position[12] not assigned to an exact location on the device
-    Info (169086): Pin position[13] not assigned to an exact location on the device
-    Info (169086): Pin position[14] not assigned to an exact location on the device
-    Info (169086): Pin position[15] not assigned to an exact location on the device
-    Info (169086): Pin position[11] not assigned to an exact location on the device
-    Info (169086): Pin position[10] not assigned to an exact location on the device
-    Info (169086): Pin position[9] not assigned to an exact location on the device
-    Info (169086): Pin position[8] not assigned to an exact location on the device
-    Info (169086): Pin position[7] not assigned to an exact location on the device
-    Info (169086): Pin position[6] not assigned to an exact location on the device
-    Info (169086): Pin position[5] not assigned to an exact location on the device
-    Info (169086): Pin position[4] not assigned to an exact location on the device
-    Info (169086): Pin position[3] not assigned to an exact location on the device
-    Info (169086): Pin position[2] not assigned to an exact location on the device
-    Info (169086): Pin position[1] not assigned to an exact location on the device
-    Info (169086): Pin position[0] not assigned to an exact location on the device
+Critical Warning (169085): No exact pin location assignment(s) for 9 pins of 22 total pins
+    Info (169086): Pin PA[0] not assigned to an exact location on the device
+    Info (169086): Pin PA[1] not assigned to an exact location on the device
+    Info (169086): Pin PA[2] not assigned to an exact location on the device
+    Info (169086): Pin PA[3] not assigned to an exact location on the device
+    Info (169086): Pin PA[4] not assigned to an exact location on the device
+    Info (169086): Pin PA[5] not assigned to an exact location on the device
+    Info (169086): Pin PA[6] not assigned to an exact location on the device
+    Info (169086): Pin PA[7] not assigned to an exact location on the device
+    Info (169086): Pin FWD not assigned to an exact location on the device
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Stepper.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332128): Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
     Info (332127): Assuming a default timing requirement
-Info (332111): Found 1 clocks
+Info (332111): Found 2 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
-    Info (332111):    1.000          clk
+    Info (332111):    1.000          CLK
+    Info (332111):    1.000  stepper_clk
 Info (186079): Completed User Assigned Global Signals Promotion Operation
-Info (186215): Automatically promoted signal "clk" to use Global clock in PIN 18
+Info (186215): Automatically promoted signal "CLK" to use Global clock in PIN 89
+Info (186215): Automatically promoted signal "stepper_clk" to use Global clock
 Info (186079): Completed Auto Global Promotion Operation
 Info (176234): Starting register packing
 Info (186468): Started processing fast register assignments
 Info (186469): Finished processing fast register assignments
 Info (176235): Finished register packing
 Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info (176211): Number of I/O pins in group: 22 (unused VREF, 3.3V VCCIO, 18 input, 4 output, 0 bidirectional)
+    Info (176211): Number of I/O pins in group: 9 (unused VREF, 3.3V VCCIO, 0 input, 9 output, 0 bidirectional)
         Info (176212): I/O standards used: 3.3-V LVTTL.
 Info (176215): I/O bank details before I/O pin placement
     Info (176214): Statistics of I/O banks
-        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  24 pins available
+        Info (176213): I/O bank number 1 does not use VREF pins and has 3.3V VCCIO pins. 4 total pin(s) used --  21 pins available
         Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  30 pins available
-        Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  29 pins available
-        Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  30 pins available
+        Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  28 pins available
+        Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 8 total pin(s) used --  22 pins available
 Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
 Info (170193): Fitter routing operations beginning
-Info (170195): Router estimated average interconnect usage is 15% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 18% of the available device resources in the region that extends from location X0_Y0 to location X8_Y11
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (170195): Router estimated average interconnect usage is 1% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X9_Y0 to location X17_Y11
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.59 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.36 seconds.
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file /home/singularity/GIT/2D-Mapping-VHDL/Stepper/output_files/Stepper.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 712 megabytes
-    Info: Processing ended: Mon Mar 10 00:25:01 2014
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Peak virtual memory: 705 megabytes
+    Info: Processing ended: Mon Mar 10 16:57:51 2014
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +----------------------------+

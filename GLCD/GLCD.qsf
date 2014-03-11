@@ -52,19 +52,3 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name VHDL_FILE GLCD.vhd
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
-set_location_assignment PIN_39 -to button1
-set_location_assignment PIN_40 -to button2
-set_location_assignment PIN_89 -to clk
-set_location_assignment PIN_102 -to cs1
-set_location_assignment PIN_104 -to cs2
-set_location_assignment PIN_74 -to en
-set_location_assignment PIN_98 -to lcdData[7]
-set_location_assignment PIN_96 -to lcdData[6]
-set_location_assignment PIN_94 -to lcdData[5]
-set_location_assignment PIN_88 -to lcdData[4]
-set_location_assignment PIN_86 -to lcdData[3]
-set_location_assignment PIN_84 -to lcdData[2]
-set_location_assignment PIN_80 -to lcdData[1]
-set_location_assignment PIN_76 -to lcdData[0]
-set_location_assignment PIN_70 -to rs
-set_location_assignment PIN_72 -to rw

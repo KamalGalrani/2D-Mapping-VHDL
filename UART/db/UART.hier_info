@@ -34,18 +34,21 @@ TXRDY << TRANSMIT:transmitter.TXRDY
 
 
 |UART|TRANSMIT:transmitter
-TX_CLK => TXRDY~reg0.CLK
+TX_CLK => ready.CLK
 TX_CLK => TX~reg0.CLK
 TX_CLK => step[0].CLK
 TX_CLK => step[1].CLK
 TX_CLK => step[2].CLK
 TX_CLK => step[3].CLK
-WR => process_0.IN1
-RST => TXRDY~reg0.PRESET
+WR => trigger.IN1
+WR => comb.IN1
+WR => process_1.IN1
+WR => comb.IN1
+RST => ready.PRESET
 RST => TX.IN1
 RST => step[1].PRESET
 RST => step[3].PRESET
-RST => TXRDY.IN1
+RST => ready.IN1
 DATA[0] => latch[0].DATAIN
 DATA[1] => latch[1].DATAIN
 DATA[2] => latch[2].DATAIN
@@ -55,6 +58,6 @@ DATA[5] => latch[5].DATAIN
 DATA[6] => latch[6].DATAIN
 DATA[7] => latch[7].DATAIN
 TX <= TX~reg0.DB_MAX_OUTPUT_PORT_TYPE
-TXRDY <= TXRDY~reg0.DB_MAX_OUTPUT_PORT_TYPE
+TXRDY <= ready.DB_MAX_OUTPUT_PORT_TYPE
 
 

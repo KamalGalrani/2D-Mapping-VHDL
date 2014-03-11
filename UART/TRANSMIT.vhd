@@ -16,18 +16,29 @@ end entity;
 architecture main of TRANSMIT is
 signal latch: std_logic_vector(7 downto 0);
 signal step: integer range 0 to 10;
+signal trigger, ready: std_logic;
 begin
+  TXRDY <= ready;
+  process (WR, ready)
+  begin
+  if ( WR = '1' ) then
+    trigger <= '1';
+  elsif ( ready = '0' ) then
+    trigger <= '0';
+  end if;
+  end process;
+  
   process (TX_CLK, RST, WR)
   begin
     if ( RST = '1' ) then
       step  <= 10;
       TX    <= '1';
-		TXRDY <= '1';
-    elsif ( WR = '0' and step = 10 ) then
+		ready <= '1';
+    elsif ( WR = '0' and step = 10 and trigger = '1' ) then
       latch <= DATA;
       step <= 0;		
       TX    <= '1';
-      TXRDY <= '0';
+      ready <= '0';
     elsif ( rising_edge(TX_CLK) ) then
       if ( step = 0 ) then				--Send START bit
         TX   <= '0';
@@ -37,7 +48,7 @@ begin
         step <= 10;
 	   elsif (step = 10) then				--Keep TX high when idle
         TX <= '1';
-        TXRDY <= '1';
+        ready <= '1';
       else										--Transmit DATA
         TX <= latch(step - 1);
         step <= step + 1;
