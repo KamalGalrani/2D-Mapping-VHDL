@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity Stepper is
   generic(
-		DISTANCE_PER_STEP : integer range 0 to 64 := 44;
+		DISTANCE_PER_STEP : integer range 0 to 64 := 44
 		--CLK_DIVIDER = (<CLOCK_FREQUENCY>/(<SPEED_IN_RPM>*<NO_OF_STEPS>))*60
       CLK_DIVIDER       : positive              := 6000000
       );
