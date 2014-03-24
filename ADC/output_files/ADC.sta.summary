@@ -1,0 +1,49 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'UART:send_data|tx_clk_tick'
+Slack : -10.694
+TNS   : -26.566
+
+Type  : Setup 'CLK'
+Slack : -6.164
+TNS   : -69.838
+
+Type  : Hold 'UART:send_data|tx_clk_tick'
+Slack : 1.094
+TNS   : 0.000
+
+Type  : Hold 'CLK'
+Slack : 2.594
+TNS   : 0.000
+
+Type  : Recovery 'UART:send_data|tx_clk_tick'
+Slack : -9.169
+TNS   : -45.672
+
+Type  : Recovery 'CLK'
+Slack : -5.584
+TNS   : -78.176
+
+Type  : Removal 'UART:send_data|tx_clk_tick'
+Slack : 2.467
+TNS   : 0.000
+
+Type  : Removal 'CLK'
+Slack : 5.522
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'RST'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'UART:send_data|tx_clk_tick'
+Slack : 0.230
+TNS   : 0.000
+
+------------------------------------------------------------

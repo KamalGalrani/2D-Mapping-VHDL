@@ -7,14 +7,14 @@ entity TRANSMIT is
       TX_CLK : in  std_logic;
       WR     : in  std_logic;
       RST    : in  std_logic;
-      DATA   : in  unsigned(7 downto 0);
+      DATA   : in  std_logic_vector(7 downto 0);
       TX     : out std_logic;
       TXRDY  : out std_logic
       );
 end entity;
 
 architecture main of TRANSMIT is
-signal latch: unsigned(7 downto 0);
+signal latch: std_logic_vector(7 downto 0);
 signal step: integer range 0 to 10;
 signal trigger, ready: std_logic;
 begin
