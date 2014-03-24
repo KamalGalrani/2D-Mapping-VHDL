@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Stepper
-Mon Mar 10 16:57:34 2014
+Mon Mar 24 13:13:06 2014
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -10,12 +10,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |Stepper
- 10. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -41,15 +36,11 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-----------------------------+--------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Mar 10 16:57:34 2014      ;
+; Analysis & Synthesis Status ; Failed - Mon Mar 24 13:13:06 2014          ;
 ; Quartus II 64-Bit Version   ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name               ; Stepper                                    ;
 ; Top-level Entity Name       ; Stepper                                    ;
 ; Family                      ; MAX V                                      ;
-; Total logic elements        ; 87                                         ;
-; Total pins                  ; 22                                         ;
-; Total virtual pins          ; 0                                          ;
-; UFM blocks                  ; 0 / 1 ( 0 % )                              ;
 +-----------------------------+--------------------------------------------+
 
 
@@ -137,108 +128,21 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                     ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                              ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-; Stepper.vhd                      ; yes             ; User VHDL File  ; /home/singularity/GIT/2D-Mapping-VHDL/Stepper/Stepper.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Total logic elements                        ; 87    ;
-;     -- Combinational with no register       ; 44    ;
-;     -- Register only                        ; 19    ;
-;     -- Combinational with a register        ; 24    ;
-;                                             ;       ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 16    ;
-;     -- 3 input functions                    ; 1     ;
-;     -- 2 input functions                    ; 49    ;
-;     -- 1 input functions                    ; 2     ;
-;     -- 0 input functions                    ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 49    ;
-;     -- arithmetic mode                      ; 38    ;
-;     -- qfbk mode                            ; 0     ;
-;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 0     ;
-;     -- asynchronous clear/load mode         ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 43    ;
-; Total logic cells in carry chains           ; 41    ;
-; I/O pins                                    ; 22    ;
-; Maximum fan-out node                        ; CLK   ;
-; Maximum fan-out                             ; 27    ;
-; Total fan-out                               ; 256   ;
-; Average fan-out                             ; 2.35  ;
-+---------------------------------------------+-------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; |Stepper                   ; 87 (87)     ; 43           ; 0          ; 22   ; 0            ; 44 (44)      ; 19 (19)           ; 24 (24)          ; 41 (41)         ; 0 (0)      ; |Stepper            ; work         ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 43    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 15    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |Stepper ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; SPEED          ; 1     ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Mar 10 16:57:30 2014
+    Info: Processing started: Mon Mar 24 13:13:04 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Stepper -c Stepper
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file Stepper.vhd
-    Info (12022): Found design unit 1: Stepper-main
-    Info (12023): Found entity 1: Stepper
-Info (12127): Elaborating entity "Stepper" for the top level hierarchy
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "FWD" is stuck at VCC
-Info (21057): Implemented 109 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 13 output pins
-    Info (21061): Implemented 87 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 666 megabytes
-    Info: Processing ended: Mon Mar 10 16:57:34 2014
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:02
+Error (10500): VHDL syntax error at Stepper.vhd(9) near text ":";  expecting ";", or ")" File: /home/singularity/GIT/2D-Mapping-VHDL/Stepper/Stepper.vhd Line: 9
+Info (12021): Found 0 design units, including 0 entities, in source file Stepper.vhd
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 645 megabytes
+    Error: Processing ended: Mon Mar 24 13:13:06 2014
+    Error: Elapsed time: 00:00:02
+    Error: Total CPU time (on all processors): 00:00:01
 
 
