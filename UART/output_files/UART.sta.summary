@@ -2,31 +2,43 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Setup 'CLK'
-Slack : -6.485
-TNS   : -71.435
-
 Type  : Setup 'tx_clk_tick'
-Slack : -2.551
-TNS   : -12.220
+Slack : -10.306
+TNS   : -25.326
+
+Type  : Setup 'CLK'
+Slack : -5.976
+TNS   : -68.020
 
 Type  : Hold 'tx_clk_tick'
 Slack : 1.094
 TNS   : 0.000
 
 Type  : Hold 'CLK'
-Slack : 2.074
+Slack : 2.342
 TNS   : 0.000
 
 Type  : Recovery 'tx_clk_tick'
-Slack : -8.062
-TNS   : -41.103
+Slack : -9.375
+TNS   : -47.787
+
+Type  : Recovery 'CLK'
+Slack : -5.355
+TNS   : -74.970
 
 Type  : Removal 'tx_clk_tick'
-Slack : 5.348
+Slack : 2.065
+TNS   : 0.000
+
+Type  : Removal 'CLK'
+Slack : 5.293
 TNS   : 0.000
 
 Type  : Minimum Pulse Width 'CLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'RST'
 Slack : -2.289
 TNS   : -2.289
 

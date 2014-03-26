@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for ADC
-Mon Mar 24 18:14:49 2014
+Mon Mar 24 21:01:52 2014
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -103,20 +103,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+-----------------+----------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                 ; Note ;
 +------------+-----------------+----------------------------+------+
-; 139.59 MHz ; 139.59 MHz      ; CLK                        ;      ;
-; 167.34 MHz ; 167.34 MHz      ; UART:send_data|tx_clk_tick ;      ;
+; 141.34 MHz ; 141.34 MHz      ; CLK                        ;      ;
+; 154.66 MHz ; 154.66 MHz      ; UART:send_data|tx_clk_tick ;      ;
 +------------+-----------------+----------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+------------------------------------------------------+
-; Setup Summary                                        ;
-+----------------------------+---------+---------------+
-; Clock                      ; Slack   ; End Point TNS ;
-+----------------------------+---------+---------------+
-; UART:send_data|tx_clk_tick ; -10.694 ; -26.566       ;
-; CLK                        ; -6.164  ; -69.838       ;
-+----------------------------+---------+---------------+
++-----------------------------------------------------+
+; Setup Summary                                       ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; UART:send_data|tx_clk_tick ; -9.369 ; -25.129       ;
+; CLK                        ; -6.075 ; -77.190       ;
++----------------------------+--------+---------------+
 
 
 +----------------------------------------------------+
@@ -125,7 +125,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock                      ; Slack ; End Point TNS ;
 +----------------------------+-------+---------------+
 ; UART:send_data|tx_clk_tick ; 1.094 ; 0.000         ;
-; CLK                        ; 2.594 ; 0.000         ;
+; CLK                        ; 1.947 ; 0.000         ;
 +----------------------------+-------+---------------+
 
 
@@ -134,7 +134,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------+--------+---------------+
 ; Clock                      ; Slack  ; End Point TNS ;
 +----------------------------+--------+---------------+
-; UART:send_data|tx_clk_tick ; -9.169 ; -45.672       ;
+; UART:send_data|tx_clk_tick ; -9.911 ; -47.904       ;
 ; CLK                        ; -5.584 ; -78.176       ;
 +----------------------------+--------+---------------+
 
@@ -144,7 +144,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------+-------+---------------+
 ; Clock                      ; Slack ; End Point TNS ;
 +----------------------------+-------+---------------+
-; UART:send_data|tx_clk_tick ; 2.467 ; 0.000         ;
+; UART:send_data|tx_clk_tick ; 2.786 ; 0.000         ;
 ; CLK                        ; 5.522 ; 0.000         ;
 +----------------------------+-------+---------------+
 
@@ -160,42 +160,42 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------+--------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Setup: 'UART:send_data|tx_clk_tick'                                                                                                                                                                     ;
-+---------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
-; Slack   ; From Node                                    ; To Node                                     ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
-+---------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
-; -10.694 ; UART:send_data|TRANSMIT:transmitter|latch[0] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -6.554     ; 4.302      ;
-; -10.447 ; UART:send_data|TRANSMIT:transmitter|latch[4] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -6.555     ; 4.054      ;
-; -10.417 ; UART:send_data|TRANSMIT:transmitter|latch[5] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -6.398     ; 4.181      ;
-; -10.183 ; UART:send_data|TRANSMIT:transmitter|latch[6] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -6.399     ; 3.946      ;
-; -10.176 ; UART:send_data|TRANSMIT:transmitter|latch[2] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -6.565     ; 3.773      ;
-; -10.140 ; UART:send_data|TRANSMIT:transmitter|latch[7] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -6.566     ; 3.736      ;
-; -9.966  ; UART:send_data|TRANSMIT:transmitter|latch[1] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -6.567     ; 3.561      ;
-; -9.925  ; UART:send_data|TRANSMIT:transmitter|latch[3] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -6.563     ; 3.524      ;
-; -4.976  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 5.638      ;
-; -4.843  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 5.505      ;
-; -3.852  ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 4.514      ;
-; -3.728  ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 4.390      ;
-; -3.718  ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 4.380      ;
-; -3.395  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 4.057      ;
-; -3.160  ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.822      ;
-; -3.050  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.712      ;
-; -2.926  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.588      ;
-; -2.923  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.585      ;
-; -2.923  ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.585      ;
-; -2.919  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.581      ;
-; -2.917  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.579      ;
-; -2.637  ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.299      ;
-; -2.602  ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.264      ;
-; -1.911  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 2.573      ;
-; -1.905  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 2.567      ;
-; -1.820  ; UART:send_data|TRANSMIT:transmitter|ready    ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 2.482      ;
-; -1.706  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 2.368      ;
-; -1.702  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 2.364      ;
-; -1.265  ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 1.927      ;
-; -0.656  ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 1.318      ;
-+---------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'UART:send_data|tx_clk_tick'                                                                                                                                                                    ;
++--------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                     ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
+; -9.369 ; UART:send_data|TRANSMIT:transmitter|latch[0] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -4.792     ; 4.739      ;
+; -9.097 ; UART:send_data|TRANSMIT:transmitter|latch[3] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -5.340     ; 3.919      ;
+; -8.969 ; UART:send_data|TRANSMIT:transmitter|latch[5] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -5.204     ; 3.927      ;
+; -8.860 ; UART:send_data|TRANSMIT:transmitter|latch[2] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -4.790     ; 4.232      ;
+; -8.809 ; UART:send_data|TRANSMIT:transmitter|latch[1] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -4.800     ; 4.171      ;
+; -8.711 ; UART:send_data|TRANSMIT:transmitter|latch[7] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -4.991     ; 3.882      ;
+; -8.231 ; UART:send_data|TRANSMIT:transmitter|latch[6] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -4.658     ; 3.735      ;
+; -7.697 ; UART:send_data|TRANSMIT:transmitter|latch[4] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; -4.798     ; 3.061      ;
+; -5.466 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.128      ;
+; -5.283 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 5.945      ;
+; -4.994 ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 5.656      ;
+; -4.804 ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 5.466      ;
+; -3.571 ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 4.233      ;
+; -3.384 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 4.046      ;
+; -3.233 ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.895      ;
+; -3.044 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.706      ;
+; -3.043 ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.705      ;
+; -3.033 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.695      ;
+; -2.728 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.390      ;
+; -2.720 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.382      ;
+; -2.697 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.359      ;
+; -2.357 ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.019      ;
+; -2.356 ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 3.018      ;
+; -2.252 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 2.914      ;
+; -2.251 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 2.913      ;
+; -2.243 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 2.905      ;
+; -2.238 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 2.900      ;
+; -2.097 ; UART:send_data|TRANSMIT:transmitter|ready    ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 2.759      ;
+; -1.658 ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 2.320      ;
+; -0.656 ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 1.318      ;
++--------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -203,253 +203,253 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                       ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
-; -6.164 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.826      ;
-; -6.031 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.693      ;
-; -5.948 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.610      ;
-; -5.794 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.456      ;
-; -5.769 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.431      ;
-; -5.769 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.431      ;
-; -5.710 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.372      ;
-; -5.670 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.332      ;
-; -5.670 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.332      ;
-; -5.667 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.329      ;
-; -5.577 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.239      ;
-; -5.576 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.238      ;
-; -5.543 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.205      ;
-; -5.513 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.175      ;
-; -5.502 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.164      ;
-; -5.494 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.156      ;
-; -5.479 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.141      ;
-; -5.477 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.139      ;
-; -5.476 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.138      ;
-; -5.444 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.106      ;
-; -5.380 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.042      ;
-; -5.380 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.042      ;
-; -5.378 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.040      ;
-; -5.358 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.020      ;
-; -5.358 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.020      ;
-; -5.354 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.016      ;
-; -5.354 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.016      ;
-; -5.349 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.011      ;
-; -5.349 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.011      ;
-; -5.345 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.007      ;
-; -5.343 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.005      ;
-; -5.342 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.004      ;
-; -5.342 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.004      ;
-; -5.340 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.002      ;
-; -5.303 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.965      ;
-; -5.302 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.964      ;
-; -5.279 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.941      ;
-; -5.232 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.894      ;
-; -5.213 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.875      ;
-; -5.188 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.850      ;
-; -5.181 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.843      ;
-; -5.170 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.832      ;
-; -5.169 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.831      ;
-; -5.165 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.827      ;
-; -5.161 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.823      ;
-; -5.156 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.818      ;
-; -5.149 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.811      ;
-; -5.143 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.805      ;
-; -5.089 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.751      ;
-; -5.087 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.749      ;
-; -5.086 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.748      ;
-; -5.068 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.730      ;
-; -5.064 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.726      ;
-; -5.059 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.721      ;
-; -5.052 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.714      ;
-; -5.039 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.701      ;
-; -5.035 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.697      ;
-; -5.033 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.695      ;
-; -5.024 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.686      ;
-; -5.022 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.684      ;
-; -5.022 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.684      ;
-; -4.961 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.623      ;
-; -4.958 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.620      ;
-; -4.933 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.595      ;
-; -4.932 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.594      ;
-; -4.925 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.587      ;
-; -4.925 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.587      ;
-; -4.924 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.586      ;
-; -4.907 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.569      ;
-; -4.825 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.487      ;
-; -4.812 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.474      ;
-; -4.794 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.456      ;
-; -4.778 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.440      ;
-; -4.777 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.439      ;
-; -4.768 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.430      ;
-; -4.737 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.399      ;
-; -4.733 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.395      ;
-; -4.732 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.394      ;
-; -4.714 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.376      ;
-; -4.682 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.344      ;
-; -4.640 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.302      ;
-; -4.635 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.297      ;
-; -4.615 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.277      ;
-; -4.614 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.276      ;
-; -4.600 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.262      ;
-; -4.585 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.247      ;
-; -4.574 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.236      ;
-; -4.517 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.179      ;
-; -4.516 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.178      ;
-; -4.499 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.161      ;
-; -4.494 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.156      ;
-; -4.371 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.033      ;
-; -4.370 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.032      ;
-; -4.344 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.006      ;
-; -4.334 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.996      ;
-; -4.330 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.992      ;
-; -4.309 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.971      ;
-; -4.260 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.922      ;
-; -4.121 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.783      ;
-; -4.109 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.771      ;
+; -6.075 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.737      ;
+; -6.041 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.703      ;
+; -6.009 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.671      ;
+; -5.901 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.563      ;
+; -5.879 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.541      ;
+; -5.858 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.520      ;
+; -5.842 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.504      ;
+; -5.781 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.443      ;
+; -5.777 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.439      ;
+; -5.776 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.438      ;
+; -5.767 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.429      ;
+; -5.707 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.369      ;
+; -5.700 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.362      ;
+; -5.664 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.326      ;
+; -5.610 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.272      ;
+; -5.597 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.259      ;
+; -5.584 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.246      ;
+; -5.548 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.210      ;
+; -5.544 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.206      ;
+; -5.531 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.193      ;
+; -5.519 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.181      ;
+; -5.518 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.180      ;
+; -5.459 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.121      ;
+; -5.433 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.095      ;
+; -5.432 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.094      ;
+; -5.431 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.093      ;
+; -5.393 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.055      ;
+; -5.377 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.039      ;
+; -5.324 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.986      ;
+; -5.303 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.965      ;
+; -5.299 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.961      ;
+; -5.293 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.955      ;
+; -5.292 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.954      ;
+; -5.291 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.953      ;
+; -5.290 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.952      ;
+; -5.290 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.952      ;
+; -5.286 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.948      ;
+; -5.271 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.933      ;
+; -5.270 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.932      ;
+; -5.269 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.931      ;
+; -5.258 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.920      ;
+; -5.250 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.912      ;
+; -5.205 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.867      ;
+; -5.188 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.850      ;
+; -5.165 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.827      ;
+; -5.159 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.821      ;
+; -5.158 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.820      ;
+; -5.139 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.801      ;
+; -5.139 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.801      ;
+; -5.132 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.794      ;
+; -5.121 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.783      ;
+; -5.119 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.781      ;
+; -5.099 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.761      ;
+; -5.098 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.760      ;
+; -5.097 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.759      ;
+; -5.092 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.754      ;
+; -5.056 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.718      ;
+; -5.055 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.717      ;
+; -5.055 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.717      ;
+; -5.054 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.716      ;
+; -5.030 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.692      ;
+; -5.026 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.688      ;
+; -5.017 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.679      ;
+; -4.943 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.605      ;
+; -4.939 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.601      ;
+; -4.911 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.573      ;
+; -4.911 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.573      ;
+; -4.910 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.572      ;
+; -4.907 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.569      ;
+; -4.885 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.547      ;
+; -4.859 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.521      ;
+; -4.841 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.503      ;
+; -4.828 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.490      ;
+; -4.780 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.442      ;
+; -4.775 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.437      ;
+; -4.765 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.427      ;
+; -4.752 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.414      ;
+; -4.740 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.402      ;
+; -4.694 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.356      ;
+; -4.631 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.293      ;
+; -4.503 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.165      ;
+; -4.492 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.154      ;
+; -4.486 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.148      ;
+; -4.443 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.105      ;
+; -4.437 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.099      ;
+; -4.423 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.085      ;
+; -4.422 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.084      ;
+; -4.386 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.048      ;
+; -4.373 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.035      ;
+; -4.346 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.008      ;
+; -4.324 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.986      ;
+; -4.313 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.975      ;
+; -4.303 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.965      ;
+; -4.220 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.882      ;
+; -4.212 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.874      ;
+; -4.205 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.867      ;
+; -4.178 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.840      ;
+; -4.152 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.814      ;
+; -4.145 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.807      ;
+; -4.109 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.771      ;
 +--------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Hold: 'UART:send_data|tx_clk_tick'                                                                                                                                                                     ;
-+--------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
-; Slack  ; From Node                                    ; To Node                                     ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
-+--------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
-; 1.094  ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 1.318      ;
-; 1.703  ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 1.927      ;
-; 2.140  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 2.364      ;
-; 2.144  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 2.368      ;
-; 2.258  ; UART:send_data|TRANSMIT:transmitter|ready    ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 2.482      ;
-; 2.343  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 2.567      ;
-; 2.349  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 2.573      ;
-; 2.906  ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.130      ;
-; 3.040  ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.264      ;
-; 3.075  ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.299      ;
-; 3.321  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.545      ;
-; 3.355  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.579      ;
-; 3.357  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.581      ;
-; 3.361  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.585      ;
-; 3.361  ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.585      ;
-; 3.364  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.588      ;
-; 3.488  ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.712      ;
-; 3.540  ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.764      ;
-; 3.598  ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.822      ;
-; 3.679  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.903      ;
-; 3.833  ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 4.057      ;
-; 4.156  ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 4.380      ;
-; 10.363 ; UART:send_data|TRANSMIT:transmitter|latch[3] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -6.563     ; 3.524      ;
-; 10.404 ; UART:send_data|TRANSMIT:transmitter|latch[1] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -6.567     ; 3.561      ;
-; 10.578 ; UART:send_data|TRANSMIT:transmitter|latch[7] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -6.566     ; 3.736      ;
-; 10.614 ; UART:send_data|TRANSMIT:transmitter|latch[2] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -6.565     ; 3.773      ;
-; 10.621 ; UART:send_data|TRANSMIT:transmitter|latch[6] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -6.399     ; 3.946      ;
-; 10.855 ; UART:send_data|TRANSMIT:transmitter|latch[5] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -6.398     ; 4.181      ;
-; 10.885 ; UART:send_data|TRANSMIT:transmitter|latch[4] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -6.555     ; 4.054      ;
-; 11.132 ; UART:send_data|TRANSMIT:transmitter|latch[0] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -6.554     ; 4.302      ;
-+--------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'UART:send_data|tx_clk_tick'                                                                                                                                                                    ;
++-------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                     ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
+; 1.094 ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 1.318      ;
+; 2.096 ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 2.320      ;
+; 2.535 ; UART:send_data|TRANSMIT:transmitter|ready    ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 2.759      ;
+; 2.676 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 2.900      ;
+; 2.681 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 2.905      ;
+; 2.689 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 2.913      ;
+; 2.690 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 2.914      ;
+; 2.794 ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.018      ;
+; 2.795 ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.019      ;
+; 3.128 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.352      ;
+; 3.135 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.359      ;
+; 3.158 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.382      ;
+; 3.166 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.390      ;
+; 3.471 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.695      ;
+; 3.481 ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.705      ;
+; 3.482 ; UART:send_data|TRANSMIT:transmitter|step[0]  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.706      ;
+; 3.671 ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.895      ;
+; 3.747 ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 3.971      ;
+; 3.815 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 4.039      ;
+; 3.822 ; UART:send_data|TRANSMIT:transmitter|step[1]  ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 4.046      ;
+; 4.009 ; UART:send_data|TRANSMIT:transmitter|step[2]  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 4.233      ;
+; 4.101 ; UART:send_data|TRANSMIT:transmitter|step[3]  ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 4.325      ;
+; 8.135 ; UART:send_data|TRANSMIT:transmitter|latch[4] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -4.798     ; 3.061      ;
+; 8.669 ; UART:send_data|TRANSMIT:transmitter|latch[6] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -4.658     ; 3.735      ;
+; 9.149 ; UART:send_data|TRANSMIT:transmitter|latch[7] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -4.991     ; 3.882      ;
+; 9.247 ; UART:send_data|TRANSMIT:transmitter|latch[1] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -4.800     ; 4.171      ;
+; 9.298 ; UART:send_data|TRANSMIT:transmitter|latch[2] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -4.790     ; 4.232      ;
+; 9.407 ; UART:send_data|TRANSMIT:transmitter|latch[5] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -5.204     ; 3.927      ;
+; 9.535 ; UART:send_data|TRANSMIT:transmitter|latch[3] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -5.340     ; 3.919      ;
+; 9.807 ; UART:send_data|TRANSMIT:transmitter|latch[0] ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; -4.792     ; 4.739      ;
++-------+----------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Hold: 'CLK'                                                                                                                                     ;
-+-------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                       ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
-; 2.594 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.818      ;
-; 2.761 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.985      ;
-; 2.873 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[1]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.097      ;
-; 2.900 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[2]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.124      ;
-; 3.047 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.271      ;
-; 3.128 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.352      ;
-; 3.191 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.415      ;
-; 3.250 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.474      ;
-; 3.496 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.720      ;
-; 3.642 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.866      ;
-; 3.692 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[2]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.916      ;
-; 3.711 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.935      ;
-; 3.790 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.014      ;
-; 3.807 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.031      ;
-; 3.906 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.130      ;
-; 3.907 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.131      ;
-; 3.915 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.139      ;
-; 3.973 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.197      ;
-; 4.000 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.224      ;
-; 4.002 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.226      ;
-; 4.004 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.228      ;
-; 4.004 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.228      ;
-; 4.102 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.326      ;
-; 4.103 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.327      ;
-; 4.117 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.341      ;
-; 4.127 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.351      ;
-; 4.219 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.443      ;
-; 4.228 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.452      ;
-; 4.239 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[0]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.463      ;
-; 4.266 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.490      ;
-; 4.281 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.505      ;
-; 4.290 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.514      ;
-; 4.291 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.515      ;
-; 4.312 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.536      ;
-; 4.313 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.537      ;
-; 4.314 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.538      ;
-; 4.364 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.588      ;
-; 4.381 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.605      ;
-; 4.399 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.623      ;
-; 4.407 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.631      ;
-; 4.488 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[2]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.712      ;
-; 4.489 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[1]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.713      ;
-; 4.491 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.715      ;
-; 4.501 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.725      ;
-; 4.510 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.734      ;
-; 4.531 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.755      ;
-; 4.547 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.771      ;
-; 4.589 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.813      ;
-; 4.615 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.839      ;
-; 4.616 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.840      ;
-; 4.689 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.913      ;
-; 4.747 ; UART:send_data|tx_clk_count[11] ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.971      ;
-; 4.768 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.992      ;
-; 4.772 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.996      ;
-; 4.773 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.997      ;
-; 4.782 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.006      ;
-; 4.809 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.033      ;
-; 4.826 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.050      ;
-; 4.904 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.128      ;
-; 4.909 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.133      ;
-; 4.920 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.144      ;
-; 4.955 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.179      ;
-; 4.964 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.188      ;
-; 4.992 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.216      ;
-; 5.019 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.243      ;
-; 5.021 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.245      ;
-; 5.030 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.254      ;
-; 5.039 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.263      ;
-; 5.052 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.276      ;
-; 5.053 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.277      ;
-; 5.114 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.338      ;
-; 5.117 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.341      ;
-; 5.165 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.389      ;
-; 5.199 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.423      ;
-; 5.206 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.430      ;
-; 5.211 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.435      ;
-; 5.215 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.439      ;
-; 5.216 ; UART:send_data|tx_clk_count[7]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.440      ;
-; 5.232 ; UART:send_data|tx_clk_count[10] ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.456      ;
-; 5.235 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.459      ;
-; 5.243 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.467      ;
-; 5.244 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.468      ;
-; 5.330 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.554      ;
-; 5.333 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.557      ;
-; 5.362 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.586      ;
-; 5.363 ; UART:send_data|tx_clk_count[0]  ; UART:send_data|tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.587      ;
-; 5.370 ; UART:send_data|tx_clk_count[8]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.594      ;
-; 5.432 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.656      ;
-; 5.438 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.662      ;
-; 5.445 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.669      ;
-; 5.447 ; UART:send_data|tx_clk_count[9]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.671      ;
-; 5.450 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.674      ;
-; 5.454 ; UART:send_data|tx_clk_count[3]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.678      ;
-; 5.454 ; UART:send_data|tx_clk_count[4]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.678      ;
-; 5.454 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.678      ;
-; 5.460 ; UART:send_data|tx_clk_count[12] ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.684      ;
-; 5.463 ; UART:send_data|tx_clk_count[2]  ; UART:send_data|tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.687      ;
-; 5.527 ; UART:send_data|tx_clk_count[6]  ; UART:send_data|tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.751      ;
-; 5.527 ; UART:send_data|tx_clk_count[5]  ; UART:send_data|tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.751      ;
-; 5.538 ; UART:send_data|tx_clk_count[1]  ; UART:send_data|tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.762      ;
-+-------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK'                                                                                                                                                             ;
++-------+-------------------------------------------+---------------------------------+----------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                         ; Launch Clock               ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+---------------------------------+----------------------------+-------------+--------------+------------+------------+
+; 1.947 ; trigger                                   ; trigger                         ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 2.171      ;
+; 1.949 ; trigger                                   ; wr                              ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 2.173      ;
+; 2.340 ; UART:send_data|tx_clk_count[0]            ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 2.564      ;
+; 2.550 ; UART:send_data|tx_clk_count[2]            ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 2.774      ;
+; 2.667 ; UART:send_data|tx_clk_count[1]            ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 2.891      ;
+; 2.951 ; UART:send_data|tx_clk_count[0]            ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 3.175      ;
+; 3.132 ; UART:send_data|tx_clk_count[2]            ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 3.356      ;
+; 3.198 ; UART:send_data|tx_clk_count[9]            ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 3.422      ;
+; 3.275 ; UART:send_data|tx_clk_count[9]            ; UART:send_data|tx_clk_count[9]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 3.499      ;
+; 3.302 ; UART:send_data|tx_clk_count[1]            ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 3.526      ;
+; 3.429 ; UART:send_data|tx_clk_count[6]            ; UART:send_data|tx_clk_count[6]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 3.653      ;
+; 3.537 ; UART:send_data|tx_clk_count[7]            ; UART:send_data|tx_clk_count[7]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 3.761      ;
+; 3.661 ; UART:send_data|tx_clk_count[12]           ; UART:send_data|tx_clk_count[12] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 3.885      ;
+; 3.689 ; UART:send_data|tx_clk_count[5]            ; UART:send_data|tx_clk_count[5]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 3.913      ;
+; 3.711 ; UART:send_data|tx_clk_count[9]            ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 3.935      ;
+; 3.737 ; UART:send_data|tx_clk_count[4]            ; UART:send_data|tx_clk_count[4]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 3.961      ;
+; 3.791 ; UART:send_data|tx_clk_count[10]           ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.015      ;
+; 3.819 ; UART:send_data|TRANSMIT:transmitter|ready ; trigger                         ; UART:send_data|tx_clk_tick ; CLK         ; 0.000        ; -2.161     ; 1.882      ;
+; 3.820 ; UART:send_data|tx_clk_count[2]            ; UART:send_data|tx_clk_count[2]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.044      ;
+; 3.896 ; UART:send_data|tx_clk_count[0]            ; UART:send_data|tx_clk_count[12] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.120      ;
+; 3.897 ; UART:send_data|tx_clk_count[0]            ; UART:send_data|tx_clk_count[10] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.121      ;
+; 3.898 ; UART:send_data|tx_clk_count[0]            ; UART:send_data|tx_clk_count[4]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.122      ;
+; 3.936 ; UART:send_data|tx_clk_count[12]           ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.160      ;
+; 3.967 ; UART:send_data|tx_clk_count[8]            ; UART:send_data|tx_clk_count[8]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.191      ;
+; 3.979 ; UART:send_data|tx_clk_count[11]           ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.203      ;
+; 3.995 ; UART:send_data|tx_clk_count[6]            ; UART:send_data|tx_clk_count[7]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.219      ;
+; 4.001 ; UART:send_data|tx_clk_count[3]            ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.225      ;
+; 4.077 ; UART:send_data|tx_clk_count[2]            ; UART:send_data|tx_clk_count[12] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.301      ;
+; 4.078 ; UART:send_data|tx_clk_count[2]            ; UART:send_data|tx_clk_count[10] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.302      ;
+; 4.079 ; UART:send_data|tx_clk_count[2]            ; UART:send_data|tx_clk_count[4]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.303      ;
+; 4.094 ; UART:send_data|tx_clk_count[4]            ; UART:send_data|tx_clk_count[5]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.318      ;
+; 4.122 ; UART:send_data|tx_clk_count[11]           ; UART:send_data|tx_clk_count[11] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.346      ;
+; 4.137 ; UART:send_data|tx_clk_count[8]            ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.361      ;
+; 4.159 ; UART:send_data|tx_clk_count[5]            ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.383      ;
+; 4.180 ; UART:send_data|tx_clk_count[4]            ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.404      ;
+; 4.247 ; UART:send_data|tx_clk_count[1]            ; UART:send_data|tx_clk_count[12] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.471      ;
+; 4.248 ; UART:send_data|tx_clk_count[1]            ; UART:send_data|tx_clk_count[10] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.472      ;
+; 4.249 ; UART:send_data|tx_clk_count[1]            ; UART:send_data|tx_clk_count[4]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.473      ;
+; 4.271 ; UART:send_data|tx_clk_count[6]            ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.495      ;
+; 4.287 ; UART:send_data|tx_clk_count[0]            ; UART:send_data|tx_clk_count[0]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.511      ;
+; 4.338 ; UART:send_data|tx_clk_count[6]            ; UART:send_data|tx_clk_count[9]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.562      ;
+; 4.382 ; UART:send_data|tx_clk_count[1]            ; UART:send_data|tx_clk_count[1]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.606      ;
+; 4.389 ; UART:send_data|tx_clk_count[10]           ; UART:send_data|tx_clk_count[10] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.613      ;
+; 4.402 ; UART:send_data|tx_clk_count[10]           ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.626      ;
+; 4.411 ; UART:send_data|tx_clk_count[7]            ; UART:send_data|tx_clk_tick      ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.635      ;
+; 4.486 ; UART:send_data|tx_clk_count[6]            ; UART:send_data|tx_clk_count[8]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.710      ;
+; 4.506 ; UART:send_data|tx_clk_count[0]            ; UART:send_data|tx_clk_count[6]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.730      ;
+; 4.506 ; UART:send_data|tx_clk_count[1]            ; UART:send_data|tx_clk_count[2]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.730      ;
+; 4.527 ; UART:send_data|tx_clk_count[8]            ; UART:send_data|tx_clk_count[9]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.751      ;
+; 4.547 ; UART:send_data|tx_clk_count[12]           ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.771      ;
+; 4.551 ; UART:send_data|tx_clk_count[3]            ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.775      ;
+; 4.588 ; UART:send_data|tx_clk_count[7]            ; UART:send_data|tx_clk_count[9]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.812      ;
+; 4.590 ; UART:send_data|tx_clk_count[11]           ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.814      ;
+; 4.615 ; UART:send_data|tx_clk_count[3]            ; UART:send_data|tx_clk_count[5]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.839      ;
+; 4.650 ; UART:send_data|tx_clk_count[8]            ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.874      ;
+; 4.656 ; UART:send_data|tx_clk_count[9]            ; UART:send_data|tx_clk_count[12] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.880      ;
+; 4.657 ; UART:send_data|tx_clk_count[9]            ; UART:send_data|tx_clk_count[10] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.881      ;
+; 4.658 ; UART:send_data|tx_clk_count[9]            ; UART:send_data|tx_clk_count[4]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.882      ;
+; 4.687 ; UART:send_data|tx_clk_count[2]            ; UART:send_data|tx_clk_count[6]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.911      ;
+; 4.736 ; UART:send_data|tx_clk_count[7]            ; UART:send_data|tx_clk_count[8]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.960      ;
+; 4.741 ; UART:send_data|tx_clk_count[5]            ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.965      ;
+; 4.762 ; UART:send_data|tx_clk_count[4]            ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 4.986      ;
+; 4.784 ; UART:send_data|tx_clk_count[6]            ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.008      ;
+; 4.794 ; UART:send_data|tx_clk_count[4]            ; UART:send_data|tx_clk_count[7]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.018      ;
+; 4.811 ; UART:send_data|tx_clk_count[9]            ; UART:send_data|tx_clk_count[11] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.035      ;
+; 4.821 ; UART:send_data|tx_clk_count[1]            ; UART:send_data|tx_clk_count[5]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.045      ;
+; 4.857 ; UART:send_data|tx_clk_count[1]            ; UART:send_data|tx_clk_count[6]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.081      ;
+; 4.860 ; UART:send_data|tx_clk_count[0]            ; UART:send_data|tx_clk_count[5]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.084      ;
+; 4.881 ; UART:send_data|tx_clk_count[0]            ; UART:send_data|tx_clk_count[2]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.105      ;
+; 4.900 ; UART:send_data|tx_clk_count[2]            ; UART:send_data|tx_clk_count[5]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.124      ;
+; 4.913 ; UART:send_data|tx_clk_count[4]            ; UART:send_data|tx_clk_count[9]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.137      ;
+; 4.924 ; UART:send_data|tx_clk_count[7]            ; UART:send_data|tx_clk_count[3]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.148      ;
+; 4.966 ; UART:send_data|tx_clk_count[3]            ; UART:send_data|tx_clk_count[4]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.190      ;
+; 5.048 ; UART:send_data|tx_clk_count[4]            ; UART:send_data|tx_clk_count[6]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.272      ;
+; 5.132 ; UART:send_data|tx_clk_count[10]           ; UART:send_data|tx_clk_count[11] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.356      ;
+; 5.166 ; UART:send_data|tx_clk_count[6]            ; UART:send_data|tx_clk_count[11] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.390      ;
+; 5.173 ; UART:send_data|tx_clk_count[4]            ; UART:send_data|tx_clk_count[8]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.397      ;
+; 5.178 ; UART:send_data|tx_clk_count[5]            ; UART:send_data|tx_clk_count[7]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.402      ;
+; 5.186 ; UART:send_data|tx_clk_count[4]            ; UART:send_data|tx_clk_count[11] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.410      ;
+; 5.201 ; UART:send_data|tx_clk_count[6]            ; UART:send_data|tx_clk_count[10] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.425      ;
+; 5.244 ; UART:send_data|tx_clk_count[11]           ; UART:send_data|tx_clk_count[12] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.468      ;
+; 5.266 ; UART:send_data|tx_clk_count[9]            ; UART:send_data|tx_clk_count[6]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.490      ;
+; 5.297 ; UART:send_data|tx_clk_count[5]            ; UART:send_data|tx_clk_count[9]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.521      ;
+; 5.315 ; UART:send_data|tx_clk_count[3]            ; UART:send_data|tx_clk_count[7]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.539      ;
+; 5.347 ; UART:send_data|tx_clk_count[10]           ; UART:send_data|tx_clk_count[12] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.571      ;
+; 5.349 ; UART:send_data|tx_clk_count[10]           ; UART:send_data|tx_clk_count[4]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.573      ;
+; 5.349 ; UART:send_data|tx_clk_count[0]            ; UART:send_data|tx_clk_count[7]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.573      ;
+; 5.355 ; UART:send_data|tx_clk_count[8]            ; UART:send_data|tx_clk_count[11] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.579      ;
+; 5.390 ; UART:send_data|tx_clk_count[8]            ; UART:send_data|tx_clk_count[10] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.614      ;
+; 5.411 ; UART:send_data|tx_clk_count[6]            ; UART:send_data|tx_clk_count[12] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.635      ;
+; 5.416 ; UART:send_data|tx_clk_count[7]            ; UART:send_data|tx_clk_count[11] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.640      ;
+; 5.431 ; UART:send_data|tx_clk_count[4]            ; UART:send_data|tx_clk_count[12] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.655      ;
+; 5.432 ; UART:send_data|tx_clk_count[5]            ; UART:send_data|tx_clk_count[6]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.656      ;
+; 5.434 ; UART:send_data|tx_clk_count[3]            ; UART:send_data|tx_clk_count[9]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.658      ;
+; 5.451 ; UART:send_data|tx_clk_count[7]            ; UART:send_data|tx_clk_count[10] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.675      ;
+; 5.468 ; UART:send_data|tx_clk_count[0]            ; UART:send_data|tx_clk_count[9]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.692      ;
+; 5.493 ; UART:send_data|tx_clk_count[12]           ; UART:send_data|tx_clk_count[10] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.717      ;
+; 5.494 ; UART:send_data|tx_clk_count[12]           ; UART:send_data|tx_clk_count[4]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.718      ;
+; 5.521 ; UART:send_data|tx_clk_count[1]            ; UART:send_data|tx_clk_count[7]  ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.745      ;
+; 5.528 ; UART:send_data|tx_clk_count[3]            ; UART:send_data|tx_clk_count[12] ; CLK                        ; CLK         ; 0.000        ; 0.000      ; 5.752      ;
++-------+-------------------------------------------+---------------------------------+----------------------------+-------------+--------------+------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -457,48 +457,48 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+---------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
 ; Slack  ; From Node                                   ; To Node                                     ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
 +--------+---------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
-; -9.169 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.831      ;
-; -9.169 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.831      ;
-; -9.169 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.831      ;
-; -8.934 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.596      ;
-; -8.934 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.596      ;
-; -8.934 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.596      ;
-; -8.824 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.486      ;
-; -8.824 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.486      ;
-; -8.824 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.486      ;
-; -8.630 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.292      ;
-; -8.630 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.292      ;
-; -8.630 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.292      ;
-; -8.411 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.073      ;
-; -8.411 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.073      ;
-; -8.411 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.073      ;
-; -6.747 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|ready   ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.148      ; 12.057     ;
-; -6.747 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[3] ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.148      ; 12.057     ;
-; -6.747 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[1] ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.148      ; 12.057     ;
-; -6.247 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|ready   ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.148      ; 12.057     ;
-; -6.247 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[3] ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.148      ; 12.057     ;
-; -6.247 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[1] ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.148      ; 12.057     ;
-; -6.055 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.717      ;
-; -6.055 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.717      ;
-; -6.055 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.717      ;
-; -5.820 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.482      ;
-; -5.820 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.482      ;
-; -5.820 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.482      ;
-; -5.710 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.372      ;
-; -5.710 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.372      ;
-; -5.710 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.372      ;
-; -5.297 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 5.959      ;
-; -5.297 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 5.959      ;
-; -5.297 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 5.959      ;
-; -4.605 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 5.267      ;
-; -4.605 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 5.267      ;
-; -4.605 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 5.267      ;
-; -2.529 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[2] ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.148      ; 7.839      ;
-; -2.529 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[0] ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.148      ; 7.839      ;
-; -2.529 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.148      ; 7.839      ;
-; -2.029 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[2] ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.148      ; 7.839      ;
-; -2.029 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[0] ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.148      ; 7.839      ;
-; -2.029 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.148      ; 7.839      ;
+; -9.911 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 10.573     ;
+; -9.911 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 10.573     ;
+; -9.911 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 10.573     ;
+; -9.760 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 10.422     ;
+; -9.760 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 10.422     ;
+; -9.760 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 10.422     ;
+; -9.570 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 10.232     ;
+; -9.570 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 10.232     ;
+; -9.570 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 10.232     ;
+; -9.224 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.886      ;
+; -9.224 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.886      ;
+; -9.224 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 9.886      ;
+; -6.057 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.719      ;
+; -6.057 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.719      ;
+; -6.057 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.719      ;
+; -5.906 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.568      ;
+; -5.906 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.568      ;
+; -5.906 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.568      ;
+; -5.716 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.378      ;
+; -5.716 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.378      ;
+; -5.716 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.378      ;
+; -5.425 ; wr                                          ; UART:send_data|TRANSMIT:transmitter|step[1] ; CLK                        ; UART:send_data|tx_clk_tick ; 1.000        ; 2.161      ; 8.248      ;
+; -5.425 ; wr                                          ; UART:send_data|TRANSMIT:transmitter|step[3] ; CLK                        ; UART:send_data|tx_clk_tick ; 1.000        ; 2.161      ; 8.248      ;
+; -5.425 ; wr                                          ; UART:send_data|TRANSMIT:transmitter|ready   ; CLK                        ; UART:send_data|tx_clk_tick ; 1.000        ; 2.161      ; 8.248      ;
+; -5.370 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.032      ;
+; -5.370 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.032      ;
+; -5.370 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 1.000        ; 0.000      ; 6.032      ;
+; -5.362 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[1] ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.926      ; 11.450     ;
+; -5.362 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[3] ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.926      ; 11.450     ;
+; -5.362 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|ready   ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.926      ; 11.450     ;
+; -4.862 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[1] ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.926      ; 11.450     ;
+; -4.862 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[3] ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.926      ; 11.450     ;
+; -4.862 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|ready   ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.926      ; 11.450     ;
+; -2.848 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[0] ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.926      ; 8.936      ;
+; -2.848 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[2] ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.926      ; 8.936      ;
+; -2.848 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.500        ; 5.926      ; 8.936      ;
+; -2.711 ; wr                                          ; UART:send_data|TRANSMIT:transmitter|step[0] ; CLK                        ; UART:send_data|tx_clk_tick ; 1.000        ; 2.161      ; 5.534      ;
+; -2.711 ; wr                                          ; UART:send_data|TRANSMIT:transmitter|step[2] ; CLK                        ; UART:send_data|tx_clk_tick ; 1.000        ; 2.161      ; 5.534      ;
+; -2.711 ; wr                                          ; UART:send_data|TRANSMIT:transmitter|TX      ; CLK                        ; UART:send_data|tx_clk_tick ; 1.000        ; 2.161      ; 5.534      ;
+; -2.348 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[0] ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.926      ; 8.936      ;
+; -2.348 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[2] ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.926      ; 8.936      ;
+; -2.348 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 1.000        ; 5.926      ; 8.936      ;
 +--------+---------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
 
 
@@ -538,54 +538,54 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removal: 'UART:send_data|tx_clk_tick'                                                                                                                                                                ;
-+-------+---------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
-; Slack ; From Node                                   ; To Node                                     ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
-+-------+---------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
-; 2.467 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[2] ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.148      ; 7.839      ;
-; 2.467 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[0] ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.148      ; 7.839      ;
-; 2.467 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.148      ; 7.839      ;
-; 2.967 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[2] ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.148      ; 7.839      ;
-; 2.967 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[0] ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.148      ; 7.839      ;
-; 2.967 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.148      ; 7.839      ;
-; 5.043 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 5.267      ;
-; 5.043 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 5.267      ;
-; 5.043 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 5.267      ;
-; 5.242 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|ready   ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.148      ; 10.614     ;
-; 5.259 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[3] ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.148      ; 10.631     ;
-; 5.259 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[1] ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.148      ; 10.631     ;
-; 5.735 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 5.959      ;
-; 5.735 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 5.959      ;
-; 5.735 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 5.959      ;
-; 5.742 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|ready   ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.148      ; 10.614     ;
-; 5.759 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[3] ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.148      ; 10.631     ;
-; 5.759 ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[1] ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.148      ; 10.631     ;
-; 6.148 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.372      ;
-; 6.148 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.372      ;
-; 6.148 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.372      ;
-; 6.258 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.482      ;
-; 6.258 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.482      ;
-; 6.258 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.482      ;
-; 6.493 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.717      ;
-; 6.493 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.717      ;
-; 6.493 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.717      ;
-; 8.849 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.073      ;
-; 8.849 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.073      ;
-; 8.849 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.073      ;
-; 9.068 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.292      ;
-; 9.068 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.292      ;
-; 9.068 ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.292      ;
-; 9.262 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.486      ;
-; 9.262 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.486      ;
-; 9.262 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.486      ;
-; 9.372 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.596      ;
-; 9.372 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.596      ;
-; 9.372 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.596      ;
-; 9.607 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.831      ;
-; 9.607 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.831      ;
-; 9.607 ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.831      ;
-+-------+---------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'UART:send_data|tx_clk_tick'                                                                                                                                                                 ;
++--------+---------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node                                   ; To Node                                     ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
+; 2.786  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[0] ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.926      ; 8.936      ;
+; 2.786  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[2] ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.926      ; 8.936      ;
+; 2.786  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.926      ; 8.936      ;
+; 3.149  ; wr                                          ; UART:send_data|TRANSMIT:transmitter|step[0] ; CLK                        ; UART:send_data|tx_clk_tick ; 0.000        ; 2.161      ; 5.534      ;
+; 3.149  ; wr                                          ; UART:send_data|TRANSMIT:transmitter|step[2] ; CLK                        ; UART:send_data|tx_clk_tick ; 0.000        ; 2.161      ; 5.534      ;
+; 3.149  ; wr                                          ; UART:send_data|TRANSMIT:transmitter|TX      ; CLK                        ; UART:send_data|tx_clk_tick ; 0.000        ; 2.161      ; 5.534      ;
+; 3.286  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[0] ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.926      ; 8.936      ;
+; 3.286  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[2] ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.926      ; 8.936      ;
+; 3.286  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|TX      ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.926      ; 8.936      ;
+; 4.464  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[1] ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.926      ; 10.614     ;
+; 4.464  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[3] ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.926      ; 10.614     ;
+; 4.464  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|ready   ; RST                        ; UART:send_data|tx_clk_tick ; 0.000        ; 5.926      ; 10.614     ;
+; 4.964  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[1] ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.926      ; 10.614     ;
+; 4.964  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|step[3] ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.926      ; 10.614     ;
+; 4.964  ; RST                                         ; UART:send_data|TRANSMIT:transmitter|ready   ; RST                        ; UART:send_data|tx_clk_tick ; -0.500       ; 5.926      ; 10.614     ;
+; 5.808  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.032      ;
+; 5.808  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.032      ;
+; 5.808  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.032      ;
+; 5.863  ; wr                                          ; UART:send_data|TRANSMIT:transmitter|step[1] ; CLK                        ; UART:send_data|tx_clk_tick ; 0.000        ; 2.161      ; 8.248      ;
+; 5.863  ; wr                                          ; UART:send_data|TRANSMIT:transmitter|step[3] ; CLK                        ; UART:send_data|tx_clk_tick ; 0.000        ; 2.161      ; 8.248      ;
+; 5.863  ; wr                                          ; UART:send_data|TRANSMIT:transmitter|ready   ; CLK                        ; UART:send_data|tx_clk_tick ; 0.000        ; 2.161      ; 8.248      ;
+; 6.154  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.378      ;
+; 6.154  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.378      ;
+; 6.154  ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.378      ;
+; 6.344  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.568      ;
+; 6.344  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.568      ;
+; 6.344  ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.568      ;
+; 6.495  ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.719      ;
+; 6.495  ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.719      ;
+; 6.495  ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|TX      ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 6.719      ;
+; 9.662  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.886      ;
+; 9.662  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.886      ;
+; 9.662  ; UART:send_data|TRANSMIT:transmitter|step[0] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 9.886      ;
+; 10.008 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 10.232     ;
+; 10.008 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 10.232     ;
+; 10.008 ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 10.232     ;
+; 10.198 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 10.422     ;
+; 10.198 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 10.422     ;
+; 10.198 ; UART:send_data|TRANSMIT:transmitter|step[2] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 10.422     ;
+; 10.349 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 10.573     ;
+; 10.349 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|step[3] ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 10.573     ;
+; 10.349 ; UART:send_data|TRANSMIT:transmitter|step[1] ; UART:send_data|TRANSMIT:transmitter|ready   ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 0.000        ; 0.000      ; 10.573     ;
++--------+---------------------------------------------+---------------------------------------------+----------------------------+----------------------------+--------------+------------+------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -658,6 +658,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; UART:send_data|tx_clk_count[9]  ;
 ; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; UART:send_data|tx_clk_tick      ;
 ; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; UART:send_data|tx_clk_tick      ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; trigger                         ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; trigger                         ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; wr                              ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; wr                              ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; CLK|combout                     ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; CLK|combout                     ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; send_data|tx_clk_count[0]|clk   ;
@@ -688,6 +692,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; send_data|tx_clk_count[9]|clk   ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; send_data|tx_clk_tick|clk       ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; send_data|tx_clk_tick|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; trigger|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; trigger|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; wr|clk                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; wr|clk                          ;
 +--------+--------------+----------------+------------------+-------+------------+---------------------------------+
 
 
@@ -715,26 +723,26 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; UART:send_data|TRANSMIT:transmitter|latch[6] ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; UART:send_data|TRANSMIT:transmitter|latch[7] ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; UART:send_data|TRANSMIT:transmitter|latch[7] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[0]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[0]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[1]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[1]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[2]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[2]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[3]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[3]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[4]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[4]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[5]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[5]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[6]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[6]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[0]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[0]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[1]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[1]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[2]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[2]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[3]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[3]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[4]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[4]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[5]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[5]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[6]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[6]|datad         ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|latch[7]|datac         ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|latch[7]|datac         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|ready~0|combout        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|ready~0|combout        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|ready~0|datab          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|ready~0|datab          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|ready~1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|ready~1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; send_data|transmitter|ready~1|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; send_data|transmitter|ready~1|datad          ;
 +--------+--------------+----------------+------------------+-------+------------+----------------------------------------------+
 
 
@@ -777,15 +785,15 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; ADC[*]    ; RST        ; -1.213 ; -1.213 ; Fall       ; RST             ;
-;  ADC[0]   ; RST        ; -1.213 ; -1.213 ; Fall       ; RST             ;
-;  ADC[1]   ; RST        ; -1.868 ; -1.868 ; Fall       ; RST             ;
-;  ADC[2]   ; RST        ; -3.148 ; -3.148 ; Fall       ; RST             ;
-;  ADC[3]   ; RST        ; -2.798 ; -2.798 ; Fall       ; RST             ;
-;  ADC[4]   ; RST        ; -2.561 ; -2.561 ; Fall       ; RST             ;
-;  ADC[5]   ; RST        ; -4.066 ; -4.066 ; Fall       ; RST             ;
-;  ADC[6]   ; RST        ; -4.189 ; -4.189 ; Fall       ; RST             ;
-;  ADC[7]   ; RST        ; -3.766 ; -3.766 ; Fall       ; RST             ;
+; ADC[*]    ; RST        ; -1.698 ; -1.698 ; Fall       ; RST             ;
+;  ADC[0]   ; RST        ; -3.177 ; -3.177 ; Fall       ; RST             ;
+;  ADC[1]   ; RST        ; -2.475 ; -2.475 ; Fall       ; RST             ;
+;  ADC[2]   ; RST        ; -2.382 ; -2.382 ; Fall       ; RST             ;
+;  ADC[3]   ; RST        ; -3.219 ; -3.219 ; Fall       ; RST             ;
+;  ADC[4]   ; RST        ; -2.584 ; -2.584 ; Fall       ; RST             ;
+;  ADC[5]   ; RST        ; -2.661 ; -2.661 ; Fall       ; RST             ;
+;  ADC[6]   ; RST        ; -2.478 ; -2.478 ; Fall       ; RST             ;
+;  ADC[7]   ; RST        ; -1.698 ; -1.698 ; Fall       ; RST             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -794,15 +802,15 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; ADC[*]    ; RST        ; 5.781 ; 5.781 ; Fall       ; RST             ;
-;  ADC[0]   ; RST        ; 3.854 ; 3.854 ; Fall       ; RST             ;
-;  ADC[1]   ; RST        ; 3.720 ; 3.720 ; Fall       ; RST             ;
-;  ADC[2]   ; RST        ; 4.617 ; 4.617 ; Fall       ; RST             ;
-;  ADC[3]   ; RST        ; 4.251 ; 4.251 ; Fall       ; RST             ;
-;  ADC[4]   ; RST        ; 4.434 ; 4.434 ; Fall       ; RST             ;
-;  ADC[5]   ; RST        ; 5.499 ; 5.499 ; Fall       ; RST             ;
-;  ADC[6]   ; RST        ; 5.623 ; 5.623 ; Fall       ; RST             ;
-;  ADC[7]   ; RST        ; 5.781 ; 5.781 ; Fall       ; RST             ;
+; ADC[*]    ; RST        ; 4.894 ; 4.894 ; Fall       ; RST             ;
+;  ADC[0]   ; RST        ; 4.711 ; 4.711 ; Fall       ; RST             ;
+;  ADC[1]   ; RST        ; 4.006 ; 4.006 ; Fall       ; RST             ;
+;  ADC[2]   ; RST        ; 4.205 ; 4.205 ; Fall       ; RST             ;
+;  ADC[3]   ; RST        ; 4.894 ; 4.894 ; Fall       ; RST             ;
+;  ADC[4]   ; RST        ; 4.074 ; 4.074 ; Fall       ; RST             ;
+;  ADC[5]   ; RST        ; 4.688 ; 4.688 ; Fall       ; RST             ;
+;  ADC[6]   ; RST        ; 4.301 ; 4.301 ; Fall       ; RST             ;
+;  ADC[7]   ; RST        ; 3.892 ; 3.892 ; Fall       ; RST             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -811,7 +819,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------+----------------------------+--------+--------+------------+----------------------------+
 ; Data Port ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
 +-----------+----------------------------+--------+--------+------------+----------------------------+
-; TX        ; UART:send_data|tx_clk_tick ; 10.987 ; 10.987 ; Rise       ; UART:send_data|tx_clk_tick ;
+; OWR       ; CLK                        ; 8.591  ; 8.591  ; Rise       ; CLK                        ;
+; OTXRDY    ; UART:send_data|tx_clk_tick ; 10.710 ; 10.710 ; Rise       ; UART:send_data|tx_clk_tick ;
+; TX        ; UART:send_data|tx_clk_tick ; 12.451 ; 12.451 ; Rise       ; UART:send_data|tx_clk_tick ;
 +-----------+----------------------------+--------+--------+------------+----------------------------+
 
 
@@ -820,72 +830,42 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------+----------------------------+--------+--------+------------+----------------------------+
 ; Data Port ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
 +-----------+----------------------------+--------+--------+------------+----------------------------+
-; TX        ; UART:send_data|tx_clk_tick ; 10.987 ; 10.987 ; Rise       ; UART:send_data|tx_clk_tick ;
+; OWR       ; CLK                        ; 8.591  ; 8.591  ; Rise       ; CLK                        ;
+; OTXRDY    ; UART:send_data|tx_clk_tick ; 10.710 ; 10.710 ; Rise       ; UART:send_data|tx_clk_tick ;
+; TX        ; UART:send_data|tx_clk_tick ; 12.451 ; 12.451 ; Rise       ; UART:send_data|tx_clk_tick ;
 +-----------+----------------------------+--------+--------+------------+----------------------------+
 
 
-+------------------------------------------------------+
-; Propagation Delay                                    ;
-+------------+-------------+--------+----+----+--------+
-; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
-+------------+-------------+--------+----+----+--------+
-; ADC[0]     ; BIN         ; 18.032 ;    ;    ; 18.032 ;
-; ADC[0]     ; DATA[0]     ; 9.565  ;    ;    ; 9.565  ;
-; ADC[1]     ; BIN         ; 17.355 ;    ;    ; 17.355 ;
-; ADC[1]     ; DATA[1]     ; 9.591  ;    ;    ; 9.591  ;
-; ADC[2]     ; BIN         ; 16.644 ;    ;    ; 16.644 ;
-; ADC[2]     ; DATA[2]     ; 9.003  ;    ;    ; 9.003  ;
-; ADC[3]     ; BIN         ; 16.862 ;    ;    ; 16.862 ;
-; ADC[3]     ; DATA[3]     ; 9.130  ;    ;    ; 9.130  ;
-; ADC[4]     ; BIN         ; 16.462 ;    ;    ; 16.462 ;
-; ADC[4]     ; DATA[4]     ; 9.018  ;    ;    ; 9.018  ;
-; ADC[5]     ; BIN         ; 15.841 ;    ;    ; 15.841 ;
-; ADC[5]     ; DATA[5]     ; 9.010  ;    ;    ; 9.010  ;
-; ADC[6]     ; BIN         ; 12.993 ;    ;    ; 12.993 ;
-; ADC[6]     ; DATA[6]     ; 8.989  ;    ;    ; 8.989  ;
-; ADC[7]     ; BIN         ; 12.195 ;    ;    ; 12.195 ;
-; ADC[7]     ; DATA[7]     ; 8.991  ;    ;    ; 8.991  ;
-; THR[0]     ; BIN         ; 15.738 ;    ;    ; 15.738 ;
-; THR[1]     ; BIN         ; 15.882 ;    ;    ; 15.882 ;
-; THR[2]     ; BIN         ; 16.006 ;    ;    ; 16.006 ;
-; THR[3]     ; BIN         ; 15.647 ;    ;    ; 15.647 ;
-; THR[4]     ; BIN         ; 16.294 ;    ;    ; 16.294 ;
-; THR[5]     ; BIN         ; 14.927 ;    ;    ; 14.927 ;
-; THR[6]     ; BIN         ; 13.333 ;    ;    ; 13.333 ;
-; THR[7]     ; BIN         ; 12.424 ;    ;    ; 12.424 ;
-+------------+-------------+--------+----+----+--------+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; ADC[0]     ; DATA[0]     ; 8.450 ;    ;    ; 8.450 ;
+; ADC[1]     ; DATA[1]     ; 8.843 ;    ;    ; 8.843 ;
+; ADC[2]     ; DATA[2]     ; 8.833 ;    ;    ; 8.833 ;
+; ADC[3]     ; DATA[3]     ; 8.888 ;    ;    ; 8.888 ;
+; ADC[4]     ; DATA[4]     ; 8.863 ;    ;    ; 8.863 ;
+; ADC[5]     ; DATA[5]     ; 9.354 ;    ;    ; 9.354 ;
+; ADC[6]     ; DATA[6]     ; 8.838 ;    ;    ; 8.838 ;
+; ADC[7]     ; DATA[7]     ; 9.358 ;    ;    ; 9.358 ;
++------------+-------------+-------+----+----+-------+
 
 
-+------------------------------------------------------+
-; Minimum Propagation Delay                            ;
-+------------+-------------+--------+----+----+--------+
-; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
-+------------+-------------+--------+----+----+--------+
-; ADC[0]     ; BIN         ; 14.854 ;    ;    ; 14.854 ;
-; ADC[0]     ; DATA[0]     ; 9.565  ;    ;    ; 9.565  ;
-; ADC[1]     ; BIN         ; 13.949 ;    ;    ; 13.949 ;
-; ADC[1]     ; DATA[1]     ; 9.591  ;    ;    ; 9.591  ;
-; ADC[2]     ; BIN         ; 13.907 ;    ;    ; 13.907 ;
-; ADC[2]     ; DATA[2]     ; 9.003  ;    ;    ; 9.003  ;
-; ADC[3]     ; BIN         ; 14.342 ;    ;    ; 14.342 ;
-; ADC[3]     ; DATA[3]     ; 9.130  ;    ;    ; 9.130  ;
-; ADC[4]     ; BIN         ; 13.980 ;    ;    ; 13.980 ;
-; ADC[4]     ; DATA[4]     ; 9.018  ;    ;    ; 9.018  ;
-; ADC[5]     ; BIN         ; 14.291 ;    ;    ; 14.291 ;
-; ADC[5]     ; DATA[5]     ; 9.010  ;    ;    ; 9.010  ;
-; ADC[6]     ; BIN         ; 12.492 ;    ;    ; 12.492 ;
-; ADC[6]     ; DATA[6]     ; 8.989  ;    ;    ; 8.989  ;
-; ADC[7]     ; BIN         ; 12.195 ;    ;    ; 12.195 ;
-; ADC[7]     ; DATA[7]     ; 8.991  ;    ;    ; 8.991  ;
-; THR[0]     ; BIN         ; 12.503 ;    ;    ; 12.503 ;
-; THR[1]     ; BIN         ; 12.419 ;    ;    ; 12.419 ;
-; THR[2]     ; BIN         ; 13.212 ;    ;    ; 13.212 ;
-; THR[3]     ; BIN         ; 13.152 ;    ;    ; 13.152 ;
-; THR[4]     ; BIN         ; 13.812 ;    ;    ; 13.812 ;
-; THR[5]     ; BIN         ; 13.434 ;    ;    ; 13.434 ;
-; THR[6]     ; BIN         ; 12.775 ;    ;    ; 12.775 ;
-; THR[7]     ; BIN         ; 12.424 ;    ;    ; 12.424 ;
-+------------+-------------+--------+----+----+--------+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; ADC[0]     ; DATA[0]     ; 8.450 ;    ;    ; 8.450 ;
+; ADC[1]     ; DATA[1]     ; 8.843 ;    ;    ; 8.843 ;
+; ADC[2]     ; DATA[2]     ; 8.833 ;    ;    ; 8.833 ;
+; ADC[3]     ; DATA[3]     ; 8.888 ;    ;    ; 8.888 ;
+; ADC[4]     ; DATA[4]     ; 8.863 ;    ;    ; 8.863 ;
+; ADC[5]     ; DATA[5]     ; 9.354 ;    ;    ; 9.354 ;
+; ADC[6]     ; DATA[6]     ; 8.838 ;    ;    ; 8.838 ;
+; ADC[7]     ; DATA[7]     ; 9.358 ;    ;    ; 9.358 ;
++------------+-------------+-------+----+----+-------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -893,7 +873,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------+----------------------------+----------+----------+----------+----------+
 ; From Clock                 ; To Clock                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------+----------------------------+----------+----------+----------+----------+
-; CLK                        ; CLK                        ; 226      ; 0        ; 0        ; 0        ;
+; CLK                        ; CLK                        ; 228      ; 0        ; 0        ; 0        ;
+; UART:send_data|tx_clk_tick ; CLK                        ; 1        ; 0        ; 0        ; 0        ;
 ; RST                        ; UART:send_data|tx_clk_tick ; 0        ; 8        ; 0        ; 0        ;
 ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 38       ; 0        ; 0        ; 0        ;
 +----------------------------+----------------------------+----------+----------+----------+----------+
@@ -905,7 +886,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +----------------------------+----------------------------+----------+----------+----------+----------+
 ; From Clock                 ; To Clock                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------+----------------------------+----------+----------+----------+----------+
-; CLK                        ; CLK                        ; 226      ; 0        ; 0        ; 0        ;
+; CLK                        ; CLK                        ; 228      ; 0        ; 0        ; 0        ;
+; UART:send_data|tx_clk_tick ; CLK                        ; 1        ; 0        ; 0        ; 0        ;
 ; RST                        ; UART:send_data|tx_clk_tick ; 0        ; 8        ; 0        ; 0        ;
 ; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 38       ; 0        ; 0        ; 0        ;
 +----------------------------+----------------------------+----------+----------+----------+----------+
@@ -918,8 +900,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock                 ; To Clock                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------+----------------------------+----------+----------+----------+----------+
 ; RST                        ; CLK                        ; 14       ; 14       ; 0        ; 0        ;
+; CLK                        ; UART:send_data|tx_clk_tick ; 6        ; 0        ; 0        ; 0        ;
 ; RST                        ; UART:send_data|tx_clk_tick ; 9        ; 9        ; 0        ; 0        ;
-; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 30       ; 0        ; 0        ; 0        ;
+; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 24       ; 0        ; 0        ; 0        ;
 +----------------------------+----------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -930,8 +913,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock                 ; To Clock                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------+----------------------------+----------+----------+----------+----------+
 ; RST                        ; CLK                        ; 14       ; 14       ; 0        ; 0        ;
+; CLK                        ; UART:send_data|tx_clk_tick ; 6        ; 0        ; 0        ; 0        ;
 ; RST                        ; UART:send_data|tx_clk_tick ; 9        ; 9        ; 0        ; 0        ;
-; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 30       ; 0        ; 0        ; 0        ;
+; UART:send_data|tx_clk_tick ; UART:send_data|tx_clk_tick ; 24       ; 0        ; 0        ; 0        ;
 +----------------------------+----------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -955,10 +939,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 16    ; 16   ;
-; Unconstrained Input Port Paths  ; 32    ; 32   ;
-; Unconstrained Output Ports      ; 10    ; 10   ;
-; Unconstrained Output Port Paths ; 25    ; 25   ;
+; Unconstrained Input Ports       ; 8     ; 8    ;
+; Unconstrained Input Port Paths  ; 16    ; 16   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 11    ; 11   ;
 +---------------------------------+-------+------+
 
 
@@ -968,7 +952,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Mar 24 18:14:47 2014
+    Info: Processing started: Mon Mar 24 21:01:51 2014
 Info: Command: quartus_sta ADC -c ADC
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -976,7 +960,7 @@ Info (21077): Low junction temperature is -40 degrees C
 Info (21077): High junction temperature is 125 degrees C
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Warning (335093): TimeQuest Timing Analyzer is analyzing 8 combinational loops as latches.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 9 combinational loops as latches.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'ADC.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
@@ -985,25 +969,25 @@ Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name RST RST
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -10.694
+Info (332146): Worst-case setup slack is -9.369
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.694             -26.566 UART:send_data|tx_clk_tick 
-    Info (332119):    -6.164             -69.838 CLK 
+    Info (332119):    -9.369             -25.129 UART:send_data|tx_clk_tick 
+    Info (332119):    -6.075             -77.190 CLK 
 Info (332146): Worst-case hold slack is 1.094
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.094               0.000 UART:send_data|tx_clk_tick 
-    Info (332119):     2.594               0.000 CLK 
-Info (332146): Worst-case recovery slack is -9.169
+    Info (332119):     1.947               0.000 CLK 
+Info (332146): Worst-case recovery slack is -9.911
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.169             -45.672 UART:send_data|tx_clk_tick 
+    Info (332119):    -9.911             -47.904 UART:send_data|tx_clk_tick 
     Info (332119):    -5.584             -78.176 CLK 
-Info (332146): Worst-case removal slack is 2.467
+Info (332146): Worst-case removal slack is 2.786
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     2.467               0.000 UART:send_data|tx_clk_tick 
+    Info (332119):     2.786               0.000 UART:send_data|tx_clk_tick 
     Info (332119):     5.522               0.000 CLK 
 Info (332146): Worst-case minimum pulse width slack is -2.289
     Info (332119):     Slack       End Point TNS Clock 
@@ -1015,9 +999,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 540 megabytes
-    Info: Processing ended: Mon Mar 24 18:14:49 2014
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 541 megabytes
+    Info: Processing ended: Mon Mar 24 21:01:52 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UART
-Mon Mar 10 15:14:54 2014
+Mon Mar 24 19:56:38 2014
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -18,8 +18,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  10. Inverted Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
  12. Parameter Settings for User Entity Instance: Top-level Entity: |UART
- 13. Port Connectivity Checks: "TRANSMIT:transmitter"
- 14. Analysis & Synthesis Messages
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -45,13 +44,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-----------------------------+--------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Mar 10 15:14:54 2014      ;
+; Analysis & Synthesis Status ; Successful - Mon Mar 24 19:56:38 2014      ;
 ; Quartus II 64-Bit Version   ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name               ; UART                                       ;
 ; Top-level Entity Name       ; UART                                       ;
 ; Family                      ; MAX V                                      ;
-; Total logic elements        ; 43                                         ;
-; Total pins                  ; 5                                          ;
+; Total logic elements        ; 57                                         ;
+; Total pins                  ; 13                                         ;
 ; Total virtual pins          ; 0                                          ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                              ;
 +-----------------------------+--------------------------------------------+
@@ -156,20 +155,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 43    ;
-;     -- Combinational with no register       ; 23    ;
+; Total logic elements                        ; 57    ;
+;     -- Combinational with no register       ; 37    ;
 ;     -- Register only                        ; 10    ;
 ;     -- Combinational with a register        ; 10    ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 10    ;
-;     -- 3 input functions                    ; 2     ;
-;     -- 2 input functions                    ; 20    ;
+;     -- 4 input functions                    ; 15    ;
+;     -- 3 input functions                    ; 12    ;
+;     -- 2 input functions                    ; 19    ;
 ;     -- 1 input functions                    ; 1     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 31    ;
+;     -- normal mode                          ; 45    ;
 ;     -- arithmetic mode                      ; 12    ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
@@ -178,11 +177,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;       ;
 ; Total registers                             ; 20    ;
 ; Total logic cells in carry chains           ; 13    ;
-; I/O pins                                    ; 5     ;
+; I/O pins                                    ; 13    ;
 ; Maximum fan-out node                        ; RST   ;
 ; Maximum fan-out                             ; 19    ;
-; Total fan-out                               ; 142   ;
-; Average fan-out                             ; 2.96  ;
+; Total fan-out                               ; 190   ;
+; Average fan-out                             ; 2.71  ;
 +---------------------------------------------+-------+
 
 
@@ -191,20 +190,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name        ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------+--------------+
-; |UART                      ; 43 (31)     ; 20           ; 0          ; 5    ; 0            ; 23 (17)      ; 10 (9)            ; 10 (5)           ; 13 (13)         ; 0 (0)      ; |UART                      ; work         ;
-;    |TRANSMIT:transmitter|  ; 12 (12)     ; 6            ; 0          ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UART|TRANSMIT:transmitter ; work         ;
+; |UART                      ; 57 (31)     ; 20           ; 0          ; 13   ; 0            ; 37 (17)      ; 10 (9)            ; 10 (5)           ; 13 (13)         ; 0 (0)      ; |UART                      ; work         ;
+;    |TRANSMIT:transmitter|  ; 26 (26)     ; 6            ; 0          ; 0    ; 0            ; 20 (20)      ; 1 (1)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UART|TRANSMIT:transmitter ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; TRANSMIT:transmitter|trigger                       ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 1  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
++----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                      ;
++----------------------------------------------------+----------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal        ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------+------------------------+
+; TRANSMIT:transmitter|latch[5]                      ; TRANSMIT:transmitter|ready ; yes                    ;
+; TRANSMIT:transmitter|latch[7]                      ; TRANSMIT:transmitter|ready ; yes                    ;
+; TRANSMIT:transmitter|latch[6]                      ; TRANSMIT:transmitter|ready ; yes                    ;
+; TRANSMIT:transmitter|latch[4]                      ; TRANSMIT:transmitter|ready ; yes                    ;
+; TRANSMIT:transmitter|latch[1]                      ; TRANSMIT:transmitter|ready ; yes                    ;
+; TRANSMIT:transmitter|latch[3]                      ; TRANSMIT:transmitter|ready ; yes                    ;
+; TRANSMIT:transmitter|latch[2]                      ; TRANSMIT:transmitter|ready ; yes                    ;
+; TRANSMIT:transmitter|latch[0]                      ; TRANSMIT:transmitter|ready ; yes                    ;
+; TRANSMIT:transmitter|trigger                       ; GND                        ; yes                    ;
+; Number of user-specified and inferred latches = 9  ;                            ;                        ;
++----------------------------------------------------+----------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -253,26 +260,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------+
-; Port Connectivity Checks: "TRANSMIT:transmitter" ;
-+------------+-------+----------+------------------+
-; Port       ; Type  ; Severity ; Details          ;
-+------------+-------+----------+------------------+
-; data[5..2] ; Input ; Info     ; Stuck at GND     ;
-; data[7]    ; Input ; Info     ; Stuck at GND     ;
-; data[6]    ; Input ; Info     ; Stuck at VCC     ;
-; data[1]    ; Input ; Info     ; Stuck at VCC     ;
-; data[0]    ; Input ; Info     ; Stuck at GND     ;
-+------------+-------+----------+------------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Mar 10 15:14:51 2014
+    Info: Processing started: Mon Mar 24 19:56:36 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UART -c UART
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file TRANSMIT.vhd
@@ -298,14 +292,14 @@ Info (10041): Inferred latch for "latch[6]" at TRANSMIT.vhd(31)
 Info (10041): Inferred latch for "latch[7]" at TRANSMIT.vhd(31)
 Info (10041): Inferred latch for "trigger" at TRANSMIT.vhd(22)
 Info (18000): Registers with preset signals will power-up high
-Info (21057): Implemented 48 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+Info (21057): Implemented 70 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
     Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 43 logic cells
+    Info (21061): Implemented 57 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 658 megabytes
-    Info: Processing ended: Mon Mar 10 15:14:54 2014
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 663 megabytes
+    Info: Processing ended: Mon Mar 24 19:56:38 2014
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

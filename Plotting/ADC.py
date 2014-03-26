@@ -6,13 +6,14 @@ ser = serial.Serial('/dev/ttyUSB0', 9600)
 plt.ion() # set plot to animated
  
 ydata = [0]*1000
- 
+
 # make plot
 line, = plt.plot(ydata)
 plt.ylim([0,255])
  
 # start data collection
-while True:  
+while True:
+    ser.flushInput()
     data = ser.read(size=1)
     ydata.append(ord(data))
     del ydata[0]

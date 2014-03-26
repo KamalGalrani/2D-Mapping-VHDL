@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "03/24/2014 18:14:57"
+-- DATE "03/24/2014 21:01:57"
 
 -- 
 -- Device: Altera 5M1270ZT144A5 Package TQFP144
@@ -38,15 +38,16 @@ ENTITY 	ADC IS
 	TX : OUT std_logic;
 	RST : IN std_logic;
 	ADC : IN IEEE.NUMERIC_STD.unsigned(7 DOWNTO 0);
-	THR : IN IEEE.NUMERIC_STD.unsigned(7 DOWNTO 0);
-	BIN : OUT std_logic;
+	OWR : OUT std_logic;
+	OTXRDY : OUT std_logic;
 	DATA : OUT IEEE.NUMERIC_STD.unsigned(7 DOWNTO 0)
 	);
 END ADC;
 
 -- Design Ports Information
 -- TX	=>  Location: PIN_1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- BIN	=>  Location: PIN_60,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- OWR	=>  Location: PIN_62,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- OTXRDY	=>  Location: PIN_63,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 -- DATA[0]	=>  Location: PIN_58,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 -- DATA[1]	=>  Location: PIN_57,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 -- DATA[2]	=>  Location: PIN_55,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
@@ -55,23 +56,15 @@ END ADC;
 -- DATA[5]	=>  Location: PIN_51,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 -- DATA[6]	=>  Location: PIN_50,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 -- DATA[7]	=>  Location: PIN_49,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ADC[0]	=>  Location: PIN_109,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- ADC[1]	=>  Location: PIN_111,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- ADC[2]	=>  Location: PIN_113,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- ADC[3]	=>  Location: PIN_117,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- ADC[4]	=>  Location: PIN_119,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- ADC[5]	=>  Location: PIN_121,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- ADC[6]	=>  Location: PIN_123,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- ADC[7]	=>  Location: PIN_125,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- ADC[0]	=>  Location: PIN_48,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- ADC[1]	=>  Location: PIN_45,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- ADC[2]	=>  Location: PIN_44,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- ADC[3]	=>  Location: PIN_43,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- ADC[4]	=>  Location: PIN_42,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- ADC[5]	=>  Location: PIN_41,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- ADC[6]	=>  Location: PIN_40,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- ADC[7]	=>  Location: PIN_39,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- RST	=>  Location: PIN_2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- THR[0]	=>  Location: PIN_48,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- THR[1]	=>  Location: PIN_45,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- THR[2]	=>  Location: PIN_44,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- THR[3]	=>  Location: PIN_43,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- THR[4]	=>  Location: PIN_42,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- THR[5]	=>  Location: PIN_41,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- THR[6]	=>  Location: PIN_40,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- THR[7]	=>  Location: PIN_39,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- CLK	=>  Location: PIN_89,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 
 
@@ -89,8 +82,8 @@ SIGNAL ww_CLK : std_logic;
 SIGNAL ww_TX : std_logic;
 SIGNAL ww_RST : std_logic;
 SIGNAL ww_ADC : std_logic_vector(7 DOWNTO 0);
-SIGNAL ww_THR : std_logic_vector(7 DOWNTO 0);
-SIGNAL ww_BIN : std_logic;
+SIGNAL ww_OWR : std_logic;
+SIGNAL ww_OTXRDY : std_logic;
 SIGNAL ww_DATA : std_logic_vector(7 DOWNTO 0);
 SIGNAL \CLK~combout\ : std_logic;
 SIGNAL \send_data|Add0~42\ : std_logic;
@@ -100,13 +93,10 @@ SIGNAL \RST~combout\ : std_logic;
 SIGNAL \send_data|Add0~52\ : std_logic;
 SIGNAL \send_data|Add0~52COUT1_78\ : std_logic;
 SIGNAL \send_data|Add0~60_combout\ : std_logic;
-SIGNAL \send_data|Add0~62\ : std_logic;
-SIGNAL \send_data|Add0~62COUT1_80\ : std_logic;
-SIGNAL \send_data|Add0~45_combout\ : std_logic;
-SIGNAL \send_data|Add0~47\ : std_logic;
-SIGNAL \send_data|Add0~47COUT1_82\ : std_logic;
-SIGNAL \send_data|Add0~55_combout\ : std_logic;
-SIGNAL \send_data|Add0~57\ : std_logic;
+SIGNAL \send_data|Equal0~2\ : std_logic;
+SIGNAL \send_data|Add0~0_combout\ : std_logic;
+SIGNAL \send_data|Add0~15_combout\ : std_logic;
+SIGNAL \send_data|Equal0~0\ : std_logic;
 SIGNAL \send_data|Add0~20_combout\ : std_logic;
 SIGNAL \send_data|Add0~22\ : std_logic;
 SIGNAL \send_data|Add0~22COUT1_84\ : std_logic;
@@ -118,61 +108,42 @@ SIGNAL \send_data|Add0~32\ : std_logic;
 SIGNAL \send_data|Add0~32COUT1_88\ : std_logic;
 SIGNAL \send_data|Add0~25_combout\ : std_logic;
 SIGNAL \send_data|Equal0~1\ : std_logic;
-SIGNAL \send_data|Add0~0_combout\ : std_logic;
-SIGNAL \send_data|Add0~17\ : std_logic;
-SIGNAL \send_data|Add0~17COUT1_92\ : std_logic;
-SIGNAL \send_data|Add0~5_combout\ : std_logic;
-SIGNAL \send_data|Equal0~0\ : std_logic;
-SIGNAL \send_data|Equal0~2\ : std_logic;
 SIGNAL \send_data|Equal0~3\ : std_logic;
+SIGNAL \send_data|Add0~62\ : std_logic;
+SIGNAL \send_data|Add0~62COUT1_80\ : std_logic;
+SIGNAL \send_data|Add0~45_combout\ : std_logic;
+SIGNAL \send_data|Add0~47\ : std_logic;
+SIGNAL \send_data|Add0~47COUT1_82\ : std_logic;
+SIGNAL \send_data|Add0~55_combout\ : std_logic;
+SIGNAL \send_data|Add0~57\ : std_logic;
 SIGNAL \send_data|Add0~27\ : std_logic;
 SIGNAL \send_data|Add0~27COUT1_90\ : std_logic;
 SIGNAL \send_data|Add0~10_combout\ : std_logic;
 SIGNAL \send_data|Add0~12\ : std_logic;
-SIGNAL \send_data|Add0~15_combout\ : std_logic;
+SIGNAL \send_data|Add0~17\ : std_logic;
+SIGNAL \send_data|Add0~17COUT1_92\ : std_logic;
+SIGNAL \send_data|Add0~5_combout\ : std_logic;
 SIGNAL \send_data|Add0~2\ : std_logic;
 SIGNAL \send_data|Add0~40_combout\ : std_logic;
 SIGNAL \send_data|tx_clk_tick~regout\ : std_logic;
+SIGNAL \send_data|transmitter|ready~1_combout\ : std_logic;
 SIGNAL \send_data|transmitter|ready~regout\ : std_logic;
-SIGNAL \send_data|transmitter|ready~0_combout\ : std_logic;
+SIGNAL \trigger~regout\ : std_logic;
+SIGNAL \wr~regout\ : std_logic;
+SIGNAL \send_data|transmitter|trigger~combout\ : std_logic;
 SIGNAL \send_data|transmitter|TX~4_combout\ : std_logic;
 SIGNAL \send_data|transmitter|Equal2~0_combout\ : std_logic;
+SIGNAL \send_data|transmitter|TX~0_combout\ : std_logic;
 SIGNAL \send_data|transmitter|Mux0~0_combout\ : std_logic;
 SIGNAL \send_data|transmitter|Mux0~1_combout\ : std_logic;
-SIGNAL \send_data|transmitter|TX~0_combout\ : std_logic;
 SIGNAL \send_data|transmitter|TX~1_combout\ : std_logic;
 SIGNAL \send_data|transmitter|Mux0~2_combout\ : std_logic;
 SIGNAL \send_data|transmitter|Mux0~3_combout\ : std_logic;
 SIGNAL \send_data|transmitter|TX~2_combout\ : std_logic;
 SIGNAL \send_data|transmitter|TX~regout\ : std_logic;
-SIGNAL \err[0]~2\ : std_logic;
-SIGNAL \err[0]~2COUT1_48\ : std_logic;
-SIGNAL \err[1]~7\ : std_logic;
-SIGNAL \err[1]~7COUT1_50\ : std_logic;
-SIGNAL \err[2]~12\ : std_logic;
-SIGNAL \err[2]~12COUT1_52\ : std_logic;
-SIGNAL \err[3]~17\ : std_logic;
-SIGNAL \err[3]~17COUT1_54\ : std_logic;
-SIGNAL \err[4]~22\ : std_logic;
-SIGNAL \err[5]~27\ : std_logic;
-SIGNAL \err[5]~27COUT1_56\ : std_logic;
-SIGNAL \err[6]~30_combout\ : std_logic;
-SIGNAL \err[5]~25_combout\ : std_logic;
-SIGNAL \err[4]~20_combout\ : std_logic;
-SIGNAL \LessThan0~1_combout\ : std_logic;
-SIGNAL \err[6]~32\ : std_logic;
-SIGNAL \err[6]~32COUT1_58\ : std_logic;
-SIGNAL \err[7]~35_combout\ : std_logic;
-SIGNAL \err[3]~15_combout\ : std_logic;
-SIGNAL \err[2]~10_combout\ : std_logic;
-SIGNAL \err[0]~0_combout\ : std_logic;
-SIGNAL \err[1]~5_combout\ : std_logic;
-SIGNAL \LessThan0~0_combout\ : std_logic;
-SIGNAL \LessThan0~2_combout\ : std_logic;
-SIGNAL \ADC~combout\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \send_data|transmitter|latch\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \send_data|transmitter|step\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \THR~combout\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \ADC~combout\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \send_data|tx_clk_count\ : std_logic_vector(12 DOWNTO 0);
 SIGNAL \send_data|transmitter|ALT_INV_TX~regout\ : std_logic;
 
@@ -182,8 +153,8 @@ ww_CLK <= CLK;
 TX <= ww_TX;
 ww_RST <= RST;
 ww_ADC <= IEEE.STD_LOGIC_1164.STD_LOGIC_VECTOR(ADC);
-ww_THR <= IEEE.STD_LOGIC_1164.STD_LOGIC_VECTOR(THR);
-BIN <= ww_BIN;
+OWR <= ww_OWR;
+OTXRDY <= ww_OTXRDY;
 DATA <= IEEE.NUMERIC_STD.UNSIGNED(ww_DATA);
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
@@ -201,7 +172,7 @@ PORT MAP (
 	padio => ww_CLK,
 	combout => \CLK~combout\);
 
--- Location: LC_X10_Y4_N5
+-- Location: LC_X8_Y4_N5
 \send_data|Add0~40\ : maxv_lcell
 -- Equation(s):
 -- \send_data|Add0~40_combout\ = (\send_data|tx_clk_count\(1) $ ((\send_data|Add0~2\)))
@@ -227,19 +198,19 @@ PORT MAP (
 	cout0 => \send_data|Add0~42\,
 	cout1 => \send_data|Add0~42COUT1_76\);
 
--- Location: LC_X10_Y4_N6
+-- Location: LC_X8_Y4_N6
 \send_data|Add0~50\ : maxv_lcell
 -- Equation(s):
--- \send_data|Add0~50_combout\ = (\send_data|tx_clk_count\(2) $ ((!(!\send_data|Add0~2\ & \send_data|Add0~42\) # (\send_data|Add0~2\ & \send_data|Add0~42COUT1_76\))))
--- \send_data|Add0~52\ = CARRY(((\send_data|tx_clk_count\(2) & !\send_data|Add0~42\)))
--- \send_data|Add0~52COUT1_78\ = CARRY(((\send_data|tx_clk_count\(2) & !\send_data|Add0~42COUT1_76\)))
+-- \send_data|Add0~50_combout\ = \send_data|tx_clk_count\(2) $ ((((!(!\send_data|Add0~2\ & \send_data|Add0~42\) # (\send_data|Add0~2\ & \send_data|Add0~42COUT1_76\)))))
+-- \send_data|Add0~52\ = CARRY((\send_data|tx_clk_count\(2) & ((!\send_data|Add0~42\))))
+-- \send_data|Add0~52COUT1_78\ = CARRY((\send_data|tx_clk_count\(2) & ((!\send_data|Add0~42COUT1_76\))))
 
 -- pragma translate_off
 GENERIC MAP (
 	cin0_used => "true",
 	cin1_used => "true",
 	cin_used => "true",
-	lut_mask => "c30c",
+	lut_mask => "a50a",
 	operation_mode => "arithmetic",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -247,7 +218,7 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \send_data|tx_clk_count\(2),
+	dataa => \send_data|tx_clk_count\(2),
 	cin => \send_data|Add0~2\,
 	cin0 => \send_data|Add0~42\,
 	cin1 => \send_data|Add0~42COUT1_76\,
@@ -268,10 +239,10 @@ PORT MAP (
 	padio => ww_RST,
 	combout => \RST~combout\);
 
--- Location: LC_X10_Y4_N1
+-- Location: LC_X7_Y4_N9
 \send_data|tx_clk_count[2]\ : maxv_lcell
 -- Equation(s):
--- \send_data|Equal0~2\ = (\send_data|tx_clk_count\(4) & (!\send_data|tx_clk_count\(5) & (B1_tx_clk_count[2] & !\send_data|tx_clk_count\(3))))
+-- \send_data|Equal0~2\ = (\send_data|tx_clk_count\(4) & (!\send_data|tx_clk_count\(3) & (B1_tx_clk_count[2] & !\send_data|tx_clk_count\(5))))
 -- \send_data|tx_clk_count\(2) = DFFEAS(\send_data|Equal0~2\, GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , \send_data|Add0~50_combout\, , , VCC)
 
 -- pragma translate_off
@@ -286,9 +257,9 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~combout\,
 	dataa => \send_data|tx_clk_count\(4),
-	datab => \send_data|tx_clk_count\(5),
+	datab => \send_data|tx_clk_count\(3),
 	datac => \send_data|Add0~50_combout\,
-	datad => \send_data|tx_clk_count\(3),
+	datad => \send_data|tx_clk_count\(5),
 	aclr => \RST~combout\,
 	sload => VCC,
 	devclrn => ww_devclrn,
@@ -296,7 +267,7 @@ PORT MAP (
 	combout => \send_data|Equal0~2\,
 	regout => \send_data|tx_clk_count\(2));
 
--- Location: LC_X10_Y4_N7
+-- Location: LC_X8_Y4_N7
 \send_data|Add0~60\ : maxv_lcell
 -- Equation(s):
 -- \send_data|Add0~60_combout\ = (\send_data|tx_clk_count\(3) $ (((!\send_data|Add0~2\ & \send_data|Add0~52\) # (\send_data|Add0~2\ & \send_data|Add0~52COUT1_78\))))
@@ -326,42 +297,39 @@ PORT MAP (
 	cout0 => \send_data|Add0~62\,
 	cout1 => \send_data|Add0~62COUT1_80\);
 
--- Location: LC_X11_Y4_N8
-\send_data|tx_clk_count[3]\ : maxv_lcell
+-- Location: LC_X8_Y4_N4
+\send_data|Add0~0\ : maxv_lcell
 -- Equation(s):
--- \send_data|tx_clk_count\(3) = DFFEAS((((!\send_data|Equal0~3\ & \send_data|Add0~60_combout\))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
+-- \send_data|Add0~0_combout\ = ((!\send_data|tx_clk_count\(0)))
+-- \send_data|Add0~2\ = CARRY(((\send_data|tx_clk_count\(0))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0f00",
-	operation_mode => "normal",
-	output_mode => "reg_only",
+	lut_mask => "33cc",
+	operation_mode => "arithmetic",
+	output_mode => "comb_only",
 	register_cascade_mode => "off",
 	sum_lutc_input => "datac",
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	clk => \CLK~combout\,
-	datac => \send_data|Equal0~3\,
-	datad => \send_data|Add0~60_combout\,
-	aclr => \RST~combout\,
+	datab => \send_data|tx_clk_count\(0),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \send_data|tx_clk_count\(3));
+	combout => \send_data|Add0~0_combout\,
+	cout => \send_data|Add0~2\);
 
--- Location: LC_X10_Y4_N8
-\send_data|Add0~45\ : maxv_lcell
+-- Location: LC_X9_Y4_N5
+\send_data|Add0~15\ : maxv_lcell
 -- Equation(s):
--- \send_data|Add0~45_combout\ = \send_data|tx_clk_count\(4) $ ((((!(!\send_data|Add0~2\ & \send_data|Add0~62\) # (\send_data|Add0~2\ & \send_data|Add0~62COUT1_80\)))))
--- \send_data|Add0~47\ = CARRY((\send_data|tx_clk_count\(4) & ((!\send_data|Add0~62\))))
--- \send_data|Add0~47COUT1_82\ = CARRY((\send_data|tx_clk_count\(4) & ((!\send_data|Add0~62COUT1_80\))))
+-- \send_data|Add0~15_combout\ = \send_data|tx_clk_count\(11) $ ((((\send_data|Add0~12\))))
+-- \send_data|Add0~17\ = CARRY(((!\send_data|Add0~12\)) # (!\send_data|tx_clk_count\(11)))
+-- \send_data|Add0~17COUT1_92\ = CARRY(((!\send_data|Add0~12\)) # (!\send_data|tx_clk_count\(11)))
 
 -- pragma translate_off
 GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
 	cin_used => "true",
-	lut_mask => "a50a",
+	lut_mask => "5a5f",
 	operation_mode => "arithmetic",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -369,71 +337,18 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \send_data|tx_clk_count\(4),
-	cin => \send_data|Add0~2\,
-	cin0 => \send_data|Add0~62\,
-	cin1 => \send_data|Add0~62COUT1_80\,
+	dataa => \send_data|tx_clk_count\(11),
+	cin => \send_data|Add0~12\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \send_data|Add0~45_combout\,
-	cout0 => \send_data|Add0~47\,
-	cout1 => \send_data|Add0~47COUT1_82\);
+	combout => \send_data|Add0~15_combout\,
+	cout0 => \send_data|Add0~17\,
+	cout1 => \send_data|Add0~17COUT1_92\);
 
--- Location: LC_X10_Y4_N3
-\send_data|tx_clk_count[4]\ : maxv_lcell
+-- Location: LC_X8_Y4_N0
+\send_data|tx_clk_count[11]\ : maxv_lcell
 -- Equation(s):
--- \send_data|tx_clk_count\(4) = DFFEAS((\send_data|Add0~45_combout\ & (((!\send_data|Equal0~3\)))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "00aa",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK~combout\,
-	dataa => \send_data|Add0~45_combout\,
-	datad => \send_data|Equal0~3\,
-	aclr => \RST~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \send_data|tx_clk_count\(4));
-
--- Location: LC_X10_Y4_N9
-\send_data|Add0~55\ : maxv_lcell
--- Equation(s):
--- \send_data|Add0~55_combout\ = (\send_data|tx_clk_count\(5) $ (((!\send_data|Add0~2\ & \send_data|Add0~47\) # (\send_data|Add0~2\ & \send_data|Add0~47COUT1_82\))))
--- \send_data|Add0~57\ = CARRY(((!\send_data|Add0~47COUT1_82\) # (!\send_data|tx_clk_count\(5))))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	cin_used => "true",
-	lut_mask => "3c3f",
-	operation_mode => "arithmetic",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \send_data|tx_clk_count\(5),
-	cin => \send_data|Add0~2\,
-	cin0 => \send_data|Add0~47\,
-	cin1 => \send_data|Add0~47COUT1_82\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \send_data|Add0~55_combout\,
-	cout => \send_data|Add0~57\);
-
--- Location: LC_X10_Y4_N2
-\send_data|tx_clk_count[5]\ : maxv_lcell
--- Equation(s):
--- \send_data|tx_clk_count\(5) = DFFEAS((((\send_data|Add0~55_combout\))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
+-- \send_data|tx_clk_count\(11) = DFFEAS((((\send_data|Add0~15_combout\))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -446,13 +361,41 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~combout\,
-	datad => \send_data|Add0~55_combout\,
+	datad => \send_data|Add0~15_combout\,
 	aclr => \RST~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \send_data|tx_clk_count\(5));
+	regout => \send_data|tx_clk_count\(11));
 
--- Location: LC_X11_Y4_N0
+-- Location: LC_X7_Y4_N4
+\send_data|tx_clk_count[0]\ : maxv_lcell
+-- Equation(s):
+-- \send_data|Equal0~0\ = (\send_data|tx_clk_count\(12) & (\send_data|tx_clk_count\(10) & (B1_tx_clk_count[0] & !\send_data|tx_clk_count\(11))))
+-- \send_data|tx_clk_count\(0) = DFFEAS(\send_data|Equal0~0\, GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , \send_data|Add0~0_combout\, , , VCC)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0080",
+	operation_mode => "normal",
+	output_mode => "reg_and_comb",
+	register_cascade_mode => "off",
+	sum_lutc_input => "qfbk",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~combout\,
+	dataa => \send_data|tx_clk_count\(12),
+	datab => \send_data|tx_clk_count\(10),
+	datac => \send_data|Add0~0_combout\,
+	datad => \send_data|tx_clk_count\(11),
+	aclr => \RST~combout\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \send_data|Equal0~0\,
+	regout => \send_data|tx_clk_count\(0));
+
+-- Location: LC_X9_Y4_N0
 \send_data|Add0~20\ : maxv_lcell
 -- Equation(s):
 -- \send_data|Add0~20_combout\ = (\send_data|tx_clk_count\(6) $ ((!\send_data|Add0~57\)))
@@ -478,14 +421,14 @@ PORT MAP (
 	cout0 => \send_data|Add0~22\,
 	cout1 => \send_data|Add0~22COUT1_84\);
 
--- Location: LC_X12_Y4_N8
+-- Location: LC_X9_Y4_N9
 \send_data|tx_clk_count[6]\ : maxv_lcell
 -- Equation(s):
--- \send_data|tx_clk_count\(6) = DFFEAS((((!\send_data|Equal0~3\ & \send_data|Add0~20_combout\))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
+-- \send_data|tx_clk_count\(6) = DFFEAS((((\send_data|Add0~20_combout\ & !\send_data|Equal0~3\))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0f00",
+	lut_mask => "00f0",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -494,14 +437,14 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~combout\,
-	datac => \send_data|Equal0~3\,
-	datad => \send_data|Add0~20_combout\,
+	datac => \send_data|Add0~20_combout\,
+	datad => \send_data|Equal0~3\,
 	aclr => \RST~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \send_data|tx_clk_count\(6));
 
--- Location: LC_X11_Y4_N1
+-- Location: LC_X9_Y4_N1
 \send_data|Add0~35\ : maxv_lcell
 -- Equation(s):
 -- \send_data|Add0~35_combout\ = (\send_data|tx_clk_count\(7) $ (((!\send_data|Add0~57\ & \send_data|Add0~22\) # (\send_data|Add0~57\ & \send_data|Add0~22COUT1_84\))))
@@ -531,7 +474,7 @@ PORT MAP (
 	cout0 => \send_data|Add0~37\,
 	cout1 => \send_data|Add0~37COUT1_86\);
 
--- Location: LC_X11_Y4_N7
+-- Location: LC_X9_Y4_N8
 \send_data|tx_clk_count[7]\ : maxv_lcell
 -- Equation(s):
 -- \send_data|tx_clk_count\(7) = DFFEAS((((\send_data|Add0~35_combout\))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
@@ -553,7 +496,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \send_data|tx_clk_count\(7));
 
--- Location: LC_X11_Y4_N2
+-- Location: LC_X9_Y4_N2
 \send_data|Add0~30\ : maxv_lcell
 -- Equation(s):
 -- \send_data|Add0~30_combout\ = (\send_data|tx_clk_count\(8) $ ((!(!\send_data|Add0~57\ & \send_data|Add0~37\) # (\send_data|Add0~57\ & \send_data|Add0~37COUT1_86\))))
@@ -583,7 +526,7 @@ PORT MAP (
 	cout0 => \send_data|Add0~32\,
 	cout1 => \send_data|Add0~32COUT1_88\);
 
--- Location: LC_X12_Y4_N2
+-- Location: LC_X10_Y4_N8
 \send_data|tx_clk_count[8]\ : maxv_lcell
 -- Equation(s):
 -- \send_data|tx_clk_count\(8) = DFFEAS((((\send_data|Add0~30_combout\))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
@@ -605,15 +548,15 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \send_data|tx_clk_count\(8));
 
--- Location: LC_X12_Y4_N7
+-- Location: LC_X9_Y4_N7
 \send_data|tx_clk_count[9]\ : maxv_lcell
 -- Equation(s):
--- \send_data|Equal0~1\ = (\send_data|tx_clk_count\(6) & (!\send_data|tx_clk_count\(8) & (!B1_tx_clk_count[9] & !\send_data|tx_clk_count\(7))))
+-- \send_data|Equal0~1\ = (!\send_data|tx_clk_count\(7) & (\send_data|tx_clk_count\(6) & (!B1_tx_clk_count[9] & !\send_data|tx_clk_count\(8))))
 -- \send_data|tx_clk_count\(9) = DFFEAS(\send_data|Equal0~1\, GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , \send_data|Add0~25_combout\, , , VCC)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0002",
+	lut_mask => "0004",
 	operation_mode => "normal",
 	output_mode => "reg_and_comb",
 	register_cascade_mode => "off",
@@ -622,10 +565,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~combout\,
-	dataa => \send_data|tx_clk_count\(6),
-	datab => \send_data|tx_clk_count\(8),
+	dataa => \send_data|tx_clk_count\(7),
+	datab => \send_data|tx_clk_count\(6),
 	datac => \send_data|Add0~25_combout\,
-	datad => \send_data|tx_clk_count\(7),
+	datad => \send_data|tx_clk_count\(8),
 	aclr => \RST~combout\,
 	sload => VCC,
 	devclrn => ww_devclrn,
@@ -633,67 +576,17 @@ PORT MAP (
 	combout => \send_data|Equal0~1\,
 	regout => \send_data|tx_clk_count\(9));
 
--- Location: LC_X11_Y4_N3
+-- Location: LC_X9_Y4_N3
 \send_data|Add0~25\ : maxv_lcell
 -- Equation(s):
--- \send_data|Add0~25_combout\ = \send_data|tx_clk_count\(9) $ (((((!\send_data|Add0~57\ & \send_data|Add0~32\) # (\send_data|Add0~57\ & \send_data|Add0~32COUT1_88\)))))
--- \send_data|Add0~27\ = CARRY(((!\send_data|Add0~32\)) # (!\send_data|tx_clk_count\(9)))
--- \send_data|Add0~27COUT1_90\ = CARRY(((!\send_data|Add0~32COUT1_88\)) # (!\send_data|tx_clk_count\(9)))
+-- \send_data|Add0~25_combout\ = (\send_data|tx_clk_count\(9) $ (((!\send_data|Add0~57\ & \send_data|Add0~32\) # (\send_data|Add0~57\ & \send_data|Add0~32COUT1_88\))))
+-- \send_data|Add0~27\ = CARRY(((!\send_data|Add0~32\) # (!\send_data|tx_clk_count\(9))))
+-- \send_data|Add0~27COUT1_90\ = CARRY(((!\send_data|Add0~32COUT1_88\) # (!\send_data|tx_clk_count\(9))))
 
 -- pragma translate_off
 GENERIC MAP (
 	cin0_used => "true",
 	cin1_used => "true",
-	cin_used => "true",
-	lut_mask => "5a5f",
-	operation_mode => "arithmetic",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \send_data|tx_clk_count\(9),
-	cin => \send_data|Add0~57\,
-	cin0 => \send_data|Add0~32\,
-	cin1 => \send_data|Add0~32COUT1_88\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \send_data|Add0~25_combout\,
-	cout0 => \send_data|Add0~27\,
-	cout1 => \send_data|Add0~27COUT1_90\);
-
--- Location: LC_X10_Y4_N4
-\send_data|Add0~0\ : maxv_lcell
--- Equation(s):
--- \send_data|Add0~0_combout\ = ((!\send_data|tx_clk_count\(0)))
--- \send_data|Add0~2\ = CARRY(((\send_data|tx_clk_count\(0))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "33cc",
-	operation_mode => "arithmetic",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \send_data|tx_clk_count\(0),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \send_data|Add0~0_combout\,
-	cout => \send_data|Add0~2\);
-
--- Location: LC_X11_Y4_N5
-\send_data|Add0~15\ : maxv_lcell
--- Equation(s):
--- \send_data|Add0~15_combout\ = (\send_data|tx_clk_count\(11) $ ((\send_data|Add0~12\)))
--- \send_data|Add0~17\ = CARRY(((!\send_data|Add0~12\) # (!\send_data|tx_clk_count\(11))))
--- \send_data|Add0~17COUT1_92\ = CARRY(((!\send_data|Add0~12\) # (!\send_data|tx_clk_count\(11))))
-
--- pragma translate_off
-GENERIC MAP (
 	cin_used => "true",
 	lut_mask => "3c3f",
 	operation_mode => "arithmetic",
@@ -703,95 +596,20 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \send_data|tx_clk_count\(11),
-	cin => \send_data|Add0~12\,
+	datab => \send_data|tx_clk_count\(9),
+	cin => \send_data|Add0~57\,
+	cin0 => \send_data|Add0~32\,
+	cin1 => \send_data|Add0~32COUT1_88\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \send_data|Add0~15_combout\,
-	cout0 => \send_data|Add0~17\,
-	cout1 => \send_data|Add0~17COUT1_92\);
+	combout => \send_data|Add0~25_combout\,
+	cout0 => \send_data|Add0~27\,
+	cout1 => \send_data|Add0~27COUT1_90\);
 
--- Location: LC_X11_Y4_N6
-\send_data|Add0~5\ : maxv_lcell
--- Equation(s):
--- \send_data|Add0~5_combout\ = (((!\send_data|Add0~12\ & \send_data|Add0~17\) # (\send_data|Add0~12\ & \send_data|Add0~17COUT1_92\) $ (!\send_data|tx_clk_count\(12))))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	cin_used => "true",
-	lut_mask => "f00f",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datad => \send_data|tx_clk_count\(12),
-	cin => \send_data|Add0~12\,
-	cin0 => \send_data|Add0~17\,
-	cin1 => \send_data|Add0~17COUT1_92\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \send_data|Add0~5_combout\);
-
--- Location: LC_X12_Y4_N4
-\send_data|tx_clk_count[12]\ : maxv_lcell
--- Equation(s):
--- \send_data|tx_clk_count\(12) = DFFEAS(((!\send_data|Equal0~3\ & (\send_data|Add0~5_combout\))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "3030",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK~combout\,
-	datab => \send_data|Equal0~3\,
-	datac => \send_data|Add0~5_combout\,
-	aclr => \RST~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \send_data|tx_clk_count\(12));
-
--- Location: LC_X11_Y4_N9
-\send_data|tx_clk_count[0]\ : maxv_lcell
--- Equation(s):
--- \send_data|Equal0~0\ = (!\send_data|tx_clk_count\(11) & (\send_data|tx_clk_count\(10) & (B1_tx_clk_count[0] & \send_data|tx_clk_count\(12))))
--- \send_data|tx_clk_count\(0) = DFFEAS(\send_data|Equal0~0\, GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , \send_data|Add0~0_combout\, , , VCC)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "4000",
-	operation_mode => "normal",
-	output_mode => "reg_and_comb",
-	register_cascade_mode => "off",
-	sum_lutc_input => "qfbk",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK~combout\,
-	dataa => \send_data|tx_clk_count\(11),
-	datab => \send_data|tx_clk_count\(10),
-	datac => \send_data|Add0~0_combout\,
-	datad => \send_data|tx_clk_count\(12),
-	aclr => \RST~combout\,
-	sload => VCC,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \send_data|Equal0~0\,
-	regout => \send_data|tx_clk_count\(0));
-
--- Location: LC_X12_Y4_N0
+-- Location: LC_X7_Y4_N5
 \send_data|tx_clk_tick\ : maxv_lcell
 -- Equation(s):
--- \send_data|Equal0~3\ = (\send_data|tx_clk_count\(1) & (\send_data|Equal0~1\ & (\send_data|Equal0~0\ & \send_data|Equal0~2\)))
+-- \send_data|Equal0~3\ = (\send_data|tx_clk_count\(1) & (\send_data|Equal0~2\ & (\send_data|Equal0~0\ & \send_data|Equal0~1\)))
 -- \send_data|tx_clk_tick~regout\ = DFFEAS(\send_data|Equal0~3\, GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
 
 -- pragma translate_off
@@ -806,16 +624,143 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~combout\,
 	dataa => \send_data|tx_clk_count\(1),
-	datab => \send_data|Equal0~1\,
+	datab => \send_data|Equal0~2\,
 	datac => \send_data|Equal0~0\,
-	datad => \send_data|Equal0~2\,
+	datad => \send_data|Equal0~1\,
 	aclr => \RST~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|Equal0~3\,
 	regout => \send_data|tx_clk_tick~regout\);
 
--- Location: LC_X11_Y4_N4
+-- Location: LC_X7_Y4_N6
+\send_data|tx_clk_count[3]\ : maxv_lcell
+-- Equation(s):
+-- \send_data|tx_clk_count\(3) = DFFEAS((\send_data|Add0~60_combout\ & (((!\send_data|Equal0~3\)))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "00aa",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~combout\,
+	dataa => \send_data|Add0~60_combout\,
+	datad => \send_data|Equal0~3\,
+	aclr => \RST~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \send_data|tx_clk_count\(3));
+
+-- Location: LC_X8_Y4_N8
+\send_data|Add0~45\ : maxv_lcell
+-- Equation(s):
+-- \send_data|Add0~45_combout\ = (\send_data|tx_clk_count\(4) $ ((!(!\send_data|Add0~2\ & \send_data|Add0~62\) # (\send_data|Add0~2\ & \send_data|Add0~62COUT1_80\))))
+-- \send_data|Add0~47\ = CARRY(((\send_data|tx_clk_count\(4) & !\send_data|Add0~62\)))
+-- \send_data|Add0~47COUT1_82\ = CARRY(((\send_data|tx_clk_count\(4) & !\send_data|Add0~62COUT1_80\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	cin0_used => "true",
+	cin1_used => "true",
+	cin_used => "true",
+	lut_mask => "c30c",
+	operation_mode => "arithmetic",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "cin",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \send_data|tx_clk_count\(4),
+	cin => \send_data|Add0~2\,
+	cin0 => \send_data|Add0~62\,
+	cin1 => \send_data|Add0~62COUT1_80\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \send_data|Add0~45_combout\,
+	cout0 => \send_data|Add0~47\,
+	cout1 => \send_data|Add0~47COUT1_82\);
+
+-- Location: LC_X8_Y4_N1
+\send_data|tx_clk_count[4]\ : maxv_lcell
+-- Equation(s):
+-- \send_data|tx_clk_count\(4) = DFFEAS((\send_data|Add0~45_combout\ & (((!\send_data|Equal0~3\)))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "00aa",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~combout\,
+	dataa => \send_data|Add0~45_combout\,
+	datad => \send_data|Equal0~3\,
+	aclr => \RST~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \send_data|tx_clk_count\(4));
+
+-- Location: LC_X8_Y4_N9
+\send_data|Add0~55\ : maxv_lcell
+-- Equation(s):
+-- \send_data|Add0~55_combout\ = (\send_data|tx_clk_count\(5) $ (((!\send_data|Add0~2\ & \send_data|Add0~47\) # (\send_data|Add0~2\ & \send_data|Add0~47COUT1_82\))))
+-- \send_data|Add0~57\ = CARRY(((!\send_data|Add0~47COUT1_82\) # (!\send_data|tx_clk_count\(5))))
+
+-- pragma translate_off
+GENERIC MAP (
+	cin0_used => "true",
+	cin1_used => "true",
+	cin_used => "true",
+	lut_mask => "3c3f",
+	operation_mode => "arithmetic",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "cin",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \send_data|tx_clk_count\(5),
+	cin => \send_data|Add0~2\,
+	cin0 => \send_data|Add0~47\,
+	cin1 => \send_data|Add0~47COUT1_82\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \send_data|Add0~55_combout\,
+	cout => \send_data|Add0~57\);
+
+-- Location: LC_X7_Y4_N7
+\send_data|tx_clk_count[5]\ : maxv_lcell
+-- Equation(s):
+-- \send_data|tx_clk_count\(5) = DFFEAS(GND, GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , \send_data|Add0~55_combout\, , , VCC)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~combout\,
+	datac => \send_data|Add0~55_combout\,
+	aclr => \RST~combout\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \send_data|tx_clk_count\(5));
+
+-- Location: LC_X9_Y4_N4
 \send_data|Add0~10\ : maxv_lcell
 -- Equation(s):
 -- \send_data|Add0~10_combout\ = (\send_data|tx_clk_count\(10) $ ((!(!\send_data|Add0~57\ & \send_data|Add0~27\) # (\send_data|Add0~57\ & \send_data|Add0~27COUT1_90\))))
@@ -843,14 +788,14 @@ PORT MAP (
 	combout => \send_data|Add0~10_combout\,
 	cout => \send_data|Add0~12\);
 
--- Location: LC_X12_Y4_N9
+-- Location: LC_X8_Y4_N2
 \send_data|tx_clk_count[10]\ : maxv_lcell
 -- Equation(s):
--- \send_data|tx_clk_count\(10) = DFFEAS((((!\send_data|Equal0~3\ & \send_data|Add0~10_combout\))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
+-- \send_data|tx_clk_count\(10) = DFFEAS(((\send_data|Add0~10_combout\ & ((!\send_data|Equal0~3\)))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0f00",
+	lut_mask => "00cc",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -859,21 +804,47 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~combout\,
-	datac => \send_data|Equal0~3\,
-	datad => \send_data|Add0~10_combout\,
+	datab => \send_data|Add0~10_combout\,
+	datad => \send_data|Equal0~3\,
 	aclr => \RST~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \send_data|tx_clk_count\(10));
 
--- Location: LC_X12_Y4_N6
-\send_data|tx_clk_count[11]\ : maxv_lcell
+-- Location: LC_X9_Y4_N6
+\send_data|Add0~5\ : maxv_lcell
 -- Equation(s):
--- \send_data|tx_clk_count\(11) = DFFEAS((((\send_data|Add0~15_combout\))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
+-- \send_data|Add0~5_combout\ = (((!\send_data|Add0~12\ & \send_data|Add0~17\) # (\send_data|Add0~12\ & \send_data|Add0~17COUT1_92\) $ (!\send_data|tx_clk_count\(12))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "ff00",
+	cin0_used => "true",
+	cin1_used => "true",
+	cin_used => "true",
+	lut_mask => "f00f",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "cin",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \send_data|tx_clk_count\(12),
+	cin => \send_data|Add0~12\,
+	cin0 => \send_data|Add0~17\,
+	cin1 => \send_data|Add0~17COUT1_92\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \send_data|Add0~5_combout\);
+
+-- Location: LC_X8_Y4_N3
+\send_data|tx_clk_count[12]\ : maxv_lcell
+-- Equation(s):
+-- \send_data|tx_clk_count\(12) = DFFEAS((((\send_data|Add0~5_combout\ & !\send_data|Equal0~3\))), GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "00f0",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -882,13 +853,14 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~combout\,
-	datad => \send_data|Add0~15_combout\,
+	datac => \send_data|Add0~5_combout\,
+	datad => \send_data|Equal0~3\,
 	aclr => \RST~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \send_data|tx_clk_count\(11));
+	regout => \send_data|tx_clk_count\(12));
 
--- Location: LC_X10_Y4_N0
+-- Location: LC_X7_Y4_N2
 \send_data|tx_clk_count[1]\ : maxv_lcell
 -- Equation(s):
 -- \send_data|tx_clk_count\(1) = DFFEAS(GND, GLOBAL(\CLK~combout\), !GLOBAL(\RST~combout\), , , \send_data|Add0~40_combout\, , , VCC)
@@ -911,15 +883,38 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \send_data|tx_clk_count\(1));
 
--- Location: LC_X6_Y9_N6
+-- Location: LC_X10_Y6_N4
+\send_data|transmitter|ready~1\ : maxv_lcell
+-- Equation(s):
+-- \send_data|transmitter|ready~1_combout\ = (\send_data|transmitter|trigger~combout\ & (\send_data|transmitter|Equal2~0_combout\ & (!\wr~regout\ & !\RST~combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0008",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \send_data|transmitter|trigger~combout\,
+	datab => \send_data|transmitter|Equal2~0_combout\,
+	datac => \wr~regout\,
+	datad => \RST~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \send_data|transmitter|ready~1_combout\);
+
+-- Location: LC_X10_Y6_N9
 \send_data|transmitter|ready\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|ready~regout\ = DFFEAS((\send_data|transmitter|ready~regout\) # (((\send_data|transmitter|Equal2~0_combout\))), GLOBAL(\send_data|tx_clk_tick~regout\), !GLOBAL(\send_data|transmitter|ready~0_combout\), , , VCC, 
+-- \send_data|transmitter|ready~regout\ = DFFEAS(((\send_data|transmitter|ready~regout\) # ((\send_data|transmitter|Equal2~0_combout\))), GLOBAL(\send_data|tx_clk_tick~regout\), !GLOBAL(\send_data|transmitter|ready~1_combout\), , , VCC, 
 -- GLOBAL(\RST~combout\), , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "ffaa",
+	lut_mask => "ffcc",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -928,45 +923,23 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \send_data|tx_clk_tick~regout\,
-	dataa => \send_data|transmitter|ready~regout\,
+	datab => \send_data|transmitter|ready~regout\,
 	datac => VCC,
 	datad => \send_data|transmitter|Equal2~0_combout\,
-	aclr => \send_data|transmitter|ready~0_combout\,
+	aclr => \send_data|transmitter|ready~1_combout\,
 	aload => \RST~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \send_data|transmitter|ready~regout\);
 
--- Location: LC_X7_Y9_N8
-\send_data|transmitter|ready~0\ : maxv_lcell
+-- Location: LC_X10_Y6_N5
+trigger : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|ready~0_combout\ = ((!\RST~combout\ & (\send_data|transmitter|ready~regout\ & \send_data|transmitter|Equal2~0_combout\)))
+-- \trigger~regout\ = DFFEAS((((!\trigger~regout\ & \send_data|transmitter|ready~regout\))), GLOBAL(\CLK~combout\), VCC, , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "3000",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \RST~combout\,
-	datac => \send_data|transmitter|ready~regout\,
-	datad => \send_data|transmitter|Equal2~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \send_data|transmitter|ready~0_combout\);
-
--- Location: LC_X7_Y9_N4
-\send_data|transmitter|step[1]\ : maxv_lcell
--- Equation(s):
--- \send_data|transmitter|step\(1) = DFFEAS((\send_data|transmitter|step\(0) $ (((\send_data|transmitter|step\(1))))), GLOBAL(\send_data|tx_clk_tick~regout\), !GLOBAL(\send_data|transmitter|ready~0_combout\), , , VCC, GLOBAL(\RST~combout\), , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "33cc",
+	lut_mask => "0f00",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -974,24 +947,44 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	clk => \send_data|tx_clk_tick~regout\,
-	datab => \send_data|transmitter|step\(0),
-	datac => VCC,
-	datad => \send_data|transmitter|step\(1),
-	aclr => \send_data|transmitter|ready~0_combout\,
-	aload => \RST~combout\,
+	clk => \CLK~combout\,
+	datac => \trigger~regout\,
+	datad => \send_data|transmitter|ready~regout\,
+	aclr => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \send_data|transmitter|step\(1));
+	regout => \trigger~regout\);
 
--- Location: LC_X6_Y9_N4
-\send_data|transmitter|TX~4\ : maxv_lcell
+-- Location: LC_X10_Y6_N6
+wr : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|TX~4_combout\ = ((\RST~combout\) # ((\send_data|transmitter|ready~regout\ & \send_data|transmitter|Equal2~0_combout\)))
+-- \wr~regout\ = DFFEAS((((!\trigger~regout\))), GLOBAL(\CLK~combout\), VCC, , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "faf0",
+	lut_mask => "0f0f",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~combout\,
+	datac => \trigger~regout\,
+	aclr => GND,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \wr~regout\);
+
+-- Location: LC_X10_Y6_N3
+\send_data|transmitter|trigger\ : maxv_lcell
+-- Equation(s):
+-- \send_data|transmitter|trigger~combout\ = ((\send_data|transmitter|ready~regout\ & ((\wr~regout\) # (\send_data|transmitter|trigger~combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f0c0",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -999,21 +992,44 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \send_data|transmitter|ready~regout\,
+	datab => \wr~regout\,
+	datac => \send_data|transmitter|ready~regout\,
+	datad => \send_data|transmitter|trigger~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \send_data|transmitter|trigger~combout\);
+
+-- Location: LC_X10_Y6_N7
+\send_data|transmitter|TX~4\ : maxv_lcell
+-- Equation(s):
+-- \send_data|transmitter|TX~4_combout\ = (\RST~combout\) # ((\send_data|transmitter|trigger~combout\ & (!\wr~regout\ & \send_data|transmitter|Equal2~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f2f0",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \send_data|transmitter|trigger~combout\,
+	datab => \wr~regout\,
 	datac => \RST~combout\,
 	datad => \send_data|transmitter|Equal2~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|TX~4_combout\);
 
--- Location: LC_X7_Y9_N3
+-- Location: LC_X9_Y6_N1
 \send_data|transmitter|step[2]\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|step\(2) = DFFEAS(\send_data|transmitter|step\(2) $ (((\send_data|transmitter|step\(1) & (\send_data|transmitter|step\(0))))), GLOBAL(\send_data|tx_clk_tick~regout\), !\send_data|transmitter|TX~4_combout\, , , , , , )
+-- \send_data|transmitter|step\(2) = DFFEAS((\send_data|transmitter|step\(2) $ (((\send_data|transmitter|step\(1) & \send_data|transmitter|step\(0))))), GLOBAL(\send_data|tx_clk_tick~regout\), !\send_data|transmitter|TX~4_combout\, , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "7878",
+	lut_mask => "3fc0",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -1022,18 +1038,18 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \send_data|tx_clk_tick~regout\,
-	dataa => \send_data|transmitter|step\(1),
-	datab => \send_data|transmitter|step\(0),
-	datac => \send_data|transmitter|step\(2),
+	datab => \send_data|transmitter|step\(1),
+	datac => \send_data|transmitter|step\(0),
+	datad => \send_data|transmitter|step\(2),
 	aclr => \send_data|transmitter|TX~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \send_data|transmitter|step\(2));
 
--- Location: LC_X7_Y9_N9
+-- Location: LC_X9_Y6_N0
 \send_data|transmitter|step[3]\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|step\(3) = DFFEAS(C1_step[3] $ (((\send_data|transmitter|step\(2) & (\send_data|transmitter|step\(0) & \send_data|transmitter|step\(1))))), GLOBAL(\send_data|tx_clk_tick~regout\), !GLOBAL(\send_data|transmitter|ready~0_combout\), , 
+-- \send_data|transmitter|step\(3) = DFFEAS(C1_step[3] $ (((\send_data|transmitter|step\(0) & (\send_data|transmitter|step\(1) & \send_data|transmitter|step\(2))))), GLOBAL(\send_data|tx_clk_tick~regout\), !GLOBAL(\send_data|transmitter|ready~1_combout\), , 
 -- , VCC, GLOBAL(\RST~combout\), , )
 
 -- pragma translate_off
@@ -1047,25 +1063,25 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \send_data|tx_clk_tick~regout\,
-	dataa => \send_data|transmitter|step\(2),
-	datab => \send_data|transmitter|step\(0),
+	dataa => \send_data|transmitter|step\(0),
+	datab => \send_data|transmitter|step\(1),
 	datac => VCC,
-	datad => \send_data|transmitter|step\(1),
-	aclr => \send_data|transmitter|ready~0_combout\,
+	datad => \send_data|transmitter|step\(2),
+	aclr => \send_data|transmitter|ready~1_combout\,
 	aload => \RST~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \send_data|transmitter|step\(3));
 
--- Location: LC_X7_Y9_N5
+-- Location: LC_X9_Y6_N8
 \send_data|transmitter|step[0]\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|step\(0) = DFFEAS((!\send_data|transmitter|step\(0) & (((\send_data|transmitter|step\(2)) # (!\send_data|transmitter|step\(3))) # (!\send_data|transmitter|step\(1)))), GLOBAL(\send_data|tx_clk_tick~regout\), 
+-- \send_data|transmitter|step\(0) = DFFEAS((!\send_data|transmitter|step\(0) & ((\send_data|transmitter|step\(2)) # ((!\send_data|transmitter|step\(3)) # (!\send_data|transmitter|step\(1))))), GLOBAL(\send_data|tx_clk_tick~regout\), 
 -- !\send_data|transmitter|TX~4_combout\, , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "3313",
+	lut_mask => "0b0f",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -1074,23 +1090,48 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \send_data|tx_clk_tick~regout\,
-	dataa => \send_data|transmitter|step\(1),
-	datab => \send_data|transmitter|step\(0),
-	datac => \send_data|transmitter|step\(3),
-	datad => \send_data|transmitter|step\(2),
+	dataa => \send_data|transmitter|step\(2),
+	datab => \send_data|transmitter|step\(1),
+	datac => \send_data|transmitter|step\(0),
+	datad => \send_data|transmitter|step\(3),
 	aclr => \send_data|transmitter|TX~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \send_data|transmitter|step\(0));
 
--- Location: LC_X7_Y9_N7
-\send_data|transmitter|Equal2~0\ : maxv_lcell
+-- Location: LC_X9_Y6_N6
+\send_data|transmitter|step[1]\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|Equal2~0_combout\ = (!\send_data|transmitter|step\(0) & (\send_data|transmitter|step\(3) & (\send_data|transmitter|step\(1) & !\send_data|transmitter|step\(2))))
+-- \send_data|transmitter|step\(1) = DFFEAS(\send_data|transmitter|step\(0) $ ((\send_data|transmitter|step\(1))), GLOBAL(\send_data|tx_clk_tick~regout\), !GLOBAL(\send_data|transmitter|ready~1_combout\), , , VCC, GLOBAL(\RST~combout\), , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0040",
+	lut_mask => "6666",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \send_data|tx_clk_tick~regout\,
+	dataa => \send_data|transmitter|step\(0),
+	datab => \send_data|transmitter|step\(1),
+	datac => VCC,
+	aclr => \send_data|transmitter|ready~1_combout\,
+	aload => \RST~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \send_data|transmitter|step\(1));
+
+-- Location: LC_X9_Y6_N2
+\send_data|transmitter|Equal2~0\ : maxv_lcell
+-- Equation(s):
+-- \send_data|transmitter|Equal2~0_combout\ = (\send_data|transmitter|step\(1) & (!\send_data|transmitter|step\(2) & (\send_data|transmitter|step\(3) & !\send_data|transmitter|step\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0020",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1098,15 +1139,37 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \send_data|transmitter|step\(0),
-	datab => \send_data|transmitter|step\(3),
-	datac => \send_data|transmitter|step\(1),
-	datad => \send_data|transmitter|step\(2),
+	dataa => \send_data|transmitter|step\(1),
+	datab => \send_data|transmitter|step\(2),
+	datac => \send_data|transmitter|step\(3),
+	datad => \send_data|transmitter|step\(0),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|Equal2~0_combout\);
 
--- Location: PIN_121,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- Location: LC_X9_Y6_N9
+\send_data|transmitter|TX~0\ : maxv_lcell
+-- Equation(s):
+-- \send_data|transmitter|TX~0_combout\ = (\send_data|transmitter|step\(2) $ (((\send_data|transmitter|step\(1)) # (\send_data|transmitter|step\(0)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0f5a",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \send_data|transmitter|step\(1),
+	datac => \send_data|transmitter|step\(2),
+	datad => \send_data|transmitter|step\(0),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \send_data|transmitter|TX~0_combout\);
+
+-- Location: PIN_41,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \ADC[5]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -1117,14 +1180,14 @@ PORT MAP (
 	padio => ww_ADC(5),
 	combout => \ADC~combout\(5));
 
--- Location: LC_X9_Y9_N8
+-- Location: LC_X7_Y6_N7
 \send_data|transmitter|latch[5]\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|latch\(5) = ((GLOBAL(\send_data|transmitter|ready~0_combout\) & (\ADC~combout\(5))) # (!GLOBAL(\send_data|transmitter|ready~0_combout\) & ((\send_data|transmitter|latch\(5)))))
+-- \send_data|transmitter|latch\(5) = ((GLOBAL(\send_data|transmitter|ready~1_combout\) & ((\ADC~combout\(5)))) # (!GLOBAL(\send_data|transmitter|ready~1_combout\) & (\send_data|transmitter|latch\(5))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "afa0",
+	lut_mask => "fc30",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1132,14 +1195,14 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ADC~combout\(5),
-	datac => \send_data|transmitter|ready~0_combout\,
-	datad => \send_data|transmitter|latch\(5),
+	datab => \send_data|transmitter|ready~1_combout\,
+	datac => \send_data|transmitter|latch\(5),
+	datad => \ADC~combout\(5),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|latch\(5));
 
--- Location: PIN_123,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- Location: PIN_40,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \ADC[6]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -1150,14 +1213,14 @@ PORT MAP (
 	padio => ww_ADC(6),
 	combout => \ADC~combout\(6));
 
--- Location: LC_X9_Y9_N9
+-- Location: LC_X7_Y6_N6
 \send_data|transmitter|latch[6]\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|latch\(6) = ((GLOBAL(\send_data|transmitter|ready~0_combout\) & (\ADC~combout\(6))) # (!GLOBAL(\send_data|transmitter|ready~0_combout\) & ((\send_data|transmitter|latch\(6)))))
+-- \send_data|transmitter|latch\(6) = ((GLOBAL(\send_data|transmitter|ready~1_combout\) & ((\ADC~combout\(6)))) # (!GLOBAL(\send_data|transmitter|ready~1_combout\) & (\send_data|transmitter|latch\(6))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "cfc0",
+	lut_mask => "f0aa",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1165,47 +1228,14 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \ADC~combout\(6),
-	datac => \send_data|transmitter|ready~0_combout\,
-	datad => \send_data|transmitter|latch\(6),
+	dataa => \send_data|transmitter|latch\(6),
+	datac => \ADC~combout\(6),
+	datad => \send_data|transmitter|ready~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|latch\(6));
 
--- Location: PIN_119,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\ADC[4]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_ADC(4),
-	combout => \ADC~combout\(4));
-
--- Location: LC_X8_Y9_N6
-\send_data|transmitter|latch[4]\ : maxv_lcell
--- Equation(s):
--- \send_data|transmitter|latch\(4) = ((GLOBAL(\send_data|transmitter|ready~0_combout\) & (\ADC~combout\(4))) # (!GLOBAL(\send_data|transmitter|ready~0_combout\) & ((\send_data|transmitter|latch\(4)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "afa0",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ADC~combout\(4),
-	datac => \send_data|transmitter|ready~0_combout\,
-	datad => \send_data|transmitter|latch\(4),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \send_data|transmitter|latch\(4));
-
--- Location: PIN_125,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- Location: PIN_39,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \ADC[7]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -1216,14 +1246,14 @@ PORT MAP (
 	padio => ww_ADC(7),
 	combout => \ADC~combout\(7));
 
--- Location: LC_X8_Y9_N1
+-- Location: LC_X8_Y6_N6
 \send_data|transmitter|latch[7]\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|latch\(7) = ((GLOBAL(\send_data|transmitter|ready~0_combout\) & ((\ADC~combout\(7)))) # (!GLOBAL(\send_data|transmitter|ready~0_combout\) & (\send_data|transmitter|latch\(7))))
+-- \send_data|transmitter|latch\(7) = (GLOBAL(\send_data|transmitter|ready~1_combout\) & (((\ADC~combout\(7))))) # (!GLOBAL(\send_data|transmitter|ready~1_combout\) & (\send_data|transmitter|latch\(7)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "fc0c",
+	lut_mask => "caca",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1231,22 +1261,32 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \send_data|transmitter|latch\(7),
-	datac => \send_data|transmitter|ready~0_combout\,
-	datad => \ADC~combout\(7),
+	dataa => \send_data|transmitter|latch\(7),
+	datab => \ADC~combout\(7),
+	datac => \send_data|transmitter|ready~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|latch\(7));
 
--- Location: LC_X8_Y9_N8
-\send_data|transmitter|Mux0~0\ : maxv_lcell
+-- Location: PIN_42,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\ADC[4]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_ADC(4),
+	combout => \ADC~combout\(4));
+
+-- Location: LC_X8_Y6_N7
+\send_data|transmitter|latch[4]\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|Mux0~0_combout\ = (\send_data|transmitter|step\(0) & ((\send_data|transmitter|step\(1)) # ((\send_data|transmitter|latch\(4))))) # (!\send_data|transmitter|step\(0) & (!\send_data|transmitter|step\(1) & 
--- ((\send_data|transmitter|latch\(7)))))
+-- \send_data|transmitter|latch\(4) = ((GLOBAL(\send_data|transmitter|ready~1_combout\) & (\ADC~combout\(4))) # (!GLOBAL(\send_data|transmitter|ready~1_combout\) & ((\send_data|transmitter|latch\(4)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "b9a8",
+	lut_mask => "aaf0",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1254,15 +1294,38 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \send_data|transmitter|step\(0),
-	datab => \send_data|transmitter|step\(1),
+	dataa => \ADC~combout\(4),
 	datac => \send_data|transmitter|latch\(4),
-	datad => \send_data|transmitter|latch\(7),
+	datad => \send_data|transmitter|ready~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \send_data|transmitter|latch\(4));
+
+-- Location: LC_X8_Y6_N8
+\send_data|transmitter|Mux0~0\ : maxv_lcell
+-- Equation(s):
+-- \send_data|transmitter|Mux0~0_combout\ = (\send_data|transmitter|step\(1) & (\send_data|transmitter|step\(0))) # (!\send_data|transmitter|step\(1) & ((\send_data|transmitter|step\(0) & ((\send_data|transmitter|latch\(4)))) # 
+-- (!\send_data|transmitter|step\(0) & (\send_data|transmitter|latch\(7)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "dc98",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \send_data|transmitter|step\(1),
+	datab => \send_data|transmitter|step\(0),
+	datac => \send_data|transmitter|latch\(7),
+	datad => \send_data|transmitter|latch\(4),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|Mux0~0_combout\);
 
--- Location: LC_X8_Y9_N9
+-- Location: LC_X8_Y6_N9
 \send_data|transmitter|Mux0~1\ : maxv_lcell
 -- Equation(s):
 -- \send_data|transmitter|Mux0~1_combout\ = (\send_data|transmitter|step\(1) & ((\send_data|transmitter|Mux0~0_combout\ & ((\send_data|transmitter|latch\(6)))) # (!\send_data|transmitter|Mux0~0_combout\ & (\send_data|transmitter|latch\(5))))) # 
@@ -1286,29 +1349,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|Mux0~1_combout\);
 
--- Location: LC_X7_Y9_N0
-\send_data|transmitter|TX~0\ : maxv_lcell
--- Equation(s):
--- \send_data|transmitter|TX~0_combout\ = (\send_data|transmitter|step\(2) $ (((\send_data|transmitter|step\(0)) # (\send_data|transmitter|step\(1)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "05fa",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \send_data|transmitter|step\(0),
-	datac => \send_data|transmitter|step\(1),
-	datad => \send_data|transmitter|step\(2),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \send_data|transmitter|TX~0_combout\);
-
--- Location: LC_X7_Y9_N6
+-- Location: LC_X9_Y6_N7
 \send_data|transmitter|TX~1\ : maxv_lcell
 -- Equation(s):
 -- \send_data|transmitter|TX~1_combout\ = (\send_data|transmitter|step\(1) & (((\send_data|transmitter|step\(2))))) # (!\send_data|transmitter|step\(1) & ((\send_data|transmitter|step\(2) & (\send_data|transmitter|step\(0))) # 
@@ -1316,7 +1357,7 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "e3e0",
+	lut_mask => "ee30",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1326,46 +1367,13 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \send_data|transmitter|step\(0),
 	datab => \send_data|transmitter|step\(1),
-	datac => \send_data|transmitter|step\(2),
-	datad => \send_data|transmitter|step\(3),
+	datac => \send_data|transmitter|step\(3),
+	datad => \send_data|transmitter|step\(2),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|TX~1_combout\);
 
--- Location: PIN_113,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\ADC[2]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_ADC(2),
-	combout => \ADC~combout\(2));
-
--- Location: LC_X8_Y9_N2
-\send_data|transmitter|latch[2]\ : maxv_lcell
--- Equation(s):
--- \send_data|transmitter|latch\(2) = ((GLOBAL(\send_data|transmitter|ready~0_combout\) & (\ADC~combout\(2))) # (!GLOBAL(\send_data|transmitter|ready~0_combout\) & ((\send_data|transmitter|latch\(2)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "cfc0",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \ADC~combout\(2),
-	datac => \send_data|transmitter|ready~0_combout\,
-	datad => \send_data|transmitter|latch\(2),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \send_data|transmitter|latch\(2));
-
--- Location: PIN_111,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- Location: PIN_45,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \ADC[1]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -1376,14 +1384,14 @@ PORT MAP (
 	padio => ww_ADC(1),
 	combout => \ADC~combout\(1));
 
--- Location: LC_X8_Y9_N0
+-- Location: LC_X8_Y6_N5
 \send_data|transmitter|latch[1]\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|latch\(1) = ((GLOBAL(\send_data|transmitter|ready~0_combout\) & (\ADC~combout\(1))) # (!GLOBAL(\send_data|transmitter|ready~0_combout\) & ((\send_data|transmitter|latch\(1)))))
+-- \send_data|transmitter|latch\(1) = ((GLOBAL(\send_data|transmitter|ready~1_combout\) & (\ADC~combout\(1))) # (!GLOBAL(\send_data|transmitter|ready~1_combout\) & ((\send_data|transmitter|latch\(1)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "afa0",
+	lut_mask => "aaf0",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1392,13 +1400,46 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ADC~combout\(1),
-	datac => \send_data|transmitter|ready~0_combout\,
-	datad => \send_data|transmitter|latch\(1),
+	datac => \send_data|transmitter|latch\(1),
+	datad => \send_data|transmitter|ready~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|latch\(1));
 
--- Location: PIN_109,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- Location: PIN_44,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\ADC[2]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_ADC(2),
+	combout => \ADC~combout\(2));
+
+-- Location: LC_X8_Y6_N3
+\send_data|transmitter|latch[2]\ : maxv_lcell
+-- Equation(s):
+-- \send_data|transmitter|latch\(2) = ((GLOBAL(\send_data|transmitter|ready~1_combout\) & ((\ADC~combout\(2)))) # (!GLOBAL(\send_data|transmitter|ready~1_combout\) & (\send_data|transmitter|latch\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ccaa",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \send_data|transmitter|latch\(2),
+	datab => \ADC~combout\(2),
+	datad => \send_data|transmitter|ready~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \send_data|transmitter|latch\(2));
+
+-- Location: PIN_48,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \ADC[0]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -1409,14 +1450,14 @@ PORT MAP (
 	padio => ww_ADC(0),
 	combout => \ADC~combout\(0));
 
--- Location: LC_X8_Y9_N7
+-- Location: LC_X8_Y6_N4
 \send_data|transmitter|latch[0]\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|latch\(0) = (GLOBAL(\send_data|transmitter|ready~0_combout\) & (((\ADC~combout\(0))))) # (!GLOBAL(\send_data|transmitter|ready~0_combout\) & (\send_data|transmitter|latch\(0)))
+-- \send_data|transmitter|latch\(0) = ((GLOBAL(\send_data|transmitter|ready~1_combout\) & (\ADC~combout\(0))) # (!GLOBAL(\send_data|transmitter|ready~1_combout\) & ((\send_data|transmitter|latch\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "caca",
+	lut_mask => "ccf0",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1424,14 +1465,14 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \send_data|transmitter|latch\(0),
 	datab => \ADC~combout\(0),
-	datac => \send_data|transmitter|ready~0_combout\,
+	datac => \send_data|transmitter|latch\(0),
+	datad => \send_data|transmitter|ready~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|latch\(0));
 
--- Location: PIN_117,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- Location: PIN_43,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \ADC[3]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -1442,14 +1483,14 @@ PORT MAP (
 	padio => ww_ADC(3),
 	combout => \ADC~combout\(3));
 
--- Location: LC_X8_Y9_N3
+-- Location: LC_X8_Y6_N1
 \send_data|transmitter|latch[3]\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|latch\(3) = ((GLOBAL(\send_data|transmitter|ready~0_combout\) & (\ADC~combout\(3))) # (!GLOBAL(\send_data|transmitter|ready~0_combout\) & ((\send_data|transmitter|latch\(3)))))
+-- \send_data|transmitter|latch\(3) = ((GLOBAL(\send_data|transmitter|ready~1_combout\) & (\ADC~combout\(3))) # (!GLOBAL(\send_data|transmitter|ready~1_combout\) & ((\send_data|transmitter|latch\(3)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "afa0",
+	lut_mask => "f3c0",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1457,46 +1498,22 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ADC~combout\(3),
-	datac => \send_data|transmitter|ready~0_combout\,
+	datab => \send_data|transmitter|ready~1_combout\,
+	datac => \ADC~combout\(3),
 	datad => \send_data|transmitter|latch\(3),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|latch\(3));
 
--- Location: LC_X8_Y9_N4
+-- Location: LC_X8_Y6_N2
 \send_data|transmitter|Mux0~2\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|Mux0~2_combout\ = (\send_data|transmitter|step\(0) & ((\send_data|transmitter|step\(1)) # ((\send_data|transmitter|latch\(0))))) # (!\send_data|transmitter|step\(0) & (!\send_data|transmitter|step\(1) & 
--- ((\send_data|transmitter|latch\(3)))))
+-- \send_data|transmitter|Mux0~2_combout\ = (\send_data|transmitter|step\(1) & (\send_data|transmitter|step\(0))) # (!\send_data|transmitter|step\(1) & ((\send_data|transmitter|step\(0) & (\send_data|transmitter|latch\(0))) # 
+-- (!\send_data|transmitter|step\(0) & ((\send_data|transmitter|latch\(3))))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "b9a8",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \send_data|transmitter|step\(0),
-	datab => \send_data|transmitter|step\(1),
-	datac => \send_data|transmitter|latch\(0),
-	datad => \send_data|transmitter|latch\(3),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \send_data|transmitter|Mux0~2_combout\);
-
--- Location: LC_X8_Y9_N5
-\send_data|transmitter|Mux0~3\ : maxv_lcell
--- Equation(s):
--- \send_data|transmitter|Mux0~3_combout\ = (\send_data|transmitter|step\(1) & ((\send_data|transmitter|Mux0~2_combout\ & (\send_data|transmitter|latch\(2))) # (!\send_data|transmitter|Mux0~2_combout\ & ((\send_data|transmitter|latch\(1)))))) # 
--- (!\send_data|transmitter|step\(1) & (((\send_data|transmitter|Mux0~2_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "dda0",
+	lut_mask => "d9c8",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1505,14 +1522,38 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \send_data|transmitter|step\(1),
-	datab => \send_data|transmitter|latch\(2),
-	datac => \send_data|transmitter|latch\(1),
+	datab => \send_data|transmitter|step\(0),
+	datac => \send_data|transmitter|latch\(0),
+	datad => \send_data|transmitter|latch\(3),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \send_data|transmitter|Mux0~2_combout\);
+
+-- Location: LC_X8_Y6_N0
+\send_data|transmitter|Mux0~3\ : maxv_lcell
+-- Equation(s):
+-- \send_data|transmitter|Mux0~3_combout\ = (\send_data|transmitter|step\(1) & ((\send_data|transmitter|Mux0~2_combout\ & ((\send_data|transmitter|latch\(2)))) # (!\send_data|transmitter|Mux0~2_combout\ & (\send_data|transmitter|latch\(1))))) # 
+-- (!\send_data|transmitter|step\(1) & (((\send_data|transmitter|Mux0~2_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f388",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \send_data|transmitter|latch\(1),
+	datab => \send_data|transmitter|step\(1),
+	datac => \send_data|transmitter|latch\(2),
 	datad => \send_data|transmitter|Mux0~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|Mux0~3_combout\);
 
--- Location: LC_X7_Y9_N1
+-- Location: LC_X9_Y6_N4
 \send_data|transmitter|TX~2\ : maxv_lcell
 -- Equation(s):
 -- \send_data|transmitter|TX~2_combout\ = ((\send_data|transmitter|TX~1_combout\) # ((\send_data|transmitter|TX~0_combout\ & \send_data|transmitter|Mux0~3_combout\)))
@@ -1534,10 +1575,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	combout => \send_data|transmitter|TX~2_combout\);
 
--- Location: LC_X7_Y9_N2
+-- Location: LC_X9_Y6_N5
 \send_data|transmitter|TX\ : maxv_lcell
 -- Equation(s):
--- \send_data|transmitter|TX~regout\ = DFFEAS((!\send_data|transmitter|Equal2~0_combout\ & (((!\send_data|transmitter|Mux0~1_combout\ & !\send_data|transmitter|TX~0_combout\)) # (!\send_data|transmitter|TX~2_combout\))), 
+-- \send_data|transmitter|TX~regout\ = DFFEAS((!\send_data|transmitter|Equal2~0_combout\ & (((!\send_data|transmitter|TX~0_combout\ & !\send_data|transmitter|Mux0~1_combout\)) # (!\send_data|transmitter|TX~2_combout\))), 
 -- GLOBAL(\send_data|tx_clk_tick~regout\), !\send_data|transmitter|TX~4_combout\, , , , , , )
 
 -- pragma translate_off
@@ -1552,392 +1593,13 @@ GENERIC MAP (
 PORT MAP (
 	clk => \send_data|tx_clk_tick~regout\,
 	dataa => \send_data|transmitter|Equal2~0_combout\,
-	datab => \send_data|transmitter|Mux0~1_combout\,
-	datac => \send_data|transmitter|TX~0_combout\,
+	datab => \send_data|transmitter|TX~0_combout\,
+	datac => \send_data|transmitter|Mux0~1_combout\,
 	datad => \send_data|transmitter|TX~2_combout\,
 	aclr => \send_data|transmitter|TX~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \send_data|transmitter|TX~regout\);
-
--- Location: PIN_40,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\THR[6]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_THR(6),
-	combout => \THR~combout\(6));
-
--- Location: PIN_42,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\THR[4]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_THR(4),
-	combout => \THR~combout\(4));
-
--- Location: PIN_43,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\THR[3]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_THR(3),
-	combout => \THR~combout\(3));
-
--- Location: PIN_44,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\THR[2]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_THR(2),
-	combout => \THR~combout\(2));
-
--- Location: PIN_45,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\THR[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_THR(1),
-	combout => \THR~combout\(1));
-
--- Location: PIN_48,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\THR[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_THR(0),
-	combout => \THR~combout\(0));
-
--- Location: LC_X8_Y4_N0
-\err[0]~0\ : maxv_lcell
--- Equation(s):
--- \err[0]~0_combout\ = \THR~combout\(0) $ ((\ADC~combout\(0)))
--- \err[0]~2\ = CARRY(((\ADC~combout\(0))) # (!\THR~combout\(0)))
--- \err[0]~2COUT1_48\ = CARRY(((\ADC~combout\(0))) # (!\THR~combout\(0)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "66dd",
-	operation_mode => "arithmetic",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \THR~combout\(0),
-	datab => \ADC~combout\(0),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \err[0]~0_combout\,
-	cout0 => \err[0]~2\,
-	cout1 => \err[0]~2COUT1_48\);
-
--- Location: LC_X8_Y4_N1
-\err[1]~5\ : maxv_lcell
--- Equation(s):
--- \err[1]~5_combout\ = \THR~combout\(1) $ (\ADC~combout\(1) $ ((!\err[0]~2\)))
--- \err[1]~7\ = CARRY((\THR~combout\(1) & ((!\err[0]~2\) # (!\ADC~combout\(1)))) # (!\THR~combout\(1) & (!\ADC~combout\(1) & !\err[0]~2\)))
--- \err[1]~7COUT1_50\ = CARRY((\THR~combout\(1) & ((!\err[0]~2COUT1_48\) # (!\ADC~combout\(1)))) # (!\THR~combout\(1) & (!\ADC~combout\(1) & !\err[0]~2COUT1_48\)))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	lut_mask => "692b",
-	operation_mode => "arithmetic",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \THR~combout\(1),
-	datab => \ADC~combout\(1),
-	cin0 => \err[0]~2\,
-	cin1 => \err[0]~2COUT1_48\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \err[1]~5_combout\,
-	cout0 => \err[1]~7\,
-	cout1 => \err[1]~7COUT1_50\);
-
--- Location: LC_X8_Y4_N2
-\err[2]~10\ : maxv_lcell
--- Equation(s):
--- \err[2]~10_combout\ = \THR~combout\(2) $ (\ADC~combout\(2) $ ((\err[1]~7\)))
--- \err[2]~12\ = CARRY((\THR~combout\(2) & (\ADC~combout\(2) & !\err[1]~7\)) # (!\THR~combout\(2) & ((\ADC~combout\(2)) # (!\err[1]~7\))))
--- \err[2]~12COUT1_52\ = CARRY((\THR~combout\(2) & (\ADC~combout\(2) & !\err[1]~7COUT1_50\)) # (!\THR~combout\(2) & ((\ADC~combout\(2)) # (!\err[1]~7COUT1_50\))))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	lut_mask => "964d",
-	operation_mode => "arithmetic",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \THR~combout\(2),
-	datab => \ADC~combout\(2),
-	cin0 => \err[1]~7\,
-	cin1 => \err[1]~7COUT1_50\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \err[2]~10_combout\,
-	cout0 => \err[2]~12\,
-	cout1 => \err[2]~12COUT1_52\);
-
--- Location: LC_X8_Y4_N3
-\err[3]~15\ : maxv_lcell
--- Equation(s):
--- \err[3]~15_combout\ = \ADC~combout\(3) $ (\THR~combout\(3) $ ((!\err[2]~12\)))
--- \err[3]~17\ = CARRY((\ADC~combout\(3) & (\THR~combout\(3) & !\err[2]~12\)) # (!\ADC~combout\(3) & ((\THR~combout\(3)) # (!\err[2]~12\))))
--- \err[3]~17COUT1_54\ = CARRY((\ADC~combout\(3) & (\THR~combout\(3) & !\err[2]~12COUT1_52\)) # (!\ADC~combout\(3) & ((\THR~combout\(3)) # (!\err[2]~12COUT1_52\))))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	lut_mask => "694d",
-	operation_mode => "arithmetic",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ADC~combout\(3),
-	datab => \THR~combout\(3),
-	cin0 => \err[2]~12\,
-	cin1 => \err[2]~12COUT1_52\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \err[3]~15_combout\,
-	cout0 => \err[3]~17\,
-	cout1 => \err[3]~17COUT1_54\);
-
--- Location: LC_X8_Y4_N4
-\err[4]~20\ : maxv_lcell
--- Equation(s):
--- \err[4]~20_combout\ = \THR~combout\(4) $ (\ADC~combout\(4) $ ((\err[3]~17\)))
--- \err[4]~22\ = CARRY((\THR~combout\(4) & (\ADC~combout\(4) & !\err[3]~17COUT1_54\)) # (!\THR~combout\(4) & ((\ADC~combout\(4)) # (!\err[3]~17COUT1_54\))))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	lut_mask => "964d",
-	operation_mode => "arithmetic",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \THR~combout\(4),
-	datab => \ADC~combout\(4),
-	cin0 => \err[3]~17\,
-	cin1 => \err[3]~17COUT1_54\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \err[4]~20_combout\,
-	cout => \err[4]~22\);
-
--- Location: PIN_41,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\THR[5]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_THR(5),
-	combout => \THR~combout\(5));
-
--- Location: LC_X8_Y4_N5
-\err[5]~25\ : maxv_lcell
--- Equation(s):
--- \err[5]~25_combout\ = \THR~combout\(5) $ (\ADC~combout\(5) $ ((!\err[4]~22\)))
--- \err[5]~27\ = CARRY((\THR~combout\(5) & ((!\err[4]~22\) # (!\ADC~combout\(5)))) # (!\THR~combout\(5) & (!\ADC~combout\(5) & !\err[4]~22\)))
--- \err[5]~27COUT1_56\ = CARRY((\THR~combout\(5) & ((!\err[4]~22\) # (!\ADC~combout\(5)))) # (!\THR~combout\(5) & (!\ADC~combout\(5) & !\err[4]~22\)))
-
--- pragma translate_off
-GENERIC MAP (
-	cin_used => "true",
-	lut_mask => "692b",
-	operation_mode => "arithmetic",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \THR~combout\(5),
-	datab => \ADC~combout\(5),
-	cin => \err[4]~22\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \err[5]~25_combout\,
-	cout0 => \err[5]~27\,
-	cout1 => \err[5]~27COUT1_56\);
-
--- Location: LC_X8_Y4_N6
-\err[6]~30\ : maxv_lcell
--- Equation(s):
--- \err[6]~30_combout\ = \THR~combout\(6) $ (\ADC~combout\(6) $ (((!\err[4]~22\ & \err[5]~27\) # (\err[4]~22\ & \err[5]~27COUT1_56\))))
--- \err[6]~32\ = CARRY((\THR~combout\(6) & (\ADC~combout\(6) & !\err[5]~27\)) # (!\THR~combout\(6) & ((\ADC~combout\(6)) # (!\err[5]~27\))))
--- \err[6]~32COUT1_58\ = CARRY((\THR~combout\(6) & (\ADC~combout\(6) & !\err[5]~27COUT1_56\)) # (!\THR~combout\(6) & ((\ADC~combout\(6)) # (!\err[5]~27COUT1_56\))))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	cin_used => "true",
-	lut_mask => "964d",
-	operation_mode => "arithmetic",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \THR~combout\(6),
-	datab => \ADC~combout\(6),
-	cin => \err[4]~22\,
-	cin0 => \err[5]~27\,
-	cin1 => \err[5]~27COUT1_56\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \err[6]~30_combout\,
-	cout0 => \err[6]~32\,
-	cout1 => \err[6]~32COUT1_58\);
-
--- Location: LC_X7_Y4_N2
-\LessThan0~1\ : maxv_lcell
--- Equation(s):
--- \LessThan0~1_combout\ = ((\err[5]~25_combout\) # ((\err[4]~20_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "ffcc",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \err[5]~25_combout\,
-	datad => \err[4]~20_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \LessThan0~1_combout\);
-
--- Location: PIN_39,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\THR[7]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_THR(7),
-	combout => \THR~combout\(7));
-
--- Location: LC_X8_Y4_N7
-\err[7]~35\ : maxv_lcell
--- Equation(s):
--- \err[7]~35_combout\ = \THR~combout\(7) $ ((((!\err[4]~22\ & \err[6]~32\) # (\err[4]~22\ & \err[6]~32COUT1_58\) $ (!\ADC~combout\(7)))))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	cin_used => "true",
-	lut_mask => "5aa5",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \THR~combout\(7),
-	datad => \ADC~combout\(7),
-	cin => \err[4]~22\,
-	cin0 => \err[6]~32\,
-	cin1 => \err[6]~32COUT1_58\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \err[7]~35_combout\);
-
--- Location: LC_X8_Y4_N9
-\LessThan0~0\ : maxv_lcell
--- Equation(s):
--- \LessThan0~0_combout\ = (\err[3]~15_combout\) # ((\err[2]~10_combout\) # ((\err[0]~0_combout\) # (\err[1]~5_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "fffe",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \err[3]~15_combout\,
-	datab => \err[2]~10_combout\,
-	datac => \err[0]~0_combout\,
-	datad => \err[1]~5_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \LessThan0~0_combout\);
-
--- Location: LC_X8_Y4_N8
-\LessThan0~2\ : maxv_lcell
--- Equation(s):
--- \LessThan0~2_combout\ = (\err[6]~30_combout\) # ((\LessThan0~1_combout\) # ((\err[7]~35_combout\) # (\LessThan0~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "fffe",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \err[6]~30_combout\,
-	datab => \LessThan0~1_combout\,
-	datac => \err[7]~35_combout\,
-	datad => \LessThan0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \LessThan0~2_combout\);
 
 -- Location: PIN_1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 \TX~I\ : maxv_io
@@ -1950,16 +1612,27 @@ PORT MAP (
 	oe => VCC,
 	padio => ww_TX);
 
--- Location: PIN_60,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\BIN~I\ : maxv_io
+-- Location: PIN_62,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\OWR~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => \LessThan0~2_combout\,
+	datain => \wr~regout\,
 	oe => VCC,
-	padio => ww_BIN);
+	padio => ww_OWR);
+
+-- Location: PIN_63,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\OTXRDY~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => \send_data|transmitter|ready~regout\,
+	oe => VCC,
+	padio => ww_OTXRDY);
 
 -- Location: PIN_58,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 \DATA[0]~I\ : maxv_io

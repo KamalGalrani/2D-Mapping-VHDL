@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for UART
-Mon Mar 10 15:15:16 2014
+Mon Mar 24 19:56:54 2014
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -16,24 +16,29 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   8. Recovery Summary
   9. Removal Summary
  10. Minimum Pulse Width Summary
- 11. Setup: 'CLK'
- 12. Setup: 'tx_clk_tick'
+ 11. Setup: 'tx_clk_tick'
+ 12. Setup: 'CLK'
  13. Hold: 'tx_clk_tick'
  14. Hold: 'CLK'
  15. Recovery: 'tx_clk_tick'
- 16. Removal: 'tx_clk_tick'
- 17. Minimum Pulse Width: 'CLK'
- 18. Minimum Pulse Width: 'tx_clk_tick'
- 19. Clock to Output Times
- 20. Minimum Clock to Output Times
- 21. Setup Transfers
- 22. Hold Transfers
- 23. Recovery Transfers
- 24. Removal Transfers
- 25. Report TCCS
- 26. Report RSKM
- 27. Unconstrained Paths
- 28. TimeQuest Timing Analyzer Messages
+ 16. Recovery: 'CLK'
+ 17. Removal: 'tx_clk_tick'
+ 18. Removal: 'CLK'
+ 19. Minimum Pulse Width: 'CLK'
+ 20. Minimum Pulse Width: 'RST'
+ 21. Minimum Pulse Width: 'tx_clk_tick'
+ 22. Setup Times
+ 23. Hold Times
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Setup Transfers
+ 27. Hold Transfers
+ 28. Recovery Transfers
+ 29. Removal Transfers
+ 30. Report TCCS
+ 31. Report RSKM
+ 32. Unconstrained Paths
+ 33. TimeQuest Timing Analyzer Messages
 
 
 
@@ -86,6 +91,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Clock Name  ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets         ;
 +-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
 ; CLK         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK }         ;
+; RST         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { RST }         ;
 ; tx_clk_tick ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { tx_clk_tick } ;
 +-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
 
@@ -95,20 +101,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+-----------------+-------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name  ; Note ;
 +------------+-----------------+-------------+------+
-; 133.6 MHz  ; 133.6 MHz       ; CLK         ;      ;
-; 281.61 MHz ; 281.61 MHz      ; tx_clk_tick ;      ;
+; 143.35 MHz ; 143.35 MHz      ; CLK         ;      ;
+; 172.06 MHz ; 172.06 MHz      ; tx_clk_tick ;      ;
 +------------+-----------------+-------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+--------------------------------------+
-; Setup Summary                        ;
-+-------------+--------+---------------+
-; Clock       ; Slack  ; End Point TNS ;
-+-------------+--------+---------------+
-; CLK         ; -6.485 ; -71.435       ;
-; tx_clk_tick ; -2.551 ; -12.220       ;
-+-------------+--------+---------------+
++---------------------------------------+
+; Setup Summary                         ;
++-------------+---------+---------------+
+; Clock       ; Slack   ; End Point TNS ;
++-------------+---------+---------------+
+; tx_clk_tick ; -10.306 ; -25.326       ;
+; CLK         ; -5.976  ; -68.020       ;
++-------------+---------+---------------+
 
 
 +-------------------------------------+
@@ -117,7 +123,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock       ; Slack ; End Point TNS ;
 +-------------+-------+---------------+
 ; tx_clk_tick ; 1.094 ; 0.000         ;
-; CLK         ; 2.074 ; 0.000         ;
+; CLK         ; 2.342 ; 0.000         ;
 +-------------+-------+---------------+
 
 
@@ -126,7 +132,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------+--------+---------------+
 ; Clock       ; Slack  ; End Point TNS ;
 +-------------+--------+---------------+
-; tx_clk_tick ; -8.062 ; -41.103       ;
+; tx_clk_tick ; -9.375 ; -47.787       ;
+; CLK         ; -5.355 ; -74.970       ;
 +-------------+--------+---------------+
 
 
@@ -135,7 +142,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------+-------+---------------+
 ; Clock       ; Slack ; End Point TNS ;
 +-------------+-------+---------------+
-; tx_clk_tick ; 5.348 ; 0.000         ;
+; tx_clk_tick ; 2.065 ; 0.000         ;
+; CLK         ; 5.293 ; 0.000         ;
 +-------------+-------+---------------+
 
 
@@ -145,8 +153,47 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock       ; Slack  ; End Point TNS ;
 +-------------+--------+---------------+
 ; CLK         ; -2.289 ; -2.289        ;
+; RST         ; -2.289 ; -2.289        ;
 ; tx_clk_tick ; 0.230  ; 0.000         ;
 +-------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'tx_clk_tick'                                                                                                                         ;
++---------+-------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                     ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; -10.306 ; TRANSMIT:transmitter|latch[3] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; 0.500        ; -6.381     ; 4.087      ;
+; -10.254 ; TRANSMIT:transmitter|latch[5] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; 0.500        ; -6.172     ; 4.244      ;
+; -10.250 ; TRANSMIT:transmitter|latch[4] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; 0.500        ; -6.381     ; 4.031      ;
+; -10.167 ; TRANSMIT:transmitter|latch[1] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; 0.500        ; -6.378     ; 3.951      ;
+; -10.139 ; TRANSMIT:transmitter|latch[2] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; 0.500        ; -6.389     ; 3.912      ;
+; -9.922  ; TRANSMIT:transmitter|latch[6] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; 0.500        ; -6.176     ; 3.908      ;
+; -9.898  ; TRANSMIT:transmitter|latch[7] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; 0.500        ; -6.388     ; 3.672      ;
+; -9.517  ; TRANSMIT:transmitter|latch[0] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; 0.500        ; -6.392     ; 3.287      ;
+; -4.812  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 5.474      ;
+; -4.774  ; TRANSMIT:transmitter|step[3]  ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 5.436      ;
+; -4.746  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 5.408      ;
+; -4.315  ; TRANSMIT:transmitter|step[3]  ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 4.977      ;
+; -4.253  ; TRANSMIT:transmitter|step[2]  ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 4.915      ;
+; -3.707  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 4.369      ;
+; -3.541  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 4.203      ;
+; -3.161  ; TRANSMIT:transmitter|step[2]  ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 3.823      ;
+; -3.115  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 3.777      ;
+; -2.536  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 3.198      ;
+; -2.536  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 3.198      ;
+; -2.518  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 3.180      ;
+; -2.358  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 3.020      ;
+; -2.316  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.978      ;
+; -2.298  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.960      ;
+; -2.215  ; TRANSMIT:transmitter|step[2]  ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.877      ;
+; -2.213  ; TRANSMIT:transmitter|step[2]  ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.875      ;
+; -2.212  ; TRANSMIT:transmitter|step[2]  ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.874      ;
+; -1.999  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.661      ;
+; -1.943  ; TRANSMIT:transmitter|step[3]  ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.605      ;
+; -1.819  ; TRANSMIT:transmitter|ready    ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.481      ;
+; -0.656  ; TRANSMIT:transmitter|step[3]  ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 1.318      ;
++---------+-------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -154,167 +201,145 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
-; -6.485 ; tx_clk_count[5]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.147      ;
-; -6.480 ; tx_clk_count[5]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.142      ;
-; -6.466 ; tx_clk_count[7]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.128      ;
-; -6.461 ; tx_clk_count[7]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.123      ;
-; -6.404 ; tx_clk_count[4]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.066      ;
-; -6.399 ; tx_clk_count[4]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.061      ;
-; -6.360 ; tx_clk_count[3]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.022      ;
-; -6.355 ; tx_clk_count[3]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.017      ;
-; -6.318 ; tx_clk_count[6]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.980      ;
-; -6.313 ; tx_clk_count[6]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.975      ;
-; -6.179 ; tx_clk_count[5]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.841      ;
-; -6.160 ; tx_clk_count[7]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.822      ;
-; -6.148 ; tx_clk_count[12] ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.810      ;
-; -6.143 ; tx_clk_count[12] ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.805      ;
-; -6.098 ; tx_clk_count[4]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.760      ;
-; -6.079 ; tx_clk_count[10] ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.741      ;
-; -6.074 ; tx_clk_count[10] ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.736      ;
-; -6.054 ; tx_clk_count[3]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.716      ;
-; -6.012 ; tx_clk_count[6]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.674      ;
-; -5.842 ; tx_clk_count[12] ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.504      ;
-; -5.773 ; tx_clk_count[10] ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.435      ;
-; -5.770 ; tx_clk_count[8]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.432      ;
-; -5.765 ; tx_clk_count[8]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.427      ;
-; -5.562 ; tx_clk_count[0]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.224      ;
-; -5.549 ; tx_clk_count[5]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.211      ;
-; -5.530 ; tx_clk_count[7]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.192      ;
-; -5.493 ; tx_clk_count[0]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.155      ;
-; -5.477 ; tx_clk_count[3]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.139      ;
-; -5.468 ; tx_clk_count[4]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.130      ;
-; -5.464 ; tx_clk_count[8]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.126      ;
-; -5.424 ; tx_clk_count[3]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.086      ;
-; -5.382 ; tx_clk_count[6]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.044      ;
-; -5.381 ; tx_clk_count[1]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.043      ;
-; -5.373 ; tx_clk_count[5]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.035      ;
-; -5.367 ; tx_clk_count[4]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.029      ;
-; -5.354 ; tx_clk_count[7]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.016      ;
-; -5.312 ; tx_clk_count[0]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.974      ;
-; -5.312 ; tx_clk_count[1]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.974      ;
-; -5.310 ; tx_clk_count[0]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.972      ;
-; -5.303 ; tx_clk_count[0]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.965      ;
-; -5.299 ; tx_clk_count[0]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.961      ;
-; -5.294 ; tx_clk_count[3]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.956      ;
-; -5.292 ; tx_clk_count[4]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.954      ;
-; -5.283 ; tx_clk_count[3]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.945      ;
-; -5.264 ; tx_clk_count[2]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.926      ;
-; -5.258 ; tx_clk_count[9]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.920      ;
-; -5.253 ; tx_clk_count[9]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.915      ;
-; -5.248 ; tx_clk_count[3]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.910      ;
-; -5.212 ; tx_clk_count[12] ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.874      ;
-; -5.206 ; tx_clk_count[6]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.868      ;
-; -5.195 ; tx_clk_count[2]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.857      ;
-; -5.184 ; tx_clk_count[4]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.846      ;
-; -5.173 ; tx_clk_count[4]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.835      ;
-; -5.143 ; tx_clk_count[10] ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.805      ;
-; -5.131 ; tx_clk_count[1]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.793      ;
-; -5.129 ; tx_clk_count[6]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.791      ;
-; -5.129 ; tx_clk_count[1]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.791      ;
-; -5.122 ; tx_clk_count[1]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.784      ;
-; -5.118 ; tx_clk_count[1]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.780      ;
-; -5.048 ; tx_clk_count[9]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.710      ;
-; -5.046 ; tx_clk_count[0]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.708      ;
-; -5.036 ; tx_clk_count[12] ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.698      ;
-; -5.030 ; tx_clk_count[3]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.692      ;
-; -5.025 ; tx_clk_count[5]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.687      ;
-; -5.014 ; tx_clk_count[2]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.676      ;
-; -5.012 ; tx_clk_count[2]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.674      ;
-; -5.005 ; tx_clk_count[2]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.667      ;
-; -5.001 ; tx_clk_count[2]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.663      ;
-; -4.999 ; tx_clk_count[7]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.661      ;
-; -4.967 ; tx_clk_count[10] ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.629      ;
-; -4.920 ; tx_clk_count[4]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.582      ;
-; -4.887 ; tx_clk_count[0]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.549      ;
-; -4.878 ; tx_clk_count[8]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.540      ;
-; -4.868 ; tx_clk_count[11] ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.530      ;
-; -4.865 ; tx_clk_count[1]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.527      ;
-; -4.863 ; tx_clk_count[11] ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.525      ;
-; -4.842 ; tx_clk_count[5]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.504      ;
-; -4.834 ; tx_clk_count[8]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.496      ;
-; -4.831 ; tx_clk_count[5]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.493      ;
-; -4.808 ; tx_clk_count[10] ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.470      ;
-; -4.785 ; tx_clk_count[9]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.447      ;
-; -4.757 ; tx_clk_count[6]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.419      ;
-; -4.748 ; tx_clk_count[2]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.410      ;
-; -4.705 ; tx_clk_count[0]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.367      ;
-; -4.658 ; tx_clk_count[8]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.320      ;
-; -4.627 ; tx_clk_count[7]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.289      ;
-; -4.626 ; tx_clk_count[11] ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.288      ;
-; -4.578 ; tx_clk_count[5]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.240      ;
-; -4.506 ; tx_clk_count[8]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.168      ;
-; -4.449 ; tx_clk_count[6]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.111      ;
-; -4.368 ; tx_clk_count[1]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.030      ;
-; -4.322 ; tx_clk_count[9]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.984      ;
-; -4.319 ; tx_clk_count[7]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.981      ;
-; -4.303 ; tx_clk_count[0]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.965      ;
-; -4.251 ; tx_clk_count[2]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.913      ;
-; -4.146 ; tx_clk_count[9]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.808      ;
-; -4.124 ; tx_clk_count[5]  ; tx_clk_tick      ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.786      ;
-; -4.076 ; tx_clk_count[7]  ; tx_clk_tick      ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.738      ;
-; -4.074 ; tx_clk_count[3]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.736      ;
-; -4.061 ; tx_clk_count[1]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.723      ;
+; -5.976 ; tx_clk_count[2]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.638      ;
+; -5.916 ; tx_clk_count[4]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.578      ;
+; -5.868 ; tx_clk_count[0]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.530      ;
+; -5.853 ; tx_clk_count[3]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.515      ;
+; -5.724 ; tx_clk_count[1]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.386      ;
+; -5.693 ; tx_clk_count[5]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.355      ;
+; -5.542 ; tx_clk_count[9]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.204      ;
+; -5.484 ; tx_clk_count[6]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.146      ;
+; -5.443 ; tx_clk_count[11] ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.105      ;
+; -5.432 ; tx_clk_count[2]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.094      ;
+; -5.410 ; tx_clk_count[2]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.072      ;
+; -5.372 ; tx_clk_count[4]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.034      ;
+; -5.350 ; tx_clk_count[4]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.012      ;
+; -5.333 ; tx_clk_count[6]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.995      ;
+; -5.324 ; tx_clk_count[0]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.986      ;
+; -5.320 ; tx_clk_count[7]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.982      ;
+; -5.309 ; tx_clk_count[3]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.971      ;
+; -5.302 ; tx_clk_count[0]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.964      ;
+; -5.287 ; tx_clk_count[3]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.949      ;
+; -5.287 ; tx_clk_count[8]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.949      ;
+; -5.285 ; tx_clk_count[10] ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.947      ;
+; -5.278 ; tx_clk_count[10] ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.940      ;
+; -5.270 ; tx_clk_count[2]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.932      ;
+; -5.269 ; tx_clk_count[6]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.931      ;
+; -5.264 ; tx_clk_count[3]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.926      ;
+; -5.228 ; tx_clk_count[11] ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.890      ;
+; -5.215 ; tx_clk_count[7]  ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.877      ;
+; -5.210 ; tx_clk_count[4]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.872      ;
+; -5.180 ; tx_clk_count[1]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.842      ;
+; -5.162 ; tx_clk_count[0]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.824      ;
+; -5.158 ; tx_clk_count[1]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.820      ;
+; -5.149 ; tx_clk_count[5]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.811      ;
+; -5.145 ; tx_clk_count[2]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.807      ;
+; -5.127 ; tx_clk_count[5]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.789      ;
+; -5.110 ; tx_clk_count[6]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.772      ;
+; -5.108 ; tx_clk_count[6]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.770      ;
+; -5.105 ; tx_clk_count[7]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.767      ;
+; -5.085 ; tx_clk_count[4]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.747      ;
+; -5.070 ; tx_clk_count[10] ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.732      ;
+; -5.069 ; tx_clk_count[11] ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.731      ;
+; -5.067 ; tx_clk_count[11] ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.729      ;
+; -5.063 ; tx_clk_count[11] ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.725      ;
+; -5.048 ; tx_clk_count[12] ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.710      ;
+; -5.037 ; tx_clk_count[0]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.699      ;
+; -5.022 ; tx_clk_count[3]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.684      ;
+; -5.018 ; tx_clk_count[1]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.680      ;
+; -5.013 ; tx_clk_count[2]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.675      ;
+; -5.013 ; tx_clk_count[2]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.675      ;
+; -4.998 ; tx_clk_count[9]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.660      ;
+; -4.987 ; tx_clk_count[5]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.649      ;
+; -4.953 ; tx_clk_count[4]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.615      ;
+; -4.953 ; tx_clk_count[4]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.615      ;
+; -4.946 ; tx_clk_count[7]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.608      ;
+; -4.944 ; tx_clk_count[7]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.606      ;
+; -4.911 ; tx_clk_count[10] ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.573      ;
+; -4.909 ; tx_clk_count[10] ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.571      ;
+; -4.905 ; tx_clk_count[0]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.567      ;
+; -4.905 ; tx_clk_count[0]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.567      ;
+; -4.893 ; tx_clk_count[1]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.555      ;
+; -4.890 ; tx_clk_count[3]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.552      ;
+; -4.890 ; tx_clk_count[3]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.552      ;
+; -4.890 ; tx_clk_count[3]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.552      ;
+; -4.888 ; tx_clk_count[3]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.550      ;
+; -4.862 ; tx_clk_count[5]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.524      ;
+; -4.833 ; tx_clk_count[12] ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.495      ;
+; -4.812 ; tx_clk_count[8]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.474      ;
+; -4.789 ; tx_clk_count[6]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.451      ;
+; -4.761 ; tx_clk_count[1]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.423      ;
+; -4.761 ; tx_clk_count[1]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.423      ;
+; -4.757 ; tx_clk_count[4]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.419      ;
+; -4.755 ; tx_clk_count[4]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.417      ;
+; -4.743 ; tx_clk_count[8]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.405      ;
+; -4.734 ; tx_clk_count[10] ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.396      ;
+; -4.730 ; tx_clk_count[5]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.392      ;
+; -4.730 ; tx_clk_count[5]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.392      ;
+; -4.688 ; tx_clk_count[0]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.350      ;
+; -4.686 ; tx_clk_count[0]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.348      ;
+; -4.674 ; tx_clk_count[12] ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.336      ;
+; -4.672 ; tx_clk_count[12] ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.334      ;
+; -4.671 ; tx_clk_count[7]  ; tx_clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.333      ;
+; -4.668 ; tx_clk_count[12] ; tx_clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.330      ;
+; -4.597 ; tx_clk_count[8]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.259      ;
+; -4.535 ; tx_clk_count[9]  ; tx_clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.197      ;
+; -4.458 ; tx_clk_count[2]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.120      ;
+; -4.438 ; tx_clk_count[8]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.100      ;
+; -4.436 ; tx_clk_count[8]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.098      ;
+; -4.424 ; tx_clk_count[0]  ; tx_clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.086      ;
+; -4.418 ; tx_clk_count[0]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.080      ;
+; -4.331 ; tx_clk_count[2]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.993      ;
+; -4.313 ; tx_clk_count[2]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.975      ;
+; -4.253 ; tx_clk_count[4]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.915      ;
+; -4.206 ; tx_clk_count[1]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.868      ;
+; -4.190 ; tx_clk_count[3]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.852      ;
+; -4.170 ; tx_clk_count[5]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.832      ;
+; -4.168 ; tx_clk_count[5]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.830      ;
+; -4.079 ; tx_clk_count[1]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.741      ;
+; -4.061 ; tx_clk_count[1]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.723      ;
+; -4.002 ; tx_clk_count[0]  ; tx_clk_count[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.664      ;
+; -3.936 ; tx_clk_count[6]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.598      ;
+; -3.890 ; tx_clk_count[8]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.552      ;
 +--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Setup: 'tx_clk_tick'                                                                                                                       ;
-+--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                    ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
-; -2.551 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 3.213      ;
-; -2.329 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.991      ;
-; -2.147 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.809      ;
-; -1.946 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.608      ;
-; -1.945 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.607      ;
-; -1.943 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.605      ;
-; -1.927 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.589      ;
-; -1.926 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.588      ;
-; -1.925 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.587      ;
-; -1.923 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.585      ;
-; -1.908 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.570      ;
-; -1.822 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.484      ;
-; -1.746 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.408      ;
-; -1.742 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.404      ;
-; -1.739 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.401      ;
-; -1.722 ; TRANSMIT:transmitter|ready   ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 2.384      ;
-; -1.303 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 1.965      ;
-; -1.302 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 1.964      ;
-; -1.301 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 1.963      ;
-; -1.300 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 1.962      ;
-; -1.272 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 1.934      ;
-; -0.656 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 1.318      ;
-+--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Hold: 'tx_clk_tick'                                                                                                                       ;
-+-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                    ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
-; 1.094 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 1.318      ;
-; 1.710 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 1.934      ;
-; 1.738 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 1.962      ;
-; 1.739 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 1.963      ;
-; 1.740 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 1.964      ;
-; 1.741 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 1.965      ;
-; 2.160 ; TRANSMIT:transmitter|ready   ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.384      ;
-; 2.177 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.401      ;
-; 2.180 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.404      ;
-; 2.184 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.408      ;
-; 2.260 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.484      ;
-; 2.346 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.570      ;
-; 2.361 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.585      ;
-; 2.363 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.587      ;
-; 2.364 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.588      ;
-; 2.365 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.589      ;
-; 2.381 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.605      ;
-; 2.383 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.607      ;
-; 2.384 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.608      ;
-; 2.585 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.809      ;
-; 2.767 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.991      ;
-; 2.989 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 3.213      ;
-+-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'tx_clk_tick'                                                                                                                         ;
++--------+-------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.094  ; TRANSMIT:transmitter|step[3]  ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 1.318      ;
+; 2.257  ; TRANSMIT:transmitter|ready    ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.481      ;
+; 2.381  ; TRANSMIT:transmitter|step[3]  ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.605      ;
+; 2.437  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.661      ;
+; 2.650  ; TRANSMIT:transmitter|step[2]  ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.874      ;
+; 2.651  ; TRANSMIT:transmitter|step[2]  ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.875      ;
+; 2.653  ; TRANSMIT:transmitter|step[2]  ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.877      ;
+; 2.736  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.960      ;
+; 2.754  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 2.978      ;
+; 2.796  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 3.020      ;
+; 2.956  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 3.180      ;
+; 2.974  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 3.198      ;
+; 2.974  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 3.198      ;
+; 3.553  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 3.777      ;
+; 3.599  ; TRANSMIT:transmitter|step[2]  ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 3.823      ;
+; 3.979  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 4.203      ;
+; 4.046  ; TRANSMIT:transmitter|step[1]  ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 4.270      ;
+; 4.058  ; TRANSMIT:transmitter|step[2]  ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 4.282      ;
+; 4.145  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 4.369      ;
+; 4.204  ; TRANSMIT:transmitter|step[3]  ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 4.428      ;
+; 4.604  ; TRANSMIT:transmitter|step[0]  ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 4.828      ;
+; 4.753  ; TRANSMIT:transmitter|step[3]  ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 4.977      ;
+; 9.955  ; TRANSMIT:transmitter|latch[0] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; -0.500       ; -6.392     ; 3.287      ;
+; 10.336 ; TRANSMIT:transmitter|latch[7] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; -0.500       ; -6.388     ; 3.672      ;
+; 10.360 ; TRANSMIT:transmitter|latch[6] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; -0.500       ; -6.176     ; 3.908      ;
+; 10.577 ; TRANSMIT:transmitter|latch[2] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; -0.500       ; -6.389     ; 3.912      ;
+; 10.605 ; TRANSMIT:transmitter|latch[1] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; -0.500       ; -6.378     ; 3.951      ;
+; 10.688 ; TRANSMIT:transmitter|latch[4] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; -0.500       ; -6.381     ; 4.031      ;
+; 10.692 ; TRANSMIT:transmitter|latch[5] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; -0.500       ; -6.172     ; 4.244      ;
+; 10.744 ; TRANSMIT:transmitter|latch[3] ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; -0.500       ; -6.381     ; 4.087      ;
++--------+-------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -322,106 +347,106 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
-; 2.074 ; tx_clk_count[0]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.298      ;
+; 2.342 ; tx_clk_count[0]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.566      ;
+; 2.494 ; tx_clk_count[9]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.718      ;
+; 2.585 ; tx_clk_count[2]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.809      ;
 ; 2.640 ; tx_clk_count[1]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.864      ;
 ; 2.873 ; tx_clk_count[1]  ; tx_clk_count[1]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.097      ;
-; 2.879 ; tx_clk_count[2]  ; tx_clk_count[2]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.103      ;
-; 2.966 ; tx_clk_count[2]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.190      ;
-; 3.014 ; tx_clk_count[11] ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.238      ;
-; 3.254 ; tx_clk_count[0]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.478      ;
-; 3.302 ; tx_clk_count[5]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.526      ;
-; 3.306 ; tx_clk_count[9]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.530      ;
-; 3.430 ; tx_clk_count[0]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.654      ;
-; 3.658 ; tx_clk_count[7]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.882      ;
-; 3.691 ; tx_clk_count[1]  ; tx_clk_count[2]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.915      ;
-; 3.818 ; tx_clk_count[8]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.042      ;
-; 3.926 ; tx_clk_count[8]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.150      ;
-; 3.929 ; tx_clk_count[6]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.153      ;
-; 3.942 ; tx_clk_count[1]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.166      ;
-; 3.954 ; tx_clk_count[3]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.178      ;
-; 3.966 ; tx_clk_count[11] ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.190      ;
-; 4.060 ; tx_clk_count[0]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.284      ;
-; 4.081 ; tx_clk_count[10] ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.305      ;
-; 4.118 ; tx_clk_count[1]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.342      ;
-; 4.141 ; tx_clk_count[9]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.365      ;
-; 4.151 ; tx_clk_count[4]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.375      ;
-; 4.156 ; tx_clk_count[0]  ; tx_clk_count[0]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.380      ;
-; 4.189 ; tx_clk_count[2]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.413      ;
-; 4.194 ; tx_clk_count[11] ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.418      ;
-; 4.215 ; tx_clk_count[2]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.439      ;
-; 4.225 ; tx_clk_count[10] ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.449      ;
-; 4.255 ; tx_clk_count[12] ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.479      ;
-; 4.293 ; tx_clk_count[1]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.517      ;
-; 4.294 ; tx_clk_count[12] ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.518      ;
-; 4.361 ; tx_clk_count[0]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.585      ;
-; 4.366 ; tx_clk_count[0]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.590      ;
-; 4.366 ; tx_clk_count[6]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.590      ;
-; 4.370 ; tx_clk_count[11] ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.594      ;
-; 4.387 ; tx_clk_count[4]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.611      ;
-; 4.391 ; tx_clk_count[2]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.615      ;
-; 4.437 ; tx_clk_count[3]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.661      ;
-; 4.475 ; tx_clk_count[0]  ; tx_clk_count[2]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.699      ;
-; 4.477 ; tx_clk_count[0]  ; tx_clk_count[1]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.701      ;
-; 4.481 ; tx_clk_count[4]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.705      ;
-; 4.483 ; tx_clk_count[6]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.707      ;
-; 4.484 ; tx_clk_count[3]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.708      ;
-; 4.514 ; tx_clk_count[7]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.738      ;
-; 4.562 ; tx_clk_count[5]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.786      ;
-; 4.584 ; tx_clk_count[9]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.808      ;
-; 4.741 ; tx_clk_count[0]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.965      ;
-; 4.742 ; tx_clk_count[7]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.966      ;
-; 4.748 ; tx_clk_count[1]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.972      ;
-; 4.760 ; tx_clk_count[9]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.984      ;
-; 4.771 ; tx_clk_count[9]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.995      ;
-; 4.851 ; tx_clk_count[8]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.075      ;
-; 4.859 ; tx_clk_count[6]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.083      ;
-; 4.929 ; tx_clk_count[8]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.153      ;
-; 4.956 ; tx_clk_count[3]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.180      ;
-; 4.959 ; tx_clk_count[7]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.183      ;
-; 5.000 ; tx_clk_count[11] ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.224      ;
-; 5.016 ; tx_clk_count[5]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.240      ;
-; 5.021 ; tx_clk_count[2]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.245      ;
-; 5.037 ; tx_clk_count[7]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.261      ;
-; 5.049 ; tx_clk_count[1]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.273      ;
-; 5.054 ; tx_clk_count[1]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.278      ;
-; 5.076 ; tx_clk_count[6]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.300      ;
-; 5.096 ; tx_clk_count[8]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.320      ;
-; 5.143 ; tx_clk_count[2]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.367      ;
-; 5.154 ; tx_clk_count[6]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.378      ;
-; 5.210 ; tx_clk_count[9]  ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.434      ;
-; 5.246 ; tx_clk_count[10] ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.470      ;
-; 5.247 ; tx_clk_count[1]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.471      ;
-; 5.269 ; tx_clk_count[5]  ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.493      ;
-; 5.272 ; tx_clk_count[8]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.496      ;
-; 5.273 ; tx_clk_count[5]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.497      ;
-; 5.280 ; tx_clk_count[5]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.504      ;
-; 5.282 ; tx_clk_count[5]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.506      ;
-; 5.290 ; tx_clk_count[8]  ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.514      ;
-; 5.301 ; tx_clk_count[11] ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.525      ;
-; 5.306 ; tx_clk_count[11] ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.530      ;
-; 5.322 ; tx_clk_count[2]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.546      ;
-; 5.327 ; tx_clk_count[2]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.551      ;
-; 5.341 ; tx_clk_count[4]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.565      ;
-; 5.390 ; tx_clk_count[9]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.614      ;
-; 5.396 ; tx_clk_count[2]  ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.620      ;
-; 5.398 ; tx_clk_count[7]  ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.622      ;
-; 5.405 ; tx_clk_count[10] ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.629      ;
-; 5.407 ; tx_clk_count[2]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.631      ;
-; 5.438 ; tx_clk_count[3]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.662      ;
-; 5.463 ; tx_clk_count[5]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.687      ;
-; 5.474 ; tx_clk_count[12] ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.698      ;
-; 5.484 ; tx_clk_count[0]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.708      ;
-; 5.500 ; tx_clk_count[1]  ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.724      ;
-; 5.509 ; tx_clk_count[10] ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.733      ;
-; 5.511 ; tx_clk_count[1]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.735      ;
-; 5.515 ; tx_clk_count[6]  ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.739      ;
-; 5.532 ; tx_clk_count[5]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.756      ;
-; 5.553 ; tx_clk_count[8]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.777      ;
-; 5.581 ; tx_clk_count[10] ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.805      ;
-; 5.590 ; tx_clk_count[2]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.814      ;
-; 5.594 ; tx_clk_count[4]  ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.818      ;
-; 5.598 ; tx_clk_count[4]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.822      ;
-; 5.605 ; tx_clk_count[4]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.829      ;
+; 3.084 ; tx_clk_count[5]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.308      ;
+; 3.164 ; tx_clk_count[7]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.388      ;
+; 3.304 ; tx_clk_count[8]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.528      ;
+; 3.414 ; tx_clk_count[6]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.638      ;
+; 3.421 ; tx_clk_count[8]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.645      ;
+; 3.559 ; tx_clk_count[12] ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.783      ;
+; 3.671 ; tx_clk_count[4]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.895      ;
+; 3.672 ; tx_clk_count[2]  ; tx_clk_count[2]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.896      ;
+; 3.681 ; tx_clk_count[5]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.905      ;
+; 3.796 ; tx_clk_count[10] ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.020      ;
+; 3.804 ; tx_clk_count[3]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.028      ;
+; 3.816 ; tx_clk_count[9]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.040      ;
+; 3.889 ; tx_clk_count[0]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.113      ;
+; 3.893 ; tx_clk_count[0]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.117      ;
+; 3.895 ; tx_clk_count[0]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.119      ;
+; 3.929 ; tx_clk_count[10] ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.153      ;
+; 3.929 ; tx_clk_count[7]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.153      ;
+; 3.936 ; tx_clk_count[3]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.160      ;
+; 3.943 ; tx_clk_count[9]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.167      ;
+; 3.947 ; tx_clk_count[9]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.171      ;
+; 3.949 ; tx_clk_count[9]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.173      ;
+; 3.954 ; tx_clk_count[11] ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.178      ;
+; 3.977 ; tx_clk_count[6]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.201      ;
+; 3.981 ; tx_clk_count[11] ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.205      ;
+; 3.984 ; tx_clk_count[7]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.208      ;
+; 4.054 ; tx_clk_count[0]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.278      ;
+; 4.069 ; tx_clk_count[4]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.293      ;
+; 4.089 ; tx_clk_count[6]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.313      ;
+; 4.093 ; tx_clk_count[6]  ; tx_clk_tick      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.317      ;
+; 4.103 ; tx_clk_count[2]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.327      ;
+; 4.107 ; tx_clk_count[2]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.331      ;
+; 4.108 ; tx_clk_count[9]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.332      ;
+; 4.109 ; tx_clk_count[2]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.333      ;
+; 4.115 ; tx_clk_count[1]  ; tx_clk_count[2]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.339      ;
+; 4.211 ; tx_clk_count[1]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.435      ;
+; 4.215 ; tx_clk_count[1]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.439      ;
+; 4.217 ; tx_clk_count[1]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.441      ;
+; 4.228 ; tx_clk_count[7]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.452      ;
+; 4.268 ; tx_clk_count[0]  ; tx_clk_count[0]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.492      ;
+; 4.268 ; tx_clk_count[2]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.492      ;
+; 4.269 ; tx_clk_count[0]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.493      ;
+; 4.313 ; tx_clk_count[8]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.537      ;
+; 4.323 ; tx_clk_count[9]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.547      ;
+; 4.333 ; tx_clk_count[6]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.557      ;
+; 4.376 ; tx_clk_count[1]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.600      ;
+; 4.440 ; tx_clk_count[0]  ; tx_clk_count[1]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.664      ;
+; 4.445 ; tx_clk_count[1]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.669      ;
+; 4.447 ; tx_clk_count[12] ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.671      ;
+; 4.483 ; tx_clk_count[2]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.707      ;
+; 4.591 ; tx_clk_count[1]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.815      ;
+; 4.600 ; tx_clk_count[3]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.824      ;
+; 4.602 ; tx_clk_count[5]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.826      ;
+; 4.605 ; tx_clk_count[7]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.829      ;
+; 4.606 ; tx_clk_count[5]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.830      ;
+; 4.608 ; tx_clk_count[5]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.832      ;
+; 4.676 ; tx_clk_count[4]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.900      ;
+; 4.690 ; tx_clk_count[8]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.914      ;
+; 4.710 ; tx_clk_count[2]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.934      ;
+; 4.710 ; tx_clk_count[6]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.934      ;
+; 4.758 ; tx_clk_count[3]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.982      ;
+; 4.767 ; tx_clk_count[5]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.991      ;
+; 4.856 ; tx_clk_count[0]  ; tx_clk_count[5]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.080      ;
+; 4.862 ; tx_clk_count[0]  ; tx_clk_count[2]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.086      ;
+; 4.870 ; tx_clk_count[8]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.094      ;
+; 4.874 ; tx_clk_count[8]  ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.098      ;
+; 4.876 ; tx_clk_count[8]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.100      ;
+; 4.982 ; tx_clk_count[5]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.206      ;
+; 5.070 ; tx_clk_count[7]  ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.294      ;
+; 5.110 ; tx_clk_count[12] ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.334      ;
+; 5.112 ; tx_clk_count[12] ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.336      ;
+; 5.143 ; tx_clk_count[1]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.367      ;
+; 5.143 ; tx_clk_count[1]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.367      ;
+; 5.155 ; tx_clk_count[8]  ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.379      ;
+; 5.168 ; tx_clk_count[5]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.392      ;
+; 5.168 ; tx_clk_count[5]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.392      ;
+; 5.172 ; tx_clk_count[10] ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.396      ;
+; 5.175 ; tx_clk_count[6]  ; tx_clk_count[11] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.399      ;
+; 5.189 ; tx_clk_count[4]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.413      ;
+; 5.195 ; tx_clk_count[4]  ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.419      ;
+; 5.250 ; tx_clk_count[8]  ; tx_clk_count[6]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.474      ;
+; 5.271 ; tx_clk_count[12] ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.495      ;
+; 5.275 ; tx_clk_count[1]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.499      ;
+; 5.298 ; tx_clk_count[3]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.522      ;
+; 5.298 ; tx_clk_count[3]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.522      ;
+; 5.300 ; tx_clk_count[5]  ; tx_clk_count[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.524      ;
+; 5.322 ; tx_clk_count[3]  ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.546      ;
+; 5.343 ; tx_clk_count[10] ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.567      ;
+; 5.343 ; tx_clk_count[0]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.567      ;
+; 5.343 ; tx_clk_count[0]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.567      ;
+; 5.345 ; tx_clk_count[11] ; tx_clk_count[12] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.569      ;
+; 5.347 ; tx_clk_count[10] ; tx_clk_count[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.571      ;
+; 5.349 ; tx_clk_count[10] ; tx_clk_count[3]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.573      ;
+; 5.354 ; tx_clk_count[4]  ; tx_clk_count[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.578      ;
+; 5.374 ; tx_clk_count[4]  ; tx_clk_count[7]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.598      ;
+; 5.374 ; tx_clk_count[4]  ; tx_clk_count[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.598      ;
 +-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -430,31 +455,79 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                    ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
-; -8.062 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.724      ;
-; -8.062 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.724      ;
-; -8.062 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.724      ;
-; -7.840 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.502      ;
-; -7.840 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.502      ;
-; -7.840 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.502      ;
-; -7.658 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.320      ;
-; -7.658 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.320      ;
-; -7.658 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.320      ;
-; -7.333 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 7.995      ;
-; -7.333 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 7.995      ;
-; -7.333 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 7.995      ;
-; -5.639 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.301      ;
-; -5.639 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.301      ;
-; -5.639 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.301      ;
-; -5.417 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.079      ;
-; -5.417 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.079      ;
-; -5.417 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.079      ;
-; -5.235 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 5.897      ;
-; -5.235 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 5.897      ;
-; -5.235 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 5.897      ;
-; -4.910 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 5.572      ;
-; -4.910 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 5.572      ;
-; -4.910 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 5.572      ;
+; -9.375 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 10.037     ;
+; -9.375 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 10.037     ;
+; -9.375 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 10.037     ;
+; -8.767 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 9.429      ;
+; -8.767 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 9.429      ;
+; -8.767 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 9.429      ;
+; -8.601 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 9.263      ;
+; -8.601 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 9.263      ;
+; -8.601 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 9.263      ;
+; -8.221 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.883      ;
+; -8.221 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.883      ;
+; -8.221 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 8.883      ;
+; -6.880 ; RST                          ; TRANSMIT:transmitter|step[1] ; RST          ; tx_clk_tick ; 0.500        ; 4.552      ; 11.594     ;
+; -6.880 ; RST                          ; TRANSMIT:transmitter|step[3] ; RST          ; tx_clk_tick ; 0.500        ; 4.552      ; 11.594     ;
+; -6.880 ; RST                          ; TRANSMIT:transmitter|ready   ; RST          ; tx_clk_tick ; 0.500        ; 4.552      ; 11.594     ;
+; -6.554 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 7.216      ;
+; -6.554 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 7.216      ;
+; -6.554 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 7.216      ;
+; -6.380 ; RST                          ; TRANSMIT:transmitter|step[1] ; RST          ; tx_clk_tick ; 1.000        ; 4.552      ; 11.594     ;
+; -6.380 ; RST                          ; TRANSMIT:transmitter|step[3] ; RST          ; tx_clk_tick ; 1.000        ; 4.552      ; 11.594     ;
+; -6.380 ; RST                          ; TRANSMIT:transmitter|ready   ; RST          ; tx_clk_tick ; 1.000        ; 4.552      ; 11.594     ;
+; -5.946 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.608      ;
+; -5.946 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.608      ;
+; -5.946 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.608      ;
+; -5.780 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.442      ;
+; -5.780 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.442      ;
+; -5.780 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.442      ;
+; -5.400 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.062      ;
+; -5.400 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.062      ;
+; -5.400 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 1.000        ; 0.000      ; 6.062      ;
+; -2.127 ; RST                          ; TRANSMIT:transmitter|step[0] ; RST          ; tx_clk_tick ; 0.500        ; 4.552      ; 6.841      ;
+; -2.127 ; RST                          ; TRANSMIT:transmitter|step[2] ; RST          ; tx_clk_tick ; 0.500        ; 4.552      ; 6.841      ;
+; -2.127 ; RST                          ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; 0.500        ; 4.552      ; 6.841      ;
+; -1.627 ; RST                          ; TRANSMIT:transmitter|step[0] ; RST          ; tx_clk_tick ; 1.000        ; 4.552      ; 6.841      ;
+; -1.627 ; RST                          ; TRANSMIT:transmitter|step[2] ; RST          ; tx_clk_tick ; 1.000        ; 4.552      ; 6.841      ;
+; -1.627 ; RST                          ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; 1.000        ; 4.552      ; 6.841      ;
 +--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Recovery: 'CLK'                                                                                             ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -5.355 ; RST       ; tx_clk_tick      ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[12] ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[10] ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[11] ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[0]  ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[6]  ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[8]  ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[7]  ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[9]  ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[1]  ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[4]  ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[5]  ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[3]  ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -5.355 ; RST       ; tx_clk_count[2]  ; RST          ; CLK         ; 0.500        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_tick      ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[12] ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[10] ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[11] ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[0]  ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[6]  ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[8]  ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[7]  ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[9]  ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[1]  ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[4]  ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[5]  ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[3]  ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
+; -4.855 ; RST       ; tx_clk_count[2]  ; RST          ; CLK         ; 1.000        ; 3.765      ; 9.282      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -462,31 +535,79 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                    ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
-; 5.348 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 5.572      ;
-; 5.348 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 5.572      ;
-; 5.348 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 5.572      ;
-; 5.673 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 5.897      ;
-; 5.673 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 5.897      ;
-; 5.673 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 5.897      ;
-; 5.855 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.079      ;
-; 5.855 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.079      ;
-; 5.855 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.079      ;
-; 6.077 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.301      ;
-; 6.077 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.301      ;
-; 6.077 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.301      ;
-; 7.771 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 7.995      ;
-; 7.771 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 7.995      ;
-; 7.771 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 7.995      ;
-; 8.096 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.320      ;
-; 8.096 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.320      ;
-; 8.096 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.320      ;
-; 8.278 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.502      ;
-; 8.278 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.502      ;
-; 8.278 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.502      ;
-; 8.500 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.724      ;
-; 8.500 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.724      ;
-; 8.500 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.724      ;
+; 2.065 ; RST                          ; TRANSMIT:transmitter|step[0] ; RST          ; tx_clk_tick ; 0.000        ; 4.552      ; 6.841      ;
+; 2.065 ; RST                          ; TRANSMIT:transmitter|step[2] ; RST          ; tx_clk_tick ; 0.000        ; 4.552      ; 6.841      ;
+; 2.065 ; RST                          ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; 0.000        ; 4.552      ; 6.841      ;
+; 2.565 ; RST                          ; TRANSMIT:transmitter|step[0] ; RST          ; tx_clk_tick ; -0.500       ; 4.552      ; 6.841      ;
+; 2.565 ; RST                          ; TRANSMIT:transmitter|step[2] ; RST          ; tx_clk_tick ; -0.500       ; 4.552      ; 6.841      ;
+; 2.565 ; RST                          ; TRANSMIT:transmitter|TX      ; RST          ; tx_clk_tick ; -0.500       ; 4.552      ; 6.841      ;
+; 5.610 ; RST                          ; TRANSMIT:transmitter|step[1] ; RST          ; tx_clk_tick ; 0.000        ; 4.552      ; 10.386     ;
+; 5.610 ; RST                          ; TRANSMIT:transmitter|step[3] ; RST          ; tx_clk_tick ; 0.000        ; 4.552      ; 10.386     ;
+; 5.610 ; RST                          ; TRANSMIT:transmitter|ready   ; RST          ; tx_clk_tick ; 0.000        ; 4.552      ; 10.386     ;
+; 5.838 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.062      ;
+; 5.838 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.062      ;
+; 5.838 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.062      ;
+; 6.110 ; RST                          ; TRANSMIT:transmitter|step[1] ; RST          ; tx_clk_tick ; -0.500       ; 4.552      ; 10.386     ;
+; 6.110 ; RST                          ; TRANSMIT:transmitter|step[3] ; RST          ; tx_clk_tick ; -0.500       ; 4.552      ; 10.386     ;
+; 6.110 ; RST                          ; TRANSMIT:transmitter|ready   ; RST          ; tx_clk_tick ; -0.500       ; 4.552      ; 10.386     ;
+; 6.218 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.442      ;
+; 6.218 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.442      ;
+; 6.218 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.442      ;
+; 6.384 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.608      ;
+; 6.384 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.608      ;
+; 6.384 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 6.608      ;
+; 6.992 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[0] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 7.216      ;
+; 6.992 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[2] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 7.216      ;
+; 6.992 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|TX      ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 7.216      ;
+; 8.659 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.883      ;
+; 8.659 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.883      ;
+; 8.659 ; TRANSMIT:transmitter|step[2] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 8.883      ;
+; 9.039 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 9.263      ;
+; 9.039 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 9.263      ;
+; 9.039 ; TRANSMIT:transmitter|step[1] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 9.263      ;
+; 9.205 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 9.429      ;
+; 9.205 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 9.429      ;
+; 9.205 ; TRANSMIT:transmitter|step[0] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 9.429      ;
+; 9.813 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[1] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 10.037     ;
+; 9.813 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|step[3] ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 10.037     ;
+; 9.813 ; TRANSMIT:transmitter|step[3] ; TRANSMIT:transmitter|ready   ; tx_clk_tick  ; tx_clk_tick ; 0.000        ; 0.000      ; 10.037     ;
 +-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Removal: 'CLK'                                                                                             ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; 5.293 ; RST       ; tx_clk_tick      ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[12] ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[10] ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[11] ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[0]  ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[6]  ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[8]  ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[7]  ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[9]  ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[1]  ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[4]  ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[5]  ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[3]  ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.293 ; RST       ; tx_clk_count[2]  ; RST          ; CLK         ; 0.000        ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_tick      ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[12] ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[10] ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[11] ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[0]  ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[6]  ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[8]  ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[7]  ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[9]  ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[1]  ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[4]  ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[5]  ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[3]  ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
+; 5.793 ; RST       ; tx_clk_count[2]  ; RST          ; CLK         ; -0.500       ; 3.765      ; 9.282      ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
@@ -556,6 +677,53 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------------+----------------+------------------+-------+------------+----------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'RST'                                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; RST   ; Rise       ; RST                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; RST|combout                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; RST|combout                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; TRANSMIT:transmitter|latch[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; TRANSMIT:transmitter|latch[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; TRANSMIT:transmitter|latch[1] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; TRANSMIT:transmitter|latch[1] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; TRANSMIT:transmitter|latch[2] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; TRANSMIT:transmitter|latch[2] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; TRANSMIT:transmitter|latch[3] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; TRANSMIT:transmitter|latch[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; TRANSMIT:transmitter|latch[4] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; TRANSMIT:transmitter|latch[4] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; TRANSMIT:transmitter|latch[5] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; TRANSMIT:transmitter|latch[5] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; TRANSMIT:transmitter|latch[6] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; TRANSMIT:transmitter|latch[6] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; TRANSMIT:transmitter|latch[7] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; TRANSMIT:transmitter|latch[7] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; transmitter|latch[0]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; transmitter|latch[0]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; transmitter|latch[1]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; transmitter|latch[1]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; transmitter|latch[2]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; transmitter|latch[2]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; transmitter|latch[3]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; transmitter|latch[3]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; transmitter|latch[4]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; transmitter|latch[4]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; transmitter|latch[5]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; transmitter|latch[5]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; transmitter|latch[6]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; transmitter|latch[6]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; transmitter|latch[7]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; transmitter|latch[7]|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; transmitter|ready~1|combout   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; transmitter|ready~1|combout   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; transmitter|ready~1|datab     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; transmitter|ready~1|datab     ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------+
 ; Minimum Pulse Width: 'tx_clk_tick'                                                                                 ;
 +-------+--------------+----------------+------------------+-------------+------------+------------------------------+
@@ -590,13 +758,47 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------------+----------------+------------------+-------------+------------+------------------------------+
 
 
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DATA[*]   ; RST        ; -2.918 ; -2.918 ; Fall       ; RST             ;
+;  DATA[0]  ; RST        ; -3.539 ; -3.539 ; Fall       ; RST             ;
+;  DATA[1]  ; RST        ; -2.977 ; -2.977 ; Fall       ; RST             ;
+;  DATA[2]  ; RST        ; -2.918 ; -2.918 ; Fall       ; RST             ;
+;  DATA[3]  ; RST        ; -3.337 ; -3.337 ; Fall       ; RST             ;
+;  DATA[4]  ; RST        ; -3.199 ; -3.199 ; Fall       ; RST             ;
+;  DATA[5]  ; RST        ; -3.148 ; -3.148 ; Fall       ; RST             ;
+;  DATA[6]  ; RST        ; -3.547 ; -3.547 ; Fall       ; RST             ;
+;  DATA[7]  ; RST        ; -2.954 ; -2.954 ; Fall       ; RST             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; DATA[*]   ; RST        ; 5.210 ; 5.210 ; Fall       ; RST             ;
+;  DATA[0]  ; RST        ; 5.037 ; 5.037 ; Fall       ; RST             ;
+;  DATA[1]  ; RST        ; 4.818 ; 4.818 ; Fall       ; RST             ;
+;  DATA[2]  ; RST        ; 4.772 ; 4.772 ; Fall       ; RST             ;
+;  DATA[3]  ; RST        ; 5.189 ; 5.189 ; Fall       ; RST             ;
+;  DATA[4]  ; RST        ; 4.699 ; 4.699 ; Fall       ; RST             ;
+;  DATA[5]  ; RST        ; 4.636 ; 4.636 ; Fall       ; RST             ;
+;  DATA[6]  ; RST        ; 5.210 ; 5.210 ; Fall       ; RST             ;
+;  DATA[7]  ; RST        ; 4.638 ; 4.638 ; Fall       ; RST             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
 +--------------------------------------------------------------------------+
 ; Clock to Output Times                                                    ;
 +-----------+-------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+-------------+--------+--------+------------+-----------------+
-; TX        ; tx_clk_tick ; 13.271 ; 13.271 ; Rise       ; tx_clk_tick     ;
-; TXRDY     ; tx_clk_tick ; 13.650 ; 13.650 ; Rise       ; tx_clk_tick     ;
+; TX        ; tx_clk_tick ; 10.671 ; 10.671 ; Rise       ; tx_clk_tick     ;
+; TXRDY     ; tx_clk_tick ; 10.610 ; 10.610 ; Rise       ; tx_clk_tick     ;
 +-----------+-------------+--------+--------+------------+-----------------+
 
 
@@ -605,8 +807,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------+-------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+-------------+--------+--------+------------+-----------------+
-; TX        ; tx_clk_tick ; 13.271 ; 13.271 ; Rise       ; tx_clk_tick     ;
-; TXRDY     ; tx_clk_tick ; 13.650 ; 13.650 ; Rise       ; tx_clk_tick     ;
+; TX        ; tx_clk_tick ; 10.671 ; 10.671 ; Rise       ; tx_clk_tick     ;
+; TXRDY     ; tx_clk_tick ; 10.610 ; 10.610 ; Rise       ; tx_clk_tick     ;
 +-----------+-------------+--------+--------+------------+-----------------+
 
 
@@ -616,7 +818,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------+-------------+----------+----------+----------+----------+
 ; CLK         ; CLK         ; 226      ; 0        ; 0        ; 0        ;
-; tx_clk_tick ; tx_clk_tick ; 22       ; 0        ; 0        ; 0        ;
+; RST         ; tx_clk_tick ; 0        ; 8        ; 0        ; 0        ;
+; tx_clk_tick ; tx_clk_tick ; 38       ; 0        ; 0        ; 0        ;
 +-------------+-------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -627,7 +830,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------+-------------+----------+----------+----------+----------+
 ; CLK         ; CLK         ; 226      ; 0        ; 0        ; 0        ;
-; tx_clk_tick ; tx_clk_tick ; 22       ; 0        ; 0        ; 0        ;
+; RST         ; tx_clk_tick ; 0        ; 8        ; 0        ; 0        ;
+; tx_clk_tick ; tx_clk_tick ; 38       ; 0        ; 0        ; 0        ;
 +-------------+-------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -637,6 +841,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------+-------------+----------+----------+----------+----------+
 ; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------+-------------+----------+----------+----------+----------+
+; RST         ; CLK         ; 14       ; 14       ; 0        ; 0        ;
+; RST         ; tx_clk_tick ; 9        ; 9        ; 0        ; 0        ;
 ; tx_clk_tick ; tx_clk_tick ; 24       ; 0        ; 0        ; 0        ;
 +-------------+-------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -647,6 +853,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------+-------------+----------+----------+----------+----------+
 ; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------+-------------+----------+----------+----------+----------+
+; RST         ; CLK         ; 14       ; 14       ; 0        ; 0        ;
+; RST         ; tx_clk_tick ; 9        ; 9        ; 0        ; 0        ;
 ; tx_clk_tick ; tx_clk_tick ; 24       ; 0        ; 0        ; 0        ;
 +-------------+-------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -671,8 +879,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 27    ; 27   ;
+; Unconstrained Input Ports       ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 15    ; 15   ;
 ; Unconstrained Output Ports      ; 2     ; 2    ;
 ; Unconstrained Output Port Paths ; 2     ; 2    ;
 +---------------------------------+-------+------+
@@ -684,7 +892,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Mar 10 15:15:14 2014
+    Info: Processing started: Mon Mar 24 19:56:53 2014
 Info: Command: quartus_sta UART -c UART
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -692,44 +900,48 @@ Info (21077): Low junction temperature is -40 degrees C
 Info (21077): High junction temperature is 125 degrees C
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Warning (335093): TimeQuest Timing Analyzer is analyzing 1 combinational loops as latches.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 9 combinational loops as latches.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'UART.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name tx_clk_tick tx_clk_tick
     Info (332105): create_clock -period 1.000 -name CLK CLK
+    Info (332105): create_clock -period 1.000 -name RST RST
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -6.485
+Info (332146): Worst-case setup slack is -10.306
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.485             -71.435 CLK 
-    Info (332119):    -2.551             -12.220 tx_clk_tick 
+    Info (332119):   -10.306             -25.326 tx_clk_tick 
+    Info (332119):    -5.976             -68.020 CLK 
 Info (332146): Worst-case hold slack is 1.094
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.094               0.000 tx_clk_tick 
-    Info (332119):     2.074               0.000 CLK 
-Info (332146): Worst-case recovery slack is -8.062
+    Info (332119):     2.342               0.000 CLK 
+Info (332146): Worst-case recovery slack is -9.375
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.062             -41.103 tx_clk_tick 
-Info (332146): Worst-case removal slack is 5.348
+    Info (332119):    -9.375             -47.787 tx_clk_tick 
+    Info (332119):    -5.355             -74.970 CLK 
+Info (332146): Worst-case removal slack is 2.065
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     5.348               0.000 tx_clk_tick 
+    Info (332119):     2.065               0.000 tx_clk_tick 
+    Info (332119):     5.293               0.000 CLK 
 Info (332146): Worst-case minimum pulse width slack is -2.289
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -2.289              -2.289 CLK 
+    Info (332119):    -2.289              -2.289 RST 
     Info (332119):     0.230               0.000 tx_clk_tick 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 541 megabytes
-    Info: Processing ended: Mon Mar 10 15:15:16 2014
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Mon Mar 24 19:56:54 2014
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

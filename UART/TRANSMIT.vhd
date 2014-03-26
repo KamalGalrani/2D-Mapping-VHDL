@@ -21,10 +21,10 @@ begin
   TXRDY <= ready;
   process (WR, ready)
   begin
-  if ( WR = '1' ) then
-    trigger <= '1';
-  elsif ( ready = '0' ) then
+  if ( ready = '0' ) then
     trigger <= '0';
+  elsif ( WR = '1' ) then
+    trigger <= '1';
   end if;
   end process;
   
