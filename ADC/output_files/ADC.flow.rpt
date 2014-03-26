@@ -1,5 +1,5 @@
 Flow report for ADC
-Mon Mar 24 21:01:58 2014
+Wed Mar 26 16:34:44 2014
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,15 +40,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +---------------------------+--------------------------------------------+
-; Flow Status               ; Successful - Mon Mar 24 21:01:58 2014      ;
+; Flow Status               ; Successful - Wed Mar 26 16:34:44 2014      ;
 ; Quartus II 64-Bit Version ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name             ; ADC                                        ;
 ; Top-level Entity Name     ; ADC                                        ;
 ; Family                    ; MAX V                                      ;
 ; Device                    ; 5M1270ZT144A5                              ;
 ; Timing Models             ; Final                                      ;
-; Total logic elements      ; 54 / 1,270 ( 4 % )                         ;
-; Total pins                ; 21 / 114 ( 18 % )                          ;
+; Total logic elements      ; 65 / 1,270 ( 5 % )                         ;
+; Total pins                ; 27 / 114 ( 24 % )                          ;
 ; Total virtual pins        ; 0                                          ;
 ; UFM blocks                ; 0 / 1 ( 0 % )                              ;
 +---------------------------+--------------------------------------------+
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/24/2014 21:01:36 ;
+; Start date & time ; 03/26/2014 16:34:19 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ADC                 ;
 +-------------------+---------------------+
@@ -70,7 +70,7 @@ applicable agreement for further details.
 +--------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name          ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID    ; 40368351734856.139567509617731 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID    ; 40368351734856.139583185929976 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT   ; Vhdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL      ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP   ; 125                            ; --            ; --          ; --             ;
@@ -84,12 +84,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 662 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:03     ; 1.0                     ; 707 MB              ; 00:00:03                           ;
-; Assembler                 ; 00:00:00     ; 1.0                     ; 570 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 541 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 817 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:07     ; --                      ; --                  ; 00:00:08                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 666 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:04     ; 1.0                     ; 704 MB              ; 00:00:04                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 570 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 541 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 816 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:09                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

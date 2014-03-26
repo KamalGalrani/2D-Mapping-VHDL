@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ADC
-Mon Mar 24 21:01:37 2014
+Wed Mar 26 16:34:20 2014
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -18,7 +18,8 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  10. Inverted Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
  12. Parameter Settings for User Entity Instance: UART:send_data
- 13. Analysis & Synthesis Messages
+ 13. Port Connectivity Checks: "UART:send_data"
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -44,13 +45,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-----------------------------+--------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Mar 24 21:01:37 2014      ;
+; Analysis & Synthesis Status ; Successful - Wed Mar 26 16:34:20 2014      ;
 ; Quartus II 64-Bit Version   ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name               ; ADC                                        ;
 ; Top-level Entity Name       ; ADC                                        ;
 ; Family                      ; MAX V                                      ;
-; Total logic elements        ; 59                                         ;
-; Total pins                  ; 21                                         ;
+; Total logic elements        ; 69                                         ;
+; Total pins                  ; 27                                         ;
 ; Total virtual pins          ; 0                                          ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                              ;
 +-----------------------------+--------------------------------------------+
@@ -156,33 +157,33 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 59    ;
-;     -- Combinational with no register       ; 37    ;
-;     -- Register only                        ; 10    ;
-;     -- Combinational with a register        ; 12    ;
+; Total logic elements                        ; 69    ;
+;     -- Combinational with no register       ; 46    ;
+;     -- Register only                        ; 9     ;
+;     -- Combinational with a register        ; 14    ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
 ;     -- 4 input functions                    ; 15    ;
-;     -- 3 input functions                    ; 12    ;
-;     -- 2 input functions                    ; 20    ;
-;     -- 1 input functions                    ; 2     ;
+;     -- 3 input functions                    ; 21    ;
+;     -- 2 input functions                    ; 21    ;
+;     -- 1 input functions                    ; 3     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 47    ;
-;     -- arithmetic mode                      ; 12    ;
+;     -- normal mode                          ; 49    ;
+;     -- arithmetic mode                      ; 20    ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
 ;     -- synchronous clear/load mode          ; 0     ;
-;     -- asynchronous clear/load mode         ; 20    ;
+;     -- asynchronous clear/load mode         ; 6     ;
 ;                                             ;       ;
-; Total registers                             ; 22    ;
-; Total logic cells in carry chains           ; 13    ;
-; I/O pins                                    ; 21    ;
-; Maximum fan-out node                        ; RST   ;
-; Maximum fan-out                             ; 19    ;
-; Total fan-out                               ; 204   ;
-; Average fan-out                             ; 2.55  ;
+; Total registers                             ; 23    ;
+; Total logic cells in carry chains           ; 22    ;
+; I/O pins                                    ; 27    ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 17    ;
+; Total fan-out                               ; 216   ;
+; Average fan-out                             ; 2.25  ;
 +---------------------------------------------+-------+
 
 
@@ -191,29 +192,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                      ; Library Name ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------+--------------+
-; |ADC                         ; 59 (2)      ; 22           ; 0          ; 21   ; 0            ; 37 (0)       ; 10 (0)            ; 12 (2)           ; 13 (0)          ; 0 (0)      ; |ADC                                     ;              ;
-;    |UART:send_data|          ; 57 (31)     ; 20           ; 0          ; 0    ; 0            ; 37 (17)      ; 10 (9)            ; 10 (5)           ; 13 (13)         ; 0 (0)      ; |ADC|UART:send_data                      ; work         ;
-;       |TRANSMIT:transmitter| ; 26 (26)     ; 6            ; 0          ; 0    ; 0            ; 20 (20)      ; 1 (1)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |ADC|UART:send_data|TRANSMIT:transmitter ; work         ;
+; |ADC                         ; 69 (14)     ; 23           ; 0          ; 27   ; 0            ; 46 (11)      ; 9 (0)             ; 14 (3)           ; 22 (9)          ; 0 (0)      ; |ADC                                     ;              ;
+;    |UART:send_data|          ; 55 (31)     ; 20           ; 0          ; 0    ; 0            ; 35 (17)      ; 9 (9)             ; 11 (5)           ; 13 (13)         ; 0 (0)      ; |ADC|UART:send_data                      ; work         ;
+;       |TRANSMIT:transmitter| ; 24 (24)     ; 6            ; 0          ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 6 (6)            ; 0 (0)           ; 0 (0)      ; |ADC|UART:send_data|TRANSMIT:transmitter ; work         ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                     ;
-+----------------------------------------------------+-------------------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal                       ; Free of Timing Hazards ;
-+----------------------------------------------------+-------------------------------------------+------------------------+
-; UART:send_data|TRANSMIT:transmitter|latch[5]       ; UART:send_data|TRANSMIT:transmitter|ready ; yes                    ;
-; UART:send_data|TRANSMIT:transmitter|latch[7]       ; UART:send_data|TRANSMIT:transmitter|ready ; yes                    ;
-; UART:send_data|TRANSMIT:transmitter|latch[6]       ; UART:send_data|TRANSMIT:transmitter|ready ; yes                    ;
-; UART:send_data|TRANSMIT:transmitter|latch[4]       ; UART:send_data|TRANSMIT:transmitter|ready ; yes                    ;
-; UART:send_data|TRANSMIT:transmitter|latch[1]       ; UART:send_data|TRANSMIT:transmitter|ready ; yes                    ;
-; UART:send_data|TRANSMIT:transmitter|latch[3]       ; UART:send_data|TRANSMIT:transmitter|ready ; yes                    ;
-; UART:send_data|TRANSMIT:transmitter|latch[2]       ; UART:send_data|TRANSMIT:transmitter|ready ; yes                    ;
-; UART:send_data|TRANSMIT:transmitter|latch[0]       ; UART:send_data|TRANSMIT:transmitter|ready ; yes                    ;
-; UART:send_data|TRANSMIT:transmitter|trigger        ; GND                                       ; yes                    ;
-; Number of user-specified and inferred latches = 9  ;                                           ;                        ;
-+----------------------------------------------------+-------------------------------------------+------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                         ;
++----------------------------------------------------+-----------------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                           ; Free of Timing Hazards ;
++----------------------------------------------------+-----------------------------------------------+------------------------+
+; UART:send_data|TRANSMIT:transmitter|latch[5]       ; UART:send_data|TRANSMIT:transmitter|process_1 ; yes                    ;
+; UART:send_data|TRANSMIT:transmitter|latch[7]       ; UART:send_data|TRANSMIT:transmitter|process_1 ; yes                    ;
+; UART:send_data|TRANSMIT:transmitter|latch[6]       ; UART:send_data|TRANSMIT:transmitter|process_1 ; yes                    ;
+; UART:send_data|TRANSMIT:transmitter|latch[4]       ; UART:send_data|TRANSMIT:transmitter|process_1 ; yes                    ;
+; UART:send_data|TRANSMIT:transmitter|latch[1]       ; UART:send_data|TRANSMIT:transmitter|process_1 ; yes                    ;
+; UART:send_data|TRANSMIT:transmitter|latch[3]       ; UART:send_data|TRANSMIT:transmitter|process_1 ; yes                    ;
+; UART:send_data|TRANSMIT:transmitter|latch[2]       ; UART:send_data|TRANSMIT:transmitter|process_1 ; yes                    ;
+; UART:send_data|TRANSMIT:transmitter|latch[0]       ; UART:send_data|TRANSMIT:transmitter|process_1 ; yes                    ;
+; UART:send_data|TRANSMIT:transmitter|trigger        ; GND                                           ; yes                    ;
+; Number of user-specified and inferred latches = 9  ;                                               ;                        ;
++----------------------------------------------------+-----------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -222,11 +223,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 22    ;
+; Total registers                              ; 23    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 20    ;
-; Number of registers using Asynchronous Load  ; 3     ;
+; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
@@ -247,8 +248,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |ADC|UART:send_data|TRANSMIT:transmitter|step[2] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |ADC|UART:send_data|TRANSMIT:transmitter|step[1] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |ADC|UART:send_data|TRANSMIT:transmitter|step[2] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
 
@@ -262,13 +262,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------+
+; Port Connectivity Checks: "UART:send_data" ;
++------+-------+----------+------------------+
+; Port ; Type  ; Severity ; Details          ;
++------+-------+----------+------------------+
+; rst  ; Input ; Info     ; Stuck at GND     ;
++------+-------+----------+------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Mar 24 21:01:35 2014
+    Info: Processing started: Wed Mar 26 16:34:18 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ADC -c ADC
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /home/singularity/GIT/2D-Mapping-VHDL/UART/TRANSMIT.vhd
@@ -298,13 +307,13 @@ Info (10041): Inferred latch for "latch[6]" at TRANSMIT.vhd(31)
 Info (10041): Inferred latch for "latch[7]" at TRANSMIT.vhd(31)
 Info (10041): Inferred latch for "trigger" at TRANSMIT.vhd(22)
 Info (18000): Registers with preset signals will power-up high
-Info (21057): Implemented 80 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 59 logic cells
+Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 17 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 69 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 662 megabytes
-    Info: Processing ended: Mon Mar 24 21:01:37 2014
+    Info: Peak virtual memory: 666 megabytes
+    Info: Processing ended: Wed Mar 26 16:34:20 2014
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

@@ -30,7 +30,7 @@ signal running      : std_logic                := '0';
 signal trigger      : std_logic                := '0';
 begin
   BUSY    <= running;
-  STATUS  <= a_steps*44;
+  STATUS  <= a_steps*DISTANCE_PER_STEP;
   
   process (CLK)
   variable count : integer range 0 to CLK_DIVIDER;
