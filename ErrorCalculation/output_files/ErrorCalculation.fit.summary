@@ -1,0 +1,11 @@
+Fitter Status : Successful - Wed Mar 26 18:34:18 2014
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Revision Name : ErrorCalculation
+Top-level Entity Name : ErrorCalculation
+Family : MAX V
+Device : 5M240ZT144A5
+Timing Models : Final
+Total logic elements : 79 / 240 ( 33 % )
+Total pins : 50 / 114 ( 44 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
