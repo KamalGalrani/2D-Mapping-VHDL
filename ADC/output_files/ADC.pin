@@ -64,8 +64,8 @@ CHIP  "ADC"  ASSIGNED TO AN: 5M1270ZT144A5
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
-TX                           : 1         : output : 3.3-V LVTTL       :         : 1         : Y              
-BIN                          : 2         : output : 3.3-V LVTTL       :         : 1         : Y              
+GND*                         : 1         :        :                   :         : 1         :                
+GND*                         : 2         :        :                   :         : 1         :                
 GND*                         : 3         :        :                   :         : 1         :                
 GND*                         : 4         :        :                   :         : 1         :                
 GND*                         : 5         :        :                   :         : 1         :                
@@ -79,7 +79,7 @@ GND*                         : 12        :        :                   :         
 GND*                         : 13        :        :                   :         : 1         :                
 GND*                         : 14        :        :                   :         : 1         :                
 GND*                         : 15        :        :                   :         : 1         :                
-GND*                         : 16        :        :                   :         : 1         :                
+TX                           : 16        : output : 3.3-V LVTTL       :         : 1         : Y              
 GNDINT                       : 17        : gnd    :                   :         :           :                
 GND*                         : 18        :        :                   :         : 1         :                
 VCCINT                       : 19        : power  :                   : 1.8V    :           :                
@@ -101,7 +101,7 @@ TDI                          : 34        : input  :                   :         
 TCK                          : 35        : input  :                   :         : 1         :                
 TDO                          : 36        : output :                   :         : 1         :                
 GND*                         : 37        :        :                   :         : 4         :                
-GND*                         : 38        :        :                   :         : 4         :                
+BIN                          : 38        : output : 3.3-V LVTTL       :         : 4         : Y              
 THR[0]                       : 39        : input  : 3.3-V LVTTL       :         : 4         : Y              
 THR[1]                       : 40        : input  : 3.3-V LVTTL       :         : 4         : Y              
 THR[2]                       : 41        : input  : 3.3-V LVTTL       :         : 4         : Y              

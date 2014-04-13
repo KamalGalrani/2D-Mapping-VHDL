@@ -1,0 +1,376 @@
+# do Stepper_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying /usr/src/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /usr/src/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {Stepper.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity Stepper
+# -- Compiling architecture structure of Stepper
+# 
+vsim work.stepper
+# vsim work.stepper 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.stepper(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading maxv.maxv_io(behave)
+# Loading maxv.maxv_lcell(vital_le_atom)
+# Loading maxv.maxv_asynch_lcell(vital_le)
+# Loading maxv.maxv_lcell_register(vital_le_reg)
+add wave -position insertpoint  \
+sim:/stepper/CLK \
+sim:/stepper/PI \
+sim:/stepper/PA \
+sim:/stepper/CH1 \
+sim:/stepper/CH2 \
+sim:/stepper/CH3 \
+sim:/stepper/CH4 \
+sim:/stepper/t
+force -freeze sim:/stepper/CLK 1 0, 0 {50 ps} -r 100
+force PI 11111111 0
+add wave -position insertpoint  \
+sim:/stepper/CLK \
+sim:/stepper/PI \
+sim:/stepper/PA \
+sim:/stepper/CH1 \
+sim:/stepper/CH2 \
+sim:/stepper/CH3 \
+sim:/stepper/CH4 \
+sim:/stepper/t
+run -all
+do Stepper_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {Stepper.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity Stepper
+# -- Compiling architecture structure of Stepper
+# 
+vsim work.stepper
+# vsim work.stepper 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.stepper(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading maxv.maxv_io(behave)
+# Loading maxv.maxv_lcell(vital_le_atom)
+# Loading maxv.maxv_asynch_lcell(vital_le)
+# Loading maxv.maxv_lcell_register(vital_le_reg)
+add wave -position insertpoint  \
+sim:/stepper/CLK \
+sim:/stepper/PI \
+sim:/stepper/PA \
+sim:/stepper/CH1 \
+sim:/stepper/CH2 \
+sim:/stepper/CH3 \
+sim:/stepper/CH4
+add wave -position insertpoint  \
+sim:/stepper/t
+force -freeze sim:/stepper/CLK 1 0, 0 {50 ps} -r 100
+force PI 11111111 0, 00000000 10000 ps
+run -all
+force PI 11111111 0, 00000000 1000000 ps
+run -all
+do Stepper_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {Stepper.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity Stepper
+# -- Compiling architecture structure of Stepper
+# 
+vsim work.stepper
+# vsim work.stepper 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.stepper(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading maxv.maxv_io(behave)
+# Loading maxv.maxv_lcell(vital_le_atom)
+# Loading maxv.maxv_asynch_lcell(vital_le)
+# Loading maxv.maxv_lcell_register(vital_le_reg)
+add wave -position insertpoint  \
+sim:/stepper/CLK \
+sim:/stepper/PI \
+sim:/stepper/PA \
+sim:/stepper/CH1 \
+sim:/stepper/CH2 \
+sim:/stepper/CH3 \
+sim:/stepper/CH4 \
+sim:/stepper/t
+do Stepper_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {Stepper.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity Stepper
+# -- Compiling architecture structure of Stepper
+# 
+vsim work.stepper
+# vsim work.stepper 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.stepper(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading maxv.maxv_io(behave)
+# Loading maxv.maxv_lcell(vital_le_atom)
+# Loading maxv.maxv_asynch_lcell(vital_le)
+# Loading maxv.maxv_lcell_register(vital_le_reg)
+do Stepper_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {Stepper.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity Stepper
+# -- Compiling architecture structure of Stepper
+# 
+vsim work.stepper
+# vsim work.stepper 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.stepper(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading maxv.maxv_io(behave)
+# Loading maxv.maxv_lcell(vital_le_atom)
+# Loading maxv.maxv_asynch_lcell(vital_le)
+# Loading maxv.maxv_lcell_register(vital_le_reg)
+add wave -position insertpoint  \
+sim:/stepper/CLK \
+sim:/stepper/PI \
+sim:/stepper/PA \
+sim:/stepper/CH1 \
+sim:/stepper/CH2 \
+sim:/stepper/CH3 \
+sim:/stepper/CH4 \
+sim:/stepper/t
+quit -sim
+vsim work.stepper
+# vsim work.stepper 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.stepper(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading maxv.maxv_io(behave)
+# Loading maxv.maxv_lcell(vital_le_atom)
+# Loading maxv.maxv_asynch_lcell(vital_le)
+# Loading maxv.maxv_lcell_register(vital_le_reg)
+add wave -position insertpoint  \
+sim:/stepper/CLK \
+sim:/stepper/PI \
+sim:/stepper/PA \
+sim:/stepper/CH1 \
+sim:/stepper/CH2 \
+sim:/stepper/CH3 \
+sim:/stepper/CH4 \
+sim:/stepper/t
+add wave -position insertpoint  \
+sim:/stepper/FWD
+force -freeze sim:/stepper/CLK 1 0, 0 {50 ps} -r 100
+force PI 11111111 0, 00000000 10000000 ps
+run -all
+force PI 11111111 0, 00000000 100000 ps
+run -all
+do Stepper_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {Stepper.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity Stepper
+# -- Compiling architecture structure of Stepper
+# 
+vsim work.stepper
+# vsim work.stepper 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.stepper(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading maxv.maxv_io(behave)
+# Loading maxv.maxv_lcell(vital_le_atom)
+# Loading maxv.maxv_asynch_lcell(vital_le)
+# Loading maxv.maxv_lcell_register(vital_le_reg)
+add wave -position insertpoint  \
+sim:/stepper/CLK \
+sim:/stepper/PI \
+sim:/stepper/PA \
+sim:/stepper/CH1 \
+sim:/stepper/CH2 \
+sim:/stepper/CH3 \
+sim:/stepper/CH4 \
+sim:/stepper/t
+add wave -position insertpoint  \
+sim:/stepper/FWD
+force PI 11111111 0, 00000000 1000000 ps
+force -freeze sim:/stepper/CLK 1 0, 0 {50 ps} -r 100
+run -all
+do Stepper_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {Stepper.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity Stepper
+# -- Compiling architecture structure of Stepper
+# 
+vsim work.stepper
+# vsim work.stepper 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.stepper(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading maxv.maxv_io(behave)
+# Loading maxv.maxv_lcell(vital_le_atom)
+# Loading maxv.maxv_asynch_lcell(vital_le)
+# Loading maxv.maxv_lcell_register(vital_le_reg)
+add wave -position insertpoint  \
+sim:/stepper/CLK \
+sim:/stepper/PI \
+sim:/stepper/PA \
+sim:/stepper/CH1 \
+sim:/stepper/CH2 \
+sim:/stepper/CH3 \
+sim:/stepper/CH4 \
+sim:/stepper/FWD \
+sim:/stepper/t
+force -freeze sim:/stepper/CLK 1 0, 0 {50 ps} -r 100
+force PI 11111111 0, 00000000 1000000 ps
+run -all
+restart -f
+force -freeze sim:/stepper/CLK 1 0, 0 {50 ps} -r 100
+force PI 11001010 0
+add wave -position insertpoint  \
+sim:/stepper/CLK \
+sim:/stepper/PI \
+sim:/stepper/PA \
+sim:/stepper/CH1 \
+sim:/stepper/CH2 \
+sim:/stepper/CH3 \
+sim:/stepper/CH4 \
+sim:/stepper/FWD \
+sim:/stepper/t
+run -all
+run -all

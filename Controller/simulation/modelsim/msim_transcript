@@ -1,0 +1,190 @@
+# do Controller_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying /usr/src/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /usr/src/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/UART/TRANSMIT.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TRANSMIT
+# -- Compiling architecture main of TRANSMIT
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/UART/UART.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity UART
+# -- Compiling architecture main of UART
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/Tracking/Lookup.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity D_Lookup
+# -- Compiling architecture main of D_Lookup
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/Tracking/Tracking.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Tracking
+# -- Compiling architecture main of Tracking
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/Controller/Controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Controller
+# -- Compiling architecture main of Controller
+# 
+vsim work.controller
+# vsim work.controller 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.controller(main)
+# Loading work.tracking(main)
+# Loading work.d_lookup(main)
+# Loading work.uart(main)
+# Loading work.transmit(main)
+force -freeze sim:/controller/CLK 1 0, 0 {50 ps} -r 100
+force -freeze sim:/controller/ENC_L 1 0, 0 {500000 ps} -r 1000000
+force -freeze sim:/controller/ENC_R 1 10, 0 {500010 ps} -r 1000000
+force RST 1 0, 0 200 ps
+# ** Error: (vish-4008) Object 'RST' not found.
+# 
+force sim:/controller/RST 1 0, 0 200 ps
+add wave -position insertpoint  \
+sim:/controller/CLK \
+sim:/controller/RST \
+sim:/controller/ENC_L \
+sim:/controller/ENC_R \
+sim:/controller/TX \
+sim:/controller/SHARP \
+sim:/controller/FIN_X \
+sim:/controller/FIN_Y \
+sim:/controller/ACT_X \
+sim:/controller/ACT_Y \
+sim:/controller/ACT_2T \
+sim:/controller/FOLLOWING \
+sim:/controller/wr \
+sim:/controller/data \
+sim:/controller/txrdy
+run -all
+do Controller_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/UART/TRANSMIT.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TRANSMIT
+# -- Compiling architecture main of TRANSMIT
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/UART/UART.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity UART
+# -- Compiling architecture main of UART
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/Tracking/Lookup.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity D_Lookup
+# -- Compiling architecture main of D_Lookup
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/Tracking/Tracking.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Tracking
+# -- Compiling architecture main of Tracking
+# vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/Controller/Controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Controller
+# -- Compiling architecture main of Controller
+# 
+vsim work.controller
+# vsim work.controller 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.controller(main)
+# Loading work.tracking(main)
+# Loading work.d_lookup(main)
+# Loading work.uart(main)
+# Loading work.transmit(main)
+add wave -position insertpoint  \
+sim:/controller/THRES \
+sim:/controller/CLK \
+sim:/controller/RST \
+sim:/controller/ENC_L \
+sim:/controller/ENC_R \
+sim:/controller/TX \
+sim:/controller/FIN_X \
+sim:/controller/FIN_Y \
+sim:/controller/ACT_X \
+sim:/controller/ACT_Y \
+sim:/controller/ACT_2T \
+sim:/controller/FOLLOWING \
+sim:/controller/wr \
+sim:/controller/data \
+sim:/controller/txrdy
+force -freeze sim:/controller/CLK 1 0, 0 {500 ps} -r 1000
+force -freeze sim:/controller/ENC_L 1 0, 0 {500000 ps} -r 1000000
+force -freeze sim:/controller/ENC_R 1 10, 0 {500010 ps} -r 1000000
+force sim:/controller/RST 1 0, 0 200 ps
+run -all
+restart -f
+force -freeze sim:/controller/CLK 1 0, 0 {500 ps} -r 1000
+force -freeze sim:/controller/ENC_R 1 10, 0 {500010 ps} -r 1000000
+force -freeze sim:/controller/ENC_L 1 0, 0 {500000 ps} -r 1000000
+force sim:/controller/RST 1 0, 0 2000 ps
+add wave -position insertpoint  \
+sim:/controller/THRES \
+sim:/controller/CLK \
+sim:/controller/RST \
+sim:/controller/ENC_L \
+sim:/controller/ENC_R \
+sim:/controller/TX \
+sim:/controller/FIN_X \
+sim:/controller/FIN_Y \
+sim:/controller/ACT_X \
+sim:/controller/ACT_Y \
+sim:/controller/ACT_2T \
+sim:/controller/FOLLOWING \
+sim:/controller/wr \
+sim:/controller/data \
+sim:/controller/txrdy
+run -all

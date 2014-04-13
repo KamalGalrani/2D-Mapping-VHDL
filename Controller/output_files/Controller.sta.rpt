@@ -1,0 +1,1174 @@
+TimeQuest Timing Analyzer report for Controller
+Sun Apr 13 01:52:20 2014
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'CLK'
+ 12. Setup: 'UART:TRANSMIT|tx_clk_tick'
+ 13. Setup: 'RST'
+ 14. Hold: 'RST'
+ 15. Hold: 'UART:TRANSMIT|tx_clk_tick'
+ 16. Hold: 'CLK'
+ 17. Recovery: 'UART:TRANSMIT|tx_clk_tick'
+ 18. Recovery: 'CLK'
+ 19. Removal: 'CLK'
+ 20. Removal: 'UART:TRANSMIT|tx_clk_tick'
+ 21. Minimum Pulse Width: 'CLK'
+ 22. Minimum Pulse Width: 'RST'
+ 23. Minimum Pulse Width: 'UART:TRANSMIT|tx_clk_tick'
+ 24. Setup Times
+ 25. Hold Times
+ 26. Clock to Output Times
+ 27. Minimum Clock to Output Times
+ 28. Setup Transfers
+ 29. Hold Transfers
+ 30. Recovery Transfers
+ 31. Removal Transfers
+ 32. Report TCCS
+ 33. Report RSKM
+ 34. Unconstrained Paths
+ 35. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; Controller                                         ;
+; Device Family      ; MAX V                                              ;
+; Device Name        ; 5M240ZM68C4                                        ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Slow Model                                         ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                               ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; Clock Name                ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                       ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; CLK                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK }                       ;
+; RST                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { RST }                       ;
+; UART:TRANSMIT|tx_clk_tick ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { UART:TRANSMIT|tx_clk_tick } ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+
+
++----------------------------------------------------------------+
+; Fmax Summary                                                   ;
++-----------+-----------------+---------------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name                ; Note ;
++-----------+-----------------+---------------------------+------+
+; 29.69 MHz ; 29.69 MHz       ; CLK                       ;      ;
+; 121.8 MHz ; 121.8 MHz       ; UART:TRANSMIT|tx_clk_tick ;      ;
++-----------+-----------------+---------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------+
+; Setup Summary                                       ;
++---------------------------+---------+---------------+
+; Clock                     ; Slack   ; End Point TNS ;
++---------------------------+---------+---------------+
+; CLK                       ; -32.681 ; -1283.675     ;
+; UART:TRANSMIT|tx_clk_tick ; -11.310 ; -30.736       ;
+; RST                       ; -3.599  ; -3.599        ;
++---------------------------+---------+---------------+
+
+
++----------------------------------------------------+
+; Hold Summary                                       ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; RST                       ; -2.335 ; -18.498       ;
+; UART:TRANSMIT|tx_clk_tick ; 1.275  ; 0.000         ;
+; CLK                       ; 2.022  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
++----------------------------------------------------+
+; Recovery Summary                                   ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; UART:TRANSMIT|tx_clk_tick ; -9.200 ; -52.428       ;
+; CLK                       ; -1.604 ; -38.202       ;
++---------------------------+--------+---------------+
+
+
++---------------------------------------------------+
+; Removal Summary                                   ;
++---------------------------+-------+---------------+
+; Clock                     ; Slack ; End Point TNS ;
++---------------------------+-------+---------------+
+; CLK                       ; 0.797 ; 0.000         ;
+; UART:TRANSMIT|tx_clk_tick ; 1.445 ; 0.000         ;
++---------------------------+-------+---------------+
+
+
++----------------------------------------------------+
+; Minimum Pulse Width Summary                        ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; CLK                       ; -2.289 ; -2.289        ;
+; RST                       ; -2.289 ; -2.289        ;
+; UART:TRANSMIT|tx_clk_tick ; 0.247  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK'                                                                                                                          ;
++---------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -32.681 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.421     ;
+; -32.681 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.421     ;
+; -32.589 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.329     ;
+; -32.589 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.329     ;
+; -32.589 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.329     ;
+; -32.589 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.329     ;
+; -32.589 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.329     ;
+; -32.412 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.152     ;
+; -32.412 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.152     ;
+; -32.320 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.060     ;
+; -32.320 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.060     ;
+; -32.320 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.060     ;
+; -32.320 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.060     ;
+; -32.320 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 33.060     ;
+; -32.134 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.874     ;
+; -32.134 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.874     ;
+; -32.086 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.826     ;
+; -32.086 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.826     ;
+; -32.086 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.826     ;
+; -32.086 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.826     ;
+; -32.086 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.826     ;
+; -31.865 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.605     ;
+; -31.865 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.605     ;
+; -31.817 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.557     ;
+; -31.817 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.557     ;
+; -31.817 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.557     ;
+; -31.817 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.557     ;
+; -31.817 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.557     ;
+; -31.752 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.492     ;
+; -31.627 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.367     ;
+; -31.502 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.242     ;
+; -31.483 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.223     ;
+; -31.358 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 32.098     ;
+; -31.249 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.989     ;
+; -31.233 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.973     ;
+; -31.124 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.864     ;
+; -30.999 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.739     ;
+; -30.980 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.720     ;
+; -30.855 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.595     ;
+; -30.754 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.494     ;
+; -30.730 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.470     ;
+; -30.642 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.382     ;
+; -30.642 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.382     ;
+; -30.485 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.225     ;
+; -30.377 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.117     ;
+; -30.373 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.113     ;
+; -30.373 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 31.113     ;
+; -30.108 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.848     ;
+; -29.683 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_y[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.423     ;
+; -29.683 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_y[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.423     ;
+; -29.615 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_y[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.355     ;
+; -29.615 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_y[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.355     ;
+; -29.591 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_y[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.331     ;
+; -29.591 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_y[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.331     ;
+; -29.591 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_y[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.331     ;
+; -29.591 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_y[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.331     ;
+; -29.591 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_y[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.331     ;
+; -29.523 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_y[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.263     ;
+; -29.523 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_y[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.263     ;
+; -29.523 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_y[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.263     ;
+; -29.523 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_y[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.263     ;
+; -29.523 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_y[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.263     ;
+; -29.473 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_x[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.213     ;
+; -29.301 ; Tracking:POSITION|a_2t[9] ; Tracking:POSITION|a_y[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.041     ;
+; -29.270 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_x[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.010     ;
+; -29.270 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_x[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 30.010     ;
+; -29.233 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_y[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.973     ;
+; -29.233 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_y[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.973     ;
+; -29.222 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_x[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.962     ;
+; -29.222 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_x[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.962     ;
+; -29.222 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_x[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.962     ;
+; -29.222 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_x[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.962     ;
+; -29.222 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_x[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.962     ;
+; -29.204 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_x[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.944     ;
+; -29.202 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_x[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.942     ;
+; -29.202 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_x[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.942     ;
+; -29.154 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_x[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.894     ;
+; -29.154 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_x[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.894     ;
+; -29.154 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_x[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.894     ;
+; -29.154 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_x[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.894     ;
+; -29.154 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_x[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.894     ;
+; -29.141 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_y[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.881     ;
+; -29.141 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_y[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.881     ;
+; -29.141 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_y[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.881     ;
+; -29.141 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_y[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.881     ;
+; -29.141 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_y[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.881     ;
+; -29.032 ; Tracking:POSITION|a_2t[0] ; Tracking:POSITION|a_y[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.772     ;
+; -28.820 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_x[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.560     ;
+; -28.820 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_x[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.560     ;
+; -28.772 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_x[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.512     ;
+; -28.772 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_x[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.512     ;
+; -28.772 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_x[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.512     ;
+; -28.772 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_x[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.512     ;
+; -28.772 ; Tracking:POSITION|a_2t[2] ; Tracking:POSITION|a_x[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.512     ;
+; -28.754 ; Tracking:POSITION|a_2t[4] ; Tracking:POSITION|a_y[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.494     ;
+; -28.710 ; Tracking:POSITION|a_2t[3] ; Tracking:POSITION|a_y[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.450     ;
+; -28.710 ; Tracking:POSITION|a_2t[3] ; Tracking:POSITION|a_y[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.450     ;
+; -28.686 ; Tracking:POSITION|a_2t[1] ; Tracking:POSITION|a_y[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.426     ;
+; -28.653 ; Tracking:POSITION|a_2t[5] ; Tracking:POSITION|a_y[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.393     ;
+; -28.653 ; Tracking:POSITION|a_2t[5] ; Tracking:POSITION|a_y[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 29.393     ;
++---------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'UART:TRANSMIT|tx_clk_tick'                                                                                                                                                                  ;
++---------+---------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; Slack   ; From Node                                   ; To Node                                    ; Launch Clock              ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++---------+---------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; -11.310 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[6] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; -4.210     ; 7.340      ;
+; -10.700 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[7] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; -4.184     ; 6.756      ;
+; -10.238 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[1] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; -4.212     ; 6.266      ;
+; -10.109 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[3] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; -4.240     ; 6.109      ;
+; -10.092 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[2] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; -4.246     ; 6.086      ;
+; -10.036 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[0] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; -4.210     ; 6.066      ;
+; -9.778  ; UART:TRANSMIT|TRANSMIT:transmitter|latch[4] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; -4.240     ; 5.778      ;
+; -9.230  ; UART:TRANSMIT|TRANSMIT:transmitter|latch[5] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; -4.245     ; 5.225      ;
+; -7.210  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 7.950      ;
+; -7.118  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 7.858      ;
+; -7.027  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 7.767      ;
+; -6.935  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 7.675      ;
+; -6.592  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2]  ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 7.332      ;
+; -6.500  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2]  ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 7.240      ;
+; -5.916  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3]  ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 6.656      ;
+; -5.824  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3]  ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 6.564      ;
+; -4.416  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 5.156      ;
+; -3.553  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 4.293      ;
+; -3.444  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 4.184      ;
+; -3.347  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 4.087      ;
+; -2.965  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 3.705      ;
+; -2.814  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 3.554      ;
+; -2.318  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 3.058      ;
+; -2.278  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 3.018      ;
+; -2.227  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 2.967      ;
+; -2.158  ; UART:TRANSMIT|TRANSMIT:transmitter|ready    ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 2.898      ;
+; -2.136  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 2.876      ;
+; -1.461  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 2.201      ;
+; -1.457  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 2.197      ;
+; -0.609  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 1.349      ;
++---------+---------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'RST'                                                                                                                           ;
++--------+-----------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.599 ; data[0]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[0] ; CLK          ; RST         ; 0.500        ; 4.553      ; 1.754      ;
+; 0.168  ; data[1]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[1] ; CLK          ; RST         ; 0.500        ; 4.555      ; 1.764      ;
+; 0.196  ; data[7]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[7] ; CLK          ; RST         ; 0.500        ; 4.527      ; 1.730      ;
+; 0.704  ; data[5]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[5] ; CLK          ; RST         ; 0.500        ; 4.588      ; 1.772      ;
+; 0.716  ; data[6]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[6] ; CLK          ; RST         ; 0.500        ; 4.553      ; 1.753      ;
+; 0.718  ; data[4]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[4] ; CLK          ; RST         ; 0.500        ; 4.583      ; 1.754      ;
+; 0.733  ; data[2]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[2] ; CLK          ; RST         ; 0.500        ; 4.589      ; 1.754      ;
+; 0.766  ; data[3]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[3] ; CLK          ; RST         ; 0.500        ; 4.583      ; 1.752      ;
++--------+-----------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'RST'                                                                                                                            ;
++--------+-----------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.335 ; data[2]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[2] ; CLK          ; RST         ; -0.500       ; 4.589      ; 1.754      ;
+; -2.331 ; data[3]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[3] ; CLK          ; RST         ; -0.500       ; 4.583      ; 1.752      ;
+; -2.329 ; data[4]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[4] ; CLK          ; RST         ; -0.500       ; 4.583      ; 1.754      ;
+; -2.316 ; data[5]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[5] ; CLK          ; RST         ; -0.500       ; 4.588      ; 1.772      ;
+; -2.300 ; data[6]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[6] ; CLK          ; RST         ; -0.500       ; 4.553      ; 1.753      ;
+; -2.299 ; data[0]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[0] ; CLK          ; RST         ; -0.500       ; 4.553      ; 1.754      ;
+; -2.297 ; data[7]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[7] ; CLK          ; RST         ; -0.500       ; 4.527      ; 1.730      ;
+; -2.291 ; data[1]   ; UART:TRANSMIT|TRANSMIT:transmitter|latch[1] ; CLK          ; RST         ; -0.500       ; 4.555      ; 1.764      ;
++--------+-----------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'UART:TRANSMIT|tx_clk_tick'                                                                                                                                                                  ;
++--------+---------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; Slack  ; From Node                                   ; To Node                                    ; Launch Clock              ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; 1.275  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 1.349      ;
+; 2.123  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 2.197      ;
+; 2.127  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 2.201      ;
+; 2.802  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 2.876      ;
+; 2.824  ; UART:TRANSMIT|TRANSMIT:transmitter|ready    ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 2.898      ;
+; 2.893  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 2.967      ;
+; 2.944  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 3.018      ;
+; 2.984  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 3.058      ;
+; 3.480  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 3.554      ;
+; 3.631  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 3.705      ;
+; 4.013  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 4.087      ;
+; 4.110  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 4.184      ;
+; 4.150  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 4.224      ;
+; 4.219  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 4.293      ;
+; 4.843  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 4.917      ;
+; 4.998  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2]  ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 5.072      ;
+; 5.082  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2]  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 5.156      ;
+; 6.139  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3]  ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 6.213      ;
+; 6.490  ; UART:TRANSMIT|TRANSMIT:transmitter|step[3]  ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 6.564      ;
+; 7.166  ; UART:TRANSMIT|TRANSMIT:transmitter|step[2]  ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 7.240      ;
+; 7.601  ; UART:TRANSMIT|TRANSMIT:transmitter|step[0]  ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 7.675      ;
+; 7.784  ; UART:TRANSMIT|TRANSMIT:transmitter|step[1]  ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 7.858      ;
+; 9.896  ; UART:TRANSMIT|TRANSMIT:transmitter|latch[5] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; -4.245     ; 5.225      ;
+; 10.444 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[4] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; -4.240     ; 5.778      ;
+; 10.702 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[0] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; -4.210     ; 6.066      ;
+; 10.758 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[2] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; -4.246     ; 6.086      ;
+; 10.775 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[3] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; -4.240     ; 6.109      ;
+; 10.904 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[1] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; -4.212     ; 6.266      ;
+; 11.366 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[7] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; -4.184     ; 6.756      ;
+; 11.976 ; UART:TRANSMIT|TRANSMIT:transmitter|latch[6] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; -4.210     ; 7.340      ;
++--------+---------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK'                                                                                                                                 ;
++-------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                     ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.022 ; Tracking:POSITION|l_lck       ; Tracking:POSITION|l_lck       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.069 ; \process_1:state[0]           ; \process_1:state[0]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.143      ;
+; 2.071 ; \process_1:state[0]           ; \process_1:state[1]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.145      ;
+; 2.071 ; \process_1:state[0]           ; \process_1:state[2]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.145      ;
+; 2.250 ; latch[7]                      ; data[7]                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.324      ;
+; 2.282 ; Tracking:POSITION|a_y[4]      ; latch[4]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.356      ;
+; 2.291 ; Tracking:POSITION|a_y[2]      ; latch[2]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.365      ;
+; 2.296 ; Tracking:POSITION|a_y[12]     ; latch[12]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.370      ;
+; 2.296 ; Tracking:POSITION|a_y[11]     ; latch[11]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.370      ;
+; 2.344 ; \process_1:state[2]           ; wr_buff                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.418      ;
+; 2.348 ; \process_1:state[1]           ; \process_1:state[1]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.422      ;
+; 2.352 ; \process_1:state[1]           ; \process_1:state[0]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.426      ;
+; 2.354 ; \process_1:state[1]           ; \process_1:state[2]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.428      ;
+; 2.806 ; Tracking:POSITION|a_y[9]      ; latch[9]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.880      ;
+; 2.812 ; Tracking:POSITION|a_2t[0]     ; Tracking:POSITION|a_2t[0]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.886      ;
+; 2.813 ; Tracking:POSITION|a_2t[7]     ; Tracking:POSITION|a_2t[7]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.887      ;
+; 2.822 ; Tracking:POSITION|a_2t[1]     ; Tracking:POSITION|a_2t[1]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.896      ;
+; 2.823 ; Tracking:POSITION|a_y[6]      ; Tracking:POSITION|a_y[6]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.823 ; Tracking:POSITION|a_2t[9]     ; Tracking:POSITION|a_2t[9]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.823 ; Tracking:POSITION|a_2t[2]     ; Tracking:POSITION|a_2t[2]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.827 ; Tracking:POSITION|a_y[6]      ; latch[6]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.901      ;
+; 2.834 ; Tracking:POSITION|a_y[4]      ; Tracking:POSITION|a_y[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.908      ;
+; 2.859 ; Tracking:POSITION|r_lck       ; Tracking:POSITION|l_lck       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.933      ;
+; 2.888 ; \process_1:state[0]           ; wr_buff                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.962      ;
+; 2.914 ; UART:TRANSMIT|tx_clk_count[0] ; UART:TRANSMIT|tx_clk_tick     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.988      ;
+; 2.928 ; Tracking:POSITION|a_x[5]      ; Tracking:POSITION|a_x[5]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.002      ;
+; 2.928 ; Tracking:POSITION|a_y[10]     ; Tracking:POSITION|a_y[10]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.002      ;
+; 2.928 ; Tracking:POSITION|a_2t[5]     ; Tracking:POSITION|a_2t[5]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.002      ;
+; 2.938 ; Tracking:POSITION|a_x[2]      ; Tracking:POSITION|a_x[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.938 ; Tracking:POSITION|a_2t[8]     ; Tracking:POSITION|a_2t[8]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.938 ; Tracking:POSITION|a_2t[3]     ; Tracking:POSITION|a_2t[3]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.939 ; Tracking:POSITION|a_x[3]      ; Tracking:POSITION|a_x[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.013      ;
+; 2.941 ; UART:TRANSMIT|tx_clk_count[1] ; UART:TRANSMIT|tx_clk_tick     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.015      ;
+; 2.948 ; wr                            ; wr                            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.022      ;
+; 2.948 ; Tracking:POSITION|a_x[12]     ; Tracking:POSITION|a_x[12]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.022      ;
+; 2.948 ; Tracking:POSITION|a_x[10]     ; Tracking:POSITION|a_x[10]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.022      ;
+; 2.949 ; Tracking:POSITION|a_x[13]     ; Tracking:POSITION|a_x[13]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.949 ; Tracking:POSITION|a_x[11]     ; Tracking:POSITION|a_x[11]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.958 ; Tracking:POSITION|a_y[1]      ; Tracking:POSITION|a_y[1]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.032      ;
+; 2.958 ; Tracking:POSITION|a_y[3]      ; Tracking:POSITION|a_y[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.032      ;
+; 2.965 ; Tracking:POSITION|a_y[13]     ; Tracking:POSITION|a_y[13]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.039      ;
+; 2.965 ; Tracking:POSITION|a_y[2]      ; Tracking:POSITION|a_y[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.039      ;
+; 2.974 ; Tracking:POSITION|a_y[11]     ; Tracking:POSITION|a_y[11]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.048      ;
+; 2.974 ; Tracking:POSITION|a_y[12]     ; Tracking:POSITION|a_y[12]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.048      ;
+; 3.020 ; \process_1:state[2]           ; \process_1:state[2]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.094      ;
+; 3.026 ; \process_1:state[2]           ; \process_1:state[0]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.100      ;
+; 3.034 ; \process_1:state[1]           ; wr_buff                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.108      ;
+; 3.166 ; UART:TRANSMIT|tx_clk_count[9] ; UART:TRANSMIT|tx_clk_tick     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.240      ;
+; 3.201 ; Tracking:POSITION|a_2t[4]     ; Tracking:POSITION|a_2t[4]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.275      ;
+; 3.226 ; Tracking:POSITION|a_2t[6]     ; Tracking:POSITION|a_2t[6]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.300      ;
+; 3.235 ; RST                           ; data[7]                       ; RST          ; CLK         ; 0.000        ; 3.716      ; 7.025      ;
+; 3.240 ; latch[11]                     ; data[3]                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.314      ;
+; 3.277 ; UART:TRANSMIT|tx_clk_count[2] ; UART:TRANSMIT|tx_clk_tick     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.351      ;
+; 3.351 ; Tracking:POSITION|a_y[9]      ; Tracking:POSITION|a_y[9]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.425      ;
+; 3.358 ; latch[12]                     ; data[4]                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.432      ;
+; 3.363 ; Tracking:POSITION|a_x[9]      ; Tracking:POSITION|a_x[9]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.437      ;
+; 3.385 ; Tracking:POSITION|a_x[4]      ; Tracking:POSITION|a_x[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.459      ;
+; 3.465 ; Tracking:POSITION|a_y[10]     ; latch[10]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.539      ;
+; 3.489 ; wr_buff                       ; wr_buff                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.563      ;
+; 3.533 ; Tracking:POSITION|a_2t[0]     ; Tracking:POSITION|a_2t[1]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.607      ;
+; 3.534 ; Tracking:POSITION|a_2t[7]     ; Tracking:POSITION|a_2t[8]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.608      ;
+; 3.543 ; Tracking:POSITION|a_2t[1]     ; Tracking:POSITION|a_2t[2]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.617      ;
+; 3.544 ; Tracking:POSITION|a_2t[2]     ; Tracking:POSITION|a_2t[3]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.618      ;
+; 3.555 ; Tracking:POSITION|a_y[4]      ; Tracking:POSITION|a_y[5]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.629      ;
+; 3.646 ; Tracking:POSITION|a_2t[0]     ; Tracking:POSITION|a_2t[2]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.720      ;
+; 3.647 ; Tracking:POSITION|a_2t[7]     ; Tracking:POSITION|a_2t[9]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.721      ;
+; 3.656 ; Tracking:POSITION|a_2t[1]     ; Tracking:POSITION|a_2t[3]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.730      ;
+; 3.657 ; Tracking:POSITION|a_2t[2]     ; Tracking:POSITION|a_2t[4]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.731      ;
+; 3.658 ; Tracking:POSITION|a_x[9]      ; latch[9]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.732      ;
+; 3.668 ; Tracking:POSITION|a_y[4]      ; Tracking:POSITION|a_y[6]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.742      ;
+; 3.670 ; Tracking:POSITION|a_y[7]      ; latch[7]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.744      ;
+; 3.682 ; latch[1]                      ; data[1]                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.756      ;
+; 3.735 ; RST                           ; data[7]                       ; RST          ; CLK         ; -0.500       ; 3.716      ; 7.025      ;
+; 3.759 ; Tracking:POSITION|a_2t[0]     ; Tracking:POSITION|a_2t[3]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.833      ;
+; 3.769 ; Tracking:POSITION|a_2t[1]     ; Tracking:POSITION|a_2t[4]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.843      ;
+; 3.793 ; Tracking:POSITION|a_x[5]      ; Tracking:POSITION|a_x[6]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.867      ;
+; 3.793 ; Tracking:POSITION|a_y[10]     ; Tracking:POSITION|a_y[11]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.867      ;
+; 3.793 ; Tracking:POSITION|a_2t[5]     ; Tracking:POSITION|a_2t[6]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.867      ;
+; 3.796 ; latch[0]                      ; data[0]                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.870      ;
+; 3.803 ; Tracking:POSITION|a_x[2]      ; Tracking:POSITION|a_x[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.877      ;
+; 3.803 ; Tracking:POSITION|a_2t[8]     ; Tracking:POSITION|a_2t[9]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.877      ;
+; 3.803 ; Tracking:POSITION|a_2t[3]     ; Tracking:POSITION|a_2t[4]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.877      ;
+; 3.804 ; Tracking:POSITION|a_x[3]      ; Tracking:POSITION|a_x[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.878      ;
+; 3.813 ; Tracking:POSITION|a_x[12]     ; Tracking:POSITION|a_x[13]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.887      ;
+; 3.813 ; Tracking:POSITION|a_x[10]     ; Tracking:POSITION|a_x[11]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.887      ;
+; 3.823 ; Tracking:POSITION|a_y[3]      ; Tracking:POSITION|a_y[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.897      ;
+; 3.829 ; latch[13]                     ; data[5]                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.903      ;
+; 3.830 ; Tracking:POSITION|a_y[2]      ; Tracking:POSITION|a_y[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.904      ;
+; 3.839 ; Tracking:POSITION|a_y[12]     ; Tracking:POSITION|a_y[13]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.913      ;
+; 3.872 ; Tracking:POSITION|a_2t[0]     ; Tracking:POSITION|a_2t[4]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.946      ;
+; 3.882 ; latch[10]                     ; data[2]                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.956      ;
+; 3.903 ; latch[2]                      ; data[2]                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.977      ;
+; 3.906 ; Tracking:POSITION|a_2t[5]     ; Tracking:POSITION|a_2t[7]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.980      ;
+; 3.916 ; Tracking:POSITION|a_x[2]      ; Tracking:POSITION|a_x[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.990      ;
+; 3.917 ; Tracking:POSITION|a_x[3]      ; Tracking:POSITION|a_x[5]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.991      ;
+; 3.936 ; Tracking:POSITION|a_y[3]      ; Tracking:POSITION|a_y[5]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.010      ;
+; 3.943 ; UART:TRANSMIT|tx_clk_count[7] ; UART:TRANSMIT|tx_clk_count[7] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.017      ;
+; 3.943 ; Tracking:POSITION|a_y[2]      ; Tracking:POSITION|a_y[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.017      ;
+; 3.947 ; Tracking:POSITION|a_2t[6]     ; Tracking:POSITION|a_2t[7]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.021      ;
+; 3.951 ; UART:TRANSMIT|tx_clk_count[8] ; UART:TRANSMIT|tx_clk_count[8] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.025      ;
++-------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'UART:TRANSMIT|tx_clk_tick'                                                                                                                                                             ;
++--------+--------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; Slack  ; From Node                                  ; To Node                                    ; Launch Clock              ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; -9.200 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.940      ;
+; -9.200 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.940      ;
+; -9.200 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.940      ;
+; -9.017 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.757      ;
+; -9.017 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.757      ;
+; -9.017 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.757      ;
+; -8.582 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.322      ;
+; -8.582 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.322      ;
+; -8.582 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.322      ;
+; -8.276 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.016      ;
+; -8.276 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.016      ;
+; -8.276 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 9.016      ;
+; -8.093 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 8.833      ;
+; -8.093 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 8.833      ;
+; -8.093 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 8.833      ;
+; -7.906 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 8.646      ;
+; -7.906 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 8.646      ;
+; -7.906 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 8.646      ;
+; -7.658 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 8.398      ;
+; -7.658 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 8.398      ;
+; -7.658 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 8.398      ;
+; -6.982 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 7.722      ;
+; -6.982 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 7.722      ;
+; -6.982 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.000      ; 7.722      ;
+; -6.479 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.343      ; 7.562      ;
+; -6.479 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.343      ; 7.562      ;
+; -6.479 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.343      ; 7.562      ;
+; -5.690 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.343      ; 6.773      ;
+; -5.690 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.343      ; 6.773      ;
+; -5.690 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 0.343      ; 6.773      ;
+; -3.704 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; 4.059      ; 8.003      ;
+; -3.704 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; 4.059      ; 8.003      ;
+; -3.704 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; 4.059      ; 8.003      ;
+; -3.204 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 4.059      ; 8.003      ;
+; -3.204 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 4.059      ; 8.003      ;
+; -3.204 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 4.059      ; 8.003      ;
+; -3.065 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; 4.059      ; 7.364      ;
+; -3.065 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; 4.059      ; 7.364      ;
+; -3.065 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.500        ; 4.059      ; 7.364      ;
+; -2.565 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 4.059      ; 7.364      ;
+; -2.565 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 4.059      ; 7.364      ;
+; -2.565 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 1.000        ; 4.059      ; 7.364      ;
++--------+--------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'CLK'                                                                                                           ;
++--------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.604 ; RST       ; wr                             ; RST          ; CLK         ; 0.500        ; 3.716      ; 5.560      ;
+; -1.104 ; RST       ; wr                             ; RST          ; CLK         ; 1.000        ; 3.716      ; 5.560      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_tick      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; \process_1:state[1]            ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; wr_buff                        ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; \process_1:state[0]            ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; \process_1:state[2]            ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[12] ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[10] ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[11] ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[0]  ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[6]  ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[8]  ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[7]  ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[9]  ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[1]  ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[4]  ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[5]  ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[3]  ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; UART:TRANSMIT|tx_clk_count[2]  ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[6]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[6]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[13]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[13]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[1]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[5]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[1]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[5]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[7]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[7]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[11]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[12]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[11]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[12]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[4]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[4]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[10]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[10]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[2]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[2]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[9]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[9]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[3]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[3]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[8]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[8]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_y[0]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_x[0]       ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|r_lck        ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|l_lck        ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_2t[9]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_2t[4]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_2t[8]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_2t[2]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_2t[5]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_2t[7]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_2t[0]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_2t[1]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_2t[6]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.631 ; RST       ; Tracking:POSITION|a_2t[3]      ; RST          ; CLK         ; 0.500        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_tick      ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; \process_1:state[1]            ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; wr_buff                        ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; \process_1:state[0]            ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; \process_1:state[2]            ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[12] ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[10] ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[11] ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[0]  ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[6]  ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[8]  ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[7]  ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[9]  ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[1]  ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[4]  ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[5]  ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[3]  ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; UART:TRANSMIT|tx_clk_count[2]  ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_y[6]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_x[6]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_y[13]      ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_x[13]      ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_y[1]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_y[5]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_x[1]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_x[5]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_y[7]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_x[7]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_y[11]      ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_y[12]      ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_x[11]      ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_x[12]      ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_y[4]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_x[4]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_y[10]      ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_x[10]      ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_y[2]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_x[2]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_y[9]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
+; -0.131 ; RST       ; Tracking:POSITION|a_x[9]       ; RST          ; CLK         ; 1.000        ; 3.716      ; 4.587      ;
++--------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'CLK'                                                                                                           ;
++-------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_tick      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; \process_1:state[1]            ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; wr_buff                        ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; \process_1:state[0]            ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; \process_1:state[2]            ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[12] ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[10] ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[11] ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[0]  ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[6]  ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[8]  ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[7]  ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[9]  ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[1]  ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[4]  ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[5]  ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[3]  ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; UART:TRANSMIT|tx_clk_count[2]  ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[6]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[6]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[13]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[13]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[1]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[5]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[1]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[5]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[7]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[7]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[11]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[12]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[11]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[12]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[4]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[4]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[10]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[10]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[2]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[2]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[9]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[9]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[3]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[3]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[8]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[8]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_y[0]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_x[0]       ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|r_lck        ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|l_lck        ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_2t[9]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_2t[4]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_2t[8]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_2t[2]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_2t[5]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_2t[7]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_2t[0]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_2t[1]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_2t[6]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 0.797 ; RST       ; Tracking:POSITION|a_2t[3]      ; RST          ; CLK         ; 0.000        ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_tick      ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; \process_1:state[1]            ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; wr_buff                        ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; \process_1:state[0]            ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; \process_1:state[2]            ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[12] ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[10] ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[11] ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[0]  ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[6]  ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[8]  ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[7]  ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[9]  ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[1]  ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[4]  ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[5]  ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[3]  ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; UART:TRANSMIT|tx_clk_count[2]  ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[6]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[6]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[13]      ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[13]      ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[1]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[5]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[1]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[5]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[7]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[7]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[11]      ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[12]      ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[11]      ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[12]      ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[4]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[4]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[10]      ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[10]      ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[2]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[2]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[9]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[9]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_y[3]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
+; 1.297 ; RST       ; Tracking:POSITION|a_x[3]       ; RST          ; CLK         ; -0.500       ; 3.716      ; 4.587      ;
++-------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'UART:TRANSMIT|tx_clk_tick'                                                                                                                                                             ;
++-------+--------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; Slack ; From Node                                  ; To Node                                    ; Launch Clock              ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; 1.445 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 4.059      ; 5.578      ;
+; 1.457 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 4.059      ; 5.590      ;
+; 1.471 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 4.059      ; 5.604      ;
+; 1.945 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; 4.059      ; 5.578      ;
+; 1.957 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; 4.059      ; 5.590      ;
+; 1.971 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; 4.059      ; 5.604      ;
+; 3.231 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 4.059      ; 7.364      ;
+; 3.231 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 4.059      ; 7.364      ;
+; 3.231 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 4.059      ; 7.364      ;
+; 3.731 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; 4.059      ; 7.364      ;
+; 3.731 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; 4.059      ; 7.364      ;
+; 3.731 ; RST                                        ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; RST                       ; UART:TRANSMIT|tx_clk_tick ; -0.500       ; 4.059      ; 7.364      ;
+; 6.356 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.343      ; 6.773      ;
+; 6.356 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.343      ; 6.773      ;
+; 6.356 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.343      ; 6.773      ;
+; 7.145 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.343      ; 7.562      ;
+; 7.145 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.343      ; 7.562      ;
+; 7.145 ; wr                                         ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.343      ; 7.562      ;
+; 7.648 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 7.722      ;
+; 7.648 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 7.722      ;
+; 7.648 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 7.722      ;
+; 8.324 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 8.398      ;
+; 8.324 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 8.398      ;
+; 8.324 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 8.398      ;
+; 8.572 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 8.646      ;
+; 8.572 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 8.646      ;
+; 8.572 ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 8.646      ;
+; 8.759 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 8.833      ;
+; 8.759 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 8.833      ;
+; 8.759 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 8.833      ;
+; 8.942 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.016      ;
+; 8.942 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.016      ;
+; 8.942 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.016      ;
+; 9.248 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.322      ;
+; 9.248 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.322      ;
+; 9.248 ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.322      ;
+; 9.683 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.757      ;
+; 9.683 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.757      ;
+; 9.683 ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.757      ;
+; 9.866 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.940      ;
+; 9.866 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.940      ;
+; 9.866 ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 0.000        ; 0.000      ; 9.940      ;
++-------+--------------------------------------------+--------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'CLK'                                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; CLK   ; Rise       ; CLK                            ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_2t[0]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_2t[0]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_2t[1]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_2t[1]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_2t[2]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_2t[2]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_2t[3]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_2t[3]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_2t[4]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_2t[4]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_2t[5]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_2t[5]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_2t[6]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_2t[6]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_2t[7]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_2t[7]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_2t[8]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_2t[8]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_2t[9]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_2t[9]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[0]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[0]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[10]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[10]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[11]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[11]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[12]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[12]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[13]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[13]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[1]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[1]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[2]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[2]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[3]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[3]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[4]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[4]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[5]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[5]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[6]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[6]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[7]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[7]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[8]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[8]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_x[9]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_x[9]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[0]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[0]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[10]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[10]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[11]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[11]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[12]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[12]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[13]      ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[13]      ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[1]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[1]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[2]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[2]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[3]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[3]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[4]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[4]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[5]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[5]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[6]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[6]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[7]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[7]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[8]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[8]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|a_y[9]       ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|a_y[9]       ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|l_lck        ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|l_lck        ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; Tracking:POSITION|r_lck        ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; Tracking:POSITION|r_lck        ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[0]  ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[0]  ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[10] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[10] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[11] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[11] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[12] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[12] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[1]  ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[1]  ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[2]  ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[2]  ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[3]  ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[3]  ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[4]  ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[4]  ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[5]  ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[5]  ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; CLK   ; Rise       ; UART:TRANSMIT|tx_clk_count[6]  ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'RST'                                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                      ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; RST   ; Rise       ; RST                                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; RST|combout                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; RST|combout                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; TRANSMIT|transmitter|latch[0]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; TRANSMIT|transmitter|latch[0]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; TRANSMIT|transmitter|latch[1]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; TRANSMIT|transmitter|latch[1]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; TRANSMIT|transmitter|latch[2]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; TRANSMIT|transmitter|latch[2]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; TRANSMIT|transmitter|latch[3]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; TRANSMIT|transmitter|latch[3]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; TRANSMIT|transmitter|latch[4]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; TRANSMIT|transmitter|latch[4]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; TRANSMIT|transmitter|latch[5]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; TRANSMIT|transmitter|latch[5]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; TRANSMIT|transmitter|latch[6]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; TRANSMIT|transmitter|latch[6]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; TRANSMIT|transmitter|latch[7]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; TRANSMIT|transmitter|latch[7]|datab         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; TRANSMIT|transmitter|ready~0|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; TRANSMIT|transmitter|ready~0|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Rise       ; TRANSMIT|transmitter|ready~0|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Rise       ; TRANSMIT|transmitter|ready~0|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[1] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[1] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[2] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[2] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[3] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[4] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[4] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[5] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[5] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[6] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[6] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[7] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RST   ; Fall       ; UART:TRANSMIT|TRANSMIT:transmitter|latch[7] ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'UART:TRANSMIT|tx_clk_tick'                                                                                               ;
++-------+--------------+----------------+------------------+---------------------------+------------+--------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                     ; Clock Edge ; Target                                     ;
++-------+--------------+----------------+------------------+---------------------------+------------+--------------------------------------------+
+; 0.247 ; 0.500        ; 0.253          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ;
+; 0.247 ; 0.500        ; 0.253          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|TX      ;
+; 0.247 ; 0.500        ; 0.253          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ;
+; 0.247 ; 0.500        ; 0.253          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|ready   ;
+; 0.247 ; 0.500        ; 0.253          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ;
+; 0.247 ; 0.500        ; 0.253          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|step[0] ;
+; 0.247 ; 0.500        ; 0.253          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ;
+; 0.247 ; 0.500        ; 0.253          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|step[1] ;
+; 0.247 ; 0.500        ; 0.253          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ;
+; 0.247 ; 0.500        ; 0.253          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|step[2] ;
+; 0.247 ; 0.500        ; 0.253          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ;
+; 0.247 ; 0.500        ; 0.253          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; UART:TRANSMIT|TRANSMIT:transmitter|step[3] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|TX|clk                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|TX|clk                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|ready|clk             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|ready|clk             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|step[0]|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|step[0]|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|step[1]|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|step[1]|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|step[2]|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|step[2]|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|step[3]|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|transmitter|step[3]|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|tx_clk_tick|regout                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; UART:TRANSMIT|tx_clk_tick ; Rise       ; TRANSMIT|tx_clk_tick|regout                ;
++-------+--------------+----------------+------------------+---------------------------+------------+--------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ENC_L     ; CLK        ; 7.536 ; 7.536 ; Rise       ; CLK             ;
+; ENC_R     ; CLK        ; 8.402 ; 8.402 ; Rise       ; CLK             ;
+; RST       ; CLK        ; 6.117 ; 6.117 ; Rise       ; CLK             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ENC_L     ; CLK        ; -2.072 ; -2.072 ; Rise       ; CLK             ;
+; ENC_R     ; CLK        ; -0.871 ; -0.871 ; Rise       ; CLK             ;
+; RST       ; CLK        ; -3.235 ; -3.235 ; Rise       ; CLK             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                          ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; TX        ; UART:TRANSMIT|tx_clk_tick ; 6.912 ; 6.912 ; Rise       ; UART:TRANSMIT|tx_clk_tick ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                  ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; TX        ; UART:TRANSMIT|tx_clk_tick ; 6.912 ; 6.912 ; Rise       ; UART:TRANSMIT|tx_clk_tick ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                   ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; CLK                       ; CLK                       ; 17718913 ; 0        ; 0        ; 0        ;
+; RST                       ; CLK                       ; 22       ; 22       ; 0        ; 0        ;
+; UART:TRANSMIT|tx_clk_tick ; CLK                       ; 27       ; 0        ; 0        ; 0        ;
+; CLK                       ; RST                       ; 0        ; 0        ; 8        ; 0        ;
+; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0        ; 8        ; 0        ; 0        ;
+; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 38       ; 0        ; 0        ; 0        ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                    ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; CLK                       ; CLK                       ; 17718913 ; 0        ; 0        ; 0        ;
+; RST                       ; CLK                       ; 22       ; 22       ; 0        ; 0        ;
+; UART:TRANSMIT|tx_clk_tick ; CLK                       ; 27       ; 0        ; 0        ; 0        ;
+; CLK                       ; RST                       ; 0        ; 0        ; 8        ; 0        ;
+; RST                       ; UART:TRANSMIT|tx_clk_tick ; 0        ; 8        ; 0        ; 0        ;
+; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 38       ; 0        ; 0        ; 0        ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; RST                       ; CLK                       ; 59       ; 59       ; 0        ; 0        ;
+; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 6        ; 0        ; 0        ; 0        ;
+; RST                       ; UART:TRANSMIT|tx_clk_tick ; 9        ; 9        ; 0        ; 0        ;
+; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 24       ; 0        ; 0        ; 0        ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                 ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; RST                       ; CLK                       ; 59       ; 59       ; 0        ; 0        ;
+; CLK                       ; UART:TRANSMIT|tx_clk_tick ; 6        ; 0        ; 0        ; 0        ;
+; RST                       ; UART:TRANSMIT|tx_clk_tick ; 9        ; 9        ; 0        ; 0        ;
+; UART:TRANSMIT|tx_clk_tick ; UART:TRANSMIT|tx_clk_tick ; 24       ; 0        ; 0        ; 0        ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 79    ; 79   ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Sun Apr 13 01:52:18 2014
+Info: Command: quartus_sta Controller -c Controller
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335093): TimeQuest Timing Analyzer is analyzing 9 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Controller.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name UART:TRANSMIT|tx_clk_tick UART:TRANSMIT|tx_clk_tick
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+    Info (332105): create_clock -period 1.000 -name RST RST
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -32.681
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -32.681           -1283.675 CLK 
+    Info (332119):   -11.310             -30.736 UART:TRANSMIT|tx_clk_tick 
+    Info (332119):    -3.599              -3.599 RST 
+Info (332146): Worst-case hold slack is -2.335
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.335             -18.498 RST 
+    Info (332119):     1.275               0.000 UART:TRANSMIT|tx_clk_tick 
+    Info (332119):     2.022               0.000 CLK 
+Info (332146): Worst-case recovery slack is -9.200
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -9.200             -52.428 UART:TRANSMIT|tx_clk_tick 
+    Info (332119):    -1.604             -38.202 CLK 
+Info (332146): Worst-case removal slack is 0.797
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.797               0.000 CLK 
+    Info (332119):     1.445               0.000 UART:TRANSMIT|tx_clk_tick 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 CLK 
+    Info (332119):    -2.289              -2.289 RST 
+    Info (332119):     0.247               0.000 UART:TRANSMIT|tx_clk_tick 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 551 megabytes
+    Info: Processing ended: Sun Apr 13 01:52:20 2014
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

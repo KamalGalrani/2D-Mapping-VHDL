@@ -2,24 +2,53 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity Navigation is
+entity ErrorCalculation is
   generic(
-      THR  : integer range 0 to 255 := 30
+  --Try removing the range and see the effect on gates
+      THRES  : integer := 50;
+		Kp     : integer := 1;
+		Kd     : integer := 0;
+		Ki     : integer := 0
       );
   port(
-		RGHT   : in  std_logic;
-      ADC_L1 : in  unsigned(7 downto 0);
-		ADC_L2 : in  unsigned(7 downto 0);
-		ADC_R1 : in  unsigned(7 downto 0);
-		ADC_R2 : in  unsigned(7 downto 0);
-		ERR    : out integer range -255 to 255;
-		ROT    : out integer range -127 to 127
+      L0_R1     : in  std_logic;		
+		ADC_R     : in  unsigned(7 downto 0);
+		ADC_L     : in  unsigned(7 downto 0);
+		CORRECTN  : out integer range -127 to 127
       );
 end entity;
 
-architecture main of Navigation is
+architecture main of ErrorCalculation is
+signal dist_r, dist_l  : integer range 0 to 1300;
+signal dist            : integer range 0 to 127;
+signal correction      : integer range -127 to 127;
+component ADC is
+  port(
+      ADC  : in  unsigned(7 downto 0);
+		DIST : out integer range 0 to 1300
+      );
+end component;
 begin
-
- ERR <= (to_integer(ADC_L1) + to_integer(ADC_L2))/2 - THR when (RGHT = '0') else (to_integer(ADC_R1) + to_integer(ADC_R2))/2 - THR;
- ROT <= (to_integer(ADC_L1) - to_integer(ADC_L2))/2 when (RGHT = '0') else (to_integer(ADC_R2) - to_integer(ADC_R1))/2;
+--DISTANCE CALCULATIONS FROM ADC VALUE
+  R_ADC : ADC port map (ADC_R, dist_r);
+  L_ADC : ADC port map (ADC_L, dist_l);
+  
+--PID IMPLEMENTATION
+  dist <= to_integer(to_unsigned(dist_r,7)) when ( L0_R1 = '1' )
+            else to_integer(to_unsigned(dist_l,7));
+				
+  process(dist)
+  variable prev_err, err  : integer range -127 to 127 := 0;
+  begin
+    err      := dist - THRES;
+    if ( (Kp * err + Kd * ( err - prev_err )) > 127 ) then
+	   CORRECTN <= 127;
+	 elsif ( (Kp * err + Kd * ( err - prev_err )) < -127 ) then
+		CORRECTN <= -127;
+	 else
+	   CORRECTN <= Kp * err + Kd * ( err - prev_err );
+	 end if;
+    prev_err := err;
+  end process;
+--END PID IMPLEMENTATION
 end architecture;

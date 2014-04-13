@@ -1,0 +1,430 @@
+Analysis & Synthesis report for Navigation
+Wed Mar 26 19:53:05 2014
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |Navigation
+ 12. Parameter Settings for User Entity Instance: Stepper:Stepper_L
+ 13. Parameter Settings for User Entity Instance: Stepper:Stepper_R
+ 14. Port Connectivity Checks: "Stepper:Stepper_R"
+ 15. Port Connectivity Checks: "Stepper:Stepper_L"
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                             ;
++-----------------------------+--------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Wed Mar 26 19:53:05 2014      ;
+; Quartus II 64-Bit Version   ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name               ; Navigation                                 ;
+; Top-level Entity Name       ; Navigation                                 ;
+; Family                      ; MAX V                                      ;
+; Total logic elements        ; 0                                          ;
+; Total pins                  ; 47                                         ;
+; Total virtual pins          ; 0                                          ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                              ;
++-----------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144A5      ;                    ;
+; Top-level entity name                                                      ; Navigation         ; Navigation         ;
+; Family name                                                                ; MAX V              ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; ../Stepper/Stepper.vhd           ; yes             ; User VHDL File  ; /home/singularity/GIT/2D-Mapping-VHDL/Stepper/Stepper.vhd       ;         ;
+; Navigation.vhd                   ; yes             ; User VHDL File  ; /home/singularity/GIT/2D-Mapping-VHDL/Navigation/Navigation.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 0     ;
+;     -- Combinational with no register       ; 0     ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+; I/O pins                                    ; 47    ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |Navigation                ; 0 (0)       ; 0            ; 0          ; 47   ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Navigation         ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; Stepper:Stepper_R|CH4                  ; Stuck at GND due to stuck port clock_enable ;
+; Stepper:Stepper_R|CH3                  ; Stuck at GND due to stuck port clock_enable ;
+; Stepper:Stepper_R|CH2                  ; Stuck at GND due to stuck port clock_enable ;
+; Stepper:Stepper_R|CH1                  ; Stuck at GND due to stuck port clock_enable ;
+; Stepper:Stepper_R|state[0,1]           ; Stuck at GND due to stuck port clock_enable ;
+; Stepper:Stepper_L|CH4                  ; Stuck at GND due to stuck port clock_enable ;
+; Stepper:Stepper_L|CH3                  ; Stuck at GND due to stuck port clock_enable ;
+; Stepper:Stepper_L|CH2                  ; Stuck at GND due to stuck port clock_enable ;
+; Stepper:Stepper_L|CH1                  ; Stuck at GND due to stuck port clock_enable ;
+; Stepper:Stepper_L|state[0,1]           ; Stuck at GND due to stuck port clock_enable ;
+; Stepper:Stepper_R|running              ; Lost fanout                                 ;
+; Stepper:Stepper_L|running              ; Lost fanout                                 ;
+; Stepper:Stepper_R|stepper_clk          ; Lost fanout                                 ;
+; Stepper:Stepper_R|a_steps[0..7]        ; Lost fanout                                 ;
+; Stepper:Stepper_R|count[0..22]         ; Lost fanout                                 ;
+; Stepper:Stepper_L|stepper_clk          ; Lost fanout                                 ;
+; Stepper:Stepper_L|a_steps[0..7]        ; Lost fanout                                 ;
+; Stepper:Stepper_L|count[0..22]         ; Lost fanout                                 ;
+; Total Number of Removed Registers = 78 ;                                             ;
++----------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                               ;
++----------------------------+--------------------------------+-------------------------------------------------------------+
+; Register name              ; Reason for Removal             ; Registers Removed due to This Register                      ;
++----------------------------+--------------------------------+-------------------------------------------------------------+
+; Stepper:Stepper_R|CH4      ; Stuck at GND                   ; Stepper:Stepper_R|a_steps[2], Stepper:Stepper_R|a_steps[3], ;
+;                            ; due to stuck port clock_enable ; Stepper:Stepper_R|a_steps[4], Stepper:Stepper_R|a_steps[5], ;
+;                            ;                                ; Stepper:Stepper_R|a_steps[6], Stepper:Stepper_R|a_steps[7]  ;
+; Stepper:Stepper_L|CH4      ; Stuck at GND                   ; Stepper:Stepper_L|a_steps[2], Stepper:Stepper_L|a_steps[3], ;
+;                            ; due to stuck port clock_enable ; Stepper:Stepper_L|a_steps[4], Stepper:Stepper_L|a_steps[5], ;
+;                            ;                                ; Stepper:Stepper_L|a_steps[6], Stepper:Stepper_L|a_steps[7]  ;
+; Stepper:Stepper_R|state[0] ; Stuck at GND                   ; Stepper:Stepper_R|state[1]                                  ;
+;                            ; due to stuck port clock_enable ;                                                             ;
+; Stepper:Stepper_L|state[0] ; Stuck at GND                   ; Stepper:Stepper_L|state[1]                                  ;
+;                            ; due to stuck port clock_enable ;                                                             ;
+; Stepper:Stepper_R|running  ; Lost Fanouts                   ; Stepper:Stepper_R|stepper_clk                               ;
+; Stepper:Stepper_L|running  ; Lost Fanouts                   ; Stepper:Stepper_L|stepper_clk                               ;
++----------------------------+--------------------------------+-------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Navigation ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; THR_ROT_MIN    ; 10    ; Signed Integer                                    ;
+; THR_ROT_MAX    ; 100   ; Signed Integer                                    ;
+; THR            ; 30    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Stepper:Stepper_L ;
++-------------------+---------+----------------------------------+
+; Parameter Name    ; Value   ; Type                             ;
++-------------------+---------+----------------------------------+
+; DISTANCE_PER_STEP ; 44      ; Signed Integer                   ;
+; CLK_DIVIDER       ; 6000000 ; Signed Integer                   ;
++-------------------+---------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Stepper:Stepper_R ;
++-------------------+---------+----------------------------------+
+; Parameter Name    ; Value   ; Type                             ;
++-------------------+---------+----------------------------------+
+; DISTANCE_PER_STEP ; 44      ; Signed Integer                   ;
+; CLK_DIVIDER       ; 6000000 ; Signed Integer                   ;
++-------------------+---------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Stepper:Stepper_R"                                                                      ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; distance ; Input  ; Info     ; Stuck at GND                                                                        ;
+; status   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; run      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; busy     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Stepper:Stepper_L"                                                                      ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; distance ; Input  ; Info     ; Stuck at GND                                                                        ;
+; status   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; run      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; busy     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Wed Mar 26 19:53:03 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Navigation -c Navigation
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file /home/singularity/GIT/2D-Mapping-VHDL/Stepper/Stepper.vhd
+    Info (12022): Found design unit 1: Stepper-main
+    Info (12023): Found entity 1: Stepper
+Info (12021): Found 2 design units, including 1 entities, in source file Navigation.vhd
+    Info (12022): Found design unit 1: Navigation-main
+    Info (12023): Found entity 1: Navigation
+Info (12127): Elaborating entity "Navigation" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Navigation.vhd(34): object "busy" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at Navigation.vhd(35): used implicit default value for signal "distance_l" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at Navigation.vhd(35): used implicit default value for signal "distance_r" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at Navigation.vhd(37): used implicit default value for signal "fwd_l" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at Navigation.vhd(37): used implicit default value for signal "fwd_r" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(66): signal "RST" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(68): signal "avg_l" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(68): signal "avg_r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(68): signal "TSOP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(71): signal "avg_l" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(73): signal "rot_l" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(78): signal "rot_l" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(80): signal "rot_l" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(83): signal "rot_l" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(90): signal "avg_r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(92): signal "rot_r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(97): signal "rot_r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(99): signal "rot_r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Navigation.vhd(102): signal "rot_r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Navigation.vhd(63): inferring latch(es) for signal or variable "run", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Navigation.vhd(63): inferring latch(es) for signal or variable "flag", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "run" at Navigation.vhd(63)
+Info (12128): Elaborating entity "Stepper" for hierarchy "Stepper:Stepper_L"
+Warning (10492): VHDL Process Statement warning at Stepper.vhd(98): signal "DISTANCE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Stepper.vhd(94): inferring latch(es) for signal or variable "req_steps", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "req_steps[0]" at Stepper.vhd(94)
+Info (10041): Inferred latch for "req_steps[1]" at Stepper.vhd(94)
+Info (10041): Inferred latch for "req_steps[2]" at Stepper.vhd(94)
+Info (10041): Inferred latch for "req_steps[3]" at Stepper.vhd(94)
+Info (10041): Inferred latch for "req_steps[4]" at Stepper.vhd(94)
+Info (10041): Inferred latch for "req_steps[5]" at Stepper.vhd(94)
+Info (10041): Inferred latch for "req_steps[6]" at Stepper.vhd(94)
+Info (10041): Inferred latch for "req_steps[7]" at Stepper.vhd(94)
+Warning (14025): LATCH primitive "Stepper:Stepper_R|req_steps[5]" is permanently disabled
+Warning (14025): LATCH primitive "Stepper:Stepper_R|req_steps[6]" is permanently disabled
+Warning (14025): LATCH primitive "Stepper:Stepper_R|req_steps[7]" is permanently disabled
+Warning (14025): LATCH primitive "Stepper:Stepper_L|req_steps[5]" is permanently disabled
+Warning (14025): LATCH primitive "Stepper:Stepper_L|req_steps[6]" is permanently disabled
+Warning (14025): LATCH primitive "Stepper:Stepper_L|req_steps[7]" is permanently disabled
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "CH1_L" is stuck at GND
+    Warning (13410): Pin "CH2_L" is stuck at GND
+    Warning (13410): Pin "CH3_L" is stuck at GND
+    Warning (13410): Pin "CH4_L" is stuck at GND
+    Warning (13410): Pin "CH1_R" is stuck at GND
+    Warning (13410): Pin "CH2_R" is stuck at GND
+    Warning (13410): Pin "CH3_R" is stuck at GND
+    Warning (13410): Pin "CH4_R" is stuck at GND
+Info (17049): 66 registers lost all their fanouts during netlist optimizations.
+Warning (21074): Design contains 39 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLK"
+    Warning (15610): No output dependent on input pin "RST"
+    Warning (15610): No output dependent on input pin "ADC_L1[0]"
+    Warning (15610): No output dependent on input pin "ADC_L1[1]"
+    Warning (15610): No output dependent on input pin "ADC_L1[2]"
+    Warning (15610): No output dependent on input pin "ADC_L1[3]"
+    Warning (15610): No output dependent on input pin "ADC_L1[4]"
+    Warning (15610): No output dependent on input pin "ADC_L1[5]"
+    Warning (15610): No output dependent on input pin "ADC_L1[6]"
+    Warning (15610): No output dependent on input pin "ADC_L1[7]"
+    Warning (15610): No output dependent on input pin "ADC_L2[0]"
+    Warning (15610): No output dependent on input pin "ADC_L2[1]"
+    Warning (15610): No output dependent on input pin "ADC_L2[2]"
+    Warning (15610): No output dependent on input pin "ADC_L2[3]"
+    Warning (15610): No output dependent on input pin "ADC_L2[4]"
+    Warning (15610): No output dependent on input pin "ADC_L2[5]"
+    Warning (15610): No output dependent on input pin "ADC_L2[6]"
+    Warning (15610): No output dependent on input pin "ADC_L2[7]"
+    Warning (15610): No output dependent on input pin "ADC_R1[0]"
+    Warning (15610): No output dependent on input pin "ADC_R1[1]"
+    Warning (15610): No output dependent on input pin "ADC_R1[2]"
+    Warning (15610): No output dependent on input pin "ADC_R1[3]"
+    Warning (15610): No output dependent on input pin "ADC_R1[4]"
+    Warning (15610): No output dependent on input pin "ADC_R1[5]"
+    Warning (15610): No output dependent on input pin "ADC_R1[6]"
+    Warning (15610): No output dependent on input pin "ADC_R1[7]"
+    Warning (15610): No output dependent on input pin "ADC_R2[0]"
+    Warning (15610): No output dependent on input pin "ADC_R2[1]"
+    Warning (15610): No output dependent on input pin "ADC_R2[2]"
+    Warning (15610): No output dependent on input pin "ADC_R2[3]"
+    Warning (15610): No output dependent on input pin "ADC_R2[4]"
+    Warning (15610): No output dependent on input pin "ADC_R2[5]"
+    Warning (15610): No output dependent on input pin "ADC_R2[6]"
+    Warning (15610): No output dependent on input pin "ADC_R2[7]"
+    Warning (15610): No output dependent on input pin "TSOP[0]"
+    Warning (15610): No output dependent on input pin "TSOP[1]"
+    Warning (15610): No output dependent on input pin "TSOP[2]"
+    Warning (15610): No output dependent on input pin "TSOP[3]"
+    Warning (15610): No output dependent on input pin "TSOP[4]"
+Info (21057): Implemented 47 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 39 input pins
+    Info (21059): Implemented 8 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 79 warnings
+    Info: Peak virtual memory: 674 megabytes
+    Info: Processing ended: Wed Mar 26 19:53:05 2014
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

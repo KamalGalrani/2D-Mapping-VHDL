@@ -1,0 +1,748 @@
+TimeQuest Timing Analyzer report for Navigation
+Mon Apr  7 17:17:55 2014
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'CLK'
+ 12. Setup: 'Stepper:Stepper_R|stepper_clk'
+ 13. Setup: 'Stepper:Stepper_L|stepper_clk'
+ 14. Hold: 'Stepper:Stepper_L|stepper_clk'
+ 15. Hold: 'Stepper:Stepper_R|stepper_clk'
+ 16. Hold: 'CLK'
+ 17. Minimum Pulse Width: 'CLK'
+ 18. Minimum Pulse Width: 'Stepper:Stepper_L|stepper_clk'
+ 19. Minimum Pulse Width: 'Stepper:Stepper_R|stepper_clk'
+ 20. Clock to Output Times
+ 21. Minimum Clock to Output Times
+ 22. Setup Transfers
+ 23. Hold Transfers
+ 24. Report TCCS
+ 25. Report RSKM
+ 26. Unconstrained Paths
+ 27. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; Navigation                                         ;
+; Device Family      ; MAX V                                              ;
+; Device Name        ; 5M1270ZT144A5                                      ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Slow Model                                         ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                       ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+; Clock Name                    ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                           ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+; CLK                           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK }                           ;
+; Stepper:Stepper_L|stepper_clk ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Stepper:Stepper_L|stepper_clk } ;
+; Stepper:Stepper_R|stepper_clk ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Stepper:Stepper_R|stepper_clk } ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+
+
++---------------------------------------------------------------------+
+; Fmax Summary                                                        ;
++------------+-----------------+-------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                    ; Note ;
++------------+-----------------+-------------------------------+------+
+; 131.06 MHz ; 131.06 MHz      ; CLK                           ;      ;
+; 306.75 MHz ; 306.75 MHz      ; Stepper:Stepper_R|stepper_clk ;      ;
+; 308.07 MHz ; 308.07 MHz      ; Stepper:Stepper_L|stepper_clk ;      ;
++------------+-----------------+-------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------------------------+
+; Setup Summary                                          ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; CLK                           ; -6.630 ; -136.620      ;
+; Stepper:Stepper_R|stepper_clk ; -2.260 ; -9.699        ;
+; Stepper:Stepper_L|stepper_clk ; -2.246 ; -9.672        ;
++-------------------------------+--------+---------------+
+
+
++-------------------------------------------------------+
+; Hold Summary                                          ;
++-------------------------------+-------+---------------+
+; Clock                         ; Slack ; End Point TNS ;
++-------------------------------+-------+---------------+
+; Stepper:Stepper_L|stepper_clk ; 1.714 ; 0.000         ;
+; Stepper:Stepper_R|stepper_clk ; 1.714 ; 0.000         ;
+; CLK                           ; 2.638 ; 0.000         ;
++-------------------------------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------------------------------+
+; Minimum Pulse Width Summary                            ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; CLK                           ; -2.289 ; -2.289        ;
+; Stepper:Stepper_L|stepper_clk ; 0.230  ; 0.000         ;
+; Stepper:Stepper_R|stepper_clk ; 0.230  ; 0.000         ;
++-------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK'                                                                                                                               ;
++--------+-----------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -6.630 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.292      ;
+; -6.586 ; Stepper:Stepper_L|count[5]  ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.248      ;
+; -6.551 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_R|stepper_clk ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.213      ;
+; -6.546 ; Stepper:Stepper_L|count[17] ; Stepper:Stepper_R|stepper_clk ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.208      ;
+; -6.545 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[9]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.207      ;
+; -6.543 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[0]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.205      ;
+; -6.537 ; Stepper:Stepper_L|count[5]  ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.199      ;
+; -6.522 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.184      ;
+; -6.521 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.183      ;
+; -6.518 ; Stepper:Stepper_L|count[5]  ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.180      ;
+; -6.516 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[8]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.178      ;
+; -6.515 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.177      ;
+; -6.514 ; Stepper:Stepper_L|count[5]  ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.176      ;
+; -6.466 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.128      ;
+; -6.423 ; Stepper:Stepper_L|count[5]  ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.085      ;
+; -6.421 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.083      ;
+; -6.398 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.060      ;
+; -6.394 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.056      ;
+; -6.381 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[5]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.043      ;
+; -6.372 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.034      ;
+; -6.361 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[5]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.023      ;
+; -6.355 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[8]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.017      ;
+; -6.353 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.015      ;
+; -6.349 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.011      ;
+; -6.332 ; Stepper:Stepper_L|count[5]  ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.994      ;
+; -6.332 ; Stepper:Stepper_L|count[5]  ; Stepper:Stepper_L|count[10]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.994      ;
+; -6.320 ; Stepper:Stepper_L|count[6]  ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.982      ;
+; -6.280 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[6]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.942      ;
+; -6.280 ; Stepper:Stepper_L|count[5]  ; Stepper:Stepper_L|count[12]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.942      ;
+; -6.271 ; Stepper:Stepper_L|count[6]  ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.933      ;
+; -6.264 ; Stepper:Stepper_L|count[11] ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.926      ;
+; -6.259 ; Stepper:Stepper_L|count[5]  ; Stepper:Stepper_L|count[16]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.921      ;
+; -6.258 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.920      ;
+; -6.252 ; Stepper:Stepper_L|count[6]  ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.914      ;
+; -6.248 ; Stepper:Stepper_L|count[6]  ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.910      ;
+; -6.241 ; Stepper:Stepper_L|count[7]  ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.903      ;
+; -6.236 ; Stepper:Stepper_L|count[13] ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.898      ;
+; -6.227 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.889      ;
+; -6.215 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.877      ;
+; -6.212 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.874      ;
+; -6.196 ; Stepper:Stepper_L|count[11] ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.858      ;
+; -6.192 ; Stepper:Stepper_L|count[7]  ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.854      ;
+; -6.192 ; Stepper:Stepper_L|count[11] ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.854      ;
+; -6.187 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[9]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.849      ;
+; -6.173 ; Stepper:Stepper_L|count[7]  ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.835      ;
+; -6.169 ; Stepper:Stepper_L|count[7]  ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.831      ;
+; -6.168 ; Stepper:Stepper_L|count[13] ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.830      ;
+; -6.167 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.829      ;
+; -6.167 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[10]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.829      ;
+; -6.166 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.828      ;
+; -6.164 ; Stepper:Stepper_L|count[13] ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.826      ;
+; -6.157 ; Stepper:Stepper_L|count[6]  ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.819      ;
+; -6.148 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_R|stepper_clk ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.810      ;
+; -6.147 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.809      ;
+; -6.143 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[7]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.805      ;
+; -6.143 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.805      ;
+; -6.142 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_L|count[9]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.804      ;
+; -6.140 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_L|count[0]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.802      ;
+; -6.139 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[16]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.801      ;
+; -6.128 ; Stepper:Stepper_L|count[17] ; Stepper:Stepper_L|count[6]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.790      ;
+; -6.127 ; Stepper:Stepper_L|count[17] ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.789      ;
+; -6.126 ; Stepper:Stepper_L|count[17] ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.788      ;
+; -6.123 ; Stepper:Stepper_L|count[17] ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.785      ;
+; -6.121 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.783      ;
+; -6.115 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[12]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.777      ;
+; -6.113 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_L|count[8]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.775      ;
+; -6.106 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[6]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.768      ;
+; -6.105 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.767      ;
+; -6.101 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.763      ;
+; -6.096 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.758      ;
+; -6.094 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[16]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.756      ;
+; -6.090 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.752      ;
+; -6.079 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.741      ;
+; -6.078 ; Stepper:Stepper_L|count[7]  ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.740      ;
+; -6.066 ; Stepper:Stepper_L|count[6]  ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.728      ;
+; -6.066 ; Stepper:Stepper_L|count[6]  ; Stepper:Stepper_L|count[10]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.728      ;
+; -6.053 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.715      ;
+; -6.052 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.714      ;
+; -6.049 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.711      ;
+; -6.047 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.709      ;
+; -6.038 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|stepper_clk ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.700      ;
+; -6.036 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[5]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.698      ;
+; -6.030 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[8]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.692      ;
+; -6.028 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.690      ;
+; -6.024 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.686      ;
+; -6.014 ; Stepper:Stepper_L|count[6]  ; Stepper:Stepper_L|count[12]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.676      ;
+; -6.010 ; Stepper:Stepper_L|count[11] ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.672      ;
+; -5.993 ; Stepper:Stepper_L|count[6]  ; Stepper:Stepper_L|count[16]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.655      ;
+; -5.987 ; Stepper:Stepper_L|count[7]  ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.649      ;
+; -5.987 ; Stepper:Stepper_L|count[7]  ; Stepper:Stepper_L|count[10]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.649      ;
+; -5.985 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.647      ;
+; -5.982 ; Stepper:Stepper_L|count[13] ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.644      ;
+; -5.978 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_L|count[5]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.640      ;
+; -5.976 ; Stepper:Stepper_L|count[14] ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.638      ;
+; -5.961 ; Stepper:Stepper_L|count[8]  ; Stepper:Stepper_L|count[10]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.623      ;
+; -5.955 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[6]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.617      ;
+; -5.954 ; Stepper:Stepper_L|count[5]  ; Stepper:Stepper_L|count[8]    ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.616      ;
+; -5.950 ; Stepper:Stepper_L|count[1]  ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.612      ;
+; -5.948 ; Stepper:Stepper_L|count[17] ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.610      ;
+; -5.946 ; Stepper:Stepper_L|count[17] ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.608      ;
++--------+-----------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'Stepper:Stepper_R|stepper_clk'                                                                                                                                    ;
++--------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node                    ; Launch Clock                  ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; -2.260 ; Stepper:Stepper_R|state[1] ; Stepper:Stepper_R|state[1] ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 1.000        ; 0.000      ; 2.922      ;
+; -2.109 ; Stepper:Stepper_R|state[1] ; Stepper:Stepper_R|CH3      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 1.000        ; 0.000      ; 2.771      ;
+; -1.946 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|state[1] ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 1.000        ; 0.000      ; 2.608      ;
+; -1.795 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|CH3      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 1.000        ; 0.000      ; 2.457      ;
+; -1.498 ; Stepper:Stepper_R|state[1] ; Stepper:Stepper_R|CH4      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 1.000        ; 0.000      ; 2.160      ;
+; -1.282 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|CH4      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 1.000        ; 0.000      ; 1.944      ;
+; -1.279 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|CH2      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 1.000        ; 0.000      ; 1.941      ;
+; -1.277 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|CH1      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 1.000        ; 0.000      ; 1.939      ;
+; -1.276 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 1.000        ; 0.000      ; 1.938      ;
++--------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'Stepper:Stepper_L|stepper_clk'                                                                                                                                    ;
++--------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node                    ; Launch Clock                  ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; -2.246 ; Stepper:Stepper_L|state[1] ; Stepper:Stepper_L|state[1] ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 1.000        ; 0.000      ; 2.908      ;
+; -2.102 ; Stepper:Stepper_L|state[1] ; Stepper:Stepper_L|CH3      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 1.000        ; 0.000      ; 2.764      ;
+; -1.936 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|state[1] ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 1.000        ; 0.000      ; 2.598      ;
+; -1.792 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|CH3      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 1.000        ; 0.000      ; 2.454      ;
+; -1.491 ; Stepper:Stepper_L|state[1] ; Stepper:Stepper_L|CH4      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 1.000        ; 0.000      ; 2.153      ;
+; -1.279 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|CH4      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 1.000        ; 0.000      ; 1.941      ;
+; -1.279 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|CH2      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 1.000        ; 0.000      ; 1.941      ;
+; -1.278 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|CH1      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 1.000        ; 0.000      ; 1.940      ;
+; -1.276 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 1.000        ; 0.000      ; 1.938      ;
++--------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'Stepper:Stepper_L|stepper_clk'                                                                                                                                    ;
++-------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node                    ; Launch Clock                  ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; 1.714 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 0.000        ; 0.000      ; 1.938      ;
+; 1.716 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|CH1      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 0.000        ; 0.000      ; 1.940      ;
+; 1.717 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|CH4      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 0.000        ; 0.000      ; 1.941      ;
+; 1.717 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|CH2      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 0.000        ; 0.000      ; 1.941      ;
+; 1.929 ; Stepper:Stepper_L|state[1] ; Stepper:Stepper_L|CH4      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 0.000        ; 0.000      ; 2.153      ;
+; 2.230 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|CH3      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 0.000        ; 0.000      ; 2.454      ;
+; 2.374 ; Stepper:Stepper_L|state[0] ; Stepper:Stepper_L|state[1] ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 0.000        ; 0.000      ; 2.598      ;
+; 2.540 ; Stepper:Stepper_L|state[1] ; Stepper:Stepper_L|CH3      ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 0.000        ; 0.000      ; 2.764      ;
+; 2.684 ; Stepper:Stepper_L|state[1] ; Stepper:Stepper_L|state[1] ; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 0.000        ; 0.000      ; 2.908      ;
++-------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'Stepper:Stepper_R|stepper_clk'                                                                                                                                    ;
++-------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node                    ; Launch Clock                  ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; 1.714 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 0.000        ; 0.000      ; 1.938      ;
+; 1.715 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|CH1      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 0.000        ; 0.000      ; 1.939      ;
+; 1.717 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|CH2      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 0.000        ; 0.000      ; 1.941      ;
+; 1.720 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|CH4      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 0.000        ; 0.000      ; 1.944      ;
+; 1.936 ; Stepper:Stepper_R|state[1] ; Stepper:Stepper_R|CH4      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 0.000        ; 0.000      ; 2.160      ;
+; 2.233 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|CH3      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 0.000        ; 0.000      ; 2.457      ;
+; 2.384 ; Stepper:Stepper_R|state[0] ; Stepper:Stepper_R|state[1] ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 0.000        ; 0.000      ; 2.608      ;
+; 2.547 ; Stepper:Stepper_R|state[1] ; Stepper:Stepper_R|CH3      ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 0.000        ; 0.000      ; 2.771      ;
+; 2.698 ; Stepper:Stepper_R|state[1] ; Stepper:Stepper_R|state[1] ; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 0.000        ; 0.000      ; 2.922      ;
++-------+----------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK'                                                                                                                               ;
++-------+-----------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                   ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.638 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.862      ;
+; 2.881 ; Stepper:Stepper_L|count[19] ; Stepper:Stepper_L|count[19]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.105      ;
+; 2.897 ; Stepper:Stepper_L|count[2]  ; Stepper:Stepper_L|count[2]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.121      ;
+; 3.056 ; Stepper:Stepper_L|count[1]  ; Stepper:Stepper_L|count[1]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.280      ;
+; 3.193 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|count[0]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.417      ;
+; 3.197 ; Stepper:Stepper_L|count[3]  ; Stepper:Stepper_L|count[3]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.421      ;
+; 3.292 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|stepper_clk ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.516      ;
+; 3.366 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|count[9]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.590      ;
+; 3.385 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[0]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.609      ;
+; 3.387 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[9]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.611      ;
+; 3.466 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[16]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.690      ;
+; 3.768 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.992      ;
+; 3.772 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.996      ;
+; 3.773 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|count[6]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.997      ;
+; 3.874 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_R|stepper_clk ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.098      ;
+; 3.913 ; Stepper:Stepper_L|count[1]  ; Stepper:Stepper_L|count[2]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.137      ;
+; 3.929 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[0]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.153      ;
+; 3.954 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[1]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.178      ;
+; 3.986 ; Stepper:Stepper_L|count[17] ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.210      ;
+; 3.994 ; Stepper:Stepper_L|count[15] ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.218      ;
+; 4.015 ; Stepper:Stepper_L|count[2]  ; Stepper:Stepper_L|count[3]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.239      ;
+; 4.046 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[2]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.270      ;
+; 4.075 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|count[5]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.299      ;
+; 4.085 ; Stepper:Stepper_L|count[18] ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.309      ;
+; 4.096 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[5]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.320      ;
+; 4.124 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[19]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.348      ;
+; 4.126 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|stepper_clk ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.350      ;
+; 4.129 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[8]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.353      ;
+; 4.131 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.355      ;
+; 4.133 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|stepper_clk ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.357      ;
+; 4.135 ; Stepper:Stepper_L|count[18] ; Stepper:Stepper_L|count[19]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.359      ;
+; 4.137 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.361      ;
+; 4.139 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.363      ;
+; 4.139 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.363      ;
+; 4.140 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|count[8]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.364      ;
+; 4.146 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.370      ;
+; 4.148 ; Stepper:Stepper_L|count[20] ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.372      ;
+; 4.196 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.420      ;
+; 4.200 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.424      ;
+; 4.201 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[6]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.425      ;
+; 4.220 ; Stepper:Stepper_L|count[17] ; Stepper:Stepper_L|count[19]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.444      ;
+; 4.290 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|stepper_clk ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.514      ;
+; 4.314 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.538      ;
+; 4.317 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.541      ;
+; 4.318 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.542      ;
+; 4.319 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_L|count[6]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.543      ;
+; 4.323 ; Stepper:Stepper_L|count[1]  ; Stepper:Stepper_L|count[3]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.547      ;
+; 4.333 ; Stepper:Stepper_L|count[18] ; Stepper:Stepper_L|count[0]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.557      ;
+; 4.335 ; Stepper:Stepper_L|count[18] ; Stepper:Stepper_L|count[9]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.559      ;
+; 4.353 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.577      ;
+; 4.357 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.581      ;
+; 4.358 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[6]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.582      ;
+; 4.368 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|stepper_clk ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.592      ;
+; 4.412 ; Stepper:Stepper_L|count[11] ; Stepper:Stepper_L|count[11]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.636      ;
+; 4.431 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.655      ;
+; 4.435 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.659      ;
+; 4.436 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[6]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.660      ;
+; 4.448 ; Stepper:Stepper_L|count[15] ; Stepper:Stepper_L|count[19]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.672      ;
+; 4.449 ; Stepper:Stepper_L|count[19] ; Stepper:Stepper_L|count[0]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.673      ;
+; 4.451 ; Stepper:Stepper_L|count[19] ; Stepper:Stepper_L|count[9]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.675      ;
+; 4.456 ; Stepper:Stepper_L|count[0]  ; Stepper:Stepper_L|count[3]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.680      ;
+; 4.476 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[5]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.700      ;
+; 4.555 ; Stepper:Stepper_L|count[15] ; Stepper:Stepper_L|count[16]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.779      ;
+; 4.556 ; Stepper:Stepper_L|count[9]  ; Stepper:Stepper_L|count[9]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.780      ;
+; 4.588 ; Stepper:Stepper_L|count[1]  ; Stepper:Stepper_L|stepper_clk ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.812      ;
+; 4.610 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.834      ;
+; 4.611 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[8]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.835      ;
+; 4.616 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.840      ;
+; 4.617 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.841      ;
+; 4.618 ; Stepper:Stepper_L|count[19] ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.842      ;
+; 4.633 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[5]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.857      ;
+; 4.638 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[0]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.862      ;
+; 4.640 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[9]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.864      ;
+; 4.646 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_R|stepper_clk ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.870      ;
+; 4.651 ; Stepper:Stepper_L|count[1]  ; Stepper:Stepper_L|count[13]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.875      ;
+; 4.655 ; Stepper:Stepper_L|count[1]  ; Stepper:Stepper_L|count[14]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.879      ;
+; 4.656 ; Stepper:Stepper_L|count[1]  ; Stepper:Stepper_L|count[6]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.880      ;
+; 4.711 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[5]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.935      ;
+; 4.725 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.949      ;
+; 4.730 ; Stepper:Stepper_L|count[3]  ; Stepper:Stepper_L|count[4]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.954      ;
+; 4.737 ; Stepper:Stepper_L|count[16] ; Stepper:Stepper_R|stepper_clk ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.961      ;
+; 4.767 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.991      ;
+; 4.768 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[8]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.992      ;
+; 4.773 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.997      ;
+; 4.774 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.998      ;
+; 4.795 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[0]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.019      ;
+; 4.797 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[9]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.021      ;
+; 4.803 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_R|stepper_clk ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.027      ;
+; 4.840 ; Stepper:Stepper_L|count[2]  ; Stepper:Stepper_L|count[4]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.064      ;
+; 4.845 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.069      ;
+; 4.846 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[8]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.070      ;
+; 4.851 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.075      ;
+; 4.852 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[15]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.076      ;
+; 4.873 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[0]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.097      ;
+; 4.873 ; Stepper:Stepper_L|count[4]  ; Stepper:Stepper_L|count[4]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.097      ;
+; 4.875 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_L|count[9]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.099      ;
+; 4.878 ; Stepper:Stepper_L|count[17] ; Stepper:Stepper_L|count[18]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.102      ;
+; 4.881 ; Stepper:Stepper_L|count[10] ; Stepper:Stepper_R|stepper_clk ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.105      ;
+; 4.882 ; Stepper:Stepper_L|count[12] ; Stepper:Stepper_L|count[20]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.106      ;
+; 4.922 ; Stepper:Stepper_L|count[15] ; Stepper:Stepper_L|count[17]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.146      ;
++-------+-----------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'CLK'                                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; CLK   ; Rise       ; CLK                           ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[0]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[0]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[10]   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[10]   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[11]   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[11]   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[12]   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[12]   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[13]   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[13]   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[14]   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[14]   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[15]   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[15]   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[16]   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[16]   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[17]   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[17]   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[18]   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[18]   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[19]   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[19]   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[1]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[1]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[20]   ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[20]   ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[2]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[2]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[3]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[3]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[4]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[4]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[5]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[5]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[6]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[6]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[7]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[7]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[8]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[8]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|count[9]    ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|count[9]    ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; 0.230  ; 0.500        ; 0.270          ; High Pulse Width ; CLK   ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+; 0.230  ; 0.500        ; 0.270          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; CLK|combout                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; CLK|combout                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[12]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[12]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[13]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[13]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[14]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[14]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[15]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[15]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[16]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[16]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[17]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[17]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[18]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[18]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[19]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[19]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[20]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[20]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[8]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[8]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|count[9]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|count[9]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_L|stepper_clk|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_L|stepper_clk|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK   ; Rise       ; Stepper_R|stepper_clk|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK   ; Rise       ; Stepper_R|stepper_clk|clk     ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'Stepper:Stepper_L|stepper_clk'                                                                                 ;
++-------+--------------+----------------+------------------+-------------------------------+------------+------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                         ; Clock Edge ; Target                       ;
++-------+--------------+----------------+------------------+-------------------------------+------------+------------------------------+
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|CH1        ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|CH1        ;
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|CH2        ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|CH2        ;
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|CH3        ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|CH3        ;
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|CH4        ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|CH4        ;
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|state[0]   ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|state[0]   ;
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|state[1]   ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper:Stepper_L|state[1]   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|CH1|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|CH1|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|CH2|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|CH2|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|CH3|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|CH3|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|CH4|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|CH4|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|state[0]|clk       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|state[0]|clk       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|state[1]|clk       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|state[1]|clk       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|stepper_clk|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_L|stepper_clk ; Rise       ; Stepper_L|stepper_clk|regout ;
++-------+--------------+----------------+------------------+-------------------------------+------------+------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'Stepper:Stepper_R|stepper_clk'                                                                                 ;
++-------+--------------+----------------+------------------+-------------------------------+------------+------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                         ; Clock Edge ; Target                       ;
++-------+--------------+----------------+------------------+-------------------------------+------------+------------------------------+
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|CH1        ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|CH1        ;
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|CH2        ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|CH2        ;
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|CH3        ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|CH3        ;
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|CH4        ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|CH4        ;
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|state[0]   ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|state[0]   ;
+; 0.230 ; 0.500        ; 0.270          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|state[1]   ;
+; 0.230 ; 0.500        ; 0.270          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper:Stepper_R|state[1]   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|CH1|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|CH1|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|CH2|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|CH2|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|CH3|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|CH3|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|CH4|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|CH4|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|state[0]|clk       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|state[0]|clk       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|state[1]|clk       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|state[1]|clk       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|stepper_clk|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Stepper:Stepper_R|stepper_clk ; Rise       ; Stepper_R|stepper_clk|regout ;
++-------+--------------+----------------+------------------+-------------------------------+------------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                    ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; CH1_L     ; Stepper:Stepper_L|stepper_clk ; 10.111 ; 10.111 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; CH2_L     ; Stepper:Stepper_L|stepper_clk ; 10.086 ; 10.086 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; CH3_L     ; Stepper:Stepper_L|stepper_clk ; 10.119 ; 10.119 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; CH4_L     ; Stepper:Stepper_L|stepper_clk ; 10.218 ; 10.218 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; DEBUG[*]  ; Stepper:Stepper_L|stepper_clk ; 11.702 ; 11.702 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+;  DEBUG[0] ; Stepper:Stepper_L|stepper_clk ; 11.702 ; 11.702 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+;  DEBUG[1] ; Stepper:Stepper_L|stepper_clk ; 11.486 ; 11.486 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; CH1_R     ; Stepper:Stepper_R|stepper_clk ; 9.441  ; 9.441  ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+; CH2_R     ; Stepper:Stepper_R|stepper_clk ; 9.551  ; 9.551  ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+; CH3_R     ; Stepper:Stepper_R|stepper_clk ; 10.043 ; 10.043 ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+; CH4_R     ; Stepper:Stepper_R|stepper_clk ; 10.108 ; 10.108 ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+; DEBUG[*]  ; Stepper:Stepper_R|stepper_clk ; 10.865 ; 10.865 ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+;  DEBUG[2] ; Stepper:Stepper_R|stepper_clk ; 10.865 ; 10.865 ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+;  DEBUG[3] ; Stepper:Stepper_R|stepper_clk ; 10.337 ; 10.337 ; Rise       ; Stepper:Stepper_R|stepper_clk ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                            ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; CH1_L     ; Stepper:Stepper_L|stepper_clk ; 10.111 ; 10.111 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; CH2_L     ; Stepper:Stepper_L|stepper_clk ; 10.086 ; 10.086 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; CH3_L     ; Stepper:Stepper_L|stepper_clk ; 10.119 ; 10.119 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; CH4_L     ; Stepper:Stepper_L|stepper_clk ; 10.218 ; 10.218 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; DEBUG[*]  ; Stepper:Stepper_L|stepper_clk ; 11.486 ; 11.486 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+;  DEBUG[0] ; Stepper:Stepper_L|stepper_clk ; 11.702 ; 11.702 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+;  DEBUG[1] ; Stepper:Stepper_L|stepper_clk ; 11.486 ; 11.486 ; Rise       ; Stepper:Stepper_L|stepper_clk ;
+; CH1_R     ; Stepper:Stepper_R|stepper_clk ; 9.441  ; 9.441  ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+; CH2_R     ; Stepper:Stepper_R|stepper_clk ; 9.551  ; 9.551  ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+; CH3_R     ; Stepper:Stepper_R|stepper_clk ; 10.043 ; 10.043 ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+; CH4_R     ; Stepper:Stepper_R|stepper_clk ; 10.108 ; 10.108 ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+; DEBUG[*]  ; Stepper:Stepper_R|stepper_clk ; 10.337 ; 10.337 ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+;  DEBUG[2] ; Stepper:Stepper_R|stepper_clk ; 10.865 ; 10.865 ; Rise       ; Stepper:Stepper_R|stepper_clk ;
+;  DEBUG[3] ; Stepper:Stepper_R|stepper_clk ; 10.337 ; 10.337 ; Rise       ; Stepper:Stepper_R|stepper_clk ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                           ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; CLK                           ; CLK                           ; 680      ; 0        ; 0        ; 0        ;
+; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 9        ; 0        ; 0        ; 0        ;
+; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 9        ; 0        ; 0        ; 0        ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                            ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; CLK                           ; CLK                           ; 680      ; 0        ; 0        ; 0        ;
+; Stepper:Stepper_L|stepper_clk ; Stepper:Stepper_L|stepper_clk ; 9        ; 0        ; 0        ; 0        ;
+; Stepper:Stepper_R|stepper_clk ; Stepper:Stepper_R|stepper_clk ; 9        ; 0        ; 0        ; 0        ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 12    ; 12   ;
+; Unconstrained Output Port Paths ; 12    ; 12   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Mon Apr  7 17:17:53 2014
+Info: Command: quartus_sta Navigation -c Navigation
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Navigation.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name Stepper:Stepper_L|stepper_clk Stepper:Stepper_L|stepper_clk
+    Info (332105): create_clock -period 1.000 -name Stepper:Stepper_R|stepper_clk Stepper:Stepper_R|stepper_clk
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.630
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.630            -136.620 CLK 
+    Info (332119):    -2.260              -9.699 Stepper:Stepper_R|stepper_clk 
+    Info (332119):    -2.246              -9.672 Stepper:Stepper_L|stepper_clk 
+Info (332146): Worst-case hold slack is 1.714
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.714               0.000 Stepper:Stepper_L|stepper_clk 
+    Info (332119):     1.714               0.000 Stepper:Stepper_R|stepper_clk 
+    Info (332119):     2.638               0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 CLK 
+    Info (332119):     0.230               0.000 Stepper:Stepper_L|stepper_clk 
+    Info (332119):     0.230               0.000 Stepper:Stepper_R|stepper_clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 541 megabytes
+    Info: Processing ended: Mon Apr  7 17:17:55 2014
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

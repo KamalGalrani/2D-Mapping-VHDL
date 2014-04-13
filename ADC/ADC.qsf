@@ -54,7 +54,7 @@ set_global_assignment -name VHDL_FILE ../UART/TRANSMIT.vhd
 set_global_assignment -name VHDL_FILE ../UART/UART.vhd
 set_global_assignment -name VHDL_FILE ADC.vhd
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
-set_location_assignment PIN_1 -to TX
+set_location_assignment PIN_16 -to TX
 set_location_assignment PIN_89 -to CLK
 set_location_assignment PIN_125 -to ADC[7]
 set_location_assignment PIN_123 -to ADC[6]
@@ -80,4 +80,4 @@ set_location_assignment PIN_42 -to THR[3]
 set_location_assignment PIN_41 -to THR[2]
 set_location_assignment PIN_40 -to THR[1]
 set_location_assignment PIN_39 -to THR[0]
-set_location_assignment PIN_2 -to BIN
+set_location_assignment PIN_38 -to BIN

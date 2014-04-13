@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'CLK'
+Slack : -6.630
+TNS   : -136.620
+
+Type  : Setup 'Stepper:Stepper_R|stepper_clk'
+Slack : -2.260
+TNS   : -9.699
+
+Type  : Setup 'Stepper:Stepper_L|stepper_clk'
+Slack : -2.246
+TNS   : -9.672
+
+Type  : Hold 'Stepper:Stepper_L|stepper_clk'
+Slack : 1.714
+TNS   : 0.000
+
+Type  : Hold 'Stepper:Stepper_R|stepper_clk'
+Slack : 1.714
+TNS   : 0.000
+
+Type  : Hold 'CLK'
+Slack : 2.638
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'Stepper:Stepper_L|stepper_clk'
+Slack : 0.230
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'Stepper:Stepper_R|stepper_clk'
+Slack : 0.230
+TNS   : 0.000
+
+------------------------------------------------------------

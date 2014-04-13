@@ -1,0 +1,13 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/UART/TRANSMIT.vhd}
+vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/UART/UART.vhd}
+vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/Tracking/Lookup.vhd}
+vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/Tracking/Tracking.vhd}
+vcom -93 -work work {/home/singularity/GIT/2D-Mapping-VHDL/Controller/Controller.vhd}
+

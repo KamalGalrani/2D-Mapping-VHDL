@@ -1,7 +1,7 @@
 import serial
 import numpy
 from matplotlib import pyplot as plt
-ser = serial.Serial('/dev/ttyUSB0', 9600)
+ser = serial.Serial('/dev/ttyUSB1', 9600)
  
 plt.ion() # set plot to animated
  
