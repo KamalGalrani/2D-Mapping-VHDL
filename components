@@ -1,7 +1,0 @@
-Component	No.	Pins on Krypton
-
-Steeper Motors	2	0
-L293D		2	8
-Sensors		5	0
-ADC		5	20
-XBee		2	2
