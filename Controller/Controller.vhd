@@ -13,8 +13,9 @@ entity Controller is
       RST       : in  std_logic;
 		ENC_L     : in  std_logic;
 		ENC_R     : in  std_logic;
-		TX        : out std_logic;
-		SHARP     : in  unsigned(7 downto 0)
+		TX        : out std_logic     := '1';
+		SHARP     : in  unsigned(7 downto 0);
+		TSOP      : in  std_logic_vector(2 downto 0)
 		);
 end entity;
 
@@ -22,9 +23,8 @@ architecture main of Controller is
 type int_array is array(0 to N) of integer range 0 to 30000;
 signal pts       : int_array;
 
-signal state     : integer range -2 to N - 1 :=  0 ;
 signal RUN       : std_logic                 := '0';
-
+signal correctn  : integer range -127 to 127 :=  0 ;
 
 --TRACKING BOT POSITION
 signal FIN_X, FIN_Y : integer range    0 to 30000;
@@ -32,7 +32,7 @@ signal ACT_X, ACT_Y : integer range    0 to 30000;
 signal ACT_2T       : integer range -360 to   360;
 signal CLOSEST_X    : integer range    0 to 30000;
 signal CLOSEST_Y    : integer range    0 to 30000;
-signal FOLLOWING    : std_logic                 := '0';
+signal FOLLOWING    : std_logic            := '0';
 component Tracking is
   port(
       CLK       : in  std_logic;
@@ -87,21 +87,25 @@ POSITION: Tracking port map (CLK, RST, ENC_L, ENC_R, '1', '1', FIN_X, FIN_Y, ACT
 ----PORT MAPPING ERROR CALCULATION
 ----PROCESS STARTS
   process (CLK)
+  variable state     : integer range -2 to N - 1 :=  0 ;
   begin
   if ( RST = '1' ) then
-    state <= -2;
+    state := -2;
   elsif (rising_edge(CLK)) then
     if (( abs( FIN_X - ACT_X ) < THRES ) and ( abs( FIN_Y - ACT_Y ) < THRES )) then
+	   RUN <= '0';
 	   if  ( state = N - 1 )  then
-		  state <= -2;
+		  state := -2;
 		else 
-        state <= state + 2;
+        state := state + 2;
 		end if;
---	 elsif near an obstacle
---	 	RUN <= '0';
---		initialise obstacle folLOWING
---		FOLLOWING <= '1';
---		RUN <= '1';
+	 elsif (( TSOP(1) = '1' ) or ( TSOP(2) = '1' )) then
+	   RUN <= '0';
+	   correctn <= 127;
+		FOLLOWING <= '1';
+	 elsif ( TSOP(0) = '1' ) then
+	 	RUN <= '0';
+		FOLLOWING <= '1';
 	 else
       if ( state = -2 ) then
 		  FIN_X <= 0;

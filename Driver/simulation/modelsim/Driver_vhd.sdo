@@ -1,0 +1,3982 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+
+// 
+// Device: Altera 5M1270ZT144A5 Package TQFP144
+// 
+
+// 
+// This SDF file should be used for ModelSim-Altera (VHDL) only
+// 
+
+(DELAYFILE
+  (SDFVERSION "2.1")
+  (DESIGN "Driver")
+  (DATE "04/14/2014 17:44:55")
+  (VENDOR "Altera")
+  (PROGRAM "Quartus II 64-Bit")
+  (VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition")
+  (DIVIDER .)
+  (TIMESCALE 1 ps)
+
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\CLK\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1192:1192:1192) (1192:1192:1192))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FOLLOWING\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_2T\[7\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_2T\[9\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_2T\[4\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_2T\[3\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_2T\[2\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_2T\[1\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_2T\[0\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\process_0\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (4051:4051:4051) (4051:4051:4051))
+        (PORT datad (3761:3761:3761) (3761:3761:3761))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add8\~47\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1961:1961:1961) (1961:1961:1961))
+        (PORT datab (4676:4676:4676) (4676:4676:4676))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add8\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4006:4006:4006) (4006:4006:4006))
+        (PORT datab (4675:4675:4675) (4675:4675:4675))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add8\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4707:4707:4707) (4707:4707:4707))
+        (PORT datab (4674:4674:4674) (4674:4674:4674))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add8\~10\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4474:4474:4474) (4474:4474:4474))
+        (PORT datab (4678:4678:4678) (4678:4678:4678))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add8\~15\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4612:4612:4612) (4612:4612:4612))
+        (PORT datab (4681:4681:4681) (4681:4681:4681))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_2T\[6\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_2T\[5\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add8\~25\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3727:3727:3727) (3727:3727:3727))
+        (PORT datab (4692:4692:4692) (4692:4692:4692))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add8\~30\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3813:3813:3813) (3813:3813:3813))
+        (PORT datab (4692:4692:4692) (4692:4692:4692))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add8\~35\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4340:4340:4340) (4340:4340:4340))
+        (PORT datab (4691:4691:4691) (4691:4691:4691))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_2T\[8\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add8\~40\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4342:4342:4342) (4342:4342:4342))
+        (PORT datab (4689:4689:4689) (4689:4689:4689))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan8\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1115:1115:1115) (1115:1115:1115))
+        (PORT datab (1134:1134:1134) (1134:1134:1134))
+        (PORT datac (1168:1168:1168) (1168:1168:1168))
+        (PORT datad (1156:1156:1156) (1156:1156:1156))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add8\~20\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan8\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1103:1103:1103) (1103:1103:1103))
+        (PORT datab (1116:1116:1116) (1116:1116:1116))
+        (PORT datac (1182:1182:1182) (1182:1182:1182))
+        (PORT datad (1136:1136:1136) (1136:1136:1136))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan8\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (693:693:693) (693:693:693))
+        (PORT datac (1181:1181:1181) (1181:1181:1181))
+        (PORT datad (718:718:718) (718:718:718))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[14\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[14\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[11\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[11\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[6\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[6\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[1\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[1\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[0\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[0\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~72\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5011:5011:5011) (5011:5011:5011))
+        (PORT datab (3736:3736:3736) (3736:3736:3736))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~67\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4009:4009:4009) (4009:4009:4009))
+        (PORT datab (4364:4364:4364) (4364:4364:4364))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[5\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[5\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[4\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[4\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[3\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[3\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[2\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[2\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1192:1192:1192) (1192:1192:1192))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~62\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4472:4472:4472) (4472:4472:4472))
+        (PORT datab (4442:4442:4442) (4442:4442:4442))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~57\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4449:4449:4449) (4449:4449:4449))
+        (PORT datab (4310:4310:4310) (4310:4310:4310))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~52\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5082:5082:5082) (5082:5082:5082))
+        (PORT datab (5157:5157:5157) (5157:5157:5157))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~47\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4445:4445:4445) (4445:4445:4445))
+        (PORT datab (4015:4015:4015) (4015:4015:4015))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~42\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4521:4521:4521) (4521:4521:4521))
+        (PORT datab (4060:4060:4060) (4060:4060:4060))
+        (IOPATH dataa cout (1263:1263:1263) (1263:1263:1263))
+        (IOPATH datab cout (1115:1115:1115) (1115:1115:1115))
+        (IOPATH cin cout (354:354:354) (354:354:354))
+        (IOPATH cin0 cout (405:405:405) (405:405:405))
+        (IOPATH cin1 cout (392:392:392) (392:392:392))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[10\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[10\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[9\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[9\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[8\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[8\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[7\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[7\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~37\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4210:4210:4210) (4210:4210:4210))
+        (PORT datab (4018:4018:4018) (4018:4018:4018))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~32\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4476:4476:4476) (4476:4476:4476))
+        (PORT datab (4038:4038:4038) (4038:4038:4038))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~27\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4589:4589:4589) (4589:4589:4589))
+        (PORT datab (4641:4641:4641) (4641:4641:4641))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~22\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4580:4580:4580) (4580:4580:4580))
+        (PORT datab (4046:4046:4046) (4046:4046:4046))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~17\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4550:4550:4550) (4550:4550:4550))
+        (PORT datab (4440:4440:4440) (4440:4440:4440))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin cout (249:249:249) (249:249:249))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[13\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[13\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_Y\[12\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_Y\[12\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~12\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4607:4607:4607) (4607:4607:4607))
+        (PORT datab (4711:4711:4711) (4711:4711:4711))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~7\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3738:3738:3738) (3738:3738:3738))
+        (PORT datab (4413:4413:4413) (4413:4413:4413))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan7\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4297:4297:4297) (4297:4297:4297))
+        (PORT datad (4632:4632:4632) (4632:4632:4632))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~75\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3837:3837:3837) (3837:3837:3837))
+        (PORT datab (4367:4367:4367) (4367:4367:4367))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~70\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3998:3998:3998) (3998:3998:3998))
+        (PORT datab (4417:4417:4417) (4417:4417:4417))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~65\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4469:4469:4469) (4469:4469:4469))
+        (PORT datab (4488:4488:4488) (4488:4488:4488))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~45\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4290:4290:4290) (4290:4290:4290))
+        (PORT datab (4439:4439:4439) (4439:4439:4439))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~50\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4410:4410:4410) (4410:4410:4410))
+        (PORT datab (4495:4495:4495) (4495:4495:4495))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~55\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4462:4462:4462) (4462:4462:4462))
+        (PORT datab (4068:4068:4068) (4068:4068:4068))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~60\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5094:5094:5094) (5094:5094:5094))
+        (PORT datab (4011:4011:4011) (4011:4011:4011))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~30\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4273:4273:4273) (4273:4273:4273))
+        (PORT datab (4000:4000:4000) (4000:4000:4000))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1263:1263:1263) (1263:1263:1263))
+        (IOPATH datab cout (1115:1115:1115) (1115:1115:1115))
+        (IOPATH cin cout (354:354:354) (354:354:354))
+        (IOPATH cin0 cout (405:405:405) (405:405:405))
+        (IOPATH cin1 cout (392:392:392) (392:392:392))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~35\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4994:4994:4994) (4994:4994:4994))
+        (PORT datab (4008:4008:4008) (4008:4008:4008))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~40\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5106:5106:5106) (5106:5106:5106))
+        (PORT datab (4583:4583:4583) (4583:4583:4583))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~10\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4003:4003:4003) (4003:4003:4003))
+        (PORT datab (4562:4562:4562) (4562:4562:4562))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~15\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4422:4422:4422) (4422:4422:4422))
+        (PORT datab (4600:4600:4600) (4600:4600:4600))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~20\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3975:3975:3975) (3975:3975:3975))
+        (PORT datab (4724:4724:4724) (4724:4724:4724))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin cout (249:249:249) (249:249:249))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~25\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4395:4395:4395) (4395:4395:4395))
+        (PORT datab (4262:4262:4262) (4262:4262:4262))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4621:4621:4621) (4621:4621:4621))
+        (PORT datab (4329:4329:4329) (4329:4329:4329))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add0\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\process_0\~3\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (711:711:711) (711:711:711))
+        (PORT datad (1185:1185:1185) (1185:1185:1185))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~77\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2366:2366:2366) (2366:2366:2366))
+        (PORT datab (2058:2058:2058) (2058:2058:2058))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~72\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1863:1863:1863) (1863:1863:1863))
+        (PORT datab (2058:2058:2058) (2058:2058:2058))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~67\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1682:1682:1682) (1682:1682:1682))
+        (PORT datab (2056:2056:2056) (2056:2056:2056))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~45\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1717:1717:1717) (1717:1717:1717))
+        (PORT datab (2053:2053:2053) (2053:2053:2053))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~50\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2204:2204:2204) (2204:2204:2204))
+        (PORT datab (2052:2052:2052) (2052:2052:2052))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~55\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2311:2311:2311) (2311:2311:2311))
+        (PORT datab (2051:2051:2051) (2051:2051:2051))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~60\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2282:2282:2282) (2282:2282:2282))
+        (PORT datab (2050:2050:2050) (2050:2050:2050))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~30\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1704:1704:1704) (1704:1704:1704))
+        (PORT datab (2052:2052:2052) (2052:2052:2052))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1263:1263:1263) (1263:1263:1263))
+        (IOPATH datab cout (1115:1115:1115) (1115:1115:1115))
+        (IOPATH cin cout (354:354:354) (354:354:354))
+        (IOPATH cin0 cout (405:405:405) (405:405:405))
+        (IOPATH cin1 cout (392:392:392) (392:392:392))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~35\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2041:2041:2041) (2041:2041:2041))
+        (PORT datab (1759:1759:1759) (1759:1759:1759))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~40\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2040:2040:2040) (2040:2040:2040))
+        (PORT datab (1675:1675:1675) (1675:1675:1675))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~10\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2039:2039:2039) (2039:2039:2039))
+        (PORT datab (1807:1807:1807) (1807:1807:1807))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~15\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2037:2037:2037) (2037:2037:2037))
+        (PORT datab (1687:1687:1687) (1687:1687:1687))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~20\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2035:2035:2035) (2035:2035:2035))
+        (PORT datab (1698:1698:1698) (1698:1698:1698))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin cout (249:249:249) (249:249:249))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~25\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2027:2027:2027) (2027:2027:2027))
+        (PORT datab (1736:1736:1736) (1736:1736:1736))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2026:2026:2026) (2026:2026:2026))
+        (PORT datab (1679:1679:1679) (1679:1679:1679))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add1\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan2\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (711:711:711) (711:711:711))
+        (PORT datab (728:728:728) (728:728:728))
+        (PORT datac (777:777:777) (777:777:777))
+        (PORT datad (728:728:728) (728:728:728))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan2\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1131:1131:1131) (1131:1131:1131))
+        (PORT datab (722:722:722) (722:722:722))
+        (PORT datac (1179:1179:1179) (1179:1179:1179))
+        (PORT datad (717:717:717) (717:717:717))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan2\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (716:716:716) (716:716:716))
+        (PORT datab (724:724:724) (724:724:724))
+        (PORT datac (781:781:781) (781:781:781))
+        (PORT datad (715:715:715) (715:715:715))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan2\~3\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (714:714:714) (714:714:714))
+        (PORT datab (712:712:712) (712:712:712))
+        (PORT datac (1169:1169:1169) (1169:1169:1169))
+        (PORT datad (724:724:724) (724:724:724))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\L2\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2035:2035:2035) (2035:2035:2035))
+        (PORT datac (3103:3103:3103) (3103:3103:3103))
+        (PORT datad (3108:3108:3108) (3108:3108:3108))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\CORRECTN\[6\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\CORRECTN\[7\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\CORRECTN\[5\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\CORRECTN\[2\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\CORRECTN\[4\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\CORRECTN\[3\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\CORRECTN\[1\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\L1\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3759:3759:3759) (3759:3759:3759))
+        (PORT datab (3781:3781:3781) (3781:3781:3781))
+        (PORT datac (4032:4032:4032) (4032:4032:4032))
+        (PORT datad (4351:4351:4351) (4351:4351:4351))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\L1\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3802:3802:3802) (3802:3802:3802))
+        (PORT datab (3805:3805:3805) (3805:3805:3805))
+        (PORT datac (3848:3848:3848) (3848:3848:3848))
+        (PORT datad (310:310:310) (310:310:310))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\RUN\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[12\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[12\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[7\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[7\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[2\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[2\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[1\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[1\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[0\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[0\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~75\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4579:4579:4579) (4579:4579:4579))
+        (PORT datab (5055:5055:5055) (5055:5055:5055))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~70\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4015:4015:4015) (4015:4015:4015))
+        (PORT datab (4032:4032:4032) (4032:4032:4032))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~65\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5163:5163:5163) (5163:5163:5163))
+        (PORT datab (5000:5000:5000) (5000:5000:5000))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[6\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[6\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[5\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[5\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[4\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[4\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[3\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[3\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4572:4572:4572) (4572:4572:4572))
+        (PORT datab (4707:4707:4707) (4707:4707:4707))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~10\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4027:4027:4027) (4027:4027:4027))
+        (PORT datab (3999:3999:3999) (3999:3999:3999))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~15\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4727:4727:4727) (4727:4727:4727))
+        (PORT datab (4542:4542:4542) (4542:4542:4542))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~20\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3974:3974:3974) (3974:3974:3974))
+        (PORT datab (4570:4570:4570) (4570:4570:4570))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~25\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5487:5487:5487) (5487:5487:5487))
+        (PORT datab (4885:4885:4885) (4885:4885:4885))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1263:1263:1263) (1263:1263:1263))
+        (IOPATH datab cout (1115:1115:1115) (1115:1115:1115))
+        (IOPATH cin cout (354:354:354) (354:354:354))
+        (IOPATH cin0 cout (405:405:405) (405:405:405))
+        (IOPATH cin1 cout (392:392:392) (392:392:392))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[11\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[11\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[10\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[10\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1192:1192:1192) (1192:1192:1192))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[9\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[9\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[8\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[8\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~30\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5722:5722:5722) (5722:5722:5722))
+        (PORT datab (5056:5056:5056) (5056:5056:5056))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~35\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5139:5139:5139) (5139:5139:5139))
+        (PORT datab (4308:4308:4308) (4308:4308:4308))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~40\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4877:4877:4877) (4877:4877:4877))
+        (PORT datab (4396:4396:4396) (4396:4396:4396))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~45\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5126:5126:5126) (5126:5126:5126))
+        (PORT datab (5543:5543:5543) (5543:5543:5543))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~50\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4282:4282:4282) (4282:4282:4282))
+        (PORT datab (5038:5038:5038) (5038:5038:5038))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin cout (249:249:249) (249:249:249))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[14\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[14\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\ACT_X\[13\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\FIN_X\[13\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1192:1192:1192) (1192:1192:1192))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~55\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5126:5126:5126) (5126:5126:5126))
+        (PORT datab (4347:4347:4347) (4347:4347:4347))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~60\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5301:5301:5301) (5301:5301:5301))
+        (PORT datab (4400:4400:4400) (4400:4400:4400))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add2\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\process_0\~4\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (711:711:711) (711:711:711))
+        (PORT datad (1197:1197:1197) (1197:1197:1197))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~77\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2141:2141:2141) (2141:2141:2141))
+        (PORT datab (1828:1828:1828) (1828:1828:1828))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~72\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2140:2140:2140) (2140:2140:2140))
+        (PORT datab (1953:1953:1953) (1953:1953:1953))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~67\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2138:2138:2138) (2138:2138:2138))
+        (PORT datab (2974:2974:2974) (2974:2974:2974))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2127:2127:2127) (2127:2127:2127))
+        (PORT datab (1965:1965:1965) (1965:1965:1965))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2126:2126:2126) (2126:2126:2126))
+        (PORT datab (2522:2522:2522) (2522:2522:2522))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~10\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2130:2130:2130) (2130:2130:2130))
+        (PORT datab (1842:1842:1842) (1842:1842:1842))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~15\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2133:2133:2133) (2133:2133:2133))
+        (PORT datab (2507:2507:2507) (2507:2507:2507))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~20\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2135:2135:2135) (2135:2135:2135))
+        (PORT datab (2969:2969:2969) (2969:2969:2969))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1263:1263:1263) (1263:1263:1263))
+        (IOPATH datab cout (1115:1115:1115) (1115:1115:1115))
+        (IOPATH cin cout (354:354:354) (354:354:354))
+        (IOPATH cin0 cout (405:405:405) (405:405:405))
+        (IOPATH cin1 cout (392:392:392) (392:392:392))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~25\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2107:2107:2107) (2107:2107:2107))
+        (PORT datab (1844:1844:1844) (1844:1844:1844))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~30\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2107:2107:2107) (2107:2107:2107))
+        (PORT datab (1836:1836:1836) (1836:1836:1836))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~35\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2105:2105:2105) (2105:2105:2105))
+        (PORT datab (2009:2009:2009) (2009:2009:2009))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~40\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2104:2104:2104) (2104:2104:2104))
+        (PORT datab (2080:2080:2080) (2080:2080:2080))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~45\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2102:2102:2102) (2102:2102:2102))
+        (PORT datab (3012:3012:3012) (3012:3012:3012))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin cout (249:249:249) (249:249:249))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~50\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2092:2092:2092) (2092:2092:2092))
+        (PORT datab (1967:1967:1967) (1967:1967:1967))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\L1\~3\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (716:716:716) (716:716:716))
+        (PORT datab (714:714:714) (714:714:714))
+        (PORT datac (781:781:781) (781:781:781))
+        (PORT datad (715:715:715) (715:715:715))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\R1\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (4784:4784:4784) (4784:4784:4784))
+        (PORT datac (2382:2382:2382) (2382:2382:2382))
+        (PORT datad (5135:5135:5135) (5135:5135:5135))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan3\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (710:710:710) (710:710:710))
+        (PORT datab (727:727:727) (727:727:727))
+        (PORT datac (777:777:777) (777:777:777))
+        (PORT datad (717:717:717) (717:717:717))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan3\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1127:1127:1127) (1127:1127:1127))
+        (PORT datab (725:725:725) (725:725:725))
+        (PORT datac (1202:1202:1202) (1202:1202:1202))
+        (PORT datad (723:723:723) (723:723:723))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~55\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2091:2091:2091) (2091:2091:2091))
+        (PORT datab (1972:1972:1972) (1972:1972:1972))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add3\~60\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\L1\~4\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (780:780:780) (780:780:780))
+        (PORT datad (310:310:310) (310:310:310))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\NEXTPT\~reg0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3190:3190:3190) (3190:3190:3190))
+        (PORT datab (2032:2032:2032) (2032:2032:2032))
+        (PORT datac (2044:2044:2044) (2044:2044:2044))
+        (PORT datad (1934:1934:1934) (1934:1934:1934))
+        (IOPATH dataa regin (1201:1201:1201) (1201:1201:1201))
+        (IOPATH datab regin (1077:1077:1077) (1077:1077:1077))
+        (IOPATH datac regin (816:816:816) (816:816:816))
+        (IOPATH datad regin (599:599:599) (599:599:599))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\NEXTPT\~reg0\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1392:1392:1392) (1392:1392:1392))
+        (PORT clk (2695:2695:2695) (2695:2695:2695))
+        (IOPATH (posedge clk) regout (381:381:381) (381:381:381))
+        (IOPATH (posedge aclr) regout (585:585:585) (585:585:585))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (338:338:338))
+      (HOLD datain (posedge clk) (224:224:224))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\L1\~reg0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5052:5052:5052) (5052:5052:5052))
+        (PORT datab (742:742:742) (742:742:742))
+        (PORT datac (2641:2641:2641) (2641:2641:2641))
+        (PORT datad (4100:4100:4100) (4100:4100:4100))
+        (IOPATH dataa regin (1201:1201:1201) (1201:1201:1201))
+        (IOPATH datab regin (1077:1077:1077) (1077:1077:1077))
+        (IOPATH datac regin (816:816:816) (816:816:816))
+        (IOPATH datad regin (599:599:599) (599:599:599))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\L1\~reg0\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1392:1392:1392) (1392:1392:1392))
+        (PORT clk (2695:2695:2695) (2695:2695:2695))
+        (PORT ena (1937:1937:1937) (1937:1937:1937))
+        (IOPATH (posedge clk) regout (381:381:381) (381:381:381))
+        (IOPATH (posedge aclr) regout (585:585:585) (585:585:585))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (338:338:338))
+      (SETUP ena (posedge clk) (338:338:338))
+      (HOLD datain (posedge clk) (224:224:224))
+      (HOLD ena (posedge clk) (224:224:224))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\L2\~reg0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5059:5059:5059) (5059:5059:5059))
+        (PORT datab (749:749:749) (749:749:749))
+        (PORT datac (2639:2639:2639) (2639:2639:2639))
+        (PORT datad (4110:4110:4110) (4110:4110:4110))
+        (IOPATH dataa regin (1201:1201:1201) (1201:1201:1201))
+        (IOPATH datab regin (1077:1077:1077) (1077:1077:1077))
+        (IOPATH datac regin (816:816:816) (816:816:816))
+        (IOPATH datad regin (599:599:599) (599:599:599))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\L2\~reg0\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1392:1392:1392) (1392:1392:1392))
+        (PORT clk (2695:2695:2695) (2695:2695:2695))
+        (PORT ena (1937:1937:1937) (1937:1937:1937))
+        (IOPATH (posedge clk) regout (381:381:381) (381:381:381))
+        (IOPATH (posedge aclr) regout (585:585:585) (585:585:585))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (338:338:338))
+      (SETUP ena (posedge clk) (338:338:338))
+      (HOLD datain (posedge clk) (224:224:224))
+      (HOLD ena (posedge clk) (224:224:224))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~72\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5033:5033:5033) (5033:5033:5033))
+        (PORT datab (4018:4018:4018) (4018:4018:4018))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~67\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4360:4360:4360) (4360:4360:4360))
+        (PORT datab (4001:4001:4001) (4001:4001:4001))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~62\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4354:4354:4354) (4354:4354:4354))
+        (PORT datab (4337:4337:4337) (4337:4337:4337))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~57\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4542:4542:4542) (4542:4542:4542))
+        (PORT datab (4724:4724:4724) (4724:4724:4724))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~52\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3971:3971:3971) (3971:3971:3971))
+        (PORT datab (4012:4012:4012) (4012:4012:4012))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~47\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5040:5040:5040) (5040:5040:5040))
+        (PORT datab (4746:4746:4746) (4746:4746:4746))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~42\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3944:3944:3944) (3944:3944:3944))
+        (PORT datab (5883:5883:5883) (5883:5883:5883))
+        (IOPATH dataa cout (1263:1263:1263) (1263:1263:1263))
+        (IOPATH datab cout (1115:1115:1115) (1115:1115:1115))
+        (IOPATH cin cout (354:354:354) (354:354:354))
+        (IOPATH cin0 cout (405:405:405) (405:405:405))
+        (IOPATH cin1 cout (392:392:392) (392:392:392))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~37\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4738:4738:4738) (4738:4738:4738))
+        (PORT datab (5396:5396:5396) (5396:5396:5396))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~32\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4329:4329:4329) (4329:4329:4329))
+        (PORT datab (5090:5090:5090) (5090:5090:5090))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~27\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4984:4984:4984) (4984:4984:4984))
+        (PORT datab (5208:5208:5208) (5208:5208:5208))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~22\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4753:4753:4753) (4753:4753:4753))
+        (PORT datab (4924:4924:4924) (4924:4924:4924))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~17\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5180:5180:5180) (5180:5180:5180))
+        (PORT datab (4880:4880:4880) (4880:4880:4880))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin cout (249:249:249) (249:249:249))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~12\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4916:4916:4916) (4916:4916:4916))
+        (PORT datab (5767:5767:5767) (5767:5767:5767))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~7\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5620:5620:5620) (5620:5620:5620))
+        (PORT datab (5023:5023:5023) (5023:5023:5023))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan4\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5157:5157:5157) (5157:5157:5157))
+        (PORT datab (4606:4606:4606) (4606:4606:4606))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\R1\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5113:5113:5113) (5113:5113:5113))
+        (PORT datab (713:713:713) (713:713:713))
+        (PORT datac (2383:2383:2383) (2383:2383:2383))
+        (PORT datad (4782:4782:4782) (4782:4782:4782))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\R1\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2028:2028:2028) (2028:2028:2028))
+        (PORT datab (4109:4109:4109) (4109:4109:4109))
+        (PORT datac (3095:3095:3095) (3095:3095:3095))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add6\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4703:4703:4703) (4703:4703:4703))
+        (PORT datab (4455:4455:4455) (4455:4455:4455))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add6\~10\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (4604:4604:4604) (4604:4604:4604))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add6\~15\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3680:3680:3680) (3680:3680:3680))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add6\~20\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3767:3767:3767) (3767:3767:3767))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add6\~25\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (4351:4351:4351) (4351:4351:4351))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add6\~30\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4297:4297:4297) (4297:4297:4297))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add6\~35\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4451:4451:4451) (4451:4451:4451))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add6\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4451:4451:4451) (4451:4451:4451))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\process_0\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (4003:4003:4003) (4003:4003:4003))
+        (PORT datac (1923:1923:1923) (1923:1923:1923))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add7\~52\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1840:1840:1840) (1840:1840:1840))
+        (PORT datab (726:726:726) (726:726:726))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add7\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1840:1840:1840) (1840:1840:1840))
+        (PORT datab (4605:4605:4605) (4605:4605:4605))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add7\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1843:1843:1843) (1843:1843:1843))
+        (PORT datab (4675:4675:4675) (4675:4675:4675))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add7\~10\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1845:1845:1845) (1845:1845:1845))
+        (PORT datab (2383:2383:2383) (2383:2383:2383))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add7\~15\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1847:1847:1847) (1847:1847:1847))
+        (PORT datab (2229:2229:2229) (2229:2229:2229))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1263:1263:1263) (1263:1263:1263))
+        (IOPATH datab cout (1115:1115:1115) (1115:1115:1115))
+        (IOPATH cin0 cout (405:405:405) (405:405:405))
+        (IOPATH cin1 cout (392:392:392) (392:392:392))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add7\~20\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1821:1821:1821) (1821:1821:1821))
+        (PORT datab (1670:1670:1670) (1670:1670:1670))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add7\~25\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1820:1820:1820) (1820:1820:1820))
+        (PORT datab (1766:1766:1766) (1766:1766:1766))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add7\~30\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1819:1819:1819) (1819:1819:1819))
+        (PORT datab (2211:2211:2211) (2211:2211:2211))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add7\~35\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1817:1817:1817) (1817:1817:1817))
+        (PORT datab (1670:1670:1670) (1670:1670:1670))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add7\~40\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1815:1815:1815) (1815:1815:1815))
+        (PORT datab (1780:1780:1780) (1780:1780:1780))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin cout (249:249:249) (249:249:249))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add7\~45\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH cin combout (989:989:989) (989:989:989))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan6\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (696:696:696) (696:696:696))
+        (PORT datab (723:723:723) (723:723:723))
+        (PORT datac (763:763:763) (763:763:763))
+        (PORT datad (1141:1141:1141) (1141:1141:1141))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan6\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (697:697:697) (697:697:697))
+        (PORT datab (726:726:726) (726:726:726))
+        (PORT datac (766:766:766) (766:766:766))
+        (PORT datad (729:729:729) (729:729:729))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan6\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (706:706:706) (706:706:706))
+        (PORT datab (1120:1120:1120) (1120:1120:1120))
+        (PORT datac (772:772:772) (772:772:772))
+        (PORT datad (310:310:310) (310:310:310))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\R1\~3\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (703:703:703) (703:703:703))
+        (PORT datab (2022:2022:2022) (2022:2022:2022))
+        (PORT datac (2822:2822:2822) (2822:2822:2822))
+        (PORT datad (2552:2552:2552) (2552:2552:2552))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan0\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3804:3804:3804) (3804:3804:3804))
+        (PORT datac (3851:3851:3851) (3851:3851:3851))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\CORRECTN\[0\]\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1161:1161:1161) (1161:1161:1161))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan0\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4463:4463:4463) (4463:4463:4463))
+        (PORT datab (4343:4343:4343) (4343:4343:4343))
+        (PORT datac (4027:4027:4027) (4027:4027:4027))
+        (PORT datad (3775:3775:3775) (3775:3775:3775))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan0\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (698:698:698) (698:698:698))
+        (PORT datab (3777:3777:3777) (3777:3777:3777))
+        (PORT datac (4084:4084:4084) (4084:4084:4084))
+        (PORT datad (715:715:715) (715:715:715))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add4\~42\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (4019:4019:4019) (4019:4019:4019))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add4\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (4450:4450:4450) (4450:4450:4450))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add4\~10\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3958:3958:3958) (3958:3958:3958))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add4\~15\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3714:3714:3714) (3714:3714:3714))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add4\~20\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3763:3763:3763) (3763:3763:3763))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add4\~25\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (4332:4332:4332) (4332:4332:4332))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add4\~30\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4291:4291:4291) (4291:4291:4291))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add4\~35\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4466:4466:4466) (4466:4466:4466))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add4\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (4486:4486:4486) (4486:4486:4486))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+        (IOPATH cin combout (989:989:989) (989:989:989))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\process_0\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (4011:4011:4011) (4011:4011:4011))
+        (PORT datad (2168:2168:2168) (2168:2168:2168))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add5\~52\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2141:2141:2141) (2141:2141:2141))
+        (PORT datab (726:726:726) (726:726:726))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add5\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2141:2141:2141) (2141:2141:2141))
+        (PORT datab (4049:4049:4049) (4049:4049:4049))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add5\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2139:2139:2139) (2139:2139:2139))
+        (PORT datab (4102:4102:4102) (4102:4102:4102))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add5\~10\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2142:2142:2142) (2142:2142:2142))
+        (PORT datab (2425:2425:2425) (2425:2425:2425))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add5\~15\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2143:2143:2143) (2143:2143:2143))
+        (PORT datab (2493:2493:2493) (2493:2493:2493))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1263:1263:1263) (1263:1263:1263))
+        (IOPATH datab cout (1115:1115:1115) (1115:1115:1115))
+        (IOPATH cin0 cout (405:405:405) (405:405:405))
+        (IOPATH cin1 cout (392:392:392) (392:392:392))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add5\~20\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2649:2649:2649) (2649:2649:2649))
+        (PORT datab (2114:2114:2114) (2114:2114:2114))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add5\~25\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3038:3038:3038) (3038:3038:3038))
+        (PORT datab (2113:2113:2113) (2113:2113:2113))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add5\~30\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1736:1736:1736) (1736:1736:1736))
+        (PORT datab (2112:2112:2112) (2112:2112:2112))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add5\~35\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1930:1930:1930) (1930:1930:1930))
+        (PORT datab (2110:2110:2110) (2110:2110:2110))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout0 (992:992:992) (992:992:992))
+        (IOPATH datab cout0 (758:758:758) (758:758:758))
+        (IOPATH cin0 cout0 (125:125:125) (125:125:125))
+        (IOPATH dataa cout1 (988:988:988) (988:988:988))
+        (IOPATH datab cout1 (754:754:754) (754:754:754))
+        (IOPATH cin1 cout1 (112:112:112) (112:112:112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan5\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (707:707:707) (707:707:707))
+        (PORT datab (725:725:725) (725:725:725))
+        (PORT datac (765:765:765) (765:765:765))
+        (PORT datad (728:728:728) (728:728:728))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan5\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (696:696:696) (696:696:696))
+        (PORT datab (723:723:723) (723:723:723))
+        (PORT datac (763:763:763) (763:763:763))
+        (PORT datad (1126:1126:1126) (1126:1126:1126))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add5\~40\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1814:1814:1814) (1814:1814:1814))
+        (PORT datab (2108:2108:2108) (2108:2108:2108))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH cin combout (1252:1252:1252) (1252:1252:1252))
+        (IOPATH cin0 combout (827:827:827) (827:827:827))
+        (IOPATH cin1 combout (816:816:816) (816:816:816))
+        (IOPATH dataa cout (1093:1093:1093) (1093:1093:1093))
+        (IOPATH datab cout (968:968:968) (968:968:968))
+        (IOPATH cin cout (249:249:249) (249:249:249))
+        (IOPATH cin0 cout (265:265:265) (265:265:265))
+        (IOPATH cin1 cout (256:256:256) (256:256:256))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\Add5\~45\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH cin combout (989:989:989) (989:989:989))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\LessThan5\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (704:704:704) (704:704:704))
+        (PORT datab (1104:1104:1104) (1104:1104:1104))
+        (PORT datac (762:762:762) (762:762:762))
+        (PORT datad (1107:1107:1107) (1107:1107:1107))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\R1\~reg0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2762:2762:2762) (2762:2762:2762))
+        (PORT datab (736:736:736) (736:736:736))
+        (PORT datac (2643:2643:2643) (2643:2643:2643))
+        (PORT datad (1825:1825:1825) (1825:1825:1825))
+        (IOPATH dataa regin (1201:1201:1201) (1201:1201:1201))
+        (IOPATH datab regin (1077:1077:1077) (1077:1077:1077))
+        (IOPATH datac regin (816:816:816) (816:816:816))
+        (IOPATH datad regin (599:599:599) (599:599:599))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\R1\~reg0\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1392:1392:1392) (1392:1392:1392))
+        (PORT clk (2695:2695:2695) (2695:2695:2695))
+        (PORT ena (1937:1937:1937) (1937:1937:1937))
+        (IOPATH (posedge clk) regout (381:381:381) (381:381:381))
+        (IOPATH (posedge aclr) regout (585:585:585) (585:585:585))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (338:338:338))
+      (SETUP ena (posedge clk) (338:338:338))
+      (HOLD datain (posedge clk) (224:224:224))
+      (HOLD ena (posedge clk) (224:224:224))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\R2\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2030:2030:2030) (2030:2030:2030))
+        (PORT datab (4108:4108:4108) (4108:4108:4108))
+        (PORT datac (3097:3097:3097) (3097:3097:3097))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\R2\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2753:2753:2753) (2753:2753:2753))
+        (PORT datab (2023:2023:2023) (2023:2023:2023))
+        (PORT datac (2652:2652:2652) (2652:2652:2652))
+        (PORT datad (725:725:725) (725:725:725))
+        (IOPATH dataa combout (927:927:927) (927:927:927))
+        (IOPATH datab combout (750:750:750) (750:750:750))
+        (IOPATH datac combout (518:518:518) (518:518:518))
+        (IOPATH datad combout (203:203:203) (203:203:203))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\R2\~reg0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1802:1802:1802) (1802:1802:1802))
+        (PORT datab (2028:2028:2028) (2028:2028:2028))
+        (PORT datac (763:763:763) (763:763:763))
+        (PORT datad (2556:2556:2556) (2556:2556:2556))
+        (IOPATH dataa regin (1201:1201:1201) (1201:1201:1201))
+        (IOPATH datab regin (1077:1077:1077) (1077:1077:1077))
+        (IOPATH datac regin (816:816:816) (816:816:816))
+        (IOPATH datad regin (599:599:599) (599:599:599))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\R2\~reg0\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1392:1392:1392) (1392:1392:1392))
+        (PORT clk (2695:2695:2695) (2695:2695:2695))
+        (PORT ena (1937:1937:1937) (1937:1937:1937))
+        (IOPATH (posedge clk) regout (381:381:381) (381:381:381))
+        (IOPATH (posedge aclr) regout (585:585:585) (585:585:585))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (338:338:338))
+      (SETUP ena (posedge clk) (338:338:338))
+      (HOLD datain (posedge clk) (224:224:224))
+      (HOLD ena (posedge clk) (224:224:224))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\L1\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (2201:2201:2201) (2201:2201:2201))
+        (IOPATH datain padio (2374:2374:2374) (2374:2374:2374))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\L2\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (2136:2136:2136) (2136:2136:2136))
+        (IOPATH datain padio (2374:2374:2374) (2374:2374:2374))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\R1\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (2629:2629:2629) (2629:2629:2629))
+        (IOPATH datain padio (2374:2374:2374) (2374:2374:2374))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\R2\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (2042:2042:2042) (2042:2042:2042))
+        (IOPATH datain padio (2374:2374:2374) (2374:2374:2374))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\NEXTPT\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (2068:2068:2068) (2068:2068:2068))
+        (IOPATH datain padio (2374:2374:2374) (2374:2374:2374))
+      )
+    )
+  )
+)

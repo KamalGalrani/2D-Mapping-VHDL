@@ -64,16 +64,16 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 -------------------------------------------------------------------------------------------------------------
 GND*                         : A1        :        :                   :         : 1         :                
 GND*                         : A2        :        :                   :         : 2         :                
-GND*                         : A3        :        :                   :         : 2         :                
+TSOP[2]                      : A3        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : A4        :        :                   :         : 2         :                
 GND*                         : A5        :        :                   :         : 2         :                
 GND*                         : A6        :        :                   :         : 2         :                
 GND*                         : A7        :        :                   :         : 2         :                
-GND*                         : A8        :        :                   :         : 2         :                
-ENC_L                        : A9        : input  : 3.3-V LVTTL       :         : 2         : N              
+SHARP[2]                     : A8        : input  : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : A9        :        :                   :         : 2         :                
 GND*                         : B1        :        :                   :         : 1         :                
-SHARP[5]                     : B2        : input  : 3.3-V LVTTL       :         : 2         : N              
-SHARP[7]                     : B3        : input  : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : B2        :        :                   :         : 2         :                
+GND*                         : B3        :        :                   :         : 2         :                
 GND*                         : B4        :        :                   :         : 2         :                
 GND*                         : B5        :        :                   :         : 2         :                
 GND*                         : B6        :        :                   :         : 2         :                
@@ -81,32 +81,32 @@ GND*                         : B7        :        :                   :         
 GND*                         : B8        :        :                   :         : 2         :                
 GND*                         : B9        :        :                   :         : 2         :                
 GND*                         : C1        :        :                   :         : 1         :                
-GND*                         : C2        :        :                   :         : 1         :                
+TX                           : C2        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO2                       : C4        : power  :                   : 3.3V    : 2         :                
 GND                          : C5        : gnd    :                   :         :           :                
 GND                          : C6        : gnd    :                   :         :           :                
-ENC_R                        : C8        : input  : 3.3-V LVTTL       :         : 2         : N              
-GND*                         : C9        :        :                   :         : 2         :                
+GND*                         : C8        :        :                   :         : 2         :                
+SHARP[4]                     : C9        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : D1        :        :                   :         : 1         :                
 GND*                         : D2        :        :                   :         : 1         :                
 VCCIO1                       : D3        : power  :                   : 3.3V    : 1         :                
 VCCINT                       : D7        : power  :                   : 1.8V    :           :                
-SHARP[6]                     : D8        : input  : 3.3-V LVTTL       :         : 2         : N              
+SHARP[1]                     : D8        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : D9        :        :                   :         : 2         :                
 CLK                          : E1        : input  : 3.3-V LVTTL       :         : 1         : N              
 RST                          : E2        : input  : 3.3-V LVTTL       :         : 1         : N              
 GND                          : E3        : gnd    :                   :         :           :                
 GND                          : E7        : gnd    :                   :         :           :                
-TX                           : E8        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : E8        :        :                   :         : 2         :                
 GND*                         : E9        :        :                   :         : 2         :                
 GND                          : F1        : gnd    :                   :         :           :                
 GND*                         : F2        :        :                   :         : 1         :                
-GND*                         : F3        :        :                   :         : 1         :                
+SHARP[0]                     : F3        : input  : 3.3-V LVTTL       :         : 1         : N              
 VCCIO2                       : F7        : power  :                   : 3.3V    : 2         :                
-GND*                         : F8        :        :                   :         : 2         :                
-GND*                         : F9        :        :                   :         : 2         :                
+SHARP[3]                     : F8        : input  : 3.3-V LVTTL       :         : 2         : N              
+TSOP[1]                      : F9        : input  : 3.3-V LVTTL       :         : 2         : N              
 TMS                          : G1        : input  :                   :         : 1         :                
-SHARP[3]                     : G2        : input  : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : G2        :        :                   :         : 1         :                
 VCCIO1                       : G4        : power  :                   : 3.3V    : 1         :                
 GND                          : G5        : gnd    :                   :         :           :                
 GND*                         : G6        :        :                   :         : 1         :                
@@ -115,18 +115,18 @@ GND*                         : G9        :        :                   :         
 TDI                          : H1        : input  :                   :         : 1         :                
 TDO                          : H2        : output :                   :         : 1         :                
 GND*                         : H3        :        :                   :         : 1         :                
-SHARP[2]                     : H4        : input  : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : H5        :        :                   :         : 1         :                
-GND*                         : H6        :        :                   :         : 1         :                
-SHARP[1]                     : H7        : input  : 3.3-V LVTTL       :         : 1         : N              
+SHARP[7]                     : H4        : input  : 3.3-V LVTTL       :         : 1         : N              
+ENC_R                        : H5        : input  : 3.3-V LVTTL       :         : 1         : N              
+SHARP[6]                     : H6        : input  : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : H7        :        :                   :         : 1         :                
 GND*                         : H8        :        :                   :         : 1         :                
-SHARP[0]                     : H9        : input  : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : H9        :        :                   :         : 2         :                
 TCK                          : J1        : input  :                   :         : 1         :                
 GND*                         : J2        :        :                   :         : 1         :                
-SHARP[4]                     : J3        : input  : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : J4        :        :                   :         : 1         :                
+GND*                         : J3        :        :                   :         : 1         :                
+ENC_L                        : J4        : input  : 3.3-V LVTTL       :         : 1         : N              
 GND                          : J5        : gnd    :                   :         :           :                
-GND*                         : J6        :        :                   :         : 1         :                
-GND*                         : J7        :        :                   :         : 1         :                
+TSOP[0]                      : J6        : input  : 3.3-V LVTTL       :         : 1         : N              
+SHARP[5]                     : J7        : input  : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : J8        :        :                   :         : 1         :                
 GND*                         : J9        :        :                   :         : 1         :                

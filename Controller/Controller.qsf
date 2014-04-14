@@ -42,13 +42,14 @@ set_global_assignment -name TOP_LEVEL_ENTITY Controller
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:37:05  APRIL 12, 2014"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name VHDL_FILE ../Driver/Driver.vhd
 set_global_assignment -name VHDL_FILE ../ErrorCalculation/ErrorCalculation.vhd
 set_global_assignment -name VHDL_FILE ../UART/TRANSMIT.vhd
 set_global_assignment -name VHDL_FILE ../UART/UART.vhd
 set_global_assignment -name VHDL_FILE ../ADC/ADC.vhd
 set_global_assignment -name VHDL_FILE ../Tracking/Lookup.vhd
 set_global_assignment -name VHDL_FILE ../Tracking/Tracking.vhd
-set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name VHDL_FILE Controller.vhd
